@@ -22,8 +22,8 @@ Unlike [VideoGameBench](https://arxiv.org/abs/2505.18134), which runs one fixed 
 
 ```bash
 npm run dev        # validate data, rebuild data.json, serve on http://localhost:4173
-npm run build      # validate data/ and rebuild data.json — run this before committing data changes
-npm run validate   # what CI runs: validate data/ and check data.json is up to date
+npm run build      # validate data/, rebuild data.json and the page copies — run this before committing
+npm run validate   # what CI runs: validate data/ and check data.json and the page copies are up to date
 ```
 
 Node 18+; no dependencies.
@@ -33,9 +33,10 @@ Node 18+; no dependencies.
 ```
 index.html, app.js, style.css, config.js, favicon.svg   the site (served from the repo root)
 data.json                   generated bundle the site loads — commit it, don't edit by hand
+why/ rules/ submit/ game/   generated copies of index.html, one per page URL — commit them, don't edit by hand
 data/games/                 game definitions: milestones, clear condition, human baselines
 data/submissions/<game>/    one JSON file per run
-scripts/build.mjs           validator + bundler -> data.json
+scripts/build.mjs           validator + bundler -> data.json and the page copies
 .github/                    CI (validate on every PR/push) and issue forms
 docs/DATA_FORMAT.md         schema for games and submissions
 ```
@@ -61,3 +62,5 @@ GitHub Pages serves the repo root directly — no build step on GitHub.
 3. The site is then at `https://<owner>.github.io/<repo>/`. For the shortest URL, name the repository `<owner>.github.io` (served at `https://<owner>.github.io/`) or add a custom domain.
 
 `.nojekyll` turns off Jekyll processing so files are served as-is.
+
+Every page has a plain URL (`/why/`, `/rules/`, `/submit/`, `/game/<id>/`). GitHub Pages only serves files, so `npm run build` writes a copy of `index.html` into each of those folders; `app.js` then moves between pages without reloading. Old `#/…` links redirect to the matching page. After changing `index.html`, run `npm run build` so the copies match.

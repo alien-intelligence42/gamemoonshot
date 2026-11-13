@@ -57,8 +57,8 @@ document.getElementById("themeToggle")?.addEventListener("click", () => {
   THEME = THEME === "dark" ? "light" : "dark";
   try { localStorage.setItem(THEME_KEY, THEME); } catch {}
   syncTheme();
-  const m = location.hash.match(/^#\/game\/([^?]+)/);
-  if (m && DATA) drawChart(DATA.games.find((g) => g.id === decodeURIComponent(m[1])));
+  const id = currentGameId();
+  if (id && DATA) drawChart(DATA.games.find((g) => g.id === id));
 });
 function applySkin(game) {
   const b = document.body.dataset;
@@ -314,7 +314,7 @@ function viewHome() {
       const best = ranked[0];
       const vids = ranked.reduce((n, sc) => n + (sc.run.videos?.length ?? 0), 0);
       return `
-      <a class="card" href="#/game/${esc(g.id)}" style="${themeStyle(g)}" data-skin="${esc(g.skin ?? "")}">
+      <a class="card" href="game/${esc(g.id)}/" style="${themeStyle(g)}" data-skin="${esc(g.skin ?? "")}">
         <div class="keyart">
           <span class="year">${esc(g.release_year ?? "")}</span>
           <div class="emblem">${emblem(g)}</div>
@@ -356,14 +356,14 @@ function viewHome() {
       <div class="hero-inner">
         <div class="eyebrow">This era's moonshot · AI agents · real games</div>
         <h1>Can your agent<br/>finish the game?</h1>
-        <a class="slogan" href="#/why">${SLOGAN_HTML}<span class="slogan-more">Why games →</span></a>
+        <a class="slogan" href="why/">${SLOGAN_HTML}<span class="slogan-more">Why games →</span></a>
         <p class="lede">Finishing a modern game end to end — seeing, planning and acting in real time across a story that takes a person
         30 to 100 hours — is this era's moonshot for AI. GameMoonshot tracks how close agents get on Elden Ring, Cyberpunk 2077, GTA V,
         Red Dead Redemption 2, Black Myth: Wukong and more. Each game is split into milestones (bosses, missions, chapters);
         every claim shows how well it is evidenced, and every board shows where human players stand.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#games">${UI.sword} Choose a game</a>
-          <a class="btn" href="#/submit">${UI.scroll} Submit a run</a>
+          <a class="btn" href="submit/">${UI.scroll} Submit a run</a>
         </div>
       </div>
       ${MOUNTAINS}
@@ -389,7 +389,7 @@ function viewHome() {
       <section class="section" id="classics">
         <div class="section-head">
           <div><h2><span class="ico">${UI.scroll}</span>Test flights</h2>
-          <div class="sub">Retro, 2D and turn-based games — the kind existing benchmarks use (<a href="https://www.vgbench.com/" target="_blank" rel="noopener">VideoGameBench</a> runs one fixed harness on 1990s Game Boy and MS-DOS games). Kept here as test flights for comparison; <a href="#/rules">how GameMoonshot differs</a>.</div></div>
+          <div class="sub">Retro, 2D and turn-based games — the kind existing benchmarks use (<a href="https://www.vgbench.com/" target="_blank" rel="noopener">VideoGameBench</a> runs one fixed harness on 1990s Game Boy and MS-DOS games). Kept here as test flights for comparison; <a href="rules/">how GameMoonshot differs</a>.</div></div>
         </div>
         <div class="grid compact">${classic}</div>
       </section>
@@ -559,7 +559,7 @@ function runDetail(game, sc) {
 
 function viewGame(id) {
   const game = DATA.games.find((g) => g.id === id);
-  if (!game) return `<div class="wrap"><div class="empty" style="margin-top:48px">Unknown game “${esc(id)}”. <a href="#/">Back to all games</a></div></div>`;
+  if (!game) return `<div class="wrap"><div class="empty" style="margin-top:48px">Unknown game “${esc(id)}”. <a href="./">Back to all games</a></div></div>`;
   VIDEO_REG = [];
 
   const allRanked = rankRuns(game, runsFor(game.id));
@@ -621,7 +621,7 @@ function viewGame(id) {
       <div class="emblem">${emblem(game)}</div>
       ${game.deco ? `<div class="deco" aria-hidden="true">${esc(game.deco)}</div>` : ""}
       ${MOUNTAINS}
-      <div class="crumbs"><a href="#/">Games</a> / ${esc(game.title)}</div>
+      <div class="crumbs"><a href="./">Games</a> / ${esc(game.title)}</div>
       <h1>${esc(game.title)}</h1>
       <div class="tags">${[game.platform, game.release_year, game.genre].filter(Boolean).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
       ${game.description ? `<p class="desc">${esc(game.description)}</p>` : ""}
@@ -665,7 +665,7 @@ function viewGame(id) {
         <div class="board-head" aria-hidden="true"><span>#</span><span>Agent</span><span></span><span>Progress</span><span>Time</span><span>Evidence</span><span>Reported</span><span></span></div>
         <div class="board" role="list">
           ${(game.human_baselines ?? []).map((b) => humanRow(game, b)).join("")}
-          ${rows || `<div class="empty">No AI runs in this view yet. <a href="#/submit?game=${esc(game.id)}">Submit the first one.</a></div>`}
+          ${rows || `<div class="empty">No AI runs in this view yet. <a href="submit/?game=${esc(game.id)}">Submit the first one.</a></div>`}
         </div>
       </section>
 
@@ -680,7 +680,7 @@ function viewGame(id) {
       <section class="section">
         <div class="section-head"><div><h2><span class="ico">${UI.scroll}</span>The path</h2>
         <div class="sub">Milestones in order. Lit nodes have been reached by at least one AI run; the badge shows the strongest evidence for it.</div></div>
-        <a class="btn small" href="#/submit?game=${esc(game.id)}">Submit a run</a></div>
+        <a class="btn small" href="submit/?game=${esc(game.id)}">Submit a run</a></div>
         <ol class="path">${ladder}</ol>
       </section>
 
@@ -877,8 +877,8 @@ let resizeTimer;
 addEventListener("resize", () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    const m = location.hash.match(/^#\/game\/([^?]+)/);
-    if (m && DATA) drawChart(DATA.games.find((g) => g.id === decodeURIComponent(m[1])));
+    const id = currentGameId();
+    if (id && DATA) drawChart(DATA.games.find((g) => g.id === id));
   }, 150);
 });
 
@@ -913,7 +913,7 @@ function viewWhy() {
   const started = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.n > 0).length;
 
   const shelf = DATA.games
-    .map((g) => `<a class="cart" href="#/game/${esc(g.id)}" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
+    .map((g) => `<a class="cart" href="game/${esc(g.id)}/" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
     .join("");
 
   const stages = [
@@ -991,9 +991,9 @@ function viewWhy() {
       <div class="blink">Press start</div>
       <p>Stage one is open. ${cleared ? `${cleared} modern game${cleared === 1 ? "" : "s"} cleared so far.` : "No AI has cleared a modern game yet."} Bring an agent.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="#/">${UI.sword} Choose a game</a>
-        <a class="btn" href="#/submit">${UI.scroll} Submit a run</a>
-        <a class="btn" href="#/rules">${UI.check} Read the rules</a>
+        <a class="btn primary" href="./">${UI.sword} Choose a game</a>
+        <a class="btn" href="submit/">${UI.scroll} Submit a run</a>
+        <a class="btn" href="rules/">${UI.check} Read the rules</a>
       </div>
     </section>
   </div>`;
@@ -1008,7 +1008,7 @@ function viewRules() {
       These rules apply to every game; a game page can add its own.</p></div>
     <article class="prose">
       <h2>How this differs from VideoGameBench</h2>
-      <p>Why games at all? See <a href="#/why">Why games</a>.</p>
+      <p>Why games at all? See <a href="why/">Why games</a>.</p>
       <p><a href="https://arxiv.org/abs/2505.18134" target="_blank" rel="noopener">VideoGameBench</a> (Zhang, Griffiths, Narasimhan and Press, 2025)
       is a controlled benchmark: one agent harness, VG-Agent, wraps each vision-language model and plays 1990s Game Boy and MS-DOS games
       (Doom II, Civilization I, Link's Awakening DX, Pokémon Crystal and others) from raw frames, scored at fixed checkpoints.</p>
@@ -1083,7 +1083,7 @@ function viewSubmit(params) {
   <div class="wrap">
     <div class="page-head"><h1>Submit a run</h1>
       <p>Fill this in, then open a GitHub issue with the generated JSON (maintainers turn it into a PR), or add it yourself as
-      <code>data/submissions/&lt;game&gt;/&lt;id&gt;.json</code> and run <code>npm run build</code>. Read the <a href="#/rules">rules</a> first.</p></div>
+      <code>data/submissions/&lt;game&gt;/&lt;id&gt;.json</code> and run <code>npm run build</code>. Read the <a href="rules/">rules</a> first.</p></div>
     <form class="submit" id="submitForm" novalidate>
       <fieldset>
         <legend>Run</legend>
@@ -1158,7 +1158,7 @@ const slug = (s) =>
 
 function bindSubmit() {
   const form = app.querySelector("#submitForm");
-  form.game.addEventListener("change", () => { location.hash = `#/submit?game=${encodeURIComponent(form.game.value)}`; });
+  form.game.addEventListener("change", () => navigate(`submit/?game=${encodeURIComponent(form.game.value)}`, { replace: true }));
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const f = Object.fromEntries(new FormData(form).entries());
@@ -1232,13 +1232,30 @@ function bindSubmit() {
 }
 
 // ---------- router ----------
+// Every page has a real URL: ./, why/, rules/, submit/ and game/<id>/. scripts/build.mjs writes a copy of
+// index.html into each of those folders (with a <base> pointing back at the site root), so a page loads
+// directly, and links between pages are handled here with the History API instead of reloading.
+const SITE_ROOT = new URL(".", document.baseURI); // the site root, wherever the site is hosted
+// Pin <base> to that root as an absolute URL. A relative <base> (the page copies' "../") or none at all (the
+// root page) is re-resolved against the address bar after pushState, which would send links and data.json
+// fetches to the wrong folder.
+(document.querySelector("base") ?? document.head.appendChild(document.createElement("base"))).href = SITE_ROOT.href;
+const PAGE_RE = /^(?:index\.html|why\/|rules\/|submit\/|game\/[^/]+\/)?$/;
+
+// Path of a URL relative to the site root ("" for home, "game/rdr2/" for a game), or null if outside it.
+function routeOf(url) {
+  return url.origin === SITE_ROOT.origin && url.pathname.startsWith(SITE_ROOT.pathname)
+    ? url.pathname.slice(SITE_ROOT.pathname.length)
+    : null;
+}
+function currentGameId() {
+  const m = /^game\/([^/]+)\//.exec(routeOf(location) ?? "");
+  return m ? decodeURIComponent(m[1]) : null;
+}
+
 function render() {
-  let hash = location.hash.replace(/^#/, "") || "/";
-  const jumpToGames = hash === "games"; // in-page anchor on the home page
-  if (jumpToGames) hash = "/";
-  const [pathPart, query = ""] = hash.split("?");
-  const parts = pathPart.split("/").filter(Boolean);
-  const params = new URLSearchParams(query);
+  const parts = (routeOf(location) ?? "").split("/").filter(Boolean);
+  const params = new URLSearchParams(location.search);
   let html, bind, nav;
   if (parts[0] === "game" && parts[1]) {
     const id = decodeURIComponent(parts[1]);
@@ -1258,28 +1275,56 @@ function render() {
   applySkin(parts[0] === "game" ? DATA.games.find((g) => g.id === decodeURIComponent(parts[1] ?? "")) : null);
   app.innerHTML = html;
   bind?.();
-  if (jumpToGames) document.getElementById("games")?.scrollIntoView();
+  if (location.hash.length > 1) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
   document.querySelectorAll("nav a").forEach((a) => a.classList.toggle("active", a.dataset.nav === nav));
 }
 
-let lastPath = null;
-window.addEventListener("hashchange", () => {
-  if (location.hash === "#games" && document.getElementById("games")) {
-    document.getElementById("games").scrollIntoView();
-    return;
-  }
-  const path = location.hash.split("?")[0];
-  if (path !== lastPath) {
+let lastPath = null, lastSearch = null;
+// Called after the URL changes (link click, back/forward). A new page resets per-page state and scrolls to
+// the top; a change of query on the same page (e.g. the submit form's game picker) just re-renders.
+function onRoute() {
+  if (location.pathname !== lastPath) {
     Object.assign(gameState, { track: "all", minEvidence: "news", open: new Set() });
     closePlayer();
-    window.scrollTo(0, 0);
+    if (!location.hash) window.scrollTo(0, 0);
   }
-  lastPath = path;
+  lastPath = location.pathname;
+  lastSearch = location.search;
   render();
+}
+function navigate(href, { replace = false } = {}) {
+  history[replace ? "replaceState" : "pushState"](null, "", new URL(href, SITE_ROOT));
+  onRoute();
+}
+
+document.addEventListener("click", (e) => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = e.target.closest("a[href]");
+  if (!a || (a.target && a.target !== "_self") || a.hasAttribute("download")) return;
+  const url = new URL(a.href);
+  const route = routeOf(url);
+  if (route == null || !PAGE_RE.test(route)) return; // files (data.json, assets) and other sites
+  // An in-page anchor on the current page (e.g. "Choose a game" -> #games): let the browser scroll.
+  if (url.hash && url.pathname === location.pathname && url.search === location.search) return;
+  e.preventDefault();
+  if (url.href !== location.href) navigate(url.href);
+});
+window.addEventListener("popstate", () => {
+  // Back/forward between anchors on one page: the browser scrolls, nothing to re-render.
+  if (location.pathname === lastPath && location.search === lastSearch) return;
+  onRoute();
 });
 
+// Links from before pages had their own URLs looked like #/game/rdr2 or #/submit?game=rdr2.
+// Send them to the matching page, keeping the address bar clean.
+if (location.hash.startsWith("#/")) {
+  const [p, q] = location.hash.slice(2).split("?");
+  const path = p.replace(/\/+$/, "");
+  history.replaceState(null, "", new URL(`${path ? `${path}/` : ""}${q ? `?${q}` : ""}`, SITE_ROOT));
+}
+
 load()
-  .then(() => { lastPath = location.hash.split("?")[0]; render(); })
+  .then(() => { lastPath = location.pathname; lastSearch = location.search; render(); })
   .catch((e) => {
     app.innerHTML = `<div class="wrap"><div class="empty" style="margin-top:48px">Could not load leaderboard data: ${esc(e.message)}<br/>Run <code>npm run dev</code> to build data.json and preview locally.</div></div>`;
   });

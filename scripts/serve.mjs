@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Tiny static server for the repo root (local preview of the GitHub Pages site).
 import { createServer } from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -23,7 +23,13 @@ createServer(async (req, res) => {
     res.writeHead(403).end();
     return;
   }
-  if (p.endsWith(path.sep)) p = path.join(p, "index.html");
+  // Like GitHub Pages: a folder without its trailing slash redirects (/why -> /why/), then serves its index.html.
+  const isDir = await stat(p).then((st) => st.isDirectory(), () => false);
+  if (isDir && !url.pathname.endsWith("/")) {
+    res.writeHead(301, { location: `${url.pathname}/${url.search}` }).end();
+    return;
+  }
+  if (isDir) p = path.join(p, "index.html");
   try {
     const body = await readFile(p);
     res.writeHead(200, { "content-type": TYPES[path.extname(p)] ?? "application/octet-stream" });
