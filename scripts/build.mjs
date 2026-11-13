@@ -106,6 +106,9 @@ function validateGame(file, g) {
   if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
   if (g.icon != null && !ICONS.includes(g.icon)) err(file, `icon must be one of ${ICONS.join(", ")}`);
+  if (g.steam_appid != null && !(Number.isInteger(g.steam_appid) && g.steam_appid > 0)) {
+    err(file, `steam_appid must be the game's numeric Steam app id (from store.steampowered.com/app/<id>)`);
+  }
   if (g.theme != null && !(Array.isArray(g.theme) && g.theme.length === 2 && g.theme.every((c) => /^#[0-9a-f]{6}$/i.test(c)))) {
     err(file, `theme must be two hex colors, e.g. ["#8a2420", "#1f2a5c"]`);
   }

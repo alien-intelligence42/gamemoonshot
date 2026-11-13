@@ -12,6 +12,7 @@
     "#0a0d16"
   ],
   "skin": "orbital",
+  "steam_appid": 220200,
   "description": "Design a rocket from parts, then fly it through ascent, orbit, a transfer burn and a powered landing on the Mun, and bring the crew home. Orbital physics punishes every design mistake. A Vals AI benchmark reports Claude Opus 5.5 landing on the Mun and returning in its own harness; it is listed below as an author report, with no timing published.",
   "clear_condition": "Land a crewed vessel on the Mun and recover the crew alive on Kerbin.",
   "timing": "Run time from the first input in a new save to the recovery dialog, as in speedrun.com's “Mun and Back” category.",

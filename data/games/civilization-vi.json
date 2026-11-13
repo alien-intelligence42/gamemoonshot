@@ -12,6 +12,7 @@
     "#8e6a1e"
   ],
   "skin": "atlas",
+  "steam_appid": 289070,
   "description": "Hundreds of turns of expansion, economy, diplomacy and war against rivals playing the same game. On Deity, those rivals start with large bonuses. LLM agents have won a few games on Prince and King at Quick speed through an API harness; none has reported a Deity win.",
   "clear_condition": "Win a Science Victory on Deity: the Exoplanet Expedition reaches its destination (Gathering Storm rules).",
   "timing": "Run time from the first input on turn 1 to the Victory screen. Also report the final turn number in notes: the human references are counted in turns.",

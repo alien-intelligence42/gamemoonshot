@@ -12,6 +12,7 @@
     "#10120f"
   ],
   "skin": "tactical",
+  "steam_appid": 10180,
   "description": "The single-player campaign: real-time aiming at sub-second speed, timed set pieces like the snowmobile chase, and checkpoint-only saves — hard for agents that act on slow, sparse screenshots. No AI agent has reported playing any Call of Duty campaign; the nearest research is on ViZDoom.",
   "clear_condition": "Finish the final level, Endgame (the knife throw).",
   "timing": "Run time from the end of the S.S.D.D. load to the knife throw in Endgame, as on speedrun.com.",

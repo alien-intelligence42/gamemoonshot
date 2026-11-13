@@ -303,6 +303,7 @@ async function load() {
 const runsFor = (gameId) => DATA.submissions.filter((s) => s.game === gameId && s.status !== "rejected");
 
 // ---------- home ----------
+const STEAM_ART = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps";
 function viewHome() {
   const all = DATA.submissions.filter((s) => s.status !== "rejected");
   const clearedGames = DATA.games.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
@@ -313,9 +314,16 @@ function viewHome() {
       const ranked = rankRuns(g, runsFor(g.id));
       const best = ranked[0];
       const vids = ranked.reduce((n, sc) => n + (sc.run.videos?.length ?? 0), 0);
+      // Official Steam header art, loaded from Steam, for games that set steam_appid. If it fails to load,
+      // the card falls back to the emblem art.
+      const art = g.steam_appid
+        ? `<img class="art" src="${STEAM_ART}/${Number(g.steam_appid)}/header.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"
+             onerror="this.parentNode.classList.remove('has-art'); this.remove()" />`
+        : "";
       return `
       <a class="card" href="game/${esc(g.id)}/" style="${themeStyle(g)}" data-skin="${esc(g.skin ?? "")}">
-        <div class="keyart">
+        <div class="keyart${art ? " has-art" : ""}">
+          ${art}
           <span class="year">${esc(g.release_year ?? "")}</span>
           <div class="emblem">${emblem(g)}</div>
           ${MOUNTAINS}

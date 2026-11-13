@@ -12,6 +12,7 @@
     "#2a1d4a"
   ],
   "skin": "sunset",
+  "steam_appid": 271590,
   "description": "About 32 hours of story for a typical player (HowLongToBeat): driving, flying, boating and cover shooting under strict fail conditions, three switchable characters and heist plans. No AI agent has reported passing a full story mission yet; the GTAGym benchmark tests sub-tasks, not whole missions.",
   "clear_condition": "Finish the story: pass any of the three final missions (The Third Way, Something Sensible, or The Time's Come).",
   "timing": "Run time from the 'Ludendorff, North Yankton' title to the end of the final mission.",

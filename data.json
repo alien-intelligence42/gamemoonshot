@@ -15,6 +15,7 @@
     "#14130f"
    ],
    "skin": "erdtree",
+   "steam_appid": 1245620,
    "description": "Real-time third-person combat with tight dodge timing, and a 30–60 hour open world whose route is never spelled out: two of five demigods must fall before the capital opens. No AI agent has reported story progress yet; hobby RL bots train against Margit in a fixed arena and none reports a win.",
    "clear_condition": "Defeat Radagon and the Elden Beast (base game, any ending).",
    "timing": "Run time from the first input after character creation to the 'God Slain' banner.",
@@ -119,6 +120,7 @@
     "#0c1420"
    ],
    "skin": "neon",
+   "steam_appid": 1091500,
    "description": "A first-person open world that keeps switching modes: gunfights, driving, branching dialogue, breach minigames and inventory, in a dense vertical city where the quest marker doesn't show the way. No AI agent has reported finishing a main job yet.",
    "clear_condition": "Reach the credits of any ending (base game or Phantom Liberty).",
    "timing": "Run time from leaving character creation to the start of the final cutscene, as on speedrun.com.",
@@ -225,6 +227,7 @@
     "#2a1d4a"
    ],
    "skin": "sunset",
+   "steam_appid": 271590,
    "description": "About 32 hours of story for a typical player (HowLongToBeat): driving, flying, boating and cover shooting under strict fail conditions, three switchable characters and heist plans. No AI agent has reported passing a full story mission yet; the GTAGym benchmark tests sub-tasks, not whole missions.",
    "clear_condition": "Finish the story: pass any of the three final missions (The Third Way, Something Sensible, or The Time's Come).",
    "timing": "Run time from the 'Ludendorff, North Yankton' title to the end of the final mission.",
@@ -334,6 +337,7 @@
     "#2a1a10"
    ],
    "skin": "western",
+   "steam_appid": 1174180,
    "description": "A AAA open world with long, story-gated chapters. Cradle, a general computer-control agent playing from screenshots alone, cleared Chapter 1; no agent has gone further yet.",
    "clear_condition": "Complete the final Epilogue mission “American Venom”.",
    "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
@@ -415,6 +419,7 @@
     "#2a1608"
    ],
    "skin": "wukong",
+   "steam_appid": 2358720,
    "deco": "黑神话·悟空",
    "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
    "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
@@ -485,6 +490,7 @@
     "#161210"
    ],
    "skin": "shinobi",
+   "steam_appid": 814380,
    "deco": "隻狼",
    "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
    "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
@@ -568,6 +574,7 @@
     "#10120f"
    ],
    "skin": "tactical",
+   "steam_appid": 10180,
    "description": "The single-player campaign: real-time aiming at sub-second speed, timed set pieces like the snowmobile chase, and checkpoint-only saves — hard for agents that act on slow, sparse screenshots. No AI agent has reported playing any Call of Duty campaign; the nearest research is on ViZDoom.",
    "clear_condition": "Finish the final level, Endgame (the knife throw).",
    "timing": "Run time from the end of the S.S.D.D. load to the knife throw in Endgame, as on speedrun.com.",
@@ -789,6 +796,7 @@
     "#17111c"
    ],
    "skin": "tome",
+   "steam_appid": 1086940,
    "description": "A story that runs for dozens of hours, carried by dialogue, skill checks and turn-based fights with a full tabletop rulebook behind them. Reading, persuading and remembering matter more than reflexes. One self-reported Claude playthrough on the easiest difficulty reached the credits in 2026, with save reloads; it is listed below as an author report.",
    "clear_condition": "Defeat the Netherbrain and reach the credits (any ending).",
    "timing": "Run time from the opening Nautiloid cutscene to the start of the credits, as on speedrun.com.",
@@ -889,6 +897,7 @@
     "#8e6a1e"
    ],
    "skin": "atlas",
+   "steam_appid": 289070,
    "description": "Hundreds of turns of expansion, economy, diplomacy and war against rivals playing the same game. On Deity, those rivals start with large bonuses. LLM agents have won a few games on Prince and King at Quick speed through an API harness; none has reported a Deity win.",
    "clear_condition": "Win a Science Victory on Deity: the Exoplanet Expedition reaches its destination (Gathering Storm rules).",
    "timing": "Run time from the first input on turn 1 to the Victory screen. Also report the final turn number in notes: the human references are counted in turns.",
@@ -984,6 +993,7 @@
     "#1c1a17"
    ],
    "skin": "factory",
+   "steam_appid": 427520,
    "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see links), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
    "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
    "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
@@ -1084,6 +1094,7 @@
     "#0a0d16"
    ],
    "skin": "orbital",
+   "steam_appid": 220200,
    "description": "Design a rocket from parts, then fly it through ascent, orbit, a transfer burn and a powered landing on the Mun, and bring the crew home. Orbital physics punishes every design mistake. A Vals AI benchmark reports Claude Opus 5.5 landing on the Mun and returning in its own harness; it is listed below as an author report, with no timing published.",
    "clear_condition": "Land a crewed vessel on the Mun and recover the crew alive on Kerbin.",
    "timing": "Run time from the first input in a new save to the recovery dialog, as in speedrun.com's “Mun and Back” category.",
@@ -1262,6 +1273,7 @@
     "#5c1d2a"
    ],
    "skin": "spire",
+   "steam_appid": 646570,
    "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
    "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
    "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",

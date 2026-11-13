@@ -12,6 +12,7 @@
     "#14130f"
   ],
   "skin": "erdtree",
+  "steam_appid": 1245620,
   "description": "Real-time third-person combat with tight dodge timing, and a 30–60 hour open world whose route is never spelled out: two of five demigods must fall before the capital opens. No AI agent has reported story progress yet; hobby RL bots train against Margit in a fixed arena and none reports a win.",
   "clear_condition": "Defeat Radagon and the Elden Beast (base game, any ending).",
   "timing": "Run time from the first input after character creation to the 'God Slain' banner.",

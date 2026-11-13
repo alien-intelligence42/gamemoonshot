@@ -12,6 +12,7 @@
     "#0c1420"
   ],
   "skin": "neon",
+  "steam_appid": 1091500,
   "description": "A first-person open world that keeps switching modes: gunfights, driving, branching dialogue, breach minigames and inventory, in a dense vertical city where the quest marker doesn't show the way. No AI agent has reported finishing a main job yet.",
   "clear_condition": "Reach the credits of any ending (base game or Phantom Liberty).",
   "timing": "Run time from leaving character creation to the start of the final cutscene, as on speedrun.com.",

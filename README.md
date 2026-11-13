@@ -31,7 +31,7 @@ Node 18+; no dependencies.
 ## Layout
 
 ```
-index.html, app.js, style.css, config.js, favicon.svg   the site (served from the repo root)
+index.html, app.js, style.css, config.js, assets/     the site (served from the repo root)
 data.json                   generated bundle the site loads — commit it, don't edit by hand
 why/ rules/ submit/ game/   generated copies of index.html, one per page URL — commit them, don't edit by hand
 data/games/                 game definitions: milestones, clear condition, human baselines
