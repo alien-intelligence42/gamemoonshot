@@ -72,6 +72,33 @@ Object.assign(EMBLEMS, {
   ),
 });
 
+// Strategy, engineering and story boards: a rocket in a gear, a rocket on its way to a moon,
+// a hex in a laurel wreath, a twenty-sided die.
+Object.assign(EMBLEMS, {
+  gear: S(
+    `<path d="M52.1 25.9L58.4 26.2L58.4 37.8L52.1 38.1L50.5 41.9L54.7 46.6L46.6 54.7L41.9 50.5L38.1 52.1L37.8 58.4L26.2 58.4L25.9 52.1L22.1 50.5L17.4 54.7L9.3 46.6L13.5 41.9L11.9 38.1L5.6 37.8L5.6 26.2L11.9 25.9L13.5 22.1L9.3 17.4L17.4 9.3L22.1 13.5L25.9 11.9L26.2 5.6L37.8 5.6L38.1 11.9L41.9 13.5L46.6 9.3L54.7 17.4L50.5 22.1z" stroke-width="2.5"/>
+     <path d="M32 18c4.5 4 5.5 10 4.5 16h-9c-1-6 0-12 4.5-16z" stroke-width="2.4"/><circle cx="32" cy="26.5" r="2" stroke-width="1.8"/>
+     <path d="M27.5 31l-4 5.5h4.5M36.5 31l4 5.5H36M30 38.5l2 4.5 2-4.5" stroke-width="2"/>`
+  ),
+  rocket: S(
+    `<circle cx="49" cy="15" r="10" stroke-width="2.5"/><circle cx="46" cy="12" r="2" stroke-width="1.5"/><circle cx="52" cy="19" r="1.4" stroke-width="1.4"/>
+     <path d="M10 58C14 42 24 30 36 23" stroke-width="2" stroke-dasharray="2 4.5"/>
+     <g transform="rotate(45 22 38)"><path d="M22 24c4 4 5 10 4 16h-8c-1-6 0-12 4-16z" stroke-width="2.6"/>
+     <path d="M18 35l-4 6h4.5M26 35l4 6h-4.5M20 42l2 5 2-5" stroke-width="2.2"/></g>`
+  ),
+  laurel: S(
+    `<path d="M32 19l11 6.5v13L32 45l-11-6.5v-13z" stroke-width="2.6"/><path d="M32 25.5l2 4.5 4.5 2-4.5 2-2 4.5-2-4.5-4.5-2 4.5-2z" fill="currentColor" stroke-width="1"/>
+     <path d="M24 56C12 52 6 40 9 24M40 56c12-4 18-16 15-32" stroke-width="2.4"/>
+     <g stroke-width="2"><path d="M11 45c-4-1-6-4-6-7 4 0 6 3 6 7zM8 35c-4-2-5-5-4-8 4 1 5 4 4 8zM8.5 26c-3-3-3-6-1-9 3 2 3 5 1 9zM18 52c-4 1-7-1-8-4 4-1 7 1 8 4z"/>
+     <path d="M53 45c4-1 6-4 6-7-4 0-6 3-6 7zM56 35c4-2 5-5 4-8-4 1-5 4-4 8zM55.5 26c3-3 3-6 1-9-3 2-3 5-1 9zM46 52c4 1 7-1 8-4-4-1-7 1-8 4z"/></g>`
+  ),
+  d20: S(
+    `<path d="M32 4l24 14v28L32 60 8 46V18z"/><path d="M32 17L16 43h32z" stroke-width="2.4"/>
+     <path d="M32 4v13M8 18l24-1 24 1M8 18l8 25M56 18l-8 25M8 46l8-3M56 46l-8-3M16 43l16 17 16-17" stroke-width="1.8"/>
+     <text x="32" y="38" text-anchor="middle" font-size="11" font-weight="700" font-family="Georgia,serif" fill="currentColor" stroke="none">20</text>`
+  ),
+});
+
 // Horseshoe nail holes, placed along the arc.
 EMBLEMS.horseshoe = S(
   `<path d="M18 54l-4-22a18 18 0 0 1 36 0l-4 22" stroke-width="8"/>

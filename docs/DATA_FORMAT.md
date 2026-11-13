@@ -19,9 +19,9 @@ data/
 | `clear_condition` | yes | what "beating the game" means for this board |
 | `timing` | no | how elapsed time is measured (default: run time from first input) |
 | `rules` | no | game-specific rules (allowed difficulty, version, glitches…) |
-| `tier` | yes | `modern` (3D, real-time, long-form — listed first) or `classic` (retro / 2D / turn-based — listed below for comparison) |
+| `tier` | yes | `modern` (current, long-form games — listed first) or `classic` (retro / 2D / turn-based — listed below for comparison) |
 | `order` | no | sort order within its tier on the home page |
-| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag |
+| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag, gear, rocket, laurel, d20 |
 | `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |
 | `milestones[]` | yes | ordered; each `{ id, name, description?, final? }`. Exactly one has `"final": true` — reaching it means the game is cleared |
 | `human_baselines[]` | no | `{ label, time: "H:MM:SS", note?, source: url }` |

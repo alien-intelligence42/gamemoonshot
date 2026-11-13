@@ -874,6 +874,183 @@ body[data-skin="tactical"] .banner .mountains .m2 { fill: #1d2019; }
 body[data-skin="tactical"] .banner h1 { font-weight: 400; text-transform: uppercase; letter-spacing: .04em; font-size: clamp(36px, 5.6vw, 66px); }
 
 /* ======================================================================
+   FACTORY — automation sprawl: steel plates, hazard stripes, conveyor-belt bars
+   ====================================================================== */
+body[data-skin="factory"] {
+  --display: "Titillium Web", "Arial Narrow", sans-serif;
+  --bg: #121110; --bg-2: #171513; --surface: #1c1a17; --surface-2: #24211d; --surface-3: #2e2a25;
+  --ink: #ece6dc; --ink-2: #c8c0b2; --muted: #958c7e;
+  --gold: #e8a33c; --gold-hi: #f4c272; --gold-lo: #a8701e; --ember: #e8a33c; --on-gold: #17110a;
+  --line: rgb(236 230 220 / 11%); --line-strong: rgb(232 163 60 / 36%); --human: #8fb4d8; --track: #0d0c0b;
+  --emblem: #e8a33c; --emblem-glow: rgb(232 163 60 / 22%); --m2: #191714; --tip-bg: #1c1a17f5;
+  --hazard: repeating-linear-gradient(-45deg, #e8a33c 0 12px, #17110a 12px 24px);
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(232 163 60 / 7%), transparent 60%), #121110;
+}
+body[data-skin="factory"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail, .btn, .tabs, .badge) { border-radius: 2px; }
+body[data-skin="factory"] :is(.fact, .panel, .step, .detail) { box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%), inset 0 -2px 0 rgb(0 0 0 / 35%); }
+body[data-skin="factory"] .section-head h2 { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+body[data-skin="factory"] .section-head h2 .ico { color: var(--gold); }
+body[data-skin="factory"] .section-head h2::after { content: ""; width: 48px; height: 8px; background: var(--hazard); border-radius: 1px; }
+body[data-skin="factory"] .fact dt, body[data-skin="factory"] .board-head, body[data-skin="factory"] .detail h4 { font-weight: 700; color: var(--gold); letter-spacing: .1em; }
+body[data-skin="factory"] .btn.primary { background: var(--gold); color: var(--on-gold); box-shadow: none; }
+body[data-skin="factory"] .badge.cleared { background: var(--gold); color: var(--on-gold); }
+body[data-skin="factory"] .bossbar { height: 12px; border-radius: 1px; background: #2a2622; border: 1px solid #000; box-shadow: inset 0 2px 0 rgb(0 0 0 / 45%); }
+body[data-skin="factory"] .bossbar::before,
+body[data-skin="factory"] .bossbar::after { display: none; }
+body[data-skin="factory"] .bossbar > i { inset: 1px auto 1px 0; border-radius: 0; box-shadow: none;
+  background: repeating-linear-gradient(90deg, transparent 0 6px, rgb(0 0 0 / 35%) 6px 8px), linear-gradient(180deg, #f0b85a, #c88424); }
+body[data-skin="factory"] .bossbar.cleared > i { background: repeating-linear-gradient(90deg, transparent 0 6px, rgb(0 0 0 / 30%) 6px 8px), linear-gradient(180deg, #a6d86a, #5f9a32); }
+body[data-skin="factory"] .bossbar.human > i { background: repeating-linear-gradient(90deg, transparent 0 6px, rgb(0 0 0 / 30%) 6px 8px), var(--human); }
+body[data-skin="factory"] .node { border-radius: 2px; transform: none; }
+body[data-skin="factory"] .node span { transform: none; }
+body[data-skin="factory"] .path li.hit .node { background: var(--gold); border-color: var(--gold); box-shadow: none; }
+body[data-skin="factory"] .path li.hit .node span { color: var(--on-gold); }
+body[data-skin="factory"] .path li.final .name { text-transform: uppercase; font-weight: 700; color: var(--gold); }
+body[data-skin="factory"] .banner {
+  background:
+    radial-gradient(50% 90% at 82% 20%, rgb(232 163 60 / 16%), transparent 70%),
+    linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(180deg, #23201b, #121110);
+}
+body[data-skin="factory"] .banner::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 14px; background: var(--hazard); opacity: .85; }
+body[data-skin="factory"] .banner .mountains { display: none; }
+body[data-skin="factory"] .banner h1 { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: clamp(38px, 6vw, 70px); }
+
+/* ======================================================================
+   ORBITAL — spaceflight: night sky, orbit ellipses round a grey moon, delta-v gauge bars
+   ====================================================================== */
+body[data-skin="orbital"] {
+  --display: "Space Grotesk", "Arial", sans-serif;
+  --bg: #0a0d16; --bg-2: #0d111c; --surface: #111624; --surface-2: #171d2e; --surface-3: #20283c;
+  --ink: #e6ebf4; --ink-2: #bcc5d6; --muted: #8590a6;
+  --gold: #f0a03c; --gold-hi: #f6c27c; --gold-lo: #b06c1c; --ember: #f0a03c; --on-gold: #160f06; --orbit: #6fc3e8;
+  --line: rgb(111 195 232 / 13%); --line-strong: rgb(111 195 232 / 34%); --human: #b7a4ec; --track: #080a12;
+  --emblem: #dfe6f2; --emblem-glow: rgb(111 195 232 / 25%); --m2: #0f1320; --tip-bg: #111624f5;
+  --stars:
+    radial-gradient(1px 1px at 12% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 34% 68%, #fff 99%, transparent),
+    radial-gradient(1.5px 1.5px at 58% 14%, #fff 99%, transparent), radial-gradient(1px 1px at 76% 52%, #fff 99%, transparent),
+    radial-gradient(1px 1px at 88% 30%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 22% 84%, #fff 99%, transparent),
+    radial-gradient(1px 1px at 46% 40%, #fff 99%, transparent), radial-gradient(1px 1px at 66% 88%, #fff 99%, transparent);
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(111 195 232 / 7%), transparent 60%), #0a0d16;
+}
+body[data-skin="orbital"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 10px; }
+body[data-skin="orbital"] .section-head h2 { font-weight: 700; letter-spacing: .02em; }
+body[data-skin="orbital"] .section-head h2 .ico { color: var(--orbit); }
+body[data-skin="orbital"] .fact dt, body[data-skin="orbital"] .board-head, body[data-skin="orbital"] .detail h4 { font-weight: 700; color: var(--orbit); letter-spacing: .12em; }
+body[data-skin="orbital"] .btn.primary { background: var(--gold); color: var(--on-gold); box-shadow: none; }
+body[data-skin="orbital"] .badge.cleared { background: var(--orbit); color: #061018; }
+body[data-skin="orbital"] .bossbar { height: 10px; border-radius: 5px; background: var(--track); border: 1px solid rgb(111 195 232 / 35%); box-shadow: none; }
+body[data-skin="orbital"] .bossbar::before,
+body[data-skin="orbital"] .bossbar::after { display: none; }
+body[data-skin="orbital"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 4px; box-shadow: none;
+  background: repeating-linear-gradient(90deg, transparent 0 9px, rgb(0 0 0 / 25%) 9px 10px), linear-gradient(90deg, #b06c1c, #f0a03c); }
+body[data-skin="orbital"] .bossbar.cleared > i { background: repeating-linear-gradient(90deg, transparent 0 9px, rgb(0 0 0 / 25%) 9px 10px), linear-gradient(90deg, #3a8fb8, var(--orbit)); }
+body[data-skin="orbital"] .bossbar.human > i { background: var(--human); }
+body[data-skin="orbital"] .node { border-radius: 50%; transform: none; }
+body[data-skin="orbital"] .node span { transform: none; }
+body[data-skin="orbital"] .path li.hit .node { background: var(--orbit); border-color: var(--orbit); box-shadow: 0 0 0 4px rgb(111 195 232 / 15%); }
+body[data-skin="orbital"] .path li.hit .node span { color: #061018; }
+body[data-skin="orbital"] .path li.final .name { font-weight: 700; color: var(--orbit); }
+body[data-skin="orbital"] .banner { background: var(--stars), radial-gradient(60% 100% at 82% 30%, rgb(111 195 232 / 10%), transparent 70%), linear-gradient(180deg, #0d1222, #0a0d16); }
+body[data-skin="orbital"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 120px); top: -40px; width: clamp(380px, 48vw, 620px); aspect-ratio: 1.6;
+  border-radius: 50%; border: 1px dashed rgb(111 195 232 / 30%); transform: rotate(-14deg);
+}
+body[data-skin="orbital"] .banner::after {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 50px); top: 30px; width: clamp(260px, 32vw, 420px); aspect-ratio: 1.8;
+  border-radius: 50%; border: 1px solid rgb(240 160 60 / 28%); transform: rotate(-14deg);
+}
+body[data-skin="orbital"] .banner .mountains .m1 { fill: #1a2032; }
+body[data-skin="orbital"] .banner .mountains .m2 { fill: #121726; }
+body[data-skin="orbital"] .banner h1 { font-weight: 700; letter-spacing: -.01em; font-size: clamp(36px, 5.6vw, 66px); }
+
+/* ======================================================================
+   ATLAS — empire map: parchment, hex grid, compass rose, gilt laurels (natural tone: light)
+   ====================================================================== */
+body[data-skin="atlas"] {
+  --display: "Marcellus", "Trajan Pro", "Times New Roman", serif;
+  --bg: #efe7d3; --bg-2: #f3ecdc; --surface: #fbf7ec; --surface-2: #f3ecdc; --surface-3: #e6dcc4;
+  --ink: #1d2433; --ink-2: #3c4456; --muted: #6a6f7c;
+  --gold: #8e6a1e; --gold-hi: #6c4f12; --gold-lo: #b8944a; --ember: #8e6a1e; --on-gold: #fbf7ec; --sea: #2d5f86;
+  --line: rgb(29 36 51 / 14%); --line-strong: rgb(142 106 30 / 40%); --human: #2d5f86; --track: #e3d8bd; --tip-bg: #fbf7ecf8;
+  --emblem: #8e6a1e; --emblem-glow: transparent; --m2: #e1d6bb;
+  --hex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='72.75' viewBox='0 0 42 72.75'%3E%3Cpath d='M21 0l21 12.12v24.25L21 48.5 0 36.37V12.12zM21 48.5v24.25' fill='none' stroke='%231d2433' stroke-opacity='.07' stroke-width='1'/%3E%3C/svg%3E");
+  --page-bg: var(--hex) 0 0 / 42px 72.75px, radial-gradient(130% 90% at 50% 40%, transparent 65%, rgb(120 90 30 / 10%) 100%), #efe7d3;
+}
+body[data-skin="atlas"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 4px; }
+body[data-skin="atlas"] .section-head h2 { font-weight: 400; letter-spacing: .05em; }
+body[data-skin="atlas"] .section-head h2 .ico { color: var(--gold); }
+body[data-skin="atlas"] .fact dt, body[data-skin="atlas"] .board-head, body[data-skin="atlas"] .detail h4 { font-weight: 700; color: var(--gold-hi); letter-spacing: .12em; }
+body[data-skin="atlas"] .btn.primary { background: var(--ink); color: #fbf7ec; box-shadow: none; }
+body[data-skin="atlas"] .badge.cleared { background: var(--gold); color: var(--on-gold); }
+body[data-skin="atlas"] .bossbar { height: 10px; border-radius: 0; background: var(--track); border: 1px solid var(--gold); box-shadow: none; }
+body[data-skin="atlas"] .bossbar::before,
+body[data-skin="atlas"] .bossbar::after { width: 8px; height: 8px; top: 0; background: var(--gold); border: 0; border-radius: 0; transform: rotate(45deg); }
+body[data-skin="atlas"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 0; box-shadow: none; background: linear-gradient(90deg, #22476a, var(--sea)); }
+body[data-skin="atlas"] .bossbar.cleared > i { background: linear-gradient(90deg, #8e6a1e, #c9a24e); }
+body[data-skin="atlas"] .bossbar.human > i { background: #6e8fae; }
+body[data-skin="atlas"] .node { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); border-radius: 0; transform: none; }
+body[data-skin="atlas"] .node span { transform: none; }
+body[data-skin="atlas"] .path li.hit .node { background: var(--sea); border-color: var(--sea); box-shadow: none; }
+body[data-skin="atlas"] .path li.hit .node span { color: #fbf7ec; }
+body[data-skin="atlas"] .path li.final .name { color: var(--gold-hi); font-family: var(--display); font-size: 18px; }
+body[data-skin="atlas"] .banner { background: var(--hex) 0 0 / 42px 72.75px, radial-gradient(60% 100% at 82% 30%, rgb(45 95 134 / 14%), transparent 70%), linear-gradient(180deg, #e6dcc2, #efe7d3); }
+body[data-skin="atlas"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 40px); top: -10px; width: clamp(260px, 32vw, 400px); aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid rgb(142 106 30 / 35%);
+  background:
+    conic-gradient(from 0deg, transparent 0 11.5%, rgb(142 106 30 / 22%) 11.5% 13.5%, transparent 13.5% 36.5%, rgb(142 106 30 / 22%) 36.5% 38.5%, transparent 38.5% 61.5%, rgb(142 106 30 / 22%) 61.5% 63.5%, transparent 63.5% 86.5%, rgb(142 106 30 / 22%) 86.5% 88.5%, transparent 88.5%),
+    radial-gradient(circle, transparent 60%, rgb(142 106 30 / 30%) 60.4% 61%, transparent 61.4%);
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 72%); mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+}
+body[data-skin="atlas"] .banner .emblem { filter: none; }
+body[data-skin="atlas"] .banner .mountains .m1 { fill: rgb(45 95 134 / 10%); }
+body[data-skin="atlas"] .banner .mountains .m2 { fill: #e1d6bb; }
+body[data-skin="atlas"] .banner h1 { font-weight: 400; letter-spacing: .04em; color: var(--ink); text-shadow: none; font-size: clamp(34px, 5.2vw, 62px); }
+
+/* ======================================================================
+   TOME — party RPG: grimoire violet, gilt rules, rune circle, diamond nodes
+   ====================================================================== */
+body[data-skin="tome"] {
+  --display: "IM Fell English SC", "Garamond", "Times New Roman", serif;
+  --bg: #110d15; --bg-2: #15111a; --surface: #1a1520; --surface-2: #221b29; --surface-3: #2c2434;
+  --ink: #ece4f0; --ink-2: #c9bed2; --muted: #958a9e;
+  --gold: #d4b06a; --gold-hi: #ead29a; --gold-lo: #94743a; --ember: #a77be0; --on-gold: #17110a; --arcane: #a77be0;
+  --line: rgb(212 176 106 / 13%); --line-strong: rgb(212 176 106 / 34%); --human: #8fb8d6; --track: #0c0910;
+  --emblem: #ead29a; --emblem-glow: rgb(167 123 224 / 35%); --m2: #17121c; --tip-bg: #1a1520f5;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(167 123 224 / 9%), transparent 60%), #110d15;
+}
+body[data-skin="tome"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 4px; }
+body[data-skin="tome"] :is(.fact, .panel, .step, .detail) { box-shadow: inset 0 0 0 1px rgb(212 176 106 / 8%), inset 0 0 0 4px var(--surface), inset 0 0 0 5px rgb(212 176 106 / 14%); }
+body[data-skin="tome"] .section-head h2 { font-weight: 400; letter-spacing: .03em; font-size: clamp(26px, 3vw, 34px); }
+body[data-skin="tome"] .section-head h2 .ico { color: var(--arcane); }
+body[data-skin="tome"] .fact dt, body[data-skin="tome"] .board-head, body[data-skin="tome"] .detail h4 { font-family: var(--display); font-weight: 400; font-size: 15px; color: var(--gold); letter-spacing: .06em; }
+body[data-skin="tome"] .btn.primary { background: linear-gradient(180deg, var(--gold-hi), var(--gold)); color: var(--on-gold); box-shadow: none; }
+body[data-skin="tome"] .badge.cleared { background: var(--gold); color: var(--on-gold); }
+body[data-skin="tome"] .bossbar { height: 10px; border-radius: 0; background: var(--track); border: 1px solid rgb(212 176 106 / 45%); box-shadow: none; }
+body[data-skin="tome"] .bossbar::before,
+body[data-skin="tome"] .bossbar::after { width: 8px; height: 8px; top: 0; background: var(--gold); border: 0; border-radius: 0; transform: rotate(45deg); }
+body[data-skin="tome"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 0; background: linear-gradient(90deg, #5a3a8a, var(--arcane)); box-shadow: 0 0 10px rgb(167 123 224 / 35%); }
+body[data-skin="tome"] .bossbar.cleared > i { background: linear-gradient(90deg, var(--gold-lo), var(--gold-hi)); box-shadow: 0 0 10px rgb(234 210 154 / 35%); }
+body[data-skin="tome"] .bossbar.human > i { background: var(--human); box-shadow: none; }
+body[data-skin="tome"] .path li.hit .node { background: var(--arcane); border-color: var(--arcane); box-shadow: 0 0 12px rgb(167 123 224 / 40%); }
+body[data-skin="tome"] .path li.hit .node span { color: #120a1a; }
+body[data-skin="tome"] .path li.final .name { font-family: var(--display); font-size: 19px; color: var(--gold-hi); }
+body[data-skin="tome"] .banner { background: radial-gradient(40% 80% at 80% 34%, rgb(167 123 224 / 24%), transparent 70%), linear-gradient(180deg, #1d1624, #110d15); }
+body[data-skin="tome"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 70px); top: -50px; width: clamp(320px, 40vw, 520px); aspect-ratio: 1; border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg, rgb(212 176 106 / 26%) 0 .6deg, transparent .6deg 15deg),
+    radial-gradient(circle, transparent 46%, rgb(212 176 106 / 26%) 46.3% 46.8%, transparent 47.1% 55%, rgb(212 176 106 / 22%) 55.3% 55.8%, transparent 56.1%);
+  -webkit-mask-image: radial-gradient(circle, transparent 46%, #000 46.3% 56%, transparent 56.3%);
+  mask-image: radial-gradient(circle, transparent 46%, #000 46.3% 56%, transparent 56.3%);
+}
+body[data-skin="tome"] .banner .mountains .m1 { fill: #241c2c; }
+body[data-skin="tome"] .banner .mountains .m2 { fill: #18131d; }
+body[data-skin="tome"] .banner h1 { font-weight: 400; letter-spacing: .02em; color: #f4ecdf; font-size: clamp(36px, 5.6vw, 66px); }
+
+/* ======================================================================
    Home-page cards: a hint of each game's skin (title type + key-art texture)
    ====================================================================== */
 .card[data-skin="gb-dmg"] h3,
@@ -928,6 +1105,38 @@ body[data-skin="tactical"] .banner h1 { font-weight: 400; text-transform: upperc
 }
 .card[data-skin="tactical"] .keyart .emblem { color: #cfcab2; filter: none; }
 .card[data-skin="tactical"] .keyart .mountains .m1 { fill: #2a2e24; }
+
+.card[data-skin="factory"] h3 { font-family: "Titillium Web", sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .04em; }
+.card[data-skin="orbital"] h3 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 21px; letter-spacing: -.01em; }
+.card[data-skin="atlas"] h3 { font-family: "Marcellus", serif; font-weight: 400; font-size: 21px; }
+.card[data-skin="tome"] h3 { font-family: "IM Fell English SC", serif; font-weight: 400; font-size: 23px; letter-spacing: .01em; }
+.card[data-skin="factory"] .keyart {
+  background: linear-gradient(transparent calc(100% - 10px), transparent calc(100% - 10px)),
+    repeating-linear-gradient(-45deg, rgb(232 163 60 / 85%) 0 9px, #17110a 9px 18px) 0 100% / 100% 10px no-repeat,
+    radial-gradient(60% 90% at 78% 30%, rgb(232 163 60 / 22%), transparent 70%),
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #26221c, #121110);
+}
+.card[data-skin="factory"] .keyart .emblem { color: #e8a33c; filter: none; }
+.card[data-skin="orbital"] .keyart {
+  background: radial-gradient(1px 1px at 12% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 34% 68%, #fff 99%, transparent),
+    radial-gradient(1.5px 1.5px at 52% 18%, #fff 99%, transparent), radial-gradient(1px 1px at 22% 50%, #fff 99%, transparent),
+    radial-gradient(50% 90% at 78% 35%, rgb(111 195 232 / 20%), transparent 70%), linear-gradient(180deg, #121a2e, #0a0d16);
+}
+.card[data-skin="orbital"] .keyart .emblem { color: #dfe6f2; }
+.card[data-skin="orbital"] .keyart .mountains .m1 { fill: #1a2032; }
+.card[data-skin="atlas"] .keyart {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='72.75' viewBox='0 0 42 72.75'%3E%3Cpath d='M21 0l21 12.12v24.25L21 48.5 0 36.37V12.12zM21 48.5v24.25' fill='none' stroke='%23f2e6c8' stroke-opacity='.12' stroke-width='1'/%3E%3C/svg%3E") 0 0 / 28px 48.5px,
+    radial-gradient(60% 90% at 78% 35%, rgb(201 162 78 / 30%), transparent 70%), linear-gradient(180deg, #2b4a66, #172a3c);
+}
+.card[data-skin="atlas"] .keyart .emblem { color: #e8cf8e; filter: none; }
+.card[data-skin="atlas"] .keyart .mountains .m1 { fill: rgb(232 207 142 / 18%); }
+.card[data-skin="tome"] .keyart {
+  background: radial-gradient(circle at 78% 42%, transparent 0 56px, rgb(212 176 106 / 30%) 57px 58px, transparent 59px 66px, rgb(212 176 106 / 18%) 67px 68px, transparent 69px),
+    radial-gradient(50% 90% at 78% 40%, rgb(167 123 224 / 32%), transparent 70%), linear-gradient(180deg, #221a2a, #110d15);
+}
+.card[data-skin="tome"] .keyart .emblem { color: #ead29a; }
+.card[data-skin="tome"] .keyart .mountains .m1 { fill: #2a2034; }
 
 /* banner progress count sits on the banner art, not a panel */
 body[data-family="pixel"] .banner .num { color: var(--banner-ink); }
@@ -1142,6 +1351,94 @@ body[data-skin="tactical"][data-tone="light"] .banner .mountains .m1 { fill: #cf
 body[data-skin="tactical"][data-tone="light"] .banner .mountains .m2 { fill: #ddd8c6; }
 body[data-skin="tactical"][data-tone="light"] .bossbar > i { background: repeating-linear-gradient(90deg, #b07e1e 0 9px, transparent 9px 12px); }
 body[data-skin="tactical"][data-tone="light"] .badge.cleared { color: #fbfaf4; }
+
+/* -- factory, light: painted sheet metal -- */
+body[data-skin="factory"][data-tone="light"] {
+  --bg: #efebe3; --bg-2: #e9e4da; --surface: #fbf9f4; --surface-2: #f3f0e8; --surface-3: #e4dfd3;
+  --ink: #1f1c17; --ink-2: #423c33; --muted: #6c6457;
+  --gold: #9a5f0c; --gold-hi: #7a4a08; --gold-lo: #c88424; --ember: #9a5f0c; --on-gold: #fbf9f4;
+  --line: rgb(31 28 23 / 12%); --line-strong: rgb(154 95 12 / 38%); --human: #2f6a98; --track: #e4dfd3; --tip-bg: #fbf9f4f8;
+  --emblem: #3a3128; --emblem-glow: transparent; --m2: #e0dbcf;
+  --hazard: repeating-linear-gradient(-45deg, #e0a03a 0 12px, #1f1c17 12px 24px);
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(200 132 36 / 7%), transparent 60%), #efebe3;
+}
+body[data-skin="factory"][data-tone="light"] :is(.fact, .panel, .step, .detail) { box-shadow: inset 0 -2px 0 rgb(0 0 0 / 6%); }
+body[data-skin="factory"][data-tone="light"] .banner {
+  background: radial-gradient(50% 90% at 82% 20%, rgb(224 160 58 / 24%), transparent 70%),
+    linear-gradient(rgb(0 0 0 / 4%) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, rgb(0 0 0 / 4%) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(180deg, #ddd6c8, #efebe3);
+}
+body[data-skin="factory"][data-tone="light"] .banner h1 { text-shadow: none; }
+body[data-skin="factory"][data-tone="light"] .bossbar { background: #d8d2c4; border-color: #6c6457; box-shadow: inset 0 1px 0 rgb(0 0 0 / 12%); }
+body[data-skin="factory"][data-tone="light"] .btn.primary,
+body[data-skin="factory"][data-tone="light"] .badge.cleared { background: #e0a03a; color: #1f1c17; }
+body[data-skin="factory"][data-tone="light"] .path li.hit .node { background: #e0a03a; border-color: #9a5f0c; }
+body[data-skin="factory"][data-tone="light"] .path li.hit .node span { color: #1f1c17; }
+
+/* -- orbital, light: mission-control whiteboard (the banner keeps its night sky) -- */
+body[data-skin="orbital"][data-tone="light"] {
+  --bg: #eef1f5; --bg-2: #e7ebf1; --surface: #fbfcfe; --surface-2: #f2f4f8; --surface-3: #e2e7ee;
+  --ink: #141a26; --ink-2: #374156; --muted: #657088;
+  --gold: #a85e10; --gold-hi: #874a0a; --gold-lo: #d08a3a; --ember: #a85e10; --on-gold: #fbfcfe; --orbit: #1f6f98;
+  --line: rgb(20 26 38 / 12%); --line-strong: rgb(31 111 152 / 34%); --human: #6a52b0; --track: #e2e7ee; --tip-bg: #fbfcfef8;
+  --m2: #e2e7ee;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(31 111 152 / 7%), transparent 60%), #eef1f5;
+}
+body[data-skin="orbital"][data-tone="light"] .badge.cleared,
+body[data-skin="orbital"][data-tone="light"] .path li.hit .node span { color: #fbfcfe; }
+body[data-skin="orbital"][data-tone="light"] .banner :is(h1, p.desc, .crumbs, .crumbs a) { color: #e6ebf4; }
+body[data-skin="orbital"][data-tone="light"] .banner .frontier .label,
+body[data-skin="orbital"][data-tone="light"] .banner .frontier .label span:last-child,
+body[data-skin="orbital"][data-tone="light"] .banner .num { color: #e6ebf4; }
+body[data-skin="orbital"][data-tone="light"] .banner .tag { background: rgb(10 13 22 / 55%); color: #e6ebf4; border-color: rgb(230 235 244 / 30%); }
+body[data-skin="orbital"][data-tone="light"] .banner .mountains .m3 { fill: var(--bg); }
+body[data-skin="orbital"][data-tone="light"] .banner .bossbar { background: #080a12; }
+
+/* -- atlas, dark: the map at night -- */
+body[data-skin="atlas"][data-tone="dark"] {
+  --bg: #0f1520; --bg-2: #121a26; --surface: #16202e; --surface-2: #1c2838; --surface-3: #253244;
+  --ink: #ece4d0; --ink-2: #c8c0ac; --muted: #8f9099;
+  --gold: #d6b464; --gold-hi: #ecd396; --gold-lo: #957530; --ember: #d6b464; --on-gold: #16120a; --sea: #6aa6d4;
+  --line: rgb(214 180 100 / 13%); --line-strong: rgb(214 180 100 / 34%); --human: #8fb4d8; --track: #0b1018; --tip-bg: #16202ef5;
+  --emblem: #ecd396; --emblem-glow: rgb(214 180 100 / 25%); --m2: #131b28;
+  --hex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='72.75' viewBox='0 0 42 72.75'%3E%3Cpath d='M21 0l21 12.12v24.25L21 48.5 0 36.37V12.12zM21 48.5v24.25' fill='none' stroke='%23ece4d0' stroke-opacity='.05' stroke-width='1'/%3E%3C/svg%3E");
+  --page-bg: var(--hex) 0 0 / 42px 72.75px, radial-gradient(900px 500px at 80% -10%, rgb(214 180 100 / 7%), transparent 60%), #0f1520;
+}
+body[data-skin="atlas"][data-tone="dark"] .banner { background: var(--hex) 0 0 / 42px 72.75px, radial-gradient(60% 100% at 82% 30%, rgb(214 180 100 / 14%), transparent 70%), linear-gradient(180deg, #1a2638, #0f1520); }
+body[data-skin="atlas"][data-tone="dark"] .banner::before {
+  border-color: rgb(214 180 100 / 30%);
+  background:
+    conic-gradient(from 0deg, transparent 0 11.5%, rgb(214 180 100 / 20%) 11.5% 13.5%, transparent 13.5% 36.5%, rgb(214 180 100 / 20%) 36.5% 38.5%, transparent 38.5% 61.5%, rgb(214 180 100 / 20%) 61.5% 63.5%, transparent 63.5% 86.5%, rgb(214 180 100 / 20%) 86.5% 88.5%, transparent 88.5%),
+    radial-gradient(circle, transparent 60%, rgb(214 180 100 / 28%) 60.4% 61%, transparent 61.4%);
+}
+body[data-skin="atlas"][data-tone="dark"] .banner .mountains .m1 { fill: rgb(106 166 212 / 8%); }
+body[data-skin="atlas"][data-tone="dark"] .banner .mountains .m2 { fill: #131b28; }
+body[data-skin="atlas"][data-tone="dark"] .banner h1 { color: #f2ead6; }
+body[data-skin="atlas"][data-tone="dark"] .btn.primary { background: var(--gold); color: var(--on-gold); }
+body[data-skin="atlas"][data-tone="dark"] .path li.hit .node span { color: #0f1520; }
+body[data-skin="atlas"][data-tone="dark"] .bossbar > i { background: linear-gradient(90deg, #3a6e98, var(--sea)); }
+
+/* -- tome, light: vellum page with violet ink -- */
+body[data-skin="tome"][data-tone="light"] {
+  --bg: #f1ece4; --bg-2: #ebe5db; --surface: #fcfaf6; --surface-2: #f4f0e9; --surface-3: #e6dfd3;
+  --ink: #221a28; --ink-2: #44394c; --muted: #6e6474;
+  --gold: #87661e; --gold-hi: #6a4f14; --gold-lo: #b8944a; --ember: #6a3fa8; --on-gold: #fcfaf6; --arcane: #6a3fa8;
+  --line: rgb(34 26 40 / 12%); --line-strong: rgb(135 102 30 / 36%); --human: #2f6a98; --track: #e6dfd3; --tip-bg: #fcfaf6f8;
+  --emblem: #6a4f14; --emblem-glow: rgb(106 63 168 / 22%); --m2: #e2dbcf;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(106 63 168 / 7%), transparent 60%), #f1ece4;
+}
+body[data-skin="tome"][data-tone="light"] .banner { background: radial-gradient(40% 80% at 80% 34%, rgb(106 63 168 / 16%), transparent 70%), linear-gradient(180deg, #e5ddd0, #f1ece4); }
+body[data-skin="tome"][data-tone="light"] .banner::before {
+  background:
+    repeating-conic-gradient(from 0deg, rgb(135 102 30 / 30%) 0 .6deg, transparent .6deg 15deg),
+    radial-gradient(circle, transparent 46%, rgb(135 102 30 / 30%) 46.3% 46.8%, transparent 47.1% 55%, rgb(135 102 30 / 26%) 55.3% 55.8%, transparent 56.1%);
+}
+body[data-skin="tome"][data-tone="light"] .banner .mountains .m1 { fill: #ddd4c6; }
+body[data-skin="tome"][data-tone="light"] .banner .mountains .m2 { fill: #e7e0d4; }
+body[data-skin="tome"][data-tone="light"] .banner h1 { color: #221a28; text-shadow: none; }
+body[data-skin="tome"][data-tone="light"] .bossbar > i { box-shadow: none; }
+body[data-skin="tome"][data-tone="light"] .path li.hit .node { box-shadow: none; }
+body[data-skin="tome"][data-tone="light"] .path li.hit .node span { color: #fcfaf6; }
 
 /* ======================================================================
    COMFORT — every skin keeps its look, but at lower saturation and

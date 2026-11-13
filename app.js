@@ -39,6 +39,7 @@ const SKINS = {
   blocky: { family: "blocky" }, western: { family: "western" }, shinobi: { family: "shinobi" }, wukong: { family: "wukong" },
   platformer: { family: "platformer" }, terminal: { family: "terminal" }, spire: { family: "spire" },
   erdtree: { family: "erdtree" }, sunset: { family: "sunset" }, neon: { family: "neon" }, tactical: { family: "tactical" },
+  factory: { family: "factory" }, orbital: { family: "orbital" }, atlas: { family: "atlas" }, tome: { family: "tome" },
 };
 const THEME_KEY = "moonshot-theme";
 let THEME = document.body.dataset.tone === "light" ? "light" : "dark";

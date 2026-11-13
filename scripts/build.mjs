@@ -20,8 +20,8 @@ export const STATUSES = ["verified", "pending", "curated", "rejected"];
 const SOURCE_TYPES = ["author", "news"];
 // Emblem names defined in icons.js.
 // Skin names defined in skins.css / app.js SKINS.
-const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire", "erdtree", "sunset", "neon", "tactical"];
-const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield", "tree", "palm", "chip", "dogtag"];
+const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire", "erdtree", "sunset", "neon", "tactical", "factory", "orbital", "atlas", "tome"];
+const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield", "tree", "palm", "chip", "dogtag", "gear", "rocket", "laurel", "d20"];
 const ID_RE = /^[a-z0-9][a-z0-9-]*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_RE = /^(\d+):([0-5]\d):([0-5]\d)$/; // H:MM:SS, hours unbounded
