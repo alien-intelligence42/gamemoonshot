@@ -6,6 +6,7 @@
    Shared: light evidence palette + generic light-skin fixes
    ====================================================================== */
 body[data-tone="light"] {
+  --v-claude: #c2603f; --v-gemini: #2f6fd0; --v-openai: #138a68; --v-other: #8a8070;
   --ev-verified: #1d9470;
   --ev-video: #2c5cb4;
   --ev-author: #a87210;

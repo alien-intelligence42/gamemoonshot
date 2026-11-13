@@ -21,6 +21,8 @@
   --ev-video: #4a8ccc;
   --ev-author: #bf8524;
   --ev-news: #c4473f;
+  /* model vendor line colors (dark) — validated as a set; icons + labels are the secondary encoding */
+  --v-claude: #c86a4e; --v-gemini: #4a86e0; --v-openai: #2a9c7a; --v-other: #9a8f80;
   --radius: 14px;
   --display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
   --body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
@@ -50,6 +52,7 @@ body[data-tone="light"] {
   --gold: #a07a32; --gold-hi: #7a5a1e; --gold-lo: #c9a25a; --ember: #c4602e; --crimson: #a9302a; --human: #2f6aa8;
   --on-gold: #fffaf0; --track: #ece3d2; --tip-bg: #fffdf8f8; --m2: rgb(226 212 184 / 80%);
   --page-bg: radial-gradient(1200px 600px at 80% -10%, rgb(160 122 50 / 8%), transparent 60%), #f6f1e7;
+  --v-claude: #c2603f; --v-gemini: #2f6fd0; --v-openai: #138a68; --v-other: #8a8070;
   color-scheme: light;
 }
 body[data-tone="light"]::before { opacity: .025; }
@@ -324,6 +327,11 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
 .chart-empty { padding: 36px; text-align: center; color: var(--muted); }
 .chart-note { font-size: 13px; margin: 10px 0 0; }
 .chart-wrap .human-pt { fill: var(--surface); stroke: var(--human); stroke-width: 2.5; }
+.chart-wrap .mdot { stroke: var(--surface); stroke-width: 1.5; }
+.chart-wrap .vmark { filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%)); pointer-events: none; }
+.chart-legend .sep { width: 1px; height: 14px; background: var(--line-strong); }
+.chart-legend img { display: block; }
+.vicon { display: inline-block; vertical-align: -3px; margin-right: 8px; background: #fff; border-radius: 50%; padding: 2px; box-sizing: content-box; box-shadow: 0 0 0 1px var(--line); }
 .chart-wrap .dlabel { fill: var(--ink) !important; font-weight: 600; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
 .chart-wrap .human-label { fill: var(--human) !important; }
 .chart-wrap .axis-title { font-size: 11px; letter-spacing: .06em; }

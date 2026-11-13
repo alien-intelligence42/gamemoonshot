@@ -131,6 +131,7 @@ function validateSubmission(file, s, gamesById) {
     err(file, `curated entries need "source_type": "author" (first-party report) or "news" (third-party press)`);
   }
   if (s.source_type != null && !SOURCE_TYPES.includes(s.source_type)) err(file, `source_type must be author or news`);
+  if (s.vendor != null && !["claude", "gemini", "openai", "other"].includes(s.vendor)) err(file, `vendor must be claude, gemini, openai or other`);
   if (s.status === "verified") {
     if (!isStr(s.verified_by)) err(file, `verified runs need "verified_by" (the maintainer who checked the footage)`);
     if (!DATE_RE.test(s.verified_at ?? "")) err(file, `verified runs need "verified_at" (YYYY-MM-DD)`);

@@ -73,6 +73,26 @@ function bar(n, total, { cleared = false, human = false, lg = false } = {}) {
   return `<div class="bar-row"><div class="${cls}" data-level="${level}" role="img" aria-label="${n} of ${total} milestones"><i style="width:calc(${pct}% - 2px)"></i></div><span class="num">${n}/${total}</span></div>`;
 }
 
+// Model vendor, for icons and chart line colors. Derived from the run's models unless "vendor" is set.
+const VENDORS = {
+  claude: { label: "Claude", icon: "assets/models/claude.svg" },
+  gemini: { label: "Gemini", icon: "assets/models/gemini.svg" },
+  openai: { label: "GPT", icon: "assets/models/openai.svg" },
+  other: { label: "Other", icon: "assets/models/other.svg" },
+};
+function vendorOf(run) {
+  if (run.vendor && VENDORS[run.vendor]) return run.vendor;
+  const m = [...(run.method?.models ?? []), run.agent].join(" ");
+  if (/claude|sonnet|opus|haiku|fable/i.test(m)) return "claude";
+  if (/gemini/i.test(m)) return "gemini";
+  if (/\bgpt|\bo3\b|\bo4\b|openai|codex/i.test(m)) return "openai";
+  return "other";
+}
+const vendorIcon = (run, size = 18) => {
+  const v = VENDORS[vendorOf(run)];
+  return `<img class="vicon" src="${v.icon}" width="${size}" height="${size}" alt="${esc(v.label)}" title="${esc(v.label)}" />`;
+};
+
 // ---------- helpers ----------
 const esc = (v) =>
   String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -542,7 +562,7 @@ function viewGame(id) {
       return `
       <div class="row" role="listitem" data-run="${esc(r.id)}" tabindex="0" aria-expanded="${open}" aria-controls="detail-${esc(r.id)}">
         <div class="c-rank"><span class="medal ${i < 3 ? `r${i + 1}` : ""}">${i + 1}</span></div>
-        <div class="c-who who"><b>${esc(r.agent)}</b><span>${esc(r.team)}</span></div>
+        <div class="c-who who"><b>${vendorIcon(r)}${esc(r.agent)}</b><span>${esc(r.team)}</span></div>
         <div class="c-chev">${UI.chevron.replace("<svg", '<svg class="chev"')}</div>
         <div class="c-prog prog">
           ${bar(sc.n, sc.total, { cleared: sc.cleared })}
@@ -607,7 +627,7 @@ function viewGame(id) {
 
       <section class="section">
         <div class="section-head"><div><h2><span class="ico">${UI.chart}</span>Progress vs. play time</h2>
-        <div class="sub">How long each agent played (across, log scale) to reach each milestone (up). The hollow ring is the human record for the whole game. Times marked “about” are approximate figures from public reports.</div></div></div>
+        <div class="sub">How long each agent played (across, log scale) to reach each milestone (up). Each line is one run, colored by model; the model's icon marks how far it got, and its ring shows the evidence level. The hollow ring is the human record for the whole game. Times marked “about” are approximate figures from public reports.</div></div></div>
         <div class="panel"><div class="chart-wrap" id="chart"></div></div>
       </section>
 
@@ -658,27 +678,28 @@ function viewGame(id) {
 }
 
 // ---------- chart: progress vs. time spent ----------
-// x = the agent's elapsed run time when it reached a milestone (log scale, so minutes and
-// hundreds of hours fit together); y = milestones reached. Human records are plotted for scale.
+// x = the agent's elapsed play time when it reached each milestone (log scale, so minutes and hundreds
+// of hours fit together); y = milestones reached. One step line per run in its model vendor's color, a
+// dot per milestone, and the model's icon at the run's furthest point. The icon's ring shows evidence.
+// Human records are plotted for scale.
 const fmtTick = (sec) => (sec < 3600 ? `${Math.round(sec / 60)}m` : `${Math.round(sec / 3600)}h`);
+const RING_DASH = { verified: "", video: "", author: "3 2", news: "1 2.2" };
 function drawChart(game) {
   const host = app.querySelector("#chart");
   if (!host) return;
   const N = game.milestones.length;
   const order = new Map(game.milestones.map((m, i) => [m.id, i]));
-  const ranked = rankRuns(game, runsFor(game.id));
-  const series = ranked
-    .map((sc) => {
-      const reached = sc.run.milestones.filter((r) => order.has(r.id)).sort((a, b) => order.get(a.id) - order.get(b.id));
-      const pts = reached
-        .map((r, i) => ({ t: parseTime(r.elapsed), y: i + 1, ms: game.milestones[order.get(r.id)], approx: !!r.approx }))
-        .filter((p) => p.t != null && p.t > 0)
-        .sort((a, b) => a.t - b.t);
-      return { sc, pts };
-    });
+  const series = rankRuns(game, runsFor(game.id)).map((sc) => {
+    const reached = sc.run.milestones.filter((r) => order.has(r.id)).sort((a, b) => order.get(a.id) - order.get(b.id));
+    const pts = reached
+      .map((r, i) => ({ t: parseTime(r.elapsed), y: i + 1, ms: game.milestones[order.get(r.id)], approx: !!r.approx }))
+      .filter((p) => p.t != null && p.t > 0)
+      .sort((a, b) => a.t - b.t || a.y - b.y);
+    return { sc, pts, vendor: vendorOf(sc.run), ev: evidenceOf(sc.run) };
+  });
   const plotted = series.filter((s) => s.pts.length);
   const missing = series.filter((s) => !s.pts.length);
-  const humans = (game.human_baselines ?? []).map((b) => ({ b, t: parseTime(b.time) })).filter((h) => h.t);
+  const humans = (game.human_baselines ?? []).map((b) => ({ b, t: parseTime(b.time) })).filter((h) => h.t).sort((a, b) => a.t - b.t);
   const missingNote = missing.length
     ? `<p class="muted chart-note">Not plotted — no time reported: ${missing.map((s) => esc(s.sc.run.agent)).join(", ")}.</p>`
     : "";
@@ -688,8 +709,8 @@ function drawChart(game) {
   }
 
   const W = Math.max(320, host.clientWidth);
-  const H = W < 560 ? 270 : 330;
-  const M = { l: 40, r: W < 560 ? 16 : 150, t: 26, b: 40 };
+  const H = W < 560 ? 290 : 360;
+  const M = { l: 40, r: W < 560 ? 20 : 170, t: 30, b: 42 };
   const all = [...plotted.flatMap((s) => s.pts.map((p) => p.t)), ...humans.map((h) => h.t)];
   const lo = Math.log10(Math.min(...all) / 2.5), hi = Math.log10(Math.max(...all) * 2.5);
   const X = (t) => M.l + ((Math.log10(t) - lo) / (hi - lo)) * (W - M.l - M.r);
@@ -698,69 +719,75 @@ function drawChart(game) {
   const yTicks = [...new Set([0, Math.round(N / 2), N])];
 
   const tipItems = [];
-  const mark = (cx, cy, shape, color, item, r = 6) => {
-    tipItems.push(item);
-    const i = tipItems.length - 1;
-    return `<g data-i="${i}">${shapeSvg(shape, cx, cy, r, `class="pt" fill="${color}"`)}<circle class="hit" cx="${cx}" cy="${cy}" r="14" tabindex="0" aria-label="${esc(item.aria)}"/></g>`;
+  const hitFor = (cx, cy, item, r = 12) => {
+    tipItems.push({ ...item, x: cx, y: cy });
+    return `<circle class="hit" data-i="${tipItems.length - 1}" cx="${cx}" cy="${cy}" r="${r}" tabindex="0" aria-label="${esc(item.aria)}"/>`;
   };
 
   const lines = plotted
     .map((s) => {
-      const k = evidenceOf(s.sc.run);
-      if (s.pts.length < 2) return "";
+      const col = `var(--v-${s.vendor})`;
       let d = `M${X(s.pts[0].t)},${Y(s.pts[0].y)}`;
       for (const p of s.pts.slice(1)) d += `H${X(p.t)}V${Y(p.y)}`;
-      return `<path d="${d}" fill="none" stroke="${EV[k].color}" stroke-width="2" opacity=".9"/>`;
+      const dots = s.pts.slice(0, -1).map((p) => `<circle class="mdot" cx="${X(p.t)}" cy="${Y(p.y)}" r="3.6" fill="${col}"/>`).join("");
+      return `<g class="run-line">${s.pts.length > 1 ? `<path d="${d}" fill="none" stroke="${col}" stroke-width="2.2"/>` : ""}${dots}</g>`;
     })
     .join("");
-  const marks = plotted
-    .flatMap((s) => {
-      const k = evidenceOf(s.sc.run);
-      return s.pts.map((p) =>
-        mark(X(p.t), Y(p.y), EV[k].shape, EV[k].color, {
+  const pointHits = plotted
+    .flatMap((s) =>
+      s.pts.map((p) =>
+        hitFor(X(p.t), Y(p.y), {
           title: s.sc.run.agent,
-          lines: [`${p.ms.name} — ${p.y}/${N}`, `${p.approx ? "about " : ""}${fmtDuration(p.t)} of play`, EV[k].label],
+          lines: [`${p.ms.name} — ${p.y}/${N}`, `${p.approx ? "about " : ""}${fmtDuration(p.t)} of play`, `${VENDORS[s.vendor].label} · ${EV[s.ev].label}`],
           aria: `${s.sc.run.agent}: ${p.ms.name} after ${p.approx ? "about " : ""}${fmtDuration(p.t)}`,
-          x: X(p.t), y: Y(p.y),
-        })
-      );
+        }, 9)
+      )
+    )
+    .join("");
+  // model icon at each run's furthest point; ring = evidence (color + dash pattern)
+  const icons = plotted
+    .map((s) => {
+      const p = s.pts[s.pts.length - 1];
+      const cx = X(p.t), cy = Y(p.y), R = 13;
+      return `<g class="vmark"><circle cx="${cx}" cy="${cy}" r="${R}" fill="#fff" stroke="${EV[s.ev].color}" stroke-width="2.6" stroke-dasharray="${RING_DASH[s.ev]}"/>
+        <image href="${VENDORS[s.vendor].icon}" x="${cx - 8.5}" y="${cy - 8.5}" width="17" height="17"/></g>`;
     })
     .join("");
   const humanMarks = humans
-    .map((h) => {
-      tipItems.push({ title: h.b.label, lines: [h.b.note ?? "Human reference", `${fmtDuration(h.t)} for the whole game`], x: X(h.t), y: Y(N) });
-      const i = tipItems.length - 1;
-      return `<g data-i="${i}"><circle class="pt human-pt" cx="${X(h.t)}" cy="${Y(N)}" r="6"/><circle class="hit" cx="${X(h.t)}" cy="${Y(N)}" r="14" tabindex="0" aria-label="${esc(h.b.label)}: ${esc(fmtDuration(h.t))}"/></g>`;
-    })
+    .map((h) => `<circle class="human-pt" cx="${X(h.t)}" cy="${Y(N)}" r="7"/>` +
+      hitFor(X(h.t), Y(N), { title: h.b.label, lines: [h.b.note ?? "Human reference", `${fmtDuration(h.t)} for the whole game`], aria: `${h.b.label}: ${fmtDuration(h.t)}` }))
     .join("");
 
-  // direct labels: each AI run at its last point, plus the fastest human record
-  const labels = [];
+  // direct labels: each run at its furthest point, plus the fastest human record
+  const placed = [];
   const placeLabel = (x, y, text, cls = "") => {
-    const right = x < W - M.r - 150;
-    let ly = y + (y < M.t + 24 ? 20 : -12);
-    while (labels.some((l) => Math.abs(l.y - ly) < 15 && Math.abs(l.x - x) < 170)) ly += 15;
-    labels.push({ x, y: ly });
-    return `<text class="dlabel ${cls}" x="${right ? x + 12 : x - 12}" y="${ly}" text-anchor="${right ? "start" : "end"}">${esc(text)}</text>`;
+    const right = x < W - M.r - 160;
+    let ly = y + (y < M.t + 28 ? 30 : -18);
+    while (placed.some((l) => Math.abs(l.y - ly) < 15 && Math.abs(l.x - x) < 190)) ly += 15;
+    placed.push({ x, y: ly });
+    return `<text class="dlabel ${cls}" x="${right ? x + 4 : x - 4}" y="${ly}" text-anchor="${right ? "start" : "end"}">${esc(text)}</text>`;
   };
   const aiLabels = plotted.map((s) => { const p = s.pts[s.pts.length - 1]; return placeLabel(X(p.t), Y(p.y), s.sc.run.agent); }).join("");
-  const fastest = humans.sort((a, b) => a.t - b.t)[0];
-  const humanLabel = fastest ? placeLabel(X(fastest.t), Y(N), `Human record ${fmtDuration(fastest.t)}`, "human-label") : "";
+  const humanLabel = humans[0] ? placeLabel(X(humans[0].t), Y(N), `Human record ${fmtDuration(humans[0].t)}`, "human-label") : "";
 
+  const vendorsShown = [...new Set(plotted.map((s) => s.vendor))];
+  const ring = (k) => `<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="${EV[k].color}" stroke-width="2.2" stroke-dasharray="${RING_DASH[k]}"/></svg>`;
   host.innerHTML = `
     <div class="chart-legend">
-      ${EVIDENCE.map((e) => `<span>${shapeIcon(e.key)}${esc(e.label)}</span>`).join("")}
-      <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="none" stroke="var(--human)" stroke-width="2"/></svg>Human record</span>
+      ${vendorsShown.map((v) => `<span><img src="${VENDORS[v].icon}" width="14" height="14" alt=""/><svg viewBox="0 0 16 4" style="width:16px;height:4px"><rect width="16" height="3" rx="1.5" fill="var(--v-${v})"/></svg>${esc(VENDORS[v].label)}</span>`).join("")}
+      <span class="sep"></span>
+      ${EVIDENCE.map((e) => `<span>${ring(e.key)}${esc(e.label)}</span>`).join("")}
+      <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="var(--human)" stroke-width="2.2"/></svg>Human record</span>
     </div>
     <svg width="${W}" height="${H}" role="img" aria-label="Milestones reached against play time on ${esc(game.title)}">
       <g class="grid">${yTicks.map((n) => `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(n)}" y2="${Y(n)}"/>`).join("")}${ticks.map((t) => `<line x1="${X(t)}" x2="${X(t)}" y1="${M.t}" y2="${Y(0)}"/>`).join("")}</g>
       ${yTicks.map((n) => `<text x="${M.l - 10}" y="${Y(n) + 4}" text-anchor="end">${n}</text>`).join("")}
-      ${ticks.map((t) => `<text x="${X(t)}" y="${H - 18}" text-anchor="middle">${fmtTick(t)}</text>`).join("")}
-      <text x="${(M.l + W - M.r) / 2}" y="${H - 2}" text-anchor="middle" class="axis-title">play time (log scale)</text>
+      ${ticks.map((t) => `<text x="${X(t)}" y="${H - 20}" text-anchor="middle">${fmtTick(t)}</text>`).join("")}
+      <text x="${(M.l + W - M.r) / 2}" y="${H - 3}" text-anchor="middle" class="axis-title">play time (log scale)</text>
       <line class="baseline" x1="${M.l}" x2="${W - M.r}" y1="${Y(0)}" y2="${Y(0)}"/>
       <line class="goal" x1="${M.l}" x2="${W - M.r}" y1="${Y(N)}" y2="${Y(N)}"/>
-      ${W >= 560 ? `<text class="goal-label" x="${W - M.r + 8}" y="${Y(N) + 4}">CLEARED</text>` : ""}
-      ${lines}${humanMarks}${marks}${aiLabels}${humanLabel}
+      ${W >= 560 ? `<text class="goal-label" x="${W - M.r + 10}" y="${Y(N) + 4}">CLEARED</text>` : ""}
+      ${lines}${humanMarks}${icons}${aiLabels}${humanLabel}${pointHits}
     </svg>
     <div class="tooltip" hidden></div>
     ${!plotted.length ? `<p class="muted chart-note">No AI run has reported how long it took yet — only the human record is shown.</p>` : ""}
@@ -768,9 +795,8 @@ function drawChart(game) {
 
   const tip = host.querySelector(".tooltip");
   const svgTop = () => host.querySelector("svg").getBoundingClientRect().top - host.getBoundingClientRect().top;
-  host.querySelectorAll("g[data-i]").forEach((g) => {
-    const it = tipItems[Number(g.dataset.i)];
-    const hit = g.querySelector(".hit");
+  host.querySelectorAll(".hit").forEach((hit) => {
+    const it = tipItems[Number(hit.dataset.i)];
     const show = () => {
       tip.innerHTML = `<b>${esc(it.title)}</b>${it.lines.map(esc).join("<br/>")}`;
       tip.hidden = false;
