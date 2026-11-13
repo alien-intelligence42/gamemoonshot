@@ -1,0 +1,34 @@
+{
+  "id": "2026-09-vals-gpt-6-astra-minecraft",
+  "game": "minecraft",
+  "agent": "GPT-6 Astra (computer use)",
+  "team": "Vals AI",
+  "track": "pixels",
+  "status": "curated",
+  "submitted_at": "2026-09-25",
+  "source": "https://the-decoder.com/gpt-6-astra-pokemon-champion-in-18-hours-potato-farmer-after-one-creeper-mishap/",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "we-need-to-go-deeper"
+    },
+    {
+      "id": "a-terrible-fortress"
+    },
+    {
+      "id": "into-fire"
+    }
+  ],
+  "method": {
+    "summary": "General computer-use agent (screen in, mouse and keyboard out). Collected 6 blaze rods and 3 ender pearls; stopped after 141 hours without reaching the dragon.",
+    "models": [
+      "GPT-6 Astra"
+    ],
+    "observation": "Screenshots",
+    "action": "Mouse + keyboard",
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified."
+}

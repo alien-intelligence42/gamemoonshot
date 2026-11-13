@@ -1,0 +1,64 @@
+{
+  "id": "zelda-links-awakening-dx",
+  "order": 11,
+  "title": "The Legend of Zelda: Link's Awakening DX",
+  "platform": "Game Boy Color",
+  "release_year": 1998,
+  "genre": "Action-adventure",
+  "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
+  "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
+  "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",
+  "milestones": [
+    {
+      "id": "d1",
+      "name": "Level 1: Tail Cave"
+    },
+    {
+      "id": "d2",
+      "name": "Level 2: Bottle Grotto"
+    },
+    {
+      "id": "d3",
+      "name": "Level 3: Key Cavern"
+    },
+    {
+      "id": "d4",
+      "name": "Level 4: Angler's Tunnel"
+    },
+    {
+      "id": "d5",
+      "name": "Level 5: Catfish's Maw"
+    },
+    {
+      "id": "d6",
+      "name": "Level 6: Face Shrine"
+    },
+    {
+      "id": "d7",
+      "name": "Level 7: Eagle's Tower"
+    },
+    {
+      "id": "d8",
+      "name": "Level 8: Turtle Rock"
+    },
+    {
+      "id": "wind-fish",
+      "name": "Wind Fish's Egg — final boss",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% (No WW/OoB)",
+      "time": "0:48:57",
+      "note": "speedrun.com world record by Nitroz",
+      "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
+    }
+  ],
+  "links": [
+    {
+      "label": "VideoGameBench",
+      "url": "https://www.vgbench.com/"
+    }
+  ]
+}

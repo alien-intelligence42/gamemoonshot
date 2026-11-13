@@ -1,0 +1,26 @@
+{
+  "id": "2024-03-cradle-rdr2",
+  "game": "rdr2",
+  "agent": "Cradle",
+  "team": "BAAI, Skywork AI, NTU, PKU et al.",
+  "track": "pixels",
+  "status": "curated",
+  "submitted_at": "2024-03-05",
+  "source": "https://baai-agents.github.io/Cradle",
+  "source_type": "author",
+  "videos": [],
+  "milestones": [],
+  "method": {
+    "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Completed early main-story missions (roughly 40 minutes of story), including ‘Follow Dutch’ and ‘Buy Supply’ style tasks.",
+    "models": [
+      "GPT-4V",
+      "GPT-4o"
+    ],
+    "observation": "Screenshots",
+    "action": "Keyboard + mouse",
+    "human_intervention": "unknown",
+    "project": "https://baai-agents.github.io/Cradle"
+  },
+  "hardware": {},
+  "notes": "No full chapter clear reported, so no milestone yet. Authors are welcome to submit full details and footage."
+}

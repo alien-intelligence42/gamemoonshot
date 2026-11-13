@@ -1,0 +1,93 @@
+{
+  "id": "pokemon-red-blue",
+  "order": 1,
+  "title": "Pokémon Red / Blue",
+  "platform": "Game Boy",
+  "release_year": 1996,
+  "genre": "RPG",
+  "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
+  "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
+  "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",
+  "timing": "Elapsed run time from New Game. Step counts may be given in notes.",
+  "milestones": [
+    {
+      "id": "boulder-badge",
+      "name": "Boulder Badge",
+      "description": "Brock, Pewter City"
+    },
+    {
+      "id": "cascade-badge",
+      "name": "Cascade Badge",
+      "description": "Misty, Cerulean City"
+    },
+    {
+      "id": "thunder-badge",
+      "name": "Thunder Badge",
+      "description": "Lt. Surge, Vermilion City"
+    },
+    {
+      "id": "rainbow-badge",
+      "name": "Rainbow Badge",
+      "description": "Erika, Celadon City"
+    },
+    {
+      "id": "soul-badge",
+      "name": "Soul Badge",
+      "description": "Koga, Fuchsia City"
+    },
+    {
+      "id": "marsh-badge",
+      "name": "Marsh Badge",
+      "description": "Sabrina, Saffron City"
+    },
+    {
+      "id": "volcano-badge",
+      "name": "Volcano Badge",
+      "description": "Blaine, Cinnabar Island"
+    },
+    {
+      "id": "earth-badge",
+      "name": "Earth Badge",
+      "description": "Giovanni, Viridian City"
+    },
+    {
+      "id": "e4-lorelei",
+      "name": "Elite Four: Lorelei"
+    },
+    {
+      "id": "e4-bruno",
+      "name": "Elite Four: Bruno"
+    },
+    {
+      "id": "e4-agatha",
+      "name": "Elite Four: Agatha"
+    },
+    {
+      "id": "e4-lance",
+      "name": "Elite Four: Lance"
+    },
+    {
+      "id": "champion",
+      "name": "Champion defeated — Hall of Fame",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Glitchless",
+      "time": "1:43:40",
+      "note": "speedrun.com world record (ENG) by SlNNED",
+      "source": "https://www.speedrun.com/pkmnredblue/runs/y4n7endm"
+    }
+  ],
+  "links": [
+    {
+      "label": "Claude Plays Pokémon (TechCrunch)",
+      "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    },
+    {
+      "label": "On comparing Pokémon harnesses (TIME)",
+      "url": "https://time.com/7345903/ai-chatgpt-claude-gemini-pokemon"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+name: Submit a run
+description: Submit an AI agent's run (full clear or partial) with video proof.
+title: "[Run] <game> — <agent> (<team>)"
+labels: [submission]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Easiest path: use the form on the site (`#/submit`), which generates the JSON below for you.
+        Read the rules first: partial runs count, every milestone needs a video timestamp, and any human intervention must be disclosed.
+  - type: input
+    id: game
+    attributes:
+      label: Game id
+      description: As listed in data/games (e.g. pokemon-red, sekiro, rdr2, minecraft).
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent name
+    validations:
+      required: true
+  - type: input
+    id: team
+    attributes:
+      label: Team / author
+    validations:
+      required: true
+  - type: dropdown
+    id: track
+    attributes:
+      label: Track
+      options:
+        - pixels (frames in, keyboard/mouse/controller out)
+        - harness (game memory/API, custom tools, or game-specific scaffold)
+    validations:
+      required: true
+  - type: textarea
+    id: videos
+    attributes:
+      label: Video links
+      description: Full, unedited, public. One per line, in order.
+    validations:
+      required: true
+  - type: textarea
+    id: milestones
+    attributes:
+      label: Milestones reached
+      description: "One per line: milestone id | elapsed run time H:MM:SS | video # | timestamp H:MM:SS"
+      placeholder: "brock | 3:12:40 | 0 | 3:12:40"
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method
+      description: Models used, what the agent observes, how it acts, planning/memory/tools, game speed, restarts. Paper / code links.
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware
+      description: GPU / CPU / RAM / OS of the machine running the game and the agent; API vs local inference; approximate cost.
+    validations:
+      required: true
+  - type: input
+    id: intervention
+    attributes:
+      label: Human intervention
+      description: Anything a human did during the run. Write "none" if nothing.
+    validations:
+      required: true
+  - type: textarea
+    id: json
+    attributes:
+      label: Generated JSON (optional)
+      render: json
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The video is the complete, unedited run and the timestamps point to each milestone.
+          required: true
+        - label: All human intervention during the run is disclosed above.
+          required: true

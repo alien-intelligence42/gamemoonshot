@@ -1,0 +1,62 @@
+{
+  "id": "black-myth-wukong",
+  "order": 7,
+  "title": "Black Myth: Wukong",
+  "platform": "PC / PS5",
+  "release_year": 2024,
+  "genre": "Action RPG",
+  "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
+  "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
+  "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",
+  "milestones": [
+    {
+      "id": "ch1",
+      "name": "Chapter 1: Black Wind Mountain"
+    },
+    {
+      "id": "ch2",
+      "name": "Chapter 2: Yellow Wind Ridge"
+    },
+    {
+      "id": "ch3",
+      "name": "Chapter 3: The New West"
+    },
+    {
+      "id": "ch4",
+      "name": "Chapter 4: The Webbed Hollow"
+    },
+    {
+      "id": "ch5",
+      "name": "Chapter 5: Flaming Mountains"
+    },
+    {
+      "id": "ch6",
+      "name": "Chapter 6: Mount Huaguo — credits",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% (PC, Glitchless)",
+      "time": "2:31:34",
+      "note": "speedrun.com world record by XiaoYume (2:31:34.630)",
+      "source": "https://www.speedrun.com/BMW/runs/m38kpxdy"
+    },
+    {
+      "label": "Speedrun WR — Any% (PC, Unrestricted)",
+      "time": "0:46:15",
+      "note": "speedrun.com world record by Non_Come (46:15.780)",
+      "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
+    }
+  ],
+  "links": [
+    {
+      "label": "VARP agent (arXiv 2409.12889)",
+      "url": "https://arxiv.org/abs/2409.12889"
+    },
+    {
+      "label": "CombatVLA",
+      "url": "https://arxiv.org/html/2503.09527v2"
+    }
+  ]
+}

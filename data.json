@@ -1,0 +1,1470 @@
+{
+ "updated": "2026-10-20",
+ "games": [
+  {
+   "id": "pokemon-red-blue",
+   "order": 1,
+   "title": "Pokémon Red / Blue",
+   "platform": "Game Boy",
+   "release_year": 1996,
+   "genre": "RPG",
+   "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
+   "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
+   "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",
+   "timing": "Elapsed run time from New Game. Step counts may be given in notes.",
+   "milestones": [
+    {
+     "id": "boulder-badge",
+     "name": "Boulder Badge",
+     "description": "Brock, Pewter City"
+    },
+    {
+     "id": "cascade-badge",
+     "name": "Cascade Badge",
+     "description": "Misty, Cerulean City"
+    },
+    {
+     "id": "thunder-badge",
+     "name": "Thunder Badge",
+     "description": "Lt. Surge, Vermilion City"
+    },
+    {
+     "id": "rainbow-badge",
+     "name": "Rainbow Badge",
+     "description": "Erika, Celadon City"
+    },
+    {
+     "id": "soul-badge",
+     "name": "Soul Badge",
+     "description": "Koga, Fuchsia City"
+    },
+    {
+     "id": "marsh-badge",
+     "name": "Marsh Badge",
+     "description": "Sabrina, Saffron City"
+    },
+    {
+     "id": "volcano-badge",
+     "name": "Volcano Badge",
+     "description": "Blaine, Cinnabar Island"
+    },
+    {
+     "id": "earth-badge",
+     "name": "Earth Badge",
+     "description": "Giovanni, Viridian City"
+    },
+    {
+     "id": "e4-lorelei",
+     "name": "Elite Four: Lorelei"
+    },
+    {
+     "id": "e4-bruno",
+     "name": "Elite Four: Bruno"
+    },
+    {
+     "id": "e4-agatha",
+     "name": "Elite Four: Agatha"
+    },
+    {
+     "id": "e4-lance",
+     "name": "Elite Four: Lance"
+    },
+    {
+     "id": "champion",
+     "name": "Champion defeated — Hall of Fame",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Glitchless",
+     "time": "1:43:40",
+     "note": "speedrun.com world record (ENG) by SlNNED",
+     "source": "https://www.speedrun.com/pkmnredblue/runs/y4n7endm"
+    }
+   ],
+   "links": [
+    {
+     "label": "Claude Plays Pokémon (TechCrunch)",
+     "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    },
+    {
+     "label": "On comparing Pokémon harnesses (TIME)",
+     "url": "https://time.com/7345903/ai-chatgpt-claude-gemini-pokemon"
+    }
+   ]
+  },
+  {
+   "id": "pokemon-crystal",
+   "order": 2,
+   "title": "Pokémon Crystal",
+   "platform": "Game Boy Color",
+   "release_year": 2000,
+   "genre": "RPG",
+   "description": "Longer than Red/Blue, with a second region after the credits. The story clear is the Champion; the 16-badge post-game and Red are tracked as extra milestones.",
+   "clear_condition": "Defeat Champion Lance and enter the Hall of Fame. Post-game milestones (Kanto badges, Red) rank above that.",
+   "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
+   "milestones": [
+    {
+     "id": "zephyr-badge",
+     "name": "Zephyr Badge",
+     "description": "Falkner"
+    },
+    {
+     "id": "hive-badge",
+     "name": "Hive Badge",
+     "description": "Bugsy"
+    },
+    {
+     "id": "plain-badge",
+     "name": "Plain Badge",
+     "description": "Whitney"
+    },
+    {
+     "id": "fog-badge",
+     "name": "Fog Badge",
+     "description": "Morty"
+    },
+    {
+     "id": "storm-badge",
+     "name": "Storm Badge",
+     "description": "Chuck"
+    },
+    {
+     "id": "mineral-badge",
+     "name": "Mineral Badge",
+     "description": "Jasmine"
+    },
+    {
+     "id": "glacier-badge",
+     "name": "Glacier Badge",
+     "description": "Pryce"
+    },
+    {
+     "id": "rising-badge",
+     "name": "Rising Badge",
+     "description": "Clair"
+    },
+    {
+     "id": "e4-will",
+     "name": "Elite Four: Will"
+    },
+    {
+     "id": "e4-koga",
+     "name": "Elite Four: Koga"
+    },
+    {
+     "id": "e4-bruno",
+     "name": "Elite Four: Bruno"
+    },
+    {
+     "id": "e4-karen",
+     "name": "Elite Four: Karen"
+    },
+    {
+     "id": "champion-lance",
+     "name": "Champion Lance — Hall of Fame",
+     "final": true
+    },
+    {
+     "id": "kanto-badges",
+     "name": "All 8 Kanto badges",
+     "description": "Post-game"
+    },
+    {
+     "id": "red",
+     "name": "Defeat Red on Mt. Silver",
+     "description": "Post-game"
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Glitchless",
+     "time": "3:06:59",
+     "note": "speedrun.com world record (ENG) by SlNNED",
+     "source": "https://www.speedrun.com/pkmncrystal/runs/zx55kd5m"
+    }
+   ],
+   "links": [
+    {
+     "label": "Gemini 3 Pro vs 2.5 Pro in Crystal (author write-up)",
+     "url": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal"
+    }
+   ]
+  },
+  {
+   "id": "pokemon-emerald",
+   "order": 3,
+   "title": "Pokémon Emerald",
+   "platform": "Game Boy Advance",
+   "release_year": 2004,
+   "genre": "RPG",
+   "description": "Used by the NeurIPS 2025 PokeAgent speedrun track, which only went as far as the first gym. No full AI clear is known yet.",
+   "clear_condition": "Defeat Champion Wallace and enter the Hall of Fame.",
+   "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
+   "milestones": [
+    {
+     "id": "stone-badge",
+     "name": "Stone Badge",
+     "description": "Roxanne"
+    },
+    {
+     "id": "knuckle-badge",
+     "name": "Knuckle Badge",
+     "description": "Brawly"
+    },
+    {
+     "id": "dynamo-badge",
+     "name": "Dynamo Badge",
+     "description": "Wattson"
+    },
+    {
+     "id": "heat-badge",
+     "name": "Heat Badge",
+     "description": "Flannery"
+    },
+    {
+     "id": "balance-badge",
+     "name": "Balance Badge",
+     "description": "Norman"
+    },
+    {
+     "id": "feather-badge",
+     "name": "Feather Badge",
+     "description": "Winona"
+    },
+    {
+     "id": "mind-badge",
+     "name": "Mind Badge",
+     "description": "Tate & Liza"
+    },
+    {
+     "id": "rain-badge",
+     "name": "Rain Badge",
+     "description": "Juan"
+    },
+    {
+     "id": "e4-sidney",
+     "name": "Elite Four: Sidney"
+    },
+    {
+     "id": "e4-phoebe",
+     "name": "Elite Four: Phoebe"
+    },
+    {
+     "id": "e4-glacia",
+     "name": "Elite Four: Glacia"
+    },
+    {
+     "id": "e4-drake",
+     "name": "Elite Four: Drake"
+    },
+    {
+     "id": "champion-wallace",
+     "name": "Champion Wallace — Hall of Fame",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Glitchless (Console)",
+     "time": "2:29:44",
+     "note": "speedrun.com world record (ENG) by keepingiticy",
+     "source": "https://www.speedrun.com/pkmnemerald/runs/m7vop64m"
+    }
+   ],
+   "links": [
+    {
+     "label": "PokeAgent Challenge (NeurIPS 2025) paper",
+     "url": "https://arxiv.org/html/2603.15563"
+    },
+    {
+     "label": "PokeAgent speedrun track",
+     "url": "https://pokeagent.github.io/track2.html"
+    }
+   ]
+  },
+  {
+   "id": "minecraft",
+   "order": 4,
+   "title": "Minecraft: Java Edition",
+   "platform": "PC",
+   "release_year": 2011,
+   "genre": "Sandbox / survival",
+   "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
+   "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
+   "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
+   "milestones": [
+    {
+     "id": "crafting-table",
+     "name": "Minecraft",
+     "description": "Advancement: craft a crafting table"
+    },
+    {
+     "id": "stone-age",
+     "name": "Stone Age",
+     "description": "Mine stone with a new pickaxe"
+    },
+    {
+     "id": "getting-an-upgrade",
+     "name": "Getting an Upgrade",
+     "description": "Craft a stone pickaxe"
+    },
+    {
+     "id": "acquire-hardware",
+     "name": "Acquire Hardware",
+     "description": "Smelt an iron ingot"
+    },
+    {
+     "id": "isnt-it-iron-pick",
+     "name": "Isn't It Iron Pick",
+     "description": "Craft an iron pickaxe"
+    },
+    {
+     "id": "diamonds",
+     "name": "Diamonds!",
+     "description": "Acquire diamonds"
+    },
+    {
+     "id": "we-need-to-go-deeper",
+     "name": "We Need to Go Deeper",
+     "description": "Enter the Nether"
+    },
+    {
+     "id": "a-terrible-fortress",
+     "name": "A Terrible Fortress",
+     "description": "Enter a Nether fortress"
+    },
+    {
+     "id": "into-fire",
+     "name": "Into Fire",
+     "description": "Obtain a blaze rod"
+    },
+    {
+     "id": "eye-of-ender",
+     "name": "Craft an Eye of Ender",
+     "description": "Dojo milestone, not an advancement"
+    },
+    {
+     "id": "eye-spy",
+     "name": "Eye Spy",
+     "description": "Enter a stronghold"
+    },
+    {
+     "id": "the-end",
+     "name": "The End?",
+     "description": "Enter the End"
+    },
+    {
+     "id": "free-the-end",
+     "name": "Free the End",
+     "description": "Kill the Ender Dragon",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Glitchless, Random Seed (1.16–1.19)",
+     "time": "0:06:39",
+     "note": "speedrun.com world record by skycrab1 (6:39.813)",
+     "source": "https://www.speedrun.com/mc/runs/y44238ky"
+    }
+   ],
+   "links": [
+    {
+     "label": "Minecraft Wiki: Advancements",
+     "url": "https://minecraft.wiki/w/Advancement"
+    },
+    {
+     "label": "VPT (OpenAI, 2022)",
+     "url": "https://openai.com/index/vpt"
+    },
+    {
+     "label": "Voyager (2023)",
+     "url": "https://arxiv.org/abs/2305.16291"
+    },
+    {
+     "label": "DreamerV3 (diamonds from scratch)",
+     "url": "https://danijar.com/project/dreamerv3/"
+    }
+   ]
+  },
+  {
+   "id": "rdr2",
+   "order": 5,
+   "title": "Red Dead Redemption 2",
+   "platform": "PC / PS4 / Xbox One",
+   "release_year": 2018,
+   "genre": "Open-world action",
+   "description": "A AAA open world with long, story-gated chapters. Cradle showed a general computer-control agent could play early story missions from screenshots alone; no AI chapter clear has been reported yet.",
+   "clear_condition": "Complete the final Epilogue mission “American Venom”.",
+   "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
+   "milestones": [
+    {
+     "id": "ch1-colter",
+     "name": "Chapter 1: Colter",
+     "description": "Final mission: Eastward Bound"
+    },
+    {
+     "id": "ch2-horseshoe-overlook",
+     "name": "Chapter 2: Horseshoe Overlook",
+     "description": "Final mission: A Strange Kindness"
+    },
+    {
+     "id": "ch3-clemens-point",
+     "name": "Chapter 3: Clemens Point",
+     "description": "Final mission: The Battle of Shady Belle"
+    },
+    {
+     "id": "ch4-saint-denis",
+     "name": "Chapter 4: Saint Denis",
+     "description": "Final mission: Banking, the Old American Art"
+    },
+    {
+     "id": "ch5-guarma",
+     "name": "Chapter 5: Guarma",
+     "description": "Final mission: That's Murfree Country"
+    },
+    {
+     "id": "ch6-beaver-hollow",
+     "name": "Chapter 6: Beaver Hollow",
+     "description": "Final mission: Red Dead Redemption"
+    },
+    {
+     "id": "epilogue-1",
+     "name": "Epilogue Part 1: Pronghorn Ranch",
+     "description": "Final mission: Gainful Employment"
+    },
+    {
+     "id": "epilogue-2",
+     "name": "Epilogue Part 2: Beecher's Hope",
+     "description": "Final mission: American Venom",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (No Checkpoint Skips)",
+     "time": "12:26:26",
+     "note": "speedrun.com world record by Hess",
+     "source": "https://www.speedrun.com/rdr2/runs/m38d714y"
+    },
+    {
+     "label": "Speedrun WR — Any% (Checkpoint Skips)",
+     "time": "8:36:31",
+     "note": "speedrun.com world record by FreshRigi",
+     "source": "https://www.speedrun.com/rdr2/runs/y8ow1d1m"
+    }
+   ],
+   "links": [
+    {
+     "label": "Cradle project page",
+     "url": "https://baai-agents.github.io/Cradle"
+    }
+   ]
+  },
+  {
+   "id": "sekiro",
+   "order": 6,
+   "title": "Sekiro: Shadows Die Twice",
+   "platform": "PC / PS4 / Xbox One",
+   "release_year": 2019,
+   "genre": "Action",
+   "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
+   "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
+   "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",
+   "milestones": [
+    {
+     "id": "gyoubu",
+     "name": "Gyoubu Masataka Oniwa"
+    },
+    {
+     "id": "lady-butterfly",
+     "name": "Lady Butterfly"
+    },
+    {
+     "id": "genichiro",
+     "name": "Genichiro Ashina"
+    },
+    {
+     "id": "folding-screen-monkeys",
+     "name": "Folding Screen Monkeys"
+    },
+    {
+     "id": "guardian-ape",
+     "name": "Guardian Ape"
+    },
+    {
+     "id": "corrupted-monk",
+     "name": "Corrupted Monk"
+    },
+    {
+     "id": "great-shinobi-owl",
+     "name": "Great Shinobi Owl"
+    },
+    {
+     "id": "divine-dragon",
+     "name": "Divine Dragon"
+    },
+    {
+     "id": "final-boss",
+     "name": "Final boss of any ending",
+     "description": "Isshin, the Sword Saint, or the Shura ending's final fight",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Immortal Severance (PC, Glitchless)",
+     "time": "0:38:57",
+     "note": "speedrun.com world record by Yeruka",
+     "source": "https://www.speedrun.com/sekiro/runs/y6jrqeqm"
+    },
+    {
+     "label": "Speedrun WR — Shura (PC, Glitchless)",
+     "time": "0:27:59",
+     "note": "speedrun.com world record by Yeruka",
+     "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
+    }
+   ],
+   "links": [
+    {
+     "label": "CombatVLA (isolated Sekiro / Wukong fights)",
+     "url": "https://arxiv.org/html/2503.09527v2"
+    },
+    {
+     "label": "Fextralife: Bosses",
+     "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"
+    }
+   ]
+  },
+  {
+   "id": "black-myth-wukong",
+   "order": 7,
+   "title": "Black Myth: Wukong",
+   "platform": "PC / PS5",
+   "release_year": 2024,
+   "genre": "Action RPG",
+   "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
+   "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
+   "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",
+   "milestones": [
+    {
+     "id": "ch1",
+     "name": "Chapter 1: Black Wind Mountain"
+    },
+    {
+     "id": "ch2",
+     "name": "Chapter 2: Yellow Wind Ridge"
+    },
+    {
+     "id": "ch3",
+     "name": "Chapter 3: The New West"
+    },
+    {
+     "id": "ch4",
+     "name": "Chapter 4: The Webbed Hollow"
+    },
+    {
+     "id": "ch5",
+     "name": "Chapter 5: Flaming Mountains"
+    },
+    {
+     "id": "ch6",
+     "name": "Chapter 6: Mount Huaguo — credits",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (PC, Glitchless)",
+     "time": "2:31:34",
+     "note": "speedrun.com world record by XiaoYume (2:31:34.630)",
+     "source": "https://www.speedrun.com/BMW/runs/m38kpxdy"
+    },
+    {
+     "label": "Speedrun WR — Any% (PC, Unrestricted)",
+     "time": "0:46:15",
+     "note": "speedrun.com world record by Non_Come (46:15.780)",
+     "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
+    }
+   ],
+   "links": [
+    {
+     "label": "VARP agent (arXiv 2409.12889)",
+     "url": "https://arxiv.org/abs/2409.12889"
+    },
+    {
+     "label": "CombatVLA",
+     "url": "https://arxiv.org/html/2503.09527v2"
+    }
+   ]
+  },
+  {
+   "id": "super-mario-bros",
+   "order": 8,
+   "title": "Super Mario Bros.",
+   "platform": "NES",
+   "release_year": 1985,
+   "genre": "Platformer",
+   "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
+   "clear_condition": "Defeat Bowser in World 8-4.",
+   "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",
+   "milestones": [
+    {
+     "id": "w1",
+     "name": "World 1 cleared"
+    },
+    {
+     "id": "w2",
+     "name": "World 2 cleared"
+    },
+    {
+     "id": "w3",
+     "name": "World 3 cleared"
+    },
+    {
+     "id": "w4",
+     "name": "World 4 cleared"
+    },
+    {
+     "id": "w5",
+     "name": "World 5 cleared"
+    },
+    {
+     "id": "w6",
+     "name": "World 6 cleared"
+    },
+    {
+     "id": "w7",
+     "name": "World 7 cleared"
+    },
+    {
+     "id": "w8",
+     "name": "World 8-4 — Bowser defeated",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Warpless (NTSC)",
+     "time": "0:18:49",
+     "note": "speedrun.com world record by Niftski (18:49.972)",
+     "source": "https://www.speedrun.com/smb1/runs/yljpjgnm"
+    },
+    {
+     "label": "Speedrun WR — Any% (NTSC)",
+     "time": "0:04:54",
+     "note": "speedrun.com world record by Niftski (4:54.299, with warps)",
+     "source": "https://www.speedrun.com/smb1/runs/ylw8epxz"
+    }
+   ],
+   "links": [
+    {
+     "label": "lmgame-bench",
+     "url": "https://arxiv.org/abs/2505.15146"
+    }
+   ]
+  },
+  {
+   "id": "nethack",
+   "order": 9,
+   "title": "NetHack",
+   "platform": "PC (terminal)",
+   "release_year": 1987,
+   "genre": "Roguelike",
+   "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
+   "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
+   "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
+   "timing": "Elapsed real time where known; report game turns in notes.",
+   "milestones": [
+    {
+     "id": "dlvl-5",
+     "name": "Reach Dungeon Level 5"
+    },
+    {
+     "id": "minetown",
+     "name": "Reach Minetown"
+    },
+    {
+     "id": "sokoban",
+     "name": "Complete Sokoban"
+    },
+    {
+     "id": "oracle",
+     "name": "Reach the Oracle"
+    },
+    {
+     "id": "quest",
+     "name": "Enter the Quest"
+    },
+    {
+     "id": "medusa",
+     "name": "Kill Medusa"
+    },
+    {
+     "id": "castle",
+     "name": "Reach the Castle"
+    },
+    {
+     "id": "gehennom",
+     "name": "Enter Gehennom (Valley of the Dead)"
+    },
+    {
+     "id": "amulet",
+     "name": "Retrieve the Amulet of Yendor"
+    },
+    {
+     "id": "planes",
+     "name": "Reach the Elemental Planes"
+    },
+    {
+     "id": "astral",
+     "name": "Reach the Astral Plane"
+    },
+    {
+     "id": "ascend",
+     "name": "Ascend",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (3.7, real time)",
+     "time": "0:49:00",
+     "note": "speedrun.com world record by luxidream",
+     "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
+    }
+   ],
+   "links": [
+    {
+     "label": "BALROG leaderboard",
+     "url": "https://balrogai.com/"
+    },
+    {
+     "label": "NetHackWiki: Ascension",
+     "url": "https://nethackwiki.com/wiki/Ascension"
+    }
+   ]
+  },
+  {
+   "id": "slay-the-spire",
+   "order": 10,
+   "title": "Slay the Spire",
+   "platform": "PC",
+   "release_year": 2017,
+   "genre": "Deckbuilder roguelike",
+   "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
+   "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
+   "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",
+   "milestones": [
+    {
+     "id": "act1",
+     "name": "Act 1 boss defeated"
+    },
+    {
+     "id": "act2",
+     "name": "Act 2 boss defeated"
+    },
+    {
+     "id": "act3",
+     "name": "Act 3 boss defeated — victory",
+     "final": true
+    },
+    {
+     "id": "heart",
+     "name": "Corrupt Heart defeated",
+     "description": "Act 4, post-game"
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Unseeded (The Silent)",
+     "time": "0:03:02",
+     "note": "speedrun.com world record by Zelda19 (3:02.600)",
+     "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
+    }
+   ],
+   "links": [
+    {
+     "label": "Epoch AI: SpireClimb results",
+     "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
+    },
+    {
+     "label": "SpireBench",
+     "url": "https://papers.cool/arxiv/2610.12596"
+    }
+   ]
+  },
+  {
+   "id": "zelda-links-awakening-dx",
+   "order": 11,
+   "title": "The Legend of Zelda: Link's Awakening DX",
+   "platform": "Game Boy Color",
+   "release_year": 1998,
+   "genre": "Action-adventure",
+   "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
+   "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
+   "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",
+   "milestones": [
+    {
+     "id": "d1",
+     "name": "Level 1: Tail Cave"
+    },
+    {
+     "id": "d2",
+     "name": "Level 2: Bottle Grotto"
+    },
+    {
+     "id": "d3",
+     "name": "Level 3: Key Cavern"
+    },
+    {
+     "id": "d4",
+     "name": "Level 4: Angler's Tunnel"
+    },
+    {
+     "id": "d5",
+     "name": "Level 5: Catfish's Maw"
+    },
+    {
+     "id": "d6",
+     "name": "Level 6: Face Shrine"
+    },
+    {
+     "id": "d7",
+     "name": "Level 7: Eagle's Tower"
+    },
+    {
+     "id": "d8",
+     "name": "Level 8: Turtle Rock"
+    },
+    {
+     "id": "wind-fish",
+     "name": "Wind Fish's Egg — final boss",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (No WW/OoB)",
+     "time": "0:48:57",
+     "note": "speedrun.com world record by Nitroz",
+     "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
+    }
+   ],
+   "links": [
+    {
+     "label": "VideoGameBench",
+     "url": "https://www.vgbench.com/"
+    }
+   ]
+  }
+ ],
+ "submissions": [
+  {
+   "id": "2026-09-vals-gpt-6-astra-minecraft",
+   "game": "minecraft",
+   "agent": "GPT-6 Astra (computer use)",
+   "team": "Vals AI",
+   "track": "pixels",
+   "status": "curated",
+   "submitted_at": "2026-09-25",
+   "source": "https://the-decoder.com/gpt-6-astra-pokemon-champion-in-18-hours-potato-farmer-after-one-creeper-mishap/",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "we-need-to-go-deeper"
+    },
+    {
+     "id": "a-terrible-fortress"
+    },
+    {
+     "id": "into-fire"
+    }
+   ],
+   "method": {
+    "summary": "General computer-use agent (screen in, mouse and keyboard out). Collected 6 blaze rods and 3 ender pearls; stopped after 141 hours without reaching the dragon.",
+    "models": [
+     "GPT-6 Astra"
+    ],
+    "observation": "Screenshots",
+    "action": "Mouse + keyboard",
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified."
+  },
+  {
+   "id": "2026-10-deepmind-gemini-minecraft",
+   "game": "minecraft",
+   "agent": "Gemini multi-agent (Gemini 4 Argon ×4)",
+   "team": "Google DeepMind",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-10-20",
+   "source": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "crafting-table"
+    },
+    {
+     "id": "stone-age"
+    },
+    {
+     "id": "getting-an-upgrade"
+    },
+    {
+     "id": "acquire-hardware"
+    },
+    {
+     "id": "isnt-it-iron-pick"
+    },
+    {
+     "id": "diamonds"
+    },
+    {
+     "id": "we-need-to-go-deeper"
+    },
+    {
+     "id": "a-terrible-fortress"
+    },
+    {
+     "id": "into-fire"
+    },
+    {
+     "id": "eye-of-ender"
+    },
+    {
+     "id": "eye-spy"
+    },
+    {
+     "id": "the-end"
+    },
+    {
+     "id": "free-the-end",
+     "elapsed": "27:14:00"
+    }
+   ],
+   "method": {
+    "summary": "Four Gemini agents controlling bots through Mineflayer (JavaScript API), Easy difficulty, Minecraft 1.20.4. Killed the Ender Dragon in a single run after 27h14m and 605 deaths.",
+    "models": [
+     "Gemini 4 Argon"
+    ],
+    "observation": "Structured game state via Mineflayer",
+    "action": "Mineflayer API calls",
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. Reported via press, not verified."
+  },
+  {
+   "id": "2026-09-gpt-6-astra-nethack-ascension",
+   "game": "nethack",
+   "agent": "GPT-6 Astra (Codex, custom harness)",
+   "team": "Ken (Vaguely Aligned blog)",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-09-21",
+   "source": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/",
+   "source_type": "author",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "dlvl-5"
+    },
+    {
+     "id": "oracle"
+    },
+    {
+     "id": "quest"
+    },
+    {
+     "id": "medusa"
+    },
+    {
+     "id": "castle"
+    },
+    {
+     "id": "gehennom"
+    },
+    {
+     "id": "amulet"
+    },
+    {
+     "id": "planes"
+    },
+    {
+     "id": "astral"
+    },
+    {
+     "id": "ascend"
+    }
+   ],
+   "method": {
+    "summary": "GPT-6 Astra driven through Codex with a self-built harness and open access to the NetHack wiki and spoilers. Ascended a Dwarf Valkyrie in 37,140 turns on the third attempt; a Hardfought dumplog is published.",
+    "models": [
+     "GPT-6 Astra"
+    ],
+    "human_intervention": "A human handled setup and resumed sessions (as reported)."
+   },
+   "hardware": {},
+   "notes": "Minetown and Sokoban are not claimed (not required for ascension). The other milestones follow from the ascension."
+  },
+  {
+   "id": "2025-08-gpt-plays-pokemon-crystal-gpt-5",
+   "game": "pokemon-crystal",
+   "agent": "GPT Plays Pokémon (GPT-5)",
+   "team": "Clad3815 (independent)",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-08-30",
+   "source": "https://news.aibase.com/news/20856",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "zephyr-badge"
+    },
+    {
+     "id": "hive-badge"
+    },
+    {
+     "id": "plain-badge"
+    },
+    {
+     "id": "fog-badge"
+    },
+    {
+     "id": "storm-badge"
+    },
+    {
+     "id": "mineral-badge"
+    },
+    {
+     "id": "glacier-badge"
+    },
+    {
+     "id": "rising-badge"
+    },
+    {
+     "id": "e4-will"
+    },
+    {
+     "id": "e4-koga"
+    },
+    {
+     "id": "e4-bruno"
+    },
+    {
+     "id": "e4-karen"
+    },
+    {
+     "id": "champion-lance"
+    },
+    {
+     "id": "kanto-badges"
+    },
+    {
+     "id": "red"
+    }
+   ],
+   "method": {
+    "summary": "GPT-5 in the GPT Plays Pokémon harness; beat Red in 9,517 steps (o3: 27,040).",
+    "models": [
+     "GPT-5"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Self-reported; the source estimates ~202 hours. Defeating Red implies all 16 badges and the Champion."
+  },
+  {
+   "id": "2025-12-gemini-plays-pokemon-crystal-3-pro",
+   "game": "pokemon-crystal",
+   "agent": "Gemini Plays Pokémon (Gemini 3 Pro)",
+   "team": "Joel Zhang (independent)",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-12-12",
+   "source": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal",
+   "source_type": "author",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "zephyr-badge"
+    },
+    {
+     "id": "hive-badge"
+    },
+    {
+     "id": "plain-badge"
+    },
+    {
+     "id": "fog-badge"
+    },
+    {
+     "id": "storm-badge"
+    },
+    {
+     "id": "mineral-badge"
+    },
+    {
+     "id": "glacier-badge"
+    },
+    {
+     "id": "rising-badge"
+    },
+    {
+     "id": "e4-will"
+    },
+    {
+     "id": "e4-koga"
+    },
+    {
+     "id": "e4-bruno"
+    },
+    {
+     "id": "e4-karen"
+    },
+    {
+     "id": "champion-lance"
+    },
+    {
+     "id": "kanto-badges"
+    },
+    {
+     "id": "red"
+    }
+   ],
+   "method": {
+    "summary": "Gemini 3 Pro in the Gemini Plays Pokémon harness: 16 badges, Elite Four, Lance and Red in about 17 days. Gemini 2.5 Pro in the same harness stalled at 4 badges.",
+    "models": [
+     "Gemini 3 Pro"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {}
+  },
+  {
+   "id": "2025-12-pokeagent-heatz",
+   "game": "pokemon-emerald",
+   "agent": "Heatz (PokeAgent winner)",
+   "team": "PokeAgent Challenge participant",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-12-06",
+   "source": "https://arxiv.org/html/2603.15563",
+   "source_type": "author",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "stone-badge",
+     "elapsed": "0:40:13"
+    }
+   ],
+   "method": {
+    "summary": "NeurIPS 2025 PokeAgent speedrun-track winner: LLM-written scripted policies distilled into a neural network, then RL fine-tuning. Reached the first gym badge in 40:13.",
+    "models": [
+     "LLM-generated policies + distilled neural policy"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "The competition ended at the first gym; per the paper, a top human speedrunner takes ~18 minutes to get there."
+  },
+  {
+   "id": "2025-03-claude-plays-pokemon-3-7-sonnet",
+   "game": "pokemon-red-blue",
+   "agent": "Claude Plays Pokémon (3.7 Sonnet)",
+   "team": "Anthropic",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-02-25",
+   "source": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "boulder-badge"
+    },
+    {
+     "id": "cascade-badge"
+    },
+    {
+     "id": "thunder-badge"
+    }
+   ],
+   "method": {
+    "summary": "Claude 3.7 Sonnet with a tool harness, streamed on Twitch. Reached 3 badges.",
+    "models": [
+     "Claude 3.7 Sonnet"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {}
+  },
+  {
+   "id": "2025-05-gemini-plays-pokemon-2-5-pro",
+   "game": "pokemon-red-blue",
+   "agent": "Gemini Plays Pokémon",
+   "team": "Joel Zhang (independent)",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-05-02",
+   "source": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "boulder-badge"
+    },
+    {
+     "id": "cascade-badge"
+    },
+    {
+     "id": "thunder-badge"
+    },
+    {
+     "id": "rainbow-badge"
+    },
+    {
+     "id": "soul-badge"
+    },
+    {
+     "id": "marsh-badge"
+    },
+    {
+     "id": "volcano-badge"
+    },
+    {
+     "id": "earth-badge"
+    },
+    {
+     "id": "e4-lorelei"
+    },
+    {
+     "id": "e4-bruno"
+    },
+    {
+     "id": "e4-agatha"
+    },
+    {
+     "id": "e4-lance"
+    },
+    {
+     "id": "champion",
+     "elapsed": "813:00:00"
+    }
+   ],
+   "method": {
+    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). The run took about 813 hours; a second run took about 406 hours.",
+    "models": [
+     "Gemini 2.5 Pro"
+    ],
+    "human_intervention": "Developer adjusted the harness during the run (as reported)."
+   },
+   "hardware": {},
+   "notes": "Played Blue. Elapsed time is approximate, from the press report."
+  },
+  {
+   "id": "2025-08-gpt-plays-pokemon-gpt-5",
+   "game": "pokemon-red-blue",
+   "agent": "GPT Plays Pokémon (GPT-5)",
+   "team": "Clad3815 (independent)",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2025-08-15",
+   "source": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "boulder-badge"
+    },
+    {
+     "id": "cascade-badge"
+    },
+    {
+     "id": "thunder-badge"
+    },
+    {
+     "id": "rainbow-badge"
+    },
+    {
+     "id": "soul-badge"
+    },
+    {
+     "id": "marsh-badge"
+    },
+    {
+     "id": "volcano-badge"
+    },
+    {
+     "id": "earth-badge"
+    },
+    {
+     "id": "e4-lorelei"
+    },
+    {
+     "id": "e4-bruno"
+    },
+    {
+     "id": "e4-agatha"
+    },
+    {
+     "id": "e4-lance"
+    },
+    {
+     "id": "champion"
+    }
+   ],
+   "method": {
+    "summary": "GPT-5 in the GPT Plays Pokémon harness; finished Pokémon Red in 6,470 steps (the same harness with o3 took 18,184 steps).",
+    "models": [
+     "GPT-5"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Step counts, not wall-clock time, are reported. Date is approximate (August 2025)."
+  },
+  {
+   "id": "2026-01-claude-plays-pokemon-opus-4-5",
+   "game": "pokemon-red-blue",
+   "agent": "Claude Plays Pokémon (Opus 4.5)",
+   "team": "Anthropic",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-01-15",
+   "source": "https://www.lesswrong.com/posts/gogZyeistdaDFuhbG/claude-plays-pokemon-opus-4-5-follow-up",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "boulder-badge"
+    },
+    {
+     "id": "cascade-badge"
+    },
+    {
+     "id": "thunder-badge"
+    },
+    {
+     "id": "rainbow-badge"
+    },
+    {
+     "id": "soul-badge"
+    },
+    {
+     "id": "marsh-badge"
+    },
+    {
+     "id": "volcano-badge"
+    },
+    {
+     "id": "earth-badge"
+    }
+   ],
+   "method": {
+    "summary": "Claude Opus 4.5 in the Claude Plays Pokémon harness. Collected all 8 badges, then stalled on the Victory Road boulder puzzles (~230k steps).",
+    "models": [
+     "Claude Opus 4.5"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Date approximate (late 2025 / early 2026)."
+  },
+  {
+   "id": "2026-05-claude-plays-pokemon-opus-4-7",
+   "game": "pokemon-red-blue",
+   "agent": "Claude Plays Pokémon (Opus 4.7)",
+   "team": "Anthropic",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-05-16",
+   "source": "https://www.lesswrong.com/posts/sehJYg5Yny9fvpbpt/a-year-late-claude-finally-beats-pokemon",
+   "source_type": "news",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "boulder-badge"
+    },
+    {
+     "id": "cascade-badge"
+    },
+    {
+     "id": "thunder-badge"
+    },
+    {
+     "id": "rainbow-badge"
+    },
+    {
+     "id": "soul-badge"
+    },
+    {
+     "id": "marsh-badge"
+    },
+    {
+     "id": "volcano-badge"
+    },
+    {
+     "id": "earth-badge"
+    },
+    {
+     "id": "e4-lorelei"
+    },
+    {
+     "id": "e4-bruno"
+    },
+    {
+     "id": "e4-agatha"
+    },
+    {
+     "id": "e4-lance"
+    },
+    {
+     "id": "champion"
+    }
+   ],
+   "method": {
+    "summary": "Claude Opus 4.7 with a deliberately minimal harness plus zoom and screenshot-memory tools; beat Pokémon Red.",
+    "models": [
+     "Claude Opus 4.7"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {}
+  },
+  {
+   "id": "2024-03-cradle-rdr2",
+   "game": "rdr2",
+   "agent": "Cradle",
+   "team": "BAAI, Skywork AI, NTU, PKU et al.",
+   "track": "pixels",
+   "status": "curated",
+   "submitted_at": "2024-03-05",
+   "source": "https://baai-agents.github.io/Cradle",
+   "source_type": "author",
+   "videos": [],
+   "milestones": [],
+   "method": {
+    "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Completed early main-story missions (roughly 40 minutes of story), including ‘Follow Dutch’ and ‘Buy Supply’ style tasks.",
+    "models": [
+     "GPT-4V",
+     "GPT-4o"
+    ],
+    "observation": "Screenshots",
+    "action": "Keyboard + mouse",
+    "human_intervention": "unknown",
+    "project": "https://baai-agents.github.io/Cradle"
+   },
+   "hardware": {},
+   "notes": "No full chapter clear reported, so no milestone yet. Authors are welcome to submit full details and footage."
+  }
+ ]
+}

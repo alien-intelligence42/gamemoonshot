@@ -1,0 +1,53 @@
+{
+  "id": "2026-09-gpt-6-astra-nethack-ascension",
+  "game": "nethack",
+  "agent": "GPT-6 Astra (Codex, custom harness)",
+  "team": "Ken (Vaguely Aligned blog)",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-09-21",
+  "source": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/",
+  "source_type": "author",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "dlvl-5"
+    },
+    {
+      "id": "oracle"
+    },
+    {
+      "id": "quest"
+    },
+    {
+      "id": "medusa"
+    },
+    {
+      "id": "castle"
+    },
+    {
+      "id": "gehennom"
+    },
+    {
+      "id": "amulet"
+    },
+    {
+      "id": "planes"
+    },
+    {
+      "id": "astral"
+    },
+    {
+      "id": "ascend"
+    }
+  ],
+  "method": {
+    "summary": "GPT-6 Astra driven through Codex with a self-built harness and open access to the NetHack wiki and spoilers. Ascended a Dwarf Valkyrie in 37,140 turns on the third attempt; a Hardfought dumplog is published.",
+    "models": [
+      "GPT-6 Astra"
+    ],
+    "human_intervention": "A human handled setup and resumed sessions (as reported)."
+  },
+  "hardware": {},
+  "notes": "Minetown and Sokoban are not claimed (not required for ascension). The other milestones follow from the ascension."
+}

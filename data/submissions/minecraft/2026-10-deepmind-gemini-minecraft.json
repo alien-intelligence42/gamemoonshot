@@ -1,0 +1,65 @@
+{
+  "id": "2026-10-deepmind-gemini-minecraft",
+  "game": "minecraft",
+  "agent": "Gemini multi-agent (Gemini 4 Argon ×4)",
+  "team": "Google DeepMind",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-10-20",
+  "source": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "crafting-table"
+    },
+    {
+      "id": "stone-age"
+    },
+    {
+      "id": "getting-an-upgrade"
+    },
+    {
+      "id": "acquire-hardware"
+    },
+    {
+      "id": "isnt-it-iron-pick"
+    },
+    {
+      "id": "diamonds"
+    },
+    {
+      "id": "we-need-to-go-deeper"
+    },
+    {
+      "id": "a-terrible-fortress"
+    },
+    {
+      "id": "into-fire"
+    },
+    {
+      "id": "eye-of-ender"
+    },
+    {
+      "id": "eye-spy"
+    },
+    {
+      "id": "the-end"
+    },
+    {
+      "id": "free-the-end",
+      "elapsed": "27:14:00"
+    }
+  ],
+  "method": {
+    "summary": "Four Gemini agents controlling bots through Mineflayer (JavaScript API), Easy difficulty, Minecraft 1.20.4. Killed the Ender Dragon in a single run after 27h14m and 605 deaths.",
+    "models": [
+      "Gemini 4 Argon"
+    ],
+    "observation": "Structured game state via Mineflayer",
+    "action": "Mineflayer API calls",
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. Reported via press, not verified."
+}

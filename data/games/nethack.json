@@ -1,0 +1,81 @@
+{
+  "id": "nethack",
+  "order": 9,
+  "title": "NetHack",
+  "platform": "PC (terminal)",
+  "release_year": 1987,
+  "genre": "Roguelike",
+  "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
+  "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
+  "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
+  "timing": "Elapsed real time where known; report game turns in notes.",
+  "milestones": [
+    {
+      "id": "dlvl-5",
+      "name": "Reach Dungeon Level 5"
+    },
+    {
+      "id": "minetown",
+      "name": "Reach Minetown"
+    },
+    {
+      "id": "sokoban",
+      "name": "Complete Sokoban"
+    },
+    {
+      "id": "oracle",
+      "name": "Reach the Oracle"
+    },
+    {
+      "id": "quest",
+      "name": "Enter the Quest"
+    },
+    {
+      "id": "medusa",
+      "name": "Kill Medusa"
+    },
+    {
+      "id": "castle",
+      "name": "Reach the Castle"
+    },
+    {
+      "id": "gehennom",
+      "name": "Enter Gehennom (Valley of the Dead)"
+    },
+    {
+      "id": "amulet",
+      "name": "Retrieve the Amulet of Yendor"
+    },
+    {
+      "id": "planes",
+      "name": "Reach the Elemental Planes"
+    },
+    {
+      "id": "astral",
+      "name": "Reach the Astral Plane"
+    },
+    {
+      "id": "ascend",
+      "name": "Ascend",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% (3.7, real time)",
+      "time": "0:49:00",
+      "note": "speedrun.com world record by luxidream",
+      "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
+    }
+  ],
+  "links": [
+    {
+      "label": "BALROG leaderboard",
+      "url": "https://balrogai.com/"
+    },
+    {
+      "label": "NetHackWiki: Ascension",
+      "url": "https://nethackwiki.com/wiki/Ascension"
+    }
+  ]
+}

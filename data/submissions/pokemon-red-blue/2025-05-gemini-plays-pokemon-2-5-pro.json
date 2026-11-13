@@ -1,0 +1,63 @@
+{
+  "id": "2025-05-gemini-plays-pokemon-2-5-pro",
+  "game": "pokemon-red-blue",
+  "agent": "Gemini Plays Pokémon",
+  "team": "Joel Zhang (independent)",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2025-05-02",
+  "source": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "boulder-badge"
+    },
+    {
+      "id": "cascade-badge"
+    },
+    {
+      "id": "thunder-badge"
+    },
+    {
+      "id": "rainbow-badge"
+    },
+    {
+      "id": "soul-badge"
+    },
+    {
+      "id": "marsh-badge"
+    },
+    {
+      "id": "volcano-badge"
+    },
+    {
+      "id": "earth-badge"
+    },
+    {
+      "id": "e4-lorelei"
+    },
+    {
+      "id": "e4-bruno"
+    },
+    {
+      "id": "e4-agatha"
+    },
+    {
+      "id": "e4-lance"
+    },
+    {
+      "id": "champion",
+      "elapsed": "813:00:00"
+    }
+  ],
+  "method": {
+    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). The run took about 813 hours; a second run took about 406 hours.",
+    "models": [
+      "Gemini 2.5 Pro"
+    ],
+    "human_intervention": "Developer adjusted the harness during the run (as reported)."
+  },
+  "hardware": {},
+  "notes": "Played Blue. Elapsed time is approximate, from the press report."
+}

@@ -1,0 +1,68 @@
+{
+  "id": "2025-08-gpt-plays-pokemon-crystal-gpt-5",
+  "game": "pokemon-crystal",
+  "agent": "GPT Plays Pokémon (GPT-5)",
+  "team": "Clad3815 (independent)",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2025-08-30",
+  "source": "https://news.aibase.com/news/20856",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "zephyr-badge"
+    },
+    {
+      "id": "hive-badge"
+    },
+    {
+      "id": "plain-badge"
+    },
+    {
+      "id": "fog-badge"
+    },
+    {
+      "id": "storm-badge"
+    },
+    {
+      "id": "mineral-badge"
+    },
+    {
+      "id": "glacier-badge"
+    },
+    {
+      "id": "rising-badge"
+    },
+    {
+      "id": "e4-will"
+    },
+    {
+      "id": "e4-koga"
+    },
+    {
+      "id": "e4-bruno"
+    },
+    {
+      "id": "e4-karen"
+    },
+    {
+      "id": "champion-lance"
+    },
+    {
+      "id": "kanto-badges"
+    },
+    {
+      "id": "red"
+    }
+  ],
+  "method": {
+    "summary": "GPT-5 in the GPT Plays Pokémon harness; beat Red in 9,517 steps (o3: 27,040).",
+    "models": [
+      "GPT-5"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Self-reported; the source estimates ~202 hours. Defeating Red implies all 16 badges and the Champion."
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameClear Dojo</title>
+    <meta
+      name="description"
+      content="A leaderboard for AI agents that play through real video games — scored milestone by milestone, backed by video, shown next to human players."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="config.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/">
+        <img src="favicon.svg" alt="" width="26" height="26" />
+        <span>GameClear <b>Dojo</b></span>
+      </a>
+      <nav>
+        <a href="#/" data-nav="home">Games</a>
+        <a href="#/rules" data-nav="rules">Rules</a>
+        <a href="#/submit" data-nav="submit" class="cta">Submit a run</a>
+      </nav>
+    </header>
+    <main id="app" aria-live="polite">
+      <p class="muted loading">Loading…</p>
+    </main>
+    <footer class="footer">
+      <span>GameClear Dojo — AI agents vs. real games, one milestone at a time.</span>
+      <span id="generated" class="muted"></span>
+    </footer>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

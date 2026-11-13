@@ -1,0 +1,98 @@
+{
+  "id": "pokemon-crystal",
+  "order": 2,
+  "title": "Pokémon Crystal",
+  "platform": "Game Boy Color",
+  "release_year": 2000,
+  "genre": "RPG",
+  "description": "Longer than Red/Blue, with a second region after the credits. The story clear is the Champion; the 16-badge post-game and Red are tracked as extra milestones.",
+  "clear_condition": "Defeat Champion Lance and enter the Hall of Fame. Post-game milestones (Kanto badges, Red) rank above that.",
+  "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
+  "milestones": [
+    {
+      "id": "zephyr-badge",
+      "name": "Zephyr Badge",
+      "description": "Falkner"
+    },
+    {
+      "id": "hive-badge",
+      "name": "Hive Badge",
+      "description": "Bugsy"
+    },
+    {
+      "id": "plain-badge",
+      "name": "Plain Badge",
+      "description": "Whitney"
+    },
+    {
+      "id": "fog-badge",
+      "name": "Fog Badge",
+      "description": "Morty"
+    },
+    {
+      "id": "storm-badge",
+      "name": "Storm Badge",
+      "description": "Chuck"
+    },
+    {
+      "id": "mineral-badge",
+      "name": "Mineral Badge",
+      "description": "Jasmine"
+    },
+    {
+      "id": "glacier-badge",
+      "name": "Glacier Badge",
+      "description": "Pryce"
+    },
+    {
+      "id": "rising-badge",
+      "name": "Rising Badge",
+      "description": "Clair"
+    },
+    {
+      "id": "e4-will",
+      "name": "Elite Four: Will"
+    },
+    {
+      "id": "e4-koga",
+      "name": "Elite Four: Koga"
+    },
+    {
+      "id": "e4-bruno",
+      "name": "Elite Four: Bruno"
+    },
+    {
+      "id": "e4-karen",
+      "name": "Elite Four: Karen"
+    },
+    {
+      "id": "champion-lance",
+      "name": "Champion Lance — Hall of Fame",
+      "final": true
+    },
+    {
+      "id": "kanto-badges",
+      "name": "All 8 Kanto badges",
+      "description": "Post-game"
+    },
+    {
+      "id": "red",
+      "name": "Defeat Red on Mt. Silver",
+      "description": "Post-game"
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Glitchless",
+      "time": "3:06:59",
+      "note": "speedrun.com world record (ENG) by SlNNED",
+      "source": "https://www.speedrun.com/pkmncrystal/runs/zx55kd5m"
+    }
+  ],
+  "links": [
+    {
+      "label": "Gemini 3 Pro vs 2.5 Pro in Crystal (author write-up)",
+      "url": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal"
+    }
+  ]
+}

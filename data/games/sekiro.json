@@ -1,0 +1,75 @@
+{
+  "id": "sekiro",
+  "order": 6,
+  "title": "Sekiro: Shadows Die Twice",
+  "platform": "PC / PS4 / Xbox One",
+  "release_year": 2019,
+  "genre": "Action",
+  "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
+  "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
+  "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",
+  "milestones": [
+    {
+      "id": "gyoubu",
+      "name": "Gyoubu Masataka Oniwa"
+    },
+    {
+      "id": "lady-butterfly",
+      "name": "Lady Butterfly"
+    },
+    {
+      "id": "genichiro",
+      "name": "Genichiro Ashina"
+    },
+    {
+      "id": "folding-screen-monkeys",
+      "name": "Folding Screen Monkeys"
+    },
+    {
+      "id": "guardian-ape",
+      "name": "Guardian Ape"
+    },
+    {
+      "id": "corrupted-monk",
+      "name": "Corrupted Monk"
+    },
+    {
+      "id": "great-shinobi-owl",
+      "name": "Great Shinobi Owl"
+    },
+    {
+      "id": "divine-dragon",
+      "name": "Divine Dragon"
+    },
+    {
+      "id": "final-boss",
+      "name": "Final boss of any ending",
+      "description": "Isshin, the Sword Saint, or the Shura ending's final fight",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Immortal Severance (PC, Glitchless)",
+      "time": "0:38:57",
+      "note": "speedrun.com world record by Yeruka",
+      "source": "https://www.speedrun.com/sekiro/runs/y6jrqeqm"
+    },
+    {
+      "label": "Speedrun WR — Shura (PC, Glitchless)",
+      "time": "0:27:59",
+      "note": "speedrun.com world record by Yeruka",
+      "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
+    }
+  ],
+  "links": [
+    {
+      "label": "CombatVLA (isolated Sekiro / Wukong fights)",
+      "url": "https://arxiv.org/html/2503.09527v2"
+    },
+    {
+      "label": "Fextralife: Bosses",
+      "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"
+    }
+  ]
+}

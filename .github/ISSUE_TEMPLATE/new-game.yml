@@ -1,0 +1,31 @@
+name: Propose a game
+description: Suggest a new game for the Dojo, with its milestone list.
+title: "[Game] <title>"
+labels: [new-game]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Game title and platform
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is a good test for agents
+  - type: textarea
+    id: milestones
+    attributes:
+      label: Proposed milestones (in order)
+      description: The last one is the clear condition. Each must be unambiguous to verify on video.
+    validations:
+      required: true
+  - type: textarea
+    id: baselines
+    attributes:
+      label: Human baselines (with sources)
+      description: e.g. HowLongToBeat main story, speedrun.com world record.
+  - type: textarea
+    id: prior
+    attributes:
+      label: Known AI attempts

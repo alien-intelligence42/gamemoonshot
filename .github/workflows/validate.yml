@@ -1,0 +1,21 @@
+name: validate
+
+# The site is served straight from the repo root by GitHub Pages ("Deploy from a branch": main, / (root)).
+# This check keeps data/ well-formed and data.json in sync with it.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run validate

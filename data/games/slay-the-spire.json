@@ -1,0 +1,49 @@
+{
+  "id": "slay-the-spire",
+  "order": 10,
+  "title": "Slay the Spire",
+  "platform": "PC",
+  "release_year": 2017,
+  "genre": "Deckbuilder roguelike",
+  "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
+  "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
+  "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",
+  "milestones": [
+    {
+      "id": "act1",
+      "name": "Act 1 boss defeated"
+    },
+    {
+      "id": "act2",
+      "name": "Act 2 boss defeated"
+    },
+    {
+      "id": "act3",
+      "name": "Act 3 boss defeated — victory",
+      "final": true
+    },
+    {
+      "id": "heart",
+      "name": "Corrupt Heart defeated",
+      "description": "Act 4, post-game"
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Unseeded (The Silent)",
+      "time": "0:03:02",
+      "note": "speedrun.com world record by Zelda19 (3:02.600)",
+      "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
+    }
+  ],
+  "links": [
+    {
+      "label": "Epoch AI: SpireClimb results",
+      "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
+    },
+    {
+      "label": "SpireBench",
+      "url": "https://papers.cool/arxiv/2610.12596"
+    }
+  ]
+}

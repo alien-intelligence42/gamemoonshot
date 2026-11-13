@@ -1,0 +1,47 @@
+{
+  "id": "2026-01-claude-plays-pokemon-opus-4-5",
+  "game": "pokemon-red-blue",
+  "agent": "Claude Plays Pokémon (Opus 4.5)",
+  "team": "Anthropic",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-01-15",
+  "source": "https://www.lesswrong.com/posts/gogZyeistdaDFuhbG/claude-plays-pokemon-opus-4-5-follow-up",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "boulder-badge"
+    },
+    {
+      "id": "cascade-badge"
+    },
+    {
+      "id": "thunder-badge"
+    },
+    {
+      "id": "rainbow-badge"
+    },
+    {
+      "id": "soul-badge"
+    },
+    {
+      "id": "marsh-badge"
+    },
+    {
+      "id": "volcano-badge"
+    },
+    {
+      "id": "earth-badge"
+    }
+  ],
+  "method": {
+    "summary": "Claude Opus 4.5 in the Claude Plays Pokémon harness. Collected all 8 badges, then stalled on the Victory Road boulder puzzles (~230k steps).",
+    "models": [
+      "Claude Opus 4.5"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Date approximate (late 2025 / early 2026)."
+}

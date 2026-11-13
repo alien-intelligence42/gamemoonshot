@@ -1,0 +1,62 @@
+{
+  "id": "2025-08-gpt-plays-pokemon-gpt-5",
+  "game": "pokemon-red-blue",
+  "agent": "GPT Plays Pokémon (GPT-5)",
+  "team": "Clad3815 (independent)",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2025-08-15",
+  "source": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "boulder-badge"
+    },
+    {
+      "id": "cascade-badge"
+    },
+    {
+      "id": "thunder-badge"
+    },
+    {
+      "id": "rainbow-badge"
+    },
+    {
+      "id": "soul-badge"
+    },
+    {
+      "id": "marsh-badge"
+    },
+    {
+      "id": "volcano-badge"
+    },
+    {
+      "id": "earth-badge"
+    },
+    {
+      "id": "e4-lorelei"
+    },
+    {
+      "id": "e4-bruno"
+    },
+    {
+      "id": "e4-agatha"
+    },
+    {
+      "id": "e4-lance"
+    },
+    {
+      "id": "champion"
+    }
+  ],
+  "method": {
+    "summary": "GPT-5 in the GPT Plays Pokémon harness; finished Pokémon Red in 6,470 steps (the same harness with o3 took 18,184 steps).",
+    "models": [
+      "GPT-5"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Step counts, not wall-clock time, are reported. Date is approximate (August 2025)."
+}

@@ -1,0 +1,92 @@
+{
+  "id": "pokemon-emerald",
+  "order": 3,
+  "title": "Pokémon Emerald",
+  "platform": "Game Boy Advance",
+  "release_year": 2004,
+  "genre": "RPG",
+  "description": "Used by the NeurIPS 2025 PokeAgent speedrun track, which only went as far as the first gym. No full AI clear is known yet.",
+  "clear_condition": "Defeat Champion Wallace and enter the Hall of Fame.",
+  "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
+  "milestones": [
+    {
+      "id": "stone-badge",
+      "name": "Stone Badge",
+      "description": "Roxanne"
+    },
+    {
+      "id": "knuckle-badge",
+      "name": "Knuckle Badge",
+      "description": "Brawly"
+    },
+    {
+      "id": "dynamo-badge",
+      "name": "Dynamo Badge",
+      "description": "Wattson"
+    },
+    {
+      "id": "heat-badge",
+      "name": "Heat Badge",
+      "description": "Flannery"
+    },
+    {
+      "id": "balance-badge",
+      "name": "Balance Badge",
+      "description": "Norman"
+    },
+    {
+      "id": "feather-badge",
+      "name": "Feather Badge",
+      "description": "Winona"
+    },
+    {
+      "id": "mind-badge",
+      "name": "Mind Badge",
+      "description": "Tate & Liza"
+    },
+    {
+      "id": "rain-badge",
+      "name": "Rain Badge",
+      "description": "Juan"
+    },
+    {
+      "id": "e4-sidney",
+      "name": "Elite Four: Sidney"
+    },
+    {
+      "id": "e4-phoebe",
+      "name": "Elite Four: Phoebe"
+    },
+    {
+      "id": "e4-glacia",
+      "name": "Elite Four: Glacia"
+    },
+    {
+      "id": "e4-drake",
+      "name": "Elite Four: Drake"
+    },
+    {
+      "id": "champion-wallace",
+      "name": "Champion Wallace — Hall of Fame",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Glitchless (Console)",
+      "time": "2:29:44",
+      "note": "speedrun.com world record (ENG) by keepingiticy",
+      "source": "https://www.speedrun.com/pkmnemerald/runs/m7vop64m"
+    }
+  ],
+  "links": [
+    {
+      "label": "PokeAgent Challenge (NeurIPS 2025) paper",
+      "url": "https://arxiv.org/html/2603.15563"
+    },
+    {
+      "label": "PokeAgent speedrun track",
+      "url": "https://pokeagent.github.io/track2.html"
+    }
+  ]
+}

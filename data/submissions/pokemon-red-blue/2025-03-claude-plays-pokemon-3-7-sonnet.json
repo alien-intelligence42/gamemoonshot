@@ -1,0 +1,31 @@
+{
+  "id": "2025-03-claude-plays-pokemon-3-7-sonnet",
+  "game": "pokemon-red-blue",
+  "agent": "Claude Plays Pokémon (3.7 Sonnet)",
+  "team": "Anthropic",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2025-02-25",
+  "source": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly",
+  "source_type": "news",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "boulder-badge"
+    },
+    {
+      "id": "cascade-badge"
+    },
+    {
+      "id": "thunder-badge"
+    }
+  ],
+  "method": {
+    "summary": "Claude 3.7 Sonnet with a tool harness, streamed on Twitch. Reached 3 badges.",
+    "models": [
+      "Claude 3.7 Sonnet"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {}
+}

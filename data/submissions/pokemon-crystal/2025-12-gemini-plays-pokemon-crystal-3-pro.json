@@ -1,0 +1,67 @@
+{
+  "id": "2025-12-gemini-plays-pokemon-crystal-3-pro",
+  "game": "pokemon-crystal",
+  "agent": "Gemini Plays Pokémon (Gemini 3 Pro)",
+  "team": "Joel Zhang (independent)",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2025-12-12",
+  "source": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal",
+  "source_type": "author",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "zephyr-badge"
+    },
+    {
+      "id": "hive-badge"
+    },
+    {
+      "id": "plain-badge"
+    },
+    {
+      "id": "fog-badge"
+    },
+    {
+      "id": "storm-badge"
+    },
+    {
+      "id": "mineral-badge"
+    },
+    {
+      "id": "glacier-badge"
+    },
+    {
+      "id": "rising-badge"
+    },
+    {
+      "id": "e4-will"
+    },
+    {
+      "id": "e4-koga"
+    },
+    {
+      "id": "e4-bruno"
+    },
+    {
+      "id": "e4-karen"
+    },
+    {
+      "id": "champion-lance"
+    },
+    {
+      "id": "kanto-badges"
+    },
+    {
+      "id": "red"
+    }
+  ],
+  "method": {
+    "summary": "Gemini 3 Pro in the Gemini Plays Pokémon harness: 16 badges, Elite Four, Lance and Red in about 17 days. Gemini 2.5 Pro in the same harness stalled at 4 badges.",
+    "models": [
+      "Gemini 3 Pro"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {}
+}

@@ -1,0 +1,66 @@
+{
+  "id": "super-mario-bros",
+  "order": 8,
+  "title": "Super Mario Bros.",
+  "platform": "NES",
+  "release_year": 1985,
+  "genre": "Platformer",
+  "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
+  "clear_condition": "Defeat Bowser in World 8-4.",
+  "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",
+  "milestones": [
+    {
+      "id": "w1",
+      "name": "World 1 cleared"
+    },
+    {
+      "id": "w2",
+      "name": "World 2 cleared"
+    },
+    {
+      "id": "w3",
+      "name": "World 3 cleared"
+    },
+    {
+      "id": "w4",
+      "name": "World 4 cleared"
+    },
+    {
+      "id": "w5",
+      "name": "World 5 cleared"
+    },
+    {
+      "id": "w6",
+      "name": "World 6 cleared"
+    },
+    {
+      "id": "w7",
+      "name": "World 7 cleared"
+    },
+    {
+      "id": "w8",
+      "name": "World 8-4 — Bowser defeated",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Warpless (NTSC)",
+      "time": "0:18:49",
+      "note": "speedrun.com world record by Niftski (18:49.972)",
+      "source": "https://www.speedrun.com/smb1/runs/yljpjgnm"
+    },
+    {
+      "label": "Speedrun WR — Any% (NTSC)",
+      "time": "0:04:54",
+      "note": "speedrun.com world record by Niftski (4:54.299, with warps)",
+      "source": "https://www.speedrun.com/smb1/runs/ylw8epxz"
+    }
+  ],
+  "links": [
+    {
+      "label": "lmgame-bench",
+      "url": "https://arxiv.org/abs/2505.15146"
+    }
+  ]
+}
