@@ -46,6 +46,32 @@ export const EMBLEMS = {
   ),
 };
 
+// Modern-3D boards: a golden tree in a halo, a palm against a striped sun, a cyberware chip, dog tags.
+Object.assign(EMBLEMS, {
+  tree: S(
+    `<circle cx="32" cy="30" r="26" stroke-width="1.5" opacity=".55"/><circle cx="32" cy="30" r="20" stroke-width="1" opacity=".35"/>
+     <path d="M32 58V24" stroke-width="3.5"/><path d="M26 58c3-3 4-7 6-12 2 5 3 9 6 12" stroke-width="2.5"/>
+     <path d="M32 40c-7-2-12-7-15-14M32 34c6-2 11-6 14-13M32 28c-3-5-3-11 0-17M24 31c-6 1-11-1-14-5M40 26c5 0 9-2 12-6M28 22c-4-2-6-6-7-10M36 21c3-3 4-7 4-11" stroke-width="2.2"/>
+     <path d="M20 58h24" stroke-width="2.5"/>`
+  ),
+  palm: S(
+    `<g class="sun"><circle cx="44" cy="40" r="12" stroke-width="2.5"/><path d="M33 43h22M34 48h20M37 53h14" stroke-width="2"/></g>
+     <path d="M20 58C22 46 23 33 28 21" stroke-width="3.5"/>
+     <path d="M28 21c-6-4-14-4-21 1M28 21c-1-6-6-11-14-12M28 21c3-6 10-9 18-7M28 21c6-1 12 2 16 8M28 21c0 6-2 11-6 14" stroke-width="2.5"/>
+     <path d="M6 58h52" stroke-width="2.5"/>`
+  ),
+  chip: S(
+    `<path d="M17 12h24l8 8v32H17z"/><path d="M24 22h16v20H24z" stroke-width="2"/><path d="M34 22l-6 10h8l-6 10" stroke-width="2"/>
+     <path d="M10 22h7M10 30h7M10 38h7M10 46h7M49 30h6M49 38h6M49 46h6M24 52v6M32 52v6M40 52v6M24 6v6M32 6v6" stroke-width="2"/>`
+  ),
+  dogtag: S(
+    `<path d="M24 6c-6 3-6 10-2 13M40 6c6 3 6 10 2 13" stroke-width="1.6" stroke-dasharray="1.5 3"/>
+     <rect x="26" y="20" width="22" height="34" rx="8" transform="rotate(12 37 37)" stroke-width="2.2" opacity=".6"/>
+     <rect x="14" y="18" width="24" height="38" rx="9"/><circle cx="26" cy="25" r="2.4" stroke-width="2"/>
+     <path d="M20 34h12M20 40h12M20 46h8" stroke-width="2.2"/>`
+  ),
+});
+
 // Horseshoe nail holes, placed along the arc.
 EMBLEMS.horseshoe = S(
   `<path d="M18 54l-4-22a18 18 0 0 1 36 0l-4 22" stroke-width="8"/>

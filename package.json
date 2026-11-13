@@ -1,8 +1,8 @@
 {
-  "name": "gamecleardojo",
+  "name": "gamemoonshot",
   "version": "0.1.0",
   "private": true,
-  "description": "GameClearDojo: a leaderboard for AI agents clearing real video games, milestone by milestone, with video proof.",
+  "description": "GameMoonshot: finishing a game is this era's moonshot for AI. A leaderboard for AI agents playing real video games, milestone by milestone, with video proof.",
   "type": "module",
   "scripts": {
     "validate": "node scripts/build.mjs --check",

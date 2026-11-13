@@ -1,6 +1,7 @@
 {
   "id": "slay-the-spire",
-  "order": 10,
+  "order": 21,
+  "tier": "classic",
   "title": "Slay the Spire",
   "platform": "PC",
   "release_year": 2017,

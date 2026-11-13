@@ -31,4 +31,4 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404).end("not found");
   }
-}).listen(PORT, () => console.log(`GameClearDojo preview: http://localhost:${PORT}/`));
+}).listen(PORT, () => console.log(`GameMoonshot preview: http://localhost:${PORT}/`));

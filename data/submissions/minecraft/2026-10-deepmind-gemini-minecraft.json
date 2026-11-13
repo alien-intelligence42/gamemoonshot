@@ -20,37 +20,57 @@
       "id": "crafting-table"
     },
     {
-      "id": "stone-age"
+      "id": "stone-age",
+      "elapsed": "0:06:00",
+      "approx": true
     },
     {
-      "id": "getting-an-upgrade"
+      "id": "getting-an-upgrade",
+      "elapsed": "0:06:00",
+      "approx": true
     },
     {
-      "id": "acquire-hardware"
+      "id": "acquire-hardware",
+      "elapsed": "0:14:00",
+      "approx": true
     },
     {
-      "id": "isnt-it-iron-pick"
+      "id": "isnt-it-iron-pick",
+      "elapsed": "0:14:00",
+      "approx": true
     },
     {
       "id": "diamonds"
     },
     {
-      "id": "we-need-to-go-deeper"
+      "id": "we-need-to-go-deeper",
+      "elapsed": "1:42:00",
+      "approx": true
     },
     {
-      "id": "a-terrible-fortress"
+      "id": "a-terrible-fortress",
+      "elapsed": "2:57:00",
+      "approx": true
     },
     {
-      "id": "into-fire"
+      "id": "into-fire",
+      "elapsed": "4:17:00",
+      "approx": true
     },
     {
-      "id": "eye-of-ender"
+      "id": "eye-of-ender",
+      "elapsed": "10:43:00",
+      "approx": true
     },
     {
-      "id": "eye-spy"
+      "id": "eye-spy",
+      "elapsed": "13:17:00",
+      "approx": true
     },
     {
-      "id": "the-end"
+      "id": "the-end",
+      "elapsed": "13:33:00",
+      "approx": true
     },
     {
       "id": "free-the-end",
@@ -67,5 +87,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage."
+  "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage. Intermediate times are read from the paper's progress chart (time since the first program); the chart marks team steps, so 'We Need to Go Deeper' uses the portal-lit time and 'Eye Spy' the End-portal-lit time. Crafting table and diamonds are not timed separately. The times include about 20 minutes of server restarts."
 }

@@ -680,6 +680,200 @@ body[data-skin="spire"]::before,
 body[data-skin="shinobi"]::before { opacity: .05; }
 
 /* ======================================================================
+   ERDTREE — dark fantasy: gilded serif, a golden tree glowing over grey ruins
+   ====================================================================== */
+body[data-skin="erdtree"] {
+  --display: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --bg: #0d0d0c; --bg-2: #121210; --surface: #161613; --surface-2: #1d1c18; --surface-3: #26251f;
+  --ink: #ece6d6; --ink-2: #c9c1ad; --muted: #928a77;
+  --gold: #d2b56a; --gold-hi: #ecd593; --gold-lo: #8f7536; --ember: #d2b56a; --on-gold: #17140c;
+  --line: rgb(210 181 106 / 14%); --line-strong: rgb(210 181 106 / 34%); --human: #8fb0d6; --track: #0a0a09;
+  --emblem: #f2dc9a; --emblem-glow: rgb(242 210 120 / 55%); --m2: #151512; --tip-bg: #121210f5;
+  --page-bg: radial-gradient(1000px 520px at 78% -12%, rgb(210 181 106 / 9%), transparent 60%), #0d0d0c;
+}
+body[data-skin="erdtree"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 3px; }
+body[data-skin="erdtree"] .section-head h2 { font-weight: 700; letter-spacing: .05em; font-size: clamp(26px, 3vw, 34px); }
+body[data-skin="erdtree"] .section-head h2 .ico { display: none; }
+body[data-skin="erdtree"] .section-head h2::before,
+body[data-skin="erdtree"] .section-head h2::after { content: ""; width: 38px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+body[data-skin="erdtree"] .section-head h2::after { background: linear-gradient(90deg, var(--gold), transparent); }
+body[data-skin="erdtree"] .fact dt, body[data-skin="erdtree"] .board-head, body[data-skin="erdtree"] .detail h4 { font-weight: 700; font-size: 14px; }
+body[data-skin="erdtree"] .bossbar { height: 8px; border-radius: 0; background: var(--track); border: 1px solid rgb(210 181 106 / 50%); box-shadow: none; }
+body[data-skin="erdtree"] .bossbar::before,
+body[data-skin="erdtree"] .bossbar::after { display: none; }
+body[data-skin="erdtree"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 0; background: linear-gradient(90deg, #6e221c, #a8392c); box-shadow: none; }
+body[data-skin="erdtree"] .bossbar.cleared > i { background: linear-gradient(90deg, #8f7536, #ecd593); box-shadow: 0 0 12px rgb(236 213 147 / 45%); }
+body[data-skin="erdtree"] .bossbar.human > i { background: #8fb0d6; }
+body[data-skin="erdtree"] .node { border-radius: 50%; transform: none; }
+body[data-skin="erdtree"] .node span { transform: none; }
+body[data-skin="erdtree"] .path li.final .name { font-size: 19px; font-weight: 700; }
+body[data-skin="erdtree"] .banner { background: radial-gradient(34% 70% at 80% 32%, rgb(242 205 110 / 30%), transparent 70%), linear-gradient(180deg, #1b1913 0%, #0d0d0c 100%); }
+body[data-skin="erdtree"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 90px); top: -110px; width: clamp(320px, 42vw, 560px); aspect-ratio: 1; border-radius: 50%;
+  background: repeating-radial-gradient(circle, rgb(242 210 120 / 13%) 0 1px, transparent 1px 24px);
+  -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 70%); mask-image: radial-gradient(circle, #000 25%, transparent 70%);
+}
+body[data-skin="erdtree"] .banner .emblem { filter: drop-shadow(0 0 36px rgb(242 205 110 / 65%)); opacity: 1; }
+body[data-skin="erdtree"] .banner .mountains .m1 { fill: #24221c; }
+body[data-skin="erdtree"] .banner .mountains .m2 { fill: #191813; }
+body[data-skin="erdtree"] .banner h1 { font-weight: 700; letter-spacing: .03em; color: #f4ecd6; font-size: clamp(36px, 5.6vw, 66px); }
+
+/* ======================================================================
+   SUNSET — sprawling city at dusk: condensed poster type, striped sun, skyline
+   ====================================================================== */
+body[data-skin="sunset"] {
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --bg: #121016; --bg-2: #17141c; --surface: #1b1820; --surface-2: #232029; --surface-3: #2d2934;
+  --ink: #f1ece6; --ink-2: #cfc6c0; --muted: #9a9098;
+  --gold: #f0a95a; --gold-hi: #f7c98c; --gold-lo: #c2763a; --ember: #e8707a; --on-gold: #1a1008;
+  --line: rgb(241 236 230 / 11%); --line-strong: rgb(240 169 90 / 38%); --human: #8fb4e8; --track: #0e0c11;
+  --emblem: #1d1424; --emblem-glow: transparent; --m2: #1a1620; --tip-bg: #1b1820f5; --cash: #7cc46a;
+  --skyline: #1d1424;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(232 112 122 / 9%), transparent 60%), #121016;
+}
+body[data-skin="sunset"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 4px; }
+body[data-skin="sunset"] .section-head h2 { font-weight: 400; letter-spacing: .02em; text-transform: uppercase; font-size: clamp(26px, 3vw, 34px); }
+body[data-skin="sunset"] .section-head h2 .ico { color: var(--ember); }
+body[data-skin="sunset"] .fact dt, body[data-skin="sunset"] .board-head, body[data-skin="sunset"] .detail h4, body[data-skin="sunset"] .frontier .label { font-weight: 400; letter-spacing: .06em; font-size: 14px; }
+body[data-skin="sunset"] .btn.primary { background: linear-gradient(90deg, var(--ember), var(--gold)); color: #1a1008; box-shadow: none; }
+body[data-skin="sunset"] .badge.cleared { background: var(--cash); color: #0d1a08; }
+body[data-skin="sunset"] .bossbar { height: 10px; border-radius: 0; border: 2px solid #000; background: #2a2630; box-shadow: none; }
+body[data-skin="sunset"] .bossbar::before,
+body[data-skin="sunset"] .bossbar::after { display: none; }
+body[data-skin="sunset"] .bossbar > i { inset: 0 auto 0 0; border-radius: 0; background: linear-gradient(90deg, #e8707a, #f0a95a); box-shadow: none; }
+body[data-skin="sunset"] .bossbar.cleared > i { background: var(--cash); }
+body[data-skin="sunset"] .bossbar.human > i { background: var(--human); }
+body[data-skin="sunset"] .path li.final .name { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .03em; color: var(--cash); }
+body[data-skin="sunset"] .banner { background: linear-gradient(180deg, #2a1d4a 0%, #6e3466 34%, #d0636e 60%, #ee9a5c 78%, #f5c983 100%); }
+body[data-skin="sunset"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) + 30px); bottom: 70px; width: clamp(220px, 28vw, 340px); aspect-ratio: 1; border-radius: 50%;
+  background: linear-gradient(180deg, #ffe7a6, #ffb070 55%, #f2707e);
+  -webkit-mask-image: linear-gradient(#000 0 52%, transparent 52%), repeating-linear-gradient(180deg, #000 0 9px, transparent 9px 14px);
+  mask-image: linear-gradient(#000 0 52%, transparent 52%), repeating-linear-gradient(180deg, #000 0 9px, transparent 9px 14px);
+}
+body[data-skin="sunset"] .banner::after {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 84px;
+  background: var(--skyline);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V52h18V34h12v18h12V22h16v22h12V30h16V12h10v18h12v18h16V26h16v14h12V18h8V8h6v10h10v28h16V30h14v22h14V36h16V20h14v24h12V28h16v22h14V16h14v22h14V26h14v22h14V32h14v22h14V24h14v22h10v34z'/%3E%3C/svg%3E") 0 100% / 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V52h18V34h12v18h12V22h16v22h12V30h16V12h10v18h12v18h16V26h16v14h12V18h8V8h6v10h10v28h16V30h14v22h14V36h16V20h14v24h12V28h16v22h14V16h14v22h14V26h14v22h14V32h14v22h14V24h14v22h10v34z'/%3E%3C/svg%3E") 0 100% / 100% 100%;
+}
+body[data-skin="sunset"] .banner .mountains { opacity: .55; }
+body[data-skin="sunset"] .banner .mountains .m1 { fill: #5a2c58; }
+body[data-skin="sunset"] .banner .mountains .m2 { fill: #3a2044; }
+body[data-skin="sunset"] .banner .mountains .m3 { fill: var(--skyline); }
+body[data-skin="sunset"] .banner .emblem { filter: none; opacity: 1; z-index: 0; top: auto; bottom: 60px; }
+body[data-skin="sunset"] .banner .emblem .sun { display: none; }
+body[data-skin="sunset"] .banner h1 { font-weight: 400; text-transform: uppercase; letter-spacing: .01em; color: #fff; text-shadow: 3px 3px 0 #1d1424; font-size: clamp(38px, 6vw, 72px); }
+body[data-skin="sunset"] .banner p.desc,
+body[data-skin="sunset"] .crumbs,
+body[data-skin="sunset"] .crumbs a,
+body[data-skin="sunset"] .frontier .label,
+body[data-skin="sunset"] .frontier .label span:last-child { color: #fff6ee; text-shadow: 0 1px 6px rgb(29 20 36 / 60%); }
+body[data-skin="sunset"] .banner .tag { background: rgb(29 20 36 / 45%); color: #fff6ee; border-color: rgb(255 246 238 / 35%); }
+body[data-skin="sunset"] .banner .num { color: #fff; }
+
+/* ======================================================================
+   NEON — night-city cyberware: angular type, clipped corners, scanlines, glitch
+   ====================================================================== */
+body[data-skin="neon"] {
+  --display: "Rajdhani", "Arial Narrow", sans-serif;
+  --bg: #0b0d12; --bg-2: #0f121a; --surface: #12161f; --surface-2: #181d28; --surface-3: #212736;
+  --ink: #e6ecf2; --ink-2: #bcc6d2; --muted: #8592a3;
+  --gold: #e6d84e; --gold-hi: #f2e88a; --gold-lo: #a89a24; --ember: #f0646e; --on-gold: #12140a; --cyan: #5fd3dc;
+  --line: rgb(95 211 220 / 14%); --line-strong: rgb(230 216 78 / 40%); --human: #5fd3dc; --track: #090b10;
+  --emblem: #e6d84e; --emblem-glow: rgb(230 216 78 / 35%); --m2: #10141c; --tip-bg: #12161ff5; --skyline: #151a26;
+  --cut: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(240 100 110 / 8%), transparent 60%), #0b0d12;
+}
+body[data-skin="neon"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail, .btn, .tabs, .tag, .badge) { border-radius: 0; }
+body[data-skin="neon"] :is(.row, .fact, .step, .detail) { clip-path: var(--cut); }
+body[data-skin="neon"] .row { border-left: 2px solid var(--cyan); }
+body[data-skin="neon"] .row.human { border-left-color: var(--human); background: var(--surface); }
+body[data-skin="neon"] .section-head h2 { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+body[data-skin="neon"] .section-head h2 .ico { color: var(--cyan); }
+body[data-skin="neon"] .section-head h2::after { content: ""; width: 44px; height: 7px; background: var(--gold); clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
+body[data-skin="neon"] .fact dt, body[data-skin="neon"] .board-head, body[data-skin="neon"] .detail h4 { font-weight: 700; color: var(--cyan); }
+body[data-skin="neon"] .btn.primary { background: var(--gold); color: var(--on-gold); box-shadow: none; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }
+body[data-skin="neon"] .badge.cleared { background: var(--gold); color: var(--on-gold); }
+body[data-skin="neon"] .tabs button[aria-pressed="true"] { border-radius: 0; color: var(--gold); box-shadow: inset 0 -2px 0 var(--gold); }
+body[data-skin="neon"] .bossbar { height: 8px; border-radius: 0; background: var(--track); border: 1px solid rgb(95 211 220 / 40%); box-shadow: none; }
+body[data-skin="neon"] .bossbar::before,
+body[data-skin="neon"] .bossbar::after { display: none; }
+body[data-skin="neon"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 0; background: linear-gradient(90deg, #b8404c, #f0646e); box-shadow: 0 0 8px rgb(240 100 110 / 40%); }
+body[data-skin="neon"] .bossbar.cleared > i { background: var(--gold); box-shadow: 0 0 10px rgb(230 216 78 / 50%); }
+body[data-skin="neon"] .bossbar.human > i { background: var(--cyan); box-shadow: none; }
+body[data-skin="neon"] .node { border-radius: 0; }
+body[data-skin="neon"] .path li.hit .node { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px rgb(230 216 78 / 45%); }
+body[data-skin="neon"] .path li.hit .node span { color: var(--on-gold); }
+body[data-skin="neon"] .path li.final .name { text-transform: uppercase; font-weight: 700; color: var(--gold); }
+body[data-skin="neon"] .banner {
+  background:
+    linear-gradient(104deg, transparent 0 66%, rgb(230 216 78 / 80%) 66% 67%, transparent 67% 69%, rgb(230 216 78 / 35%) 69% 69.4%, transparent 69.4%),
+    linear-gradient(rgb(95 211 220 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgb(95 211 220 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
+    radial-gradient(50% 80% at 82% 20%, rgb(240 100 110 / 22%), transparent 70%),
+    #0b0d12;
+}
+body[data-skin="neon"] .banner::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(0deg, rgb(0 0 0 / 22%) 0 1px, transparent 1px 3px); pointer-events: none; }
+body[data-skin="neon"] .banner::after {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 84px; background: var(--skyline);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V40h10V20h6v20h14V10h12v30h10V24h18V4h8v20h10v26h14V16h10v24h8V30h20V6h4v24h12v20h12V22h16v18h10V12h14v28h8V28h18V8h10v32h12V20h14v30h10V18h12v22h10v40z'/%3E%3C/svg%3E") 0 100% / 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V40h10V20h6v20h14V10h12v30h10V24h18V4h8v20h10v26h14V16h10v24h8V30h20V6h4v24h12v20h12V22h16v18h10V12h14v28h8V28h18V8h10v32h12V20h14v30h10V18h12v22h10v40z'/%3E%3C/svg%3E") 0 100% / 100% 100%;
+}
+body[data-skin="neon"] .banner .mountains { display: none; }
+body[data-skin="neon"] .banner h1 { text-transform: uppercase; font-weight: 700; letter-spacing: .05em; text-shadow: 2px 0 rgb(240 100 110 / 70%), -2px 0 rgb(95 211 220 / 60%); font-size: clamp(38px, 6vw, 70px); }
+body[data-skin="neon"] .banner .tag { background: rgb(11 13 18 / 70%); }
+
+/* ======================================================================
+   TACTICAL — military shooter: stencil type, HUD brackets, reticle, ammo-segment bars
+   ====================================================================== */
+body[data-skin="tactical"] {
+  --display: "Saira Stencil One", "Impact", sans-serif;
+  --bg: #10120f; --bg-2: #141612; --surface: #181a16; --surface-2: #1f221c; --surface-3: #282b24;
+  --ink: #e6e4d8; --ink-2: #c4c1b2; --muted: #8e8b7c;
+  --gold: #c9b26a; --gold-hi: #e0cc8c; --gold-lo: #8c7a3e; --ember: #d9773e; --on-gold: #15140c; --hud: #9ccf6a;
+  --line: rgb(230 228 216 / 11%); --line-strong: rgb(201 178 106 / 36%); --human: #8fb0d0; --track: #0b0c0a;
+  --emblem: #cfcab2; --emblem-glow: rgb(156 207 106 / 18%); --m2: #161813; --tip-bg: #181a16f5;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(156 207 106 / 6%), transparent 60%), #10120f;
+}
+body[data-skin="tactical"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail, .btn, .tabs, .badge) { border-radius: 2px; }
+body[data-skin="tactical"] :is(.fact, .panel, .step, .detail) {
+  background:
+    linear-gradient(var(--hud), var(--hud)) 0 0 / 14px 2px no-repeat, linear-gradient(var(--hud), var(--hud)) 0 0 / 2px 14px no-repeat,
+    linear-gradient(var(--hud), var(--hud)) 100% 100% / 14px 2px no-repeat, linear-gradient(var(--hud), var(--hud)) 100% 100% / 2px 14px no-repeat,
+    var(--surface);
+}
+body[data-skin="tactical"] .section-head h2 { font-weight: 400; letter-spacing: .05em; text-transform: uppercase; }
+body[data-skin="tactical"] .section-head h2 .ico { color: var(--hud); }
+body[data-skin="tactical"] .fact dt, body[data-skin="tactical"] .board-head, body[data-skin="tactical"] .detail h4 { font-family: var(--body); font-weight: 700; color: var(--hud); letter-spacing: .14em; }
+body[data-skin="tactical"] .btn.primary { background: var(--gold); color: var(--on-gold); box-shadow: none; }
+body[data-skin="tactical"] .badge.cleared { background: var(--hud); color: #10140a; }
+body[data-skin="tactical"] .bossbar { height: 10px; border-radius: 0; background: var(--track); border: 1px solid rgb(156 207 106 / 35%); box-shadow: none; }
+body[data-skin="tactical"] .bossbar::before,
+body[data-skin="tactical"] .bossbar::after { display: none; }
+body[data-skin="tactical"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, #d9a441 0 9px, transparent 9px 12px); }
+body[data-skin="tactical"] .bossbar.cleared > i { background: repeating-linear-gradient(90deg, var(--hud) 0 9px, transparent 9px 12px); }
+body[data-skin="tactical"] .bossbar.human > i { background: repeating-linear-gradient(90deg, var(--human) 0 9px, transparent 9px 12px); }
+body[data-skin="tactical"] .node { border-radius: 2px; transform: none; }
+body[data-skin="tactical"] .node span { transform: none; }
+body[data-skin="tactical"] .path li.hit .node { background: var(--hud); border-color: var(--hud); box-shadow: none; }
+body[data-skin="tactical"] .path li.hit .node span { color: #10140a; }
+body[data-skin="tactical"] .path li.final .name { text-transform: uppercase; color: var(--hud); }
+body[data-skin="tactical"] .banner { background: radial-gradient(60% 90% at 80% 10%, rgb(156 207 106 / 10%), transparent 70%), linear-gradient(180deg, #262a20 0%, #181b15 60%, #10120f 100%); }
+body[data-skin="tactical"] .banner::before {
+  content: ""; position: absolute; z-index: -2; right: calc(var(--gutter) - 10px); top: 14px; width: clamp(220px, 28vw, 320px); aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid rgb(156 207 106 / 32%);
+  background:
+    linear-gradient(rgb(156 207 106 / 32%), rgb(156 207 106 / 32%)) center / 1px 100% no-repeat,
+    linear-gradient(rgb(156 207 106 / 32%), rgb(156 207 106 / 32%)) center / 100% 1px no-repeat,
+    radial-gradient(circle, transparent 30%, rgb(156 207 106 / 22%) 30.4% 31%, transparent 31.4%);
+}
+body[data-skin="tactical"] .banner .emblem { right: calc(var(--gutter) + 40px); top: 60px; }
+body[data-skin="tactical"] .banner .mountains .m1 { fill: #2a2e24; }
+body[data-skin="tactical"] .banner .mountains .m2 { fill: #1d2019; }
+body[data-skin="tactical"] .banner h1 { font-weight: 400; text-transform: uppercase; letter-spacing: .04em; font-size: clamp(36px, 5.6vw, 66px); }
+
+/* ======================================================================
    Home-page cards: a hint of each game's skin (title type + key-art texture)
    ====================================================================== */
 .card[data-skin="gb-dmg"] h3,
@@ -709,6 +903,31 @@ body[data-skin="shinobi"]::before { opacity: .05; }
 .card[data-skin^="gb"] .keyart .mountains,
 .card[data-skin="gba-emerald"] .keyart .mountains,
 .card[data-skin="platformer"] .keyart .mountains { display: none; }
+
+.card[data-skin="erdtree"] h3 { font-family: "Cormorant Garamond", serif; font-size: 25px; font-weight: 700; letter-spacing: .02em; }
+.card[data-skin="sunset"] h3 { font-family: "Anton", sans-serif; font-weight: 400; font-size: 24px; text-transform: uppercase; letter-spacing: .01em; }
+.card[data-skin="neon"] h3 { font-family: "Rajdhani", sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: .05em; }
+.card[data-skin="tactical"] h3 { font-family: "Saira Stencil One", sans-serif; font-weight: 400; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; }
+.card[data-skin="erdtree"] .keyart { background: radial-gradient(40% 80% at 78% 40%, rgb(242 205 110 / 38%), transparent 70%), linear-gradient(180deg, #1d1b14, #0d0d0c); }
+.card[data-skin="erdtree"] .keyart .emblem { color: #f2dc9a; filter: drop-shadow(0 0 22px rgb(242 205 110 / 60%)); }
+.card[data-skin="sunset"] .keyart { background: linear-gradient(180deg, #2a1d4a 0%, #6e3466 38%, #d0636e 66%, #ee9a5c 88%, #f5c983 100%); }
+.card[data-skin="sunset"] .keyart .emblem { color: #1d1424; filter: none; }
+.card[data-skin="sunset"] .keyart .mountains .m1 { fill: #5a2c58; }
+.card[data-skin="sunset"] .keyart .mountains .m2 { fill: #3a2044; }
+.card[data-skin="neon"] .keyart {
+  background: linear-gradient(104deg, transparent 0 60%, rgb(230 216 78 / 80%) 60% 61.5%, transparent 61.5%),
+    linear-gradient(rgb(95 211 220 / 9%) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(90deg, rgb(95 211 220 / 9%) 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(60% 90% at 80% 20%, rgb(240 100 110 / 28%), transparent 70%), #0b0d12;
+}
+.card[data-skin="neon"] .keyart .emblem { color: #e6d84e; }
+.card[data-skin="neon"] .keyart .mountains { display: none; }
+.card[data-skin="tactical"] .keyart {
+  background: radial-gradient(circle at 76% 44%, transparent 0 56px, rgb(156 207 106 / 35%) 57px 58px, transparent 59px),
+    linear-gradient(rgb(156 207 106 / 30%), rgb(156 207 106 / 30%)) 76% 0 / 1px 100% no-repeat,
+    linear-gradient(180deg, #2a2e24, #10120f);
+}
+.card[data-skin="tactical"] .keyart .emblem { color: #cfcab2; filter: none; }
+.card[data-skin="tactical"] .keyart .mountains .m1 { fill: #2a2e24; }
 
 /* banner progress count sits on the banner art, not a panel */
 body[data-family="pixel"] .banner .num { color: var(--banner-ink); }
@@ -845,3 +1064,81 @@ body[data-skin="spire"][data-tone="light"] .panel,
 body[data-skin="spire"][data-tone="light"] .detail { box-shadow: inset 0 0 0 4px rgb(154 116 40 / 6%), inset 0 0 0 5px rgb(154 116 40 / 18%); }
 body[data-skin="spire"][data-tone="light"] .bossbar { border-color: #c9b89a; background: #efe6d6; }
 body[data-skin="spire"][data-tone="light"] .node { border-color: #b8ad96; }
+
+/* -- erdtree, light: vellum and gilt -- */
+body[data-skin="erdtree"][data-tone="light"] {
+  --bg: #f2efe6; --bg-2: #ece8dc; --surface: #fcfbf6; --surface-2: #f4f1e8; --surface-3: #e7e2d4;
+  --ink: #1e1c16; --ink-2: #413c31; --muted: #6c6556;
+  --gold: #8f7230; --gold-hi: #6e5520; --gold-lo: #b89a54; --ember: #8f7230; --on-gold: #fcfbf6;
+  --line: rgb(143 114 48 / 18%); --line-strong: rgb(143 114 48 / 38%); --human: #3a6a9a; --track: #e7e2d4; --tip-bg: #fcfbf6f8;
+  --emblem: #8f7230; --emblem-glow: rgb(214 170 70 / 45%); --m2: #e2ddcf;
+  --page-bg: radial-gradient(1000px 520px at 78% -12%, rgb(184 140 50 / 9%), transparent 60%), #f2efe6;
+}
+body[data-skin="erdtree"][data-tone="light"] .banner { background: radial-gradient(34% 70% at 80% 32%, rgb(230 190 90 / 34%), transparent 70%), linear-gradient(180deg, #e8e2d0, #f2efe6); }
+body[data-skin="erdtree"][data-tone="light"] .banner::before { background: repeating-radial-gradient(circle, rgb(143 114 48 / 16%) 0 1px, transparent 1px 24px); }
+body[data-skin="erdtree"][data-tone="light"] .banner .mountains .m1 { fill: #dcd5c2; }
+body[data-skin="erdtree"][data-tone="light"] .banner .mountains .m2 { fill: #e6e0cf; }
+body[data-skin="erdtree"][data-tone="light"] .banner h1 { color: #1e1c16; }
+body[data-skin="erdtree"][data-tone="light"] .bossbar { background: #ebe6d8; }
+
+/* -- sunset, light: daytime boulevard (the banner keeps its dusk sky) -- */
+body[data-skin="sunset"][data-tone="light"] {
+  --bg: #f7f1ea; --bg-2: #f2eae1; --surface: #fffdf9; --surface-2: #f8f2ea; --surface-3: #ede4d8;
+  --ink: #221a20; --ink-2: #463a42; --muted: #73666e;
+  --gold: #b8622a; --gold-hi: #924a1a; --gold-lo: #d88a52; --ember: #c2485a; --on-gold: #fffdf9; --cash: #3f8a32;
+  --line: rgb(34 26 32 / 12%); --line-strong: rgb(184 98 42 / 38%); --human: #2f6aa8; --track: #ede4d8; --tip-bg: #fffdf9f8; --m2: #ede4d8;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(232 112 122 / 8%), transparent 60%), #f7f1ea;
+}
+body[data-skin="sunset"][data-tone="light"] .bossbar { background: #ede4d8; border-color: #221a20; }
+body[data-skin="sunset"][data-tone="light"] .btn.primary { color: #1a1008; }
+
+/* -- neon, light: hazard-yellow signage -- */
+body[data-skin="neon"][data-tone="light"] {
+  --bg: #f3f1e4; --bg-2: #eeebdb; --surface: #fffef7; --surface-2: #f6f4e6; --surface-3: #eae6d0;
+  --ink: #15171c; --ink-2: #363a44; --muted: #636874;
+  --gold: #7a6e00; --gold-hi: #5c5300; --gold-lo: #b0a22a; --ember: #c23a48; --on-gold: #15171c; --cyan: #137f8a;
+  --line: rgb(21 23 28 / 13%); --line-strong: rgb(21 23 28 / 32%); --human: #137f8a; --track: #eae6d0; --tip-bg: #fffef7f8;
+  --emblem: #15171c; --emblem-glow: transparent; --m2: #eae6d0; --skyline: #15171c;
+  --page-bg: #f3f1e4;
+}
+body[data-skin="neon"][data-tone="light"] .banner {
+  background:
+    linear-gradient(104deg, transparent 0 66%, rgb(21 23 28 / 85%) 66% 67%, transparent 67% 69%, rgb(21 23 28 / 40%) 69% 69.4%, transparent 69.4%),
+    linear-gradient(rgb(21 23 28 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgb(21 23 28 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
+    #e8dc6a;
+}
+body[data-skin="neon"][data-tone="light"] .banner::before { background: repeating-linear-gradient(0deg, rgb(0 0 0 / 5%) 0 1px, transparent 1px 3px); }
+body[data-skin="neon"][data-tone="light"] .banner h1 { color: #15171c; text-shadow: 2px 0 rgb(194 58 72 / 55%), -2px 0 rgb(19 127 138 / 55%); }
+body[data-skin="neon"][data-tone="light"] .banner :is(p.desc, .crumbs, .crumbs a) { color: #2a2d33; }
+body[data-skin="neon"][data-tone="light"] .banner .tag { background: rgb(255 254 247 / 65%); color: #15171c; }
+body[data-skin="neon"][data-tone="light"] .banner .frontier .label { color: #15171c; }
+body[data-skin="neon"][data-tone="light"] .banner .frontier .label span:last-child { color: #2a2d33; }
+body[data-skin="neon"][data-tone="light"] .banner .num { color: #15171c; }
+body[data-skin="neon"][data-tone="light"] .btn.primary,
+body[data-skin="neon"][data-tone="light"] .badge.cleared,
+body[data-skin="neon"][data-tone="light"] .path li.hit .node,
+body[data-skin="neon"][data-tone="light"] .bossbar.cleared > i { background: #e0d23e; border-color: #15171c; color: #15171c; }
+body[data-skin="neon"][data-tone="light"] .bossbar > i { box-shadow: none; }
+
+/* -- tactical, light: desert khaki -- */
+body[data-skin="tactical"][data-tone="light"] {
+  --bg: #eeebe0; --bg-2: #e8e4d6; --surface: #fbfaf4; --surface-2: #f3f1e7; --surface-3: #e5e1d2;
+  --ink: #1f211a; --ink-2: #3f4236; --muted: #6a6b5c;
+  --gold: #7a6a2a; --gold-hi: #5c4f1a; --gold-lo: #a8945a; --ember: #b0582a; --on-gold: #fbfaf4; --hud: #4f7a2a;
+  --line: rgb(31 33 26 / 12%); --line-strong: rgb(122 106 42 / 38%); --human: #2f6a98; --track: #e5e1d2; --tip-bg: #fbfaf4f8;
+  --emblem: #3f4236; --emblem-glow: transparent; --m2: #e0dccb;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(79 122 42 / 6%), transparent 60%), #eeebe0;
+}
+body[data-skin="tactical"][data-tone="light"] .banner { background: radial-gradient(60% 90% at 80% 10%, rgb(79 122 42 / 10%), transparent 70%), linear-gradient(180deg, #d9d5c2, #eeebe0); }
+body[data-skin="tactical"][data-tone="light"] .banner::before {
+  border-color: rgb(79 122 42 / 40%);
+  background:
+    linear-gradient(rgb(79 122 42 / 40%), rgb(79 122 42 / 40%)) center / 1px 100% no-repeat,
+    linear-gradient(rgb(79 122 42 / 40%), rgb(79 122 42 / 40%)) center / 100% 1px no-repeat,
+    radial-gradient(circle, transparent 30%, rgb(79 122 42 / 30%) 30.4% 31%, transparent 31.4%);
+}
+body[data-skin="tactical"][data-tone="light"] .banner .mountains .m1 { fill: #cfcab5; }
+body[data-skin="tactical"][data-tone="light"] .banner .mountains .m2 { fill: #ddd8c6; }
+body[data-skin="tactical"][data-tone="light"] .bossbar > i { background: repeating-linear-gradient(90deg, #b07e1e 0 9px, transparent 9px 12px); }
+body[data-skin="tactical"][data-tone="light"] .badge.cleared { color: #fbfaf4; }

@@ -1,8 +1,8 @@
-// GameClearDojo — static, dependency-free leaderboard.
+// GameMoonshot — static, dependency-free leaderboard.
 // Data comes from data.json, which scripts/build.mjs assembles from data/.
 import { EMBLEMS, UI, MOUNTAINS } from "./icons.js";
 
-const CFG = window.DOJO_CONFIG ?? { repo: "your-org/gamecleardojo", branch: "main" };
+const CFG = window.MOONSHOT_CONFIG ?? { repo: "your-org/gamemoonshot", branch: "main" };
 const app = document.getElementById("app");
 const player = document.getElementById("player");
 
@@ -38,8 +38,9 @@ const SKINS = {
   "gb-dmg": { family: "pixel" }, "gb-crystal": { family: "pixel" }, "gba-emerald": { family: "pixel" }, "gb-adventure": { family: "pixel" },
   blocky: { family: "blocky" }, western: { family: "western" }, shinobi: { family: "shinobi" }, wukong: { family: "wukong" },
   platformer: { family: "platformer" }, terminal: { family: "terminal" }, spire: { family: "spire" },
+  erdtree: { family: "erdtree" }, sunset: { family: "sunset" }, neon: { family: "neon" }, tactical: { family: "tactical" },
 };
-const THEME_KEY = "dojo-theme";
+const THEME_KEY = "moonshot-theme";
 let THEME = document.body.dataset.tone === "light" ? "light" : "dark";
 function syncTheme() {
   document.body.dataset.tone = THEME;
@@ -264,7 +265,9 @@ function scoreRun(game, run) {
   const reached = run.milestones.filter((r) => order.has(r.id)).sort((a, b) => order.get(a.id) - order.get(b.id));
   const furthest = reached[reached.length - 1];
   const finalId = game.milestones.find((m) => m.final)?.id;
-  const elapsedVals = reached.map((r) => parseTime(r.elapsed)).filter((x) => x != null);
+  // time shown = when the last of the reached milestones was done (badges can come out of order)
+  const timed = reached.map((r) => ({ t: parseTime(r.elapsed), approx: !!r.approx })).filter((x) => x.t != null);
+  const last = timed.reduce((a, b) => (b.t >= (a?.t ?? -1) ? b : a), null);
   return {
     run,
     reachedIds: new Set(reached.map((r) => r.id)),
@@ -272,8 +275,8 @@ function scoreRun(game, run) {
     total: game.milestones.length,
     cleared: reached.some((r) => r.id === finalId),
     furthest: furthest ? game.milestones[order.get(furthest.id)] : null,
-    time: furthest ? parseTime(furthest.elapsed) ?? (elapsedVals.length ? Math.max(...elapsedVals) : null) : null,
-    approx: reached.some((r) => r.approx),
+    time: last?.t ?? null,
+    approx: !!last?.approx,
   };
 }
 const rankRuns = (game, runs) =>
@@ -305,8 +308,7 @@ function viewHome() {
   const videoCount = all.reduce((n, s) => n + (s.videos?.length ?? 0), 0);
   const verified = all.filter((s) => s.status === "verified").length;
 
-  const cards = DATA.games
-    .map((g) => {
+  const card = (g) => {
       const ranked = rankRuns(g, runsFor(g.id));
       const best = ranked[0];
       const vids = ranked.reduce((n, sc) => n + (sc.run.videos?.length ?? 0), 0);
@@ -337,8 +339,9 @@ function viewHome() {
           </div>
         </div>
       </a>`;
-    })
-    .join("");
+  };
+  const modern = DATA.games.filter((g) => g.tier === "modern").map(card).join("");
+  const classic = DATA.games.filter((g) => g.tier !== "modern").map(card).join("");
 
   VIDEO_REG = [];
   const footage = DATA.games
@@ -350,11 +353,12 @@ function viewHome() {
     <section class="hero">
       <canvas id="embers" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <div class="eyebrow">AI agents · real games · video proof</div>
+        <div class="eyebrow">This era's moonshot · AI agents · real games</div>
         <h1>Can your agent<br/>finish the game?</h1>
-        <p class="lede">GameClearDojo tracks AI agents playing full-length games — Pokémon, Minecraft, Red Dead Redemption 2,
-        Sekiro, Black Myth: Wukong and more. Each game is split into milestones (gyms, chapters, bosses); every claim shows
-        how well it is evidenced, and every board shows where human players stand.</p>
+        <p class="lede">Finishing a modern game end to end — seeing, planning and acting in real time across a story that takes a person
+        30 to 100 hours — is this era's moonshot for AI. GameMoonshot tracks how close agents get on Elden Ring, Cyberpunk 2077, GTA V,
+        Red Dead Redemption 2, Black Myth: Wukong and more. Each game is split into milestones (bosses, missions, chapters);
+        every claim shows how well it is evidenced, and every board shows where human players stand.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#games">${UI.sword} Choose a game</a>
           <a class="btn" href="#/submit">${UI.scroll} Submit a run</a>
@@ -373,11 +377,19 @@ function viewHome() {
     <div class="wrap">
       <section class="section" id="games">
         <div class="section-head">
-          <div><h2><span class="ico">${UI.sword}</span>Choose your trial</h2>
-          <div class="sub">One board per game. Partial runs count — every milestone reached is on the board.</div></div>
+          <div><h2><span class="ico">${UI.sword}</span>The moonshots</h2>
+          <div class="sub">Modern 3D games: real-time combat, open worlds, stories that take a human 20–100 hours. No AI has finished one yet. Partial runs count — every milestone reached is on the board.</div></div>
           <a class="btn small" href="${esc(repoUrl("/issues/new?template=new-game.yml"))}" target="_blank" rel="noopener">Propose a game</a>
         </div>
-        <div class="grid">${cards}</div>
+        <div class="grid">${modern}</div>
+      </section>
+
+      <section class="section" id="classics">
+        <div class="section-head">
+          <div><h2><span class="ico">${UI.scroll}</span>Test flights</h2>
+          <div class="sub">Retro, 2D and turn-based games — the kind existing benchmarks use (<a href="https://www.vgbench.com/" target="_blank" rel="noopener">VideoGameBench</a> runs one fixed harness on 1990s Game Boy and MS-DOS games). Kept here as test flights for comparison; <a href="#/rules">how GameMoonshot differs</a>.</div></div>
+        </div>
+        <div class="grid compact">${classic}</div>
       </section>
 
       ${
@@ -391,12 +403,12 @@ function viewHome() {
       }
 
       <section class="section">
-        <div class="section-head"><div><h2><span class="ico">${UI.scroll}</span>How the dojo works</h2></div></div>
+        <div class="section-head"><div><h2><span class="ico">${UI.scroll}</span>How it works</h2></div></div>
         <div class="steps">
-          <div class="step"><div class="n">I</div><h3>Pick a game</h3><p>Each game has an ordered list of milestones ending in the clear condition.</p></div>
-          <div class="step"><div class="n">II</div><h3>Record the run</h3><p>Upload the full, unedited run. Partial runs count.</p></div>
-          <div class="step"><div class="n">III</div><h3>Submit</h3><p>Video link and timestamps, hardware, models, and how the agent sees and acts.</p></div>
-          <div class="step"><div class="n">IV</div><h3>Get verified</h3><p>A maintainer watches the footage. Every run carries its evidence level.</p></div>
+          <div class="step"><div class="n">01</div><h3>Pick a game</h3><p>Each game has an ordered list of milestones ending in the clear condition.</p></div>
+          <div class="step"><div class="n">02</div><h3>Record the run</h3><p>Upload the full, unedited run. Partial runs count.</p></div>
+          <div class="step"><div class="n">03</div><h3>Submit</h3><p>Video link and timestamps, hardware, models, and how the agent sees and acts.</p></div>
+          <div class="step"><div class="n">04</div><h3>Get verified</h3><p>A maintainer watches the footage. Every run carries its evidence level.</p></div>
         </div>
       </section>
     </div>`;
@@ -691,10 +703,24 @@ function drawChart(game) {
   const order = new Map(game.milestones.map((m, i) => [m.id, i]));
   const series = rankRuns(game, runsFor(game.id)).map((sc) => {
     const reached = sc.run.milestones.filter((r) => order.has(r.id)).sort((a, b) => order.get(a.id) - order.get(b.id));
-    const pts = reached
-      .map((r, i) => ({ t: parseTime(r.elapsed), y: i + 1, ms: game.milestones[order.get(r.id)], approx: !!r.approx }))
-      .filter((p) => p.t != null && p.t > 0)
-      .sort((a, b) => a.t - b.t || a.y - b.y);
+    // y = milestones done by time t. Runs may take milestones out of list order (e.g. Marsh before Soul),
+    // and an untimed milestone counts as done by the earliest timed milestone listed after it.
+    const own = reached.map((r) => { const t = parseTime(r.elapsed); return t > 0 ? t : null; });
+    const eff = [];
+    for (let i = reached.length - 1, later = null; i >= 0; i--) {
+      if (own[i] != null) later = later == null ? own[i] : Math.min(later, own[i]);
+      eff[i] = own[i] ?? later;
+    }
+    const pts = [];
+    reached
+      .map((r, i) => ({ r, t: own[i], pos: i }))
+      .filter((p) => p.t != null)
+      .sort((a, b) => a.t - b.t || a.pos - b.pos)
+      .forEach(({ r, t }) => {
+        const p = { t, y: eff.filter((e) => e != null && e <= t).length, ms: game.milestones[order.get(r.id)], approx: !!r.approx };
+        if (pts.length && pts[pts.length - 1].t === t) pts[pts.length - 1] = p;
+        else pts.push(p);
+      });
     return { sc, pts, vendor: vendorOf(sc.run), ev: evidenceOf(sc.run) };
   });
   const plotted = series.filter((s) => s.pts.length);
@@ -758,17 +784,28 @@ function drawChart(game) {
       hitFor(X(h.t), Y(N), { title: h.b.label, lines: [h.b.note ?? "Human reference", `${fmtDuration(h.t)} for the whole game`], aria: `${h.b.label}: ${fmtDuration(h.t)}` }))
     .join("");
 
-  // direct labels: each run at its furthest point, plus the fastest human record
-  const placed = [];
-  const placeLabel = (x, y, text, cls = "") => {
-    const right = x < W - M.r - 160;
-    let ly = y + (y < M.t + 28 ? 30 : -18);
-    while (placed.some((l) => Math.abs(l.y - ly) < 15 && Math.abs(l.x - x) < 190)) ly += 15;
-    placed.push({ x, y: ly });
-    return `<text class="dlabel ${cls}" x="${right ? x + 4 : x - 4}" y="${ly}" text-anchor="${right ? "start" : "end"}">${esc(text)}</text>`;
+  // direct labels: each run at its furthest point (short model name; full name is in the tooltip),
+  // plus the fastest human record. Try spots around the mark; skip any that hit a label or icon.
+  const shortName = (s) => (s.sc.run.method?.models?.length === 1 ? s.sc.run.method.models[0] : s.sc.run.agent);
+  const names = plotted.map(shortName);
+  const nameOf = (s, i) => (names.filter((n) => n === names[i]).length > 1 ? s.sc.run.agent : names[i]);
+  const boxes = plotted.map((s) => { const p = s.pts[s.pts.length - 1]; return { x1: X(p.t) - 14, x2: X(p.t) + 14, y1: Y(p.y) - 14, y2: Y(p.y) + 14 }; });
+  if (humans[0]) boxes.push({ x1: X(humans[0].t) - 8, x2: X(humans[0].t) + 8, y1: Y(N) - 8, y2: Y(N) + 8 });
+  const hits = (b) => boxes.some((o) => b.x1 < o.x2 && b.x2 > o.x1 && b.y1 < o.y2 && b.y2 > o.y1);
+  const placeLabel = (x, y, text, cls = "", r = 17) => {
+    const w = text.length * 6.8 + 4;
+    const spots = [[x + r, y + 4, "start"], [x - r, y + 4, "end"]];
+    for (const dy of [18, -14, 32, -28, 46]) spots.push([x + r - 6, y + dy + 4, "start"], [x - r + 6, y + dy + 4, "end"]);
+    const boxOf = ([lx, ly, a]) => { const x1 = a === "start" ? lx : lx - w; return { x1, x2: x1 + w, y1: ly - 12, y2: ly + 3 }; };
+    const inside = (b) => b.x1 >= 2 && b.x2 <= W - 2 && b.y1 >= 0 && b.y2 <= Y(0) - 2;
+    // no clear spot (narrow screens): leave it to the tooltip and legend rather than overlap
+    const spot = spots.find((s) => { const b = boxOf(s); return inside(b) && !hits(b); });
+    if (!spot) return "";
+    boxes.push(boxOf(spot));
+    return `<text class="dlabel ${cls}" x="${spot[0]}" y="${spot[1]}" text-anchor="${spot[2]}">${esc(text)}</text>`;
   };
-  const aiLabels = plotted.map((s) => { const p = s.pts[s.pts.length - 1]; return placeLabel(X(p.t), Y(p.y), s.sc.run.agent); }).join("");
-  const humanLabel = humans[0] ? placeLabel(X(humans[0].t), Y(N), `Human record ${fmtDuration(humans[0].t)}`, "human-label") : "";
+  const aiLabels = plotted.map((s, i) => { const p = s.pts[s.pts.length - 1]; return placeLabel(X(p.t), Y(p.y), nameOf(s, i)); }).join("");
+  const humanLabel = humans[0] ? placeLabel(X(humans[0].t), Y(N), `${W < 560 ? "Human" : "Human record"} ${fmtDuration(humans[0].t)}`, "human-label", 11) : "";
 
   const vendorsShown = [...new Set(plotted.map((s) => s.vendor))];
   const ring = (k) => `<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="${EV[k].color}" stroke-width="2.2" stroke-dasharray="${RING_DASH[k]}"/></svg>`;
@@ -846,10 +883,24 @@ addEventListener("resize", () => {
 function viewRules() {
   return `
   <div class="wrap">
-    <div class="page-head"><h1>Rules of the dojo</h1>
+    <div class="page-head"><h1>Mission rules</h1>
       <p>The point is to measure how far agents get through real games, in a way other people can check.
       These rules apply to every game; a game page can add its own.</p></div>
     <article class="prose">
+      <h2>Why games are the moonshot — and how this differs from VideoGameBench</h2>
+      <p><a href="https://arxiv.org/abs/2505.18134" target="_blank" rel="noopener">VideoGameBench</a> (Zhang, Griffiths, Narasimhan and Press, 2025)
+      is a controlled benchmark: one agent harness, VG-Agent, wraps each vision-language model and plays 1990s Game Boy and MS-DOS games
+      (Doom II, Civilization I, Link's Awakening DX, Pokémon Crystal and others) from raw frames, scored at fixed checkpoints.</p>
+      <p>GameMoonshot asks a different question: how far does <i>any</i> agent get through the games people actually play today?</p>
+      <ul>
+        <li><b>Games.</b> The main boards are modern 3D titles — Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2, Black Myth: Wukong —
+        with real-time combat, open worlds and stories that take a human 20–100 hours. Retro and 2D boards stay as a lower rung for comparison;
+        a few of them (Pokémon Red, Pokémon Crystal, Link's Awakening DX) overlap with VideoGameBench's games.</li>
+        <li><b>Agents.</b> Any design is welcome: a frontier model in a custom harness, an RL policy, a multi-agent team. Runs are split into a
+        pixels-only and a harness track and must disclose their tools and any human help, rather than all sharing one harness.</li>
+        <li><b>Scoring.</b> Story milestones (bosses, missions, chapters) against play time, next to human speedrun records,
+        with every claim labeled by how well it is evidenced.</li>
+      </ul>
       <h2>What counts as a run</h2>
       <ul>
         <li>One continuous attempt by an AI agent on an unmodified official copy of the game (version noted).</li>
@@ -1049,7 +1100,7 @@ function bindSubmit() {
     const issue = new URL(repoUrl("/issues/new"));
     issue.searchParams.set("title", `[Run] ${gameTitle} — ${sub.agent} (${sub.team})`);
     issue.searchParams.set("labels", "submission");
-    issue.searchParams.set("body", `Submission generated on the GameClearDojo site.\n\n\`\`\`json\n${json}\n\`\`\`\n`);
+    issue.searchParams.set("body", `Submission generated on the GameMoonshot site.\n\n\`\`\`json\n${json}\n\`\`\`\n`);
     app.querySelector("#issue").href = issue.toString();
     app.querySelector("#copy").onclick = async () => {
       try { await navigator.clipboard.writeText(json); app.querySelector("#copy").textContent = "Copied"; }
@@ -1072,13 +1123,13 @@ function render() {
     html = viewGame(id);
     bind = () => bindGame(id);
     nav = "home";
-    document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameClearDojo`;
+    document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameMoonshot`;
   } else if (parts[0] === "rules") {
-    html = viewRules(); nav = "rules"; document.title = "Rules · GameClearDojo";
+    html = viewRules(); nav = "rules"; document.title = "Rules · GameMoonshot";
   } else if (parts[0] === "submit") {
-    html = viewSubmit(params); bind = bindSubmit; nav = "submit"; document.title = "Submit a run · GameClearDojo";
+    html = viewSubmit(params); bind = bindSubmit; nav = "submit"; document.title = "Submit a run · GameMoonshot";
   } else {
-    html = viewHome(); bind = startEmbers; nav = "home"; document.title = "GameClearDojo";
+    html = viewHome(); bind = startEmbers; nav = "home"; document.title = "GameMoonshot";
   }
   applySkin(parts[0] === "game" ? DATA.games.find((g) => g.id === decodeURIComponent(parts[1] ?? "")) : null);
   app.innerHTML = html;

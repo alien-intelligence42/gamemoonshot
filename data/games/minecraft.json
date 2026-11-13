@@ -1,6 +1,7 @@
 {
   "id": "minecraft",
-  "order": 4,
+  "order": 8,
+  "tier": "modern",
   "title": "Minecraft: Java Edition",
   "platform": "PC",
   "release_year": 2011,
@@ -63,7 +64,7 @@
     {
       "id": "eye-of-ender",
       "name": "Craft an Eye of Ender",
-      "description": "Dojo milestone, not an advancement"
+      "description": "Board milestone, not an advancement"
     },
     {
       "id": "eye-spy",

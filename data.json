@@ -2,107 +2,927 @@
  "updated": "2026-10-15",
  "games": [
   {
-   "id": "pokemon-red-blue",
+   "id": "elden-ring",
    "order": 1,
-   "title": "Pokémon Red / Blue",
-   "platform": "Game Boy",
-   "release_year": 1996,
-   "genre": "RPG",
-   "icon": "badge",
+   "tier": "modern",
+   "title": "Elden Ring",
+   "platform": "PC / PS4 / PS5 / Xbox",
+   "release_year": 2022,
+   "genre": "Action RPG",
+   "icon": "tree",
    "theme": [
-    "#8a2420",
-    "#1f2a5c"
+    "#8a6a24",
+    "#14130f"
    ],
-   "skin": "gb-dmg",
-   "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
-   "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
-   "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",
-   "timing": "Elapsed run time from New Game. Step counts may be given in notes.",
+   "skin": "erdtree",
+   "description": "Real-time third-person combat with tight dodge timing, and a 30–60 hour open world whose route is never spelled out: two of five demigods must fall before the capital opens. No AI agent has reported story progress yet; hobby RL bots train against Margit in a fixed arena and none reports a win.",
+   "clear_condition": "Defeat Radagon and the Elden Beast (base game, any ending).",
+   "timing": "Run time from the first input after character creation to the 'God Slain' banner.",
+   "rules": "Unmodified game, any patch (state it); base game only. Spirit Ashes and NPC summons are allowed; other players (co-op or invasions) are not — play offline. No cheats, trainers or frame-rate unlock mods unless disclosed. Shardbearers can be beaten in any order.",
    "milestones": [
     {
-     "id": "boulder-badge",
-     "name": "Boulder Badge",
-     "description": "Brock, Pewter City"
+     "id": "reach-limgrave",
+     "name": "Reach Limgrave",
+     "description": "Leave the Stranded Graveyard; the 'Limgrave' area title appears"
     },
     {
-     "id": "cascade-badge",
-     "name": "Cascade Badge",
-     "description": "Misty, Cerulean City"
+     "id": "margit",
+     "name": "Margit, the Fell Omen",
+     "description": "First major boss on the usual route; skippable by going around Stormveil"
     },
     {
-     "id": "thunder-badge",
-     "name": "Thunder Badge",
-     "description": "Lt. Surge, Vermilion City"
+     "id": "first-shardbearer",
+     "name": "First shardbearer",
+     "description": "Any of Godrick, Rennala, Radahn, Rykard or Mohg — usually Godrick the Grafted"
     },
     {
-     "id": "rainbow-badge",
-     "name": "Rainbow Badge",
-     "description": "Erika, Celadon City"
+     "id": "second-shardbearer",
+     "name": "Second shardbearer",
+     "description": "Two Great Runes open the way to the capital"
     },
     {
-     "id": "soul-badge",
-     "name": "Soul Badge",
-     "description": "Koga, Fuchsia City"
+     "id": "reach-leyndell",
+     "name": "Reach Leyndell, Royal Capital",
+     "description": "Area title 'Leyndell, Royal Capital'"
     },
     {
-     "id": "marsh-badge",
-     "name": "Marsh Badge",
-     "description": "Sabrina, Saffron City"
+     "id": "morgott",
+     "name": "Morgott, the Omen King"
     },
     {
-     "id": "volcano-badge",
-     "name": "Volcano Badge",
-     "description": "Blaine, Cinnabar Island"
+     "id": "fire-giant",
+     "name": "Fire Giant"
     },
     {
-     "id": "earth-badge",
-     "name": "Earth Badge",
-     "description": "Giovanni, Viridian City"
+     "id": "godskin-duo",
+     "name": "Godskin Duo"
     },
     {
-     "id": "e4-lorelei",
-     "name": "Elite Four: Lorelei"
+     "id": "maliketh",
+     "name": "Maliketh, the Black Blade"
     },
     {
-     "id": "e4-bruno",
-     "name": "Elite Four: Bruno"
+     "id": "hoarah-loux",
+     "name": "Godfrey, First Elden Lord (Hoarah Loux)"
     },
     {
-     "id": "e4-agatha",
-     "name": "Elite Four: Agatha"
-    },
-    {
-     "id": "e4-lance",
-     "name": "Elite Four: Lance"
-    },
-    {
-     "id": "champion",
-     "name": "Champion defeated — Hall of Fame",
+     "id": "elden-beast",
+     "name": "Radagon and the Elden Beast",
+     "description": "'God Slain', then an ending",
      "final": true
     }
    ],
    "human_baselines": [
     {
-     "label": "Speedrun WR — Any% Glitchless",
-     "time": "1:43:40",
-     "note": "speedrun.com world record (ENG) by SlNNED",
-     "source": "https://www.speedrun.com/pkmnredblue/runs/y4n7endm"
+     "label": "Speedrun WR — Any% Glitchless (PC)",
+     "time": "0:51:45",
+     "note": "speedrun.com world record by Karlitto (v1.07)",
+     "source": "https://www.speedrun.com/eldenring/runs/zqo84jxy"
+    },
+    {
+     "label": "Speedrun WR — All Remembrances, No DLC, Glitchless (PC)",
+     "time": "1:46:07",
+     "note": "speedrun.com world record by Yzqanghii; beats every remembrance boss",
+     "source": "https://www.speedrun.com/eldenring/runs/m349rkgz"
     }
    ],
    "links": [
     {
-     "label": "Claude Plays Pokémon (TechCrunch)",
-     "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+     "label": "G.A.L.E. — hobby PPO agent vs. Margit (no win yet)",
+     "url": "https://github.com/mr-raichman/eldenring-ai"
     },
     {
-     "label": "On comparing Pokémon harnesses (TIME)",
-     "url": "https://time.com/7345903/ai-chatgpt-claude-gemini-pokemon"
+     "label": "EldenRL — hobby RL boss arena (no boss defeated)",
+     "url": "https://github.com/ocram444/EldenRL"
+    },
+    {
+     "label": "3A-VLA — zero-shot combat transfer, 'hit' rate only",
+     "url": "https://arxiv.org/abs/2602.02212"
+    },
+    {
+     "label": "Elden Ring wiki: bosses and which are mandatory",
+     "url": "https://eldenring.wiki.gg/wiki/Bosses"
+    }
+   ]
+  },
+  {
+   "id": "cyberpunk-2077",
+   "order": 2,
+   "tier": "modern",
+   "title": "Cyberpunk 2077",
+   "platform": "PC / PS5 / Xbox Series",
+   "release_year": 2020,
+   "genre": "Open-world RPG",
+   "icon": "chip",
+   "theme": [
+    "#8a2a3a",
+    "#0c1420"
+   ],
+   "skin": "neon",
+   "description": "A first-person open world that keeps switching modes: gunfights, driving, branching dialogue, breach minigames and inventory, in a dense vertical city where the quest marker doesn't show the way. No AI agent has reported finishing a main job yet.",
+   "clear_condition": "Reach the credits of any ending (base game or Phantom Liberty).",
+   "timing": "Run time from leaving character creation to the start of the final cutscene, as on speedrun.com.",
+   "rules": "Unmodified game, any patch (state it; 2.0+ and pre-2.0 play differently). Any lifepath and difficulty (state it). No cheats, trainers or console commands. Mods that only read game state for the agent are allowed on the harness track and must be disclosed.",
+   "milestones": [
+    {
+     "id": "the-rescue",
+     "name": "The Rescue",
+     "description": "First job after the lifepath prologue"
+    },
+    {
+     "id": "the-ripperdoc",
+     "name": "The Ripperdoc"
+    },
+    {
+     "id": "the-pickup",
+     "name": "The Pickup"
+    },
+    {
+     "id": "the-heist",
+     "name": "The Heist",
+     "description": "End of Act 1 (Konpeki Plaza)"
+    },
+    {
+     "id": "love-like-fire",
+     "name": "Love Like Fire",
+     "description": "Interlude into Act 2"
+    },
+    {
+     "id": "playing-for-time",
+     "name": "Playing for Time",
+     "description": "First Act 2 job"
+    },
+    {
+     "id": "automatic-love",
+     "name": "Automatic Love"
+    },
+    {
+     "id": "double-life",
+     "name": "Double Life"
+    },
+    {
+     "id": "transmission",
+     "name": "Transmission",
+     "description": "End of the Voodoo Boys line"
+    },
+    {
+     "id": "search-and-destroy",
+     "name": "Search and Destroy",
+     "description": "End of the Hanako line"
+    },
+    {
+     "id": "nocturne-op55n1",
+     "name": "Nocturne Op55N1",
+     "description": "Point of no return"
+    },
+    {
+     "id": "ending",
+     "name": "Any ending",
+     "description": "Credits roll after any final mission",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (2.0+, PC)",
+     "time": "2:56:14",
+     "note": "speedrun.com world record by _Wutz_ (real time)",
+     "source": "https://www.speedrun.com/cyberpunk_2077/runs/ydn37wwm"
+    },
+    {
+     "label": "Speedrun WR — Any% Glitchless (pre-2.0, PC)",
+     "time": "3:12:10",
+     "note": "speedrun.com world record by _Wutz_ (load-removed)",
+     "source": "https://www.speedrun.com/cyberpunk_2077/runs/mkv5knxy"
+    }
+   ],
+   "links": [
+    {
+     "label": "CyberpunkAgent — hobby LLM agent via a game-state mod (no missions reported)",
+     "url": "https://github.com/Oli97430/CyberpunkAgent"
+    },
+    {
+     "label": "NitroGen — NVIDIA's generalist gamepad model (press says it was shown on Cyberpunk; the paper doesn't name it)",
+     "url": "https://arxiv.org/abs/2601.02427"
+    },
+    {
+     "label": "Main missions list (gamepressure)",
+     "url": "https://www.gamepressure.com/cyberpunk-2077/main-missions/zcc7aa"
+    }
+   ]
+  },
+  {
+   "id": "gta-v",
+   "order": 3,
+   "tier": "modern",
+   "title": "Grand Theft Auto V",
+   "platform": "PC / PS4 / PS5 / Xbox",
+   "release_year": 2013,
+   "genre": "Open-world action",
+   "icon": "palm",
+   "theme": [
+    "#c0566a",
+    "#2a1d4a"
+   ],
+   "skin": "sunset",
+   "description": "About 32 hours of story for a typical player (HowLongToBeat): driving, flying, boating and cover shooting under strict fail conditions, three switchable characters and heist plans. No AI agent has reported passing a full story mission yet; the GTAGym benchmark tests sub-tasks, not whole missions.",
+   "clear_condition": "Finish the story: pass any of the three final missions (The Third Way, Something Sensible, or The Time's Come).",
+   "timing": "Run time from the 'Ludendorff, North Yankton' title to the end of the final mission.",
+   "rules": "Story mode, unmodified game, any version (state Legacy or Enhanced). No cheat codes, trainers or taxi fast travel; do not use the skip offered after failing a mission three times. Mods that only read game state for the agent are allowed on the harness track and must be disclosed.",
+   "milestones": [
+    {
+     "id": "prologue",
+     "name": "Prologue (North Yankton)",
+     "description": "Done once Franklin's story starts in Los Santos"
+    },
+    {
+     "id": "franklin-and-lamar",
+     "name": "Franklin and Lamar"
+    },
+    {
+     "id": "the-jewel-store-job",
+     "name": "The Jewel Store Job"
+    },
+    {
+     "id": "mr-philips",
+     "name": "Mr. Philips",
+     "description": "Trevor's introduction"
+    },
+    {
+     "id": "friends-reunited",
+     "name": "Friends Reunited"
+    },
+    {
+     "id": "threes-company",
+     "name": "Three's Company"
+    },
+    {
+     "id": "the-merryweather-heist",
+     "name": "The Merryweather Heist"
+    },
+    {
+     "id": "blitz-play",
+     "name": "Blitz Play"
+    },
+    {
+     "id": "the-paleto-score",
+     "name": "The Paleto Score"
+    },
+    {
+     "id": "the-bureau-raid",
+     "name": "The Bureau Raid"
+    },
+    {
+     "id": "lamar-down",
+     "name": "Lamar Down"
+    },
+    {
+     "id": "the-big-score",
+     "name": "The Big Score"
+    },
+    {
+     "id": "ending",
+     "name": "Any ending",
+     "description": "The Third Way, Something Sensible, or The Time's Come — 'Mission Passed'",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Classic, no glitches (PC)",
+     "time": "5:36:54",
+     "note": "speedrun.com world record by UnNameD; Classic rules: no taxis, no mission skips, The Third Way ending",
+     "source": "https://www.speedrun.com/gtav/runs/m7oqel5y"
+    },
+    {
+     "label": "Speedrun WR — All Missions (PC)",
+     "time": "11:00:22",
+     "note": "speedrun.com world record by UnNameD; every story mission plus Strangers and Freaks",
+     "source": "https://www.speedrun.com/gtav/runs/y2nvj2wy"
+    }
+   ],
+   "links": [
+    {
+     "label": "GTAGym / GTAVBench — benchmark of story sub-tasks (arXiv 2611.13028)",
+     "url": "https://arxiv.org/abs/2611.13028"
+    },
+    {
+     "label": "WANTED — hobby Claude agent via a game-state mod (no mission passed yet)",
+     "url": "https://github.com/devzer0x/wanted"
+    },
+    {
+     "label": "HowLongToBeat: Grand Theft Auto V",
+     "url": "https://howlongtobeat.com/game/4064"
+    },
+    {
+     "label": "Missions in GTA V (Grand Theft Wiki)",
+     "url": "https://www.grandtheftwiki.com/Missions_in_GTA_V"
+    }
+   ]
+  },
+  {
+   "id": "rdr2",
+   "order": 4,
+   "tier": "modern",
+   "title": "Red Dead Redemption 2",
+   "platform": "PC / PS4 / Xbox One",
+   "release_year": 2018,
+   "genre": "Open-world action",
+   "icon": "horseshoe",
+   "theme": [
+    "#8a3a18",
+    "#2a1a10"
+   ],
+   "skin": "western",
+   "description": "A AAA open world with long, story-gated chapters. Cradle showed a general computer-control agent could play early story missions from screenshots alone; no AI chapter clear has been reported yet.",
+   "clear_condition": "Complete the final Epilogue mission “American Venom”.",
+   "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
+   "milestones": [
+    {
+     "id": "ch1-colter",
+     "name": "Chapter 1: Colter",
+     "description": "Final mission: Eastward Bound"
+    },
+    {
+     "id": "ch2-horseshoe-overlook",
+     "name": "Chapter 2: Horseshoe Overlook",
+     "description": "Final mission: A Strange Kindness"
+    },
+    {
+     "id": "ch3-clemens-point",
+     "name": "Chapter 3: Clemens Point",
+     "description": "Final mission: The Battle of Shady Belle"
+    },
+    {
+     "id": "ch4-saint-denis",
+     "name": "Chapter 4: Saint Denis",
+     "description": "Final mission: Banking, the Old American Art"
+    },
+    {
+     "id": "ch5-guarma",
+     "name": "Chapter 5: Guarma",
+     "description": "Final mission: That's Murfree Country"
+    },
+    {
+     "id": "ch6-beaver-hollow",
+     "name": "Chapter 6: Beaver Hollow",
+     "description": "Final mission: Red Dead Redemption"
+    },
+    {
+     "id": "epilogue-1",
+     "name": "Epilogue Part 1: Pronghorn Ranch",
+     "description": "Final mission: Gainful Employment"
+    },
+    {
+     "id": "epilogue-2",
+     "name": "Epilogue Part 2: Beecher's Hope",
+     "description": "Final mission: American Venom",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (No Checkpoint Skips)",
+     "time": "12:26:26",
+     "note": "speedrun.com world record by Hess",
+     "source": "https://www.speedrun.com/rdr2/runs/m38d714y"
+    },
+    {
+     "label": "Speedrun WR — Any% (Checkpoint Skips)",
+     "time": "8:36:31",
+     "note": "speedrun.com world record by FreshRigi",
+     "source": "https://www.speedrun.com/rdr2/runs/y8ow1d1m"
+    }
+   ],
+   "links": [
+    {
+     "label": "Cradle project page",
+     "url": "https://baai-agents.github.io/Cradle"
+    }
+   ]
+  },
+  {
+   "id": "black-myth-wukong",
+   "order": 5,
+   "tier": "modern",
+   "title": "Black Myth: Wukong",
+   "platform": "PC / PS5",
+   "release_year": 2024,
+   "genre": "Action RPG",
+   "icon": "staff",
+   "theme": [
+    "#9a7020",
+    "#2a1608"
+   ],
+   "skin": "wukong",
+   "deco": "黑神话·悟空",
+   "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
+   "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
+   "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",
+   "milestones": [
+    {
+     "id": "ch1",
+     "name": "Chapter 1: Black Wind Mountain"
+    },
+    {
+     "id": "ch2",
+     "name": "Chapter 2: Yellow Wind Ridge"
+    },
+    {
+     "id": "ch3",
+     "name": "Chapter 3: The New West"
+    },
+    {
+     "id": "ch4",
+     "name": "Chapter 4: The Webbed Hollow"
+    },
+    {
+     "id": "ch5",
+     "name": "Chapter 5: Flaming Mountains"
+    },
+    {
+     "id": "ch6",
+     "name": "Chapter 6: Mount Huaguo — credits",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (PC, Glitchless)",
+     "time": "2:31:34",
+     "note": "speedrun.com world record by XiaoYume (2:31:34.630)",
+     "source": "https://www.speedrun.com/BMW/runs/m38kpxdy"
+    },
+    {
+     "label": "Speedrun WR — Any% (PC, Unrestricted)",
+     "time": "0:46:15",
+     "note": "speedrun.com world record by Non_Come (46:15.780)",
+     "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
+    }
+   ],
+   "links": [
+    {
+     "label": "VARP agent (arXiv 2409.12889)",
+     "url": "https://arxiv.org/abs/2409.12889"
+    },
+    {
+     "label": "CombatVLA",
+     "url": "https://arxiv.org/html/2503.09527v2"
+    }
+   ]
+  },
+  {
+   "id": "sekiro",
+   "order": 6,
+   "tier": "modern",
+   "title": "Sekiro: Shadows Die Twice",
+   "platform": "PC / PS4 / Xbox One",
+   "release_year": 2019,
+   "genre": "Action",
+   "icon": "katana",
+   "theme": [
+    "#7a1a1a",
+    "#161210"
+   ],
+   "skin": "shinobi",
+   "deco": "隻狼",
+   "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
+   "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
+   "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",
+   "milestones": [
+    {
+     "id": "gyoubu",
+     "name": "Gyoubu Masataka Oniwa"
+    },
+    {
+     "id": "lady-butterfly",
+     "name": "Lady Butterfly"
+    },
+    {
+     "id": "genichiro",
+     "name": "Genichiro Ashina"
+    },
+    {
+     "id": "folding-screen-monkeys",
+     "name": "Folding Screen Monkeys"
+    },
+    {
+     "id": "guardian-ape",
+     "name": "Guardian Ape"
+    },
+    {
+     "id": "corrupted-monk",
+     "name": "Corrupted Monk"
+    },
+    {
+     "id": "great-shinobi-owl",
+     "name": "Great Shinobi Owl"
+    },
+    {
+     "id": "divine-dragon",
+     "name": "Divine Dragon"
+    },
+    {
+     "id": "final-boss",
+     "name": "Final boss of any ending",
+     "description": "Isshin, the Sword Saint, or the Shura ending's final fight",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Immortal Severance (PC, Glitchless)",
+     "time": "0:38:57",
+     "note": "speedrun.com world record by Yeruka",
+     "source": "https://www.speedrun.com/sekiro/runs/y6jrqeqm"
+    },
+    {
+     "label": "Speedrun WR — Shura (PC, Glitchless)",
+     "time": "0:27:59",
+     "note": "speedrun.com world record by Yeruka",
+     "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
+    }
+   ],
+   "links": [
+    {
+     "label": "CombatVLA (isolated Sekiro / Wukong fights)",
+     "url": "https://arxiv.org/html/2503.09527v2"
+    },
+    {
+     "label": "Fextralife: Bosses",
+     "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"
+    }
+   ]
+  },
+  {
+   "id": "call-of-duty-mw2",
+   "order": 7,
+   "tier": "modern",
+   "title": "Call of Duty: Modern Warfare 2",
+   "platform": "PC (2009)",
+   "release_year": 2009,
+   "genre": "First-person shooter (campaign)",
+   "icon": "dogtag",
+   "theme": [
+    "#4a5a2a",
+    "#10120f"
+   ],
+   "skin": "tactical",
+   "description": "The single-player campaign: real-time aiming at sub-second speed, timed set pieces like the snowmobile chase, and checkpoint-only saves — hard for agents that act on slow, sparse screenshots. No AI agent has reported playing any Call of Duty campaign; the nearest research is on ViZDoom.",
+   "clear_condition": "Finish the final level, Endgame (the knife throw).",
+   "timing": "Run time from the end of the S.S.D.D. load to the knife throw in Endgame, as on speedrun.com.",
+   "rules": "Original 2009 PC release, unmodified (Campaign Remastered is a different game). Any difficulty — state it; Recruit and Veteran are compared separately. No console commands, trainers or aim assistance outside the game's own. Levels may be selected from the menu only after they were reached in the run.",
+   "milestones": [
+    {
+     "id": "ssdd",
+     "name": "S.S.D.D.",
+     "description": "Training level"
+    },
+    {
+     "id": "team-player",
+     "name": "Team Player"
+    },
+    {
+     "id": "cliffhanger",
+     "name": "Cliffhanger"
+    },
+    {
+     "id": "takedown",
+     "name": "Takedown",
+     "description": "No Russian, before it, can be skipped and is not counted"
+    },
+    {
+     "id": "wolverines",
+     "name": "Wolverines!"
+    },
+    {
+     "id": "the-hornets-nest",
+     "name": "The Hornet's Nest"
+    },
+    {
+     "id": "exodus",
+     "name": "Exodus"
+    },
+    {
+     "id": "the-only-easy-day-was-yesterday",
+     "name": "The Only Easy Day... Was Yesterday"
+    },
+    {
+     "id": "the-gulag",
+     "name": "The Gulag"
+    },
+    {
+     "id": "of-their-own-accord",
+     "name": "Of Their Own Accord"
+    },
+    {
+     "id": "contingency",
+     "name": "Contingency"
+    },
+    {
+     "id": "whiskey-hotel",
+     "name": "Whiskey Hotel"
+    },
+    {
+     "id": "loose-ends",
+     "name": "Loose Ends"
+    },
+    {
+     "id": "just-like-old-times",
+     "name": "Just Like Old Times"
+    },
+    {
+     "id": "endgame",
+     "name": "Endgame",
+     "description": "The knife throw ends the run",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Recruit (PC)",
+     "time": "1:19:21",
+     "note": "speedrun.com world record by medz",
+     "source": "https://www.speedrun.com/mw2/runs/zxp49ogy"
+    },
+    {
+     "label": "Speedrun WR — Any% Veteran (PC)",
+     "time": "1:35:41",
+     "note": "speedrun.com world record by cryynbtw (load-removed)",
+     "source": "https://www.speedrun.com/mw2/runs/y4vlr8ny"
+    }
+   ],
+   "links": [
+    {
+     "label": "Speedrun.com: Modern Warfare 2 Any%",
+     "url": "https://www.speedrun.com/mw2?h=any&x=xd13zwk8"
+    },
+    {
+     "label": "Game-TARS — nearest FPS agent result (ViZDoom, not CoD)",
+     "url": "https://arxiv.org/abs/2510.23691"
+    }
+   ]
+  },
+  {
+   "id": "minecraft",
+   "order": 8,
+   "tier": "modern",
+   "title": "Minecraft: Java Edition",
+   "platform": "PC",
+   "release_year": 2011,
+   "genre": "Sandbox / survival",
+   "icon": "pickaxe",
+   "theme": [
+    "#3e6e2e",
+    "#3b2a1a"
+   ],
+   "skin": "blocky",
+   "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
+   "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
+   "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
+   "milestones": [
+    {
+     "id": "crafting-table",
+     "name": "Minecraft",
+     "description": "Advancement: craft a crafting table"
+    },
+    {
+     "id": "stone-age",
+     "name": "Stone Age",
+     "description": "Mine stone with a new pickaxe"
+    },
+    {
+     "id": "getting-an-upgrade",
+     "name": "Getting an Upgrade",
+     "description": "Craft a stone pickaxe"
+    },
+    {
+     "id": "acquire-hardware",
+     "name": "Acquire Hardware",
+     "description": "Smelt an iron ingot"
+    },
+    {
+     "id": "isnt-it-iron-pick",
+     "name": "Isn't It Iron Pick",
+     "description": "Craft an iron pickaxe"
+    },
+    {
+     "id": "diamonds",
+     "name": "Diamonds!",
+     "description": "Acquire diamonds"
+    },
+    {
+     "id": "we-need-to-go-deeper",
+     "name": "We Need to Go Deeper",
+     "description": "Enter the Nether"
+    },
+    {
+     "id": "a-terrible-fortress",
+     "name": "A Terrible Fortress",
+     "description": "Enter a Nether fortress"
+    },
+    {
+     "id": "into-fire",
+     "name": "Into Fire",
+     "description": "Obtain a blaze rod"
+    },
+    {
+     "id": "eye-of-ender",
+     "name": "Craft an Eye of Ender",
+     "description": "Board milestone, not an advancement"
+    },
+    {
+     "id": "eye-spy",
+     "name": "Eye Spy",
+     "description": "Enter a stronghold"
+    },
+    {
+     "id": "the-end",
+     "name": "The End?",
+     "description": "Enter the End"
+    },
+    {
+     "id": "free-the-end",
+     "name": "Free the End",
+     "description": "Kill the Ender Dragon",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Glitchless, Random Seed (1.16–1.19)",
+     "time": "0:06:39",
+     "note": "speedrun.com world record by skycrab1 (6:39.813)",
+     "source": "https://www.speedrun.com/mc/runs/y44238ky"
+    }
+   ],
+   "links": [
+    {
+     "label": "Minecraft Wiki: Advancements",
+     "url": "https://minecraft.wiki/w/Advancement"
+    },
+    {
+     "label": "VPT (OpenAI, 2022)",
+     "url": "https://openai.com/index/vpt"
+    },
+    {
+     "label": "Voyager (2023)",
+     "url": "https://arxiv.org/abs/2305.16291"
+    },
+    {
+     "label": "DreamerV3 (diamonds from scratch)",
+     "url": "https://danijar.com/project/dreamerv3/"
+    }
+   ]
+  },
+  {
+   "id": "nethack",
+   "order": 20,
+   "tier": "classic",
+   "title": "NetHack",
+   "platform": "PC (terminal)",
+   "release_year": 1987,
+   "genre": "Roguelike",
+   "icon": "at",
+   "theme": [
+    "#3a4a3a",
+    "#141c22"
+   ],
+   "skin": "terminal",
+   "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
+   "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
+   "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
+   "timing": "Elapsed real time where known; report game turns in notes.",
+   "milestones": [
+    {
+     "id": "dlvl-5",
+     "name": "Reach Dungeon Level 5"
+    },
+    {
+     "id": "minetown",
+     "name": "Reach Minetown"
+    },
+    {
+     "id": "sokoban",
+     "name": "Complete Sokoban"
+    },
+    {
+     "id": "oracle",
+     "name": "Reach the Oracle"
+    },
+    {
+     "id": "quest",
+     "name": "Enter the Quest"
+    },
+    {
+     "id": "medusa",
+     "name": "Kill Medusa"
+    },
+    {
+     "id": "castle",
+     "name": "Reach the Castle"
+    },
+    {
+     "id": "gehennom",
+     "name": "Enter Gehennom (Valley of the Dead)"
+    },
+    {
+     "id": "amulet",
+     "name": "Retrieve the Amulet of Yendor"
+    },
+    {
+     "id": "planes",
+     "name": "Reach the Elemental Planes"
+    },
+    {
+     "id": "astral",
+     "name": "Reach the Astral Plane"
+    },
+    {
+     "id": "ascend",
+     "name": "Ascend",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% (3.7, real time)",
+     "time": "0:49:00",
+     "note": "speedrun.com world record by luxidream",
+     "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
+    }
+   ],
+   "links": [
+    {
+     "label": "BALROG leaderboard",
+     "url": "https://balrogai.com/"
+    },
+    {
+     "label": "NetHackWiki: Ascension",
+     "url": "https://nethackwiki.com/wiki/Ascension"
+    }
+   ]
+  },
+  {
+   "id": "slay-the-spire",
+   "order": 21,
+   "tier": "classic",
+   "title": "Slay the Spire",
+   "platform": "PC",
+   "release_year": 2017,
+   "genre": "Deckbuilder roguelike",
+   "icon": "spire",
+   "theme": [
+    "#4d2470",
+    "#5c1d2a"
+   ],
+   "skin": "spire",
+   "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
+   "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
+   "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",
+   "milestones": [
+    {
+     "id": "act1",
+     "name": "Act 1 boss defeated"
+    },
+    {
+     "id": "act2",
+     "name": "Act 2 boss defeated"
+    },
+    {
+     "id": "act3",
+     "name": "Act 3 boss defeated — victory",
+     "final": true
+    },
+    {
+     "id": "heart",
+     "name": "Corrupt Heart defeated",
+     "description": "Act 4, post-game"
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Any% Unseeded (The Silent)",
+     "time": "0:03:02",
+     "note": "speedrun.com world record by Zelda19 (3:02.600)",
+     "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
+    }
+   ],
+   "links": [
+    {
+     "label": "Epoch AI: SpireClimb results",
+     "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
+    },
+    {
+     "label": "SpireBench",
+     "url": "https://papers.cool/arxiv/2610.12596"
     }
    ]
   },
   {
    "id": "pokemon-crystal",
-   "order": 2,
+   "order": 22,
+   "tier": "classic",
    "title": "Pokémon Crystal",
    "platform": "Game Boy Color",
    "release_year": 2000,
@@ -206,7 +1026,8 @@
   },
   {
    "id": "pokemon-emerald",
-   "order": 3,
+   "order": 23,
+   "tier": "classic",
    "title": "Pokémon Emerald",
    "platform": "Game Boy Advance",
    "release_year": 2004,
@@ -303,350 +1124,180 @@
    ]
   },
   {
-   "id": "minecraft",
-   "order": 4,
-   "title": "Minecraft: Java Edition",
-   "platform": "PC",
-   "release_year": 2011,
-   "genre": "Sandbox / survival",
-   "icon": "pickaxe",
+   "id": "pokemon-red-blue",
+   "order": 24,
+   "tier": "classic",
+   "title": "Pokémon Red / Blue",
+   "platform": "Game Boy",
+   "release_year": 1996,
+   "genre": "RPG",
+   "icon": "badge",
    "theme": [
-    "#3e6e2e",
-    "#3b2a1a"
+    "#8a2420",
+    "#1f2a5c"
    ],
-   "skin": "blocky",
-   "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
-   "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
-   "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
+   "skin": "gb-dmg",
+   "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
+   "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
+   "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",
+   "timing": "Elapsed run time from New Game. Step counts may be given in notes.",
    "milestones": [
     {
-     "id": "crafting-table",
-     "name": "Minecraft",
-     "description": "Advancement: craft a crafting table"
+     "id": "boulder-badge",
+     "name": "Boulder Badge",
+     "description": "Brock, Pewter City"
     },
     {
-     "id": "stone-age",
-     "name": "Stone Age",
-     "description": "Mine stone with a new pickaxe"
+     "id": "cascade-badge",
+     "name": "Cascade Badge",
+     "description": "Misty, Cerulean City"
     },
     {
-     "id": "getting-an-upgrade",
-     "name": "Getting an Upgrade",
-     "description": "Craft a stone pickaxe"
+     "id": "thunder-badge",
+     "name": "Thunder Badge",
+     "description": "Lt. Surge, Vermilion City"
     },
     {
-     "id": "acquire-hardware",
-     "name": "Acquire Hardware",
-     "description": "Smelt an iron ingot"
+     "id": "rainbow-badge",
+     "name": "Rainbow Badge",
+     "description": "Erika, Celadon City"
     },
     {
-     "id": "isnt-it-iron-pick",
-     "name": "Isn't It Iron Pick",
-     "description": "Craft an iron pickaxe"
+     "id": "soul-badge",
+     "name": "Soul Badge",
+     "description": "Koga, Fuchsia City"
     },
     {
-     "id": "diamonds",
-     "name": "Diamonds!",
-     "description": "Acquire diamonds"
+     "id": "marsh-badge",
+     "name": "Marsh Badge",
+     "description": "Sabrina, Saffron City"
     },
     {
-     "id": "we-need-to-go-deeper",
-     "name": "We Need to Go Deeper",
-     "description": "Enter the Nether"
+     "id": "volcano-badge",
+     "name": "Volcano Badge",
+     "description": "Blaine, Cinnabar Island"
     },
     {
-     "id": "a-terrible-fortress",
-     "name": "A Terrible Fortress",
-     "description": "Enter a Nether fortress"
+     "id": "earth-badge",
+     "name": "Earth Badge",
+     "description": "Giovanni, Viridian City"
     },
     {
-     "id": "into-fire",
-     "name": "Into Fire",
-     "description": "Obtain a blaze rod"
+     "id": "e4-lorelei",
+     "name": "Elite Four: Lorelei"
     },
     {
-     "id": "eye-of-ender",
-     "name": "Craft an Eye of Ender",
-     "description": "Dojo milestone, not an advancement"
+     "id": "e4-bruno",
+     "name": "Elite Four: Bruno"
     },
     {
-     "id": "eye-spy",
-     "name": "Eye Spy",
-     "description": "Enter a stronghold"
+     "id": "e4-agatha",
+     "name": "Elite Four: Agatha"
     },
     {
-     "id": "the-end",
-     "name": "The End?",
-     "description": "Enter the End"
+     "id": "e4-lance",
+     "name": "Elite Four: Lance"
     },
     {
-     "id": "free-the-end",
-     "name": "Free the End",
-     "description": "Kill the Ender Dragon",
+     "id": "champion",
+     "name": "Champion defeated — Hall of Fame",
      "final": true
     }
    ],
    "human_baselines": [
     {
-     "label": "Speedrun WR — Any% Glitchless, Random Seed (1.16–1.19)",
-     "time": "0:06:39",
-     "note": "speedrun.com world record by skycrab1 (6:39.813)",
-     "source": "https://www.speedrun.com/mc/runs/y44238ky"
+     "label": "Speedrun WR — Any% Glitchless",
+     "time": "1:43:40",
+     "note": "speedrun.com world record (ENG) by SlNNED",
+     "source": "https://www.speedrun.com/pkmnredblue/runs/y4n7endm"
     }
    ],
    "links": [
     {
-     "label": "Minecraft Wiki: Advancements",
-     "url": "https://minecraft.wiki/w/Advancement"
+     "label": "Claude Plays Pokémon (TechCrunch)",
+     "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
     },
     {
-     "label": "VPT (OpenAI, 2022)",
-     "url": "https://openai.com/index/vpt"
-    },
-    {
-     "label": "Voyager (2023)",
-     "url": "https://arxiv.org/abs/2305.16291"
-    },
-    {
-     "label": "DreamerV3 (diamonds from scratch)",
-     "url": "https://danijar.com/project/dreamerv3/"
+     "label": "On comparing Pokémon harnesses (TIME)",
+     "url": "https://time.com/7345903/ai-chatgpt-claude-gemini-pokemon"
     }
    ]
   },
   {
-   "id": "rdr2",
-   "order": 5,
-   "title": "Red Dead Redemption 2",
-   "platform": "PC / PS4 / Xbox One",
-   "release_year": 2018,
-   "genre": "Open-world action",
-   "icon": "horseshoe",
+   "id": "zelda-links-awakening-dx",
+   "order": 25,
+   "tier": "classic",
+   "title": "The Legend of Zelda: Link's Awakening DX",
+   "platform": "Game Boy Color",
+   "release_year": 1998,
+   "genre": "Action-adventure",
+   "icon": "shield",
    "theme": [
-    "#8a3a18",
-    "#2a1a10"
+    "#1f6a48",
+    "#2a3d14"
    ],
-   "skin": "western",
-   "description": "A AAA open world with long, story-gated chapters. Cradle showed a general computer-control agent could play early story missions from screenshots alone; no AI chapter clear has been reported yet.",
-   "clear_condition": "Complete the final Epilogue mission “American Venom”.",
-   "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
+   "skin": "gb-adventure",
+   "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
+   "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
+   "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",
    "milestones": [
     {
-     "id": "ch1-colter",
-     "name": "Chapter 1: Colter",
-     "description": "Final mission: Eastward Bound"
+     "id": "d1",
+     "name": "Level 1: Tail Cave"
     },
     {
-     "id": "ch2-horseshoe-overlook",
-     "name": "Chapter 2: Horseshoe Overlook",
-     "description": "Final mission: A Strange Kindness"
+     "id": "d2",
+     "name": "Level 2: Bottle Grotto"
     },
     {
-     "id": "ch3-clemens-point",
-     "name": "Chapter 3: Clemens Point",
-     "description": "Final mission: The Battle of Shady Belle"
+     "id": "d3",
+     "name": "Level 3: Key Cavern"
     },
     {
-     "id": "ch4-saint-denis",
-     "name": "Chapter 4: Saint Denis",
-     "description": "Final mission: Banking, the Old American Art"
+     "id": "d4",
+     "name": "Level 4: Angler's Tunnel"
     },
     {
-     "id": "ch5-guarma",
-     "name": "Chapter 5: Guarma",
-     "description": "Final mission: That's Murfree Country"
+     "id": "d5",
+     "name": "Level 5: Catfish's Maw"
     },
     {
-     "id": "ch6-beaver-hollow",
-     "name": "Chapter 6: Beaver Hollow",
-     "description": "Final mission: Red Dead Redemption"
+     "id": "d6",
+     "name": "Level 6: Face Shrine"
     },
     {
-     "id": "epilogue-1",
-     "name": "Epilogue Part 1: Pronghorn Ranch",
-     "description": "Final mission: Gainful Employment"
+     "id": "d7",
+     "name": "Level 7: Eagle's Tower"
     },
     {
-     "id": "epilogue-2",
-     "name": "Epilogue Part 2: Beecher's Hope",
-     "description": "Final mission: American Venom",
+     "id": "d8",
+     "name": "Level 8: Turtle Rock"
+    },
+    {
+     "id": "wind-fish",
+     "name": "Wind Fish's Egg — final boss",
      "final": true
     }
    ],
    "human_baselines": [
     {
-     "label": "Speedrun WR — Any% (No Checkpoint Skips)",
-     "time": "12:26:26",
-     "note": "speedrun.com world record by Hess",
-     "source": "https://www.speedrun.com/rdr2/runs/m38d714y"
-    },
-    {
-     "label": "Speedrun WR — Any% (Checkpoint Skips)",
-     "time": "8:36:31",
-     "note": "speedrun.com world record by FreshRigi",
-     "source": "https://www.speedrun.com/rdr2/runs/y8ow1d1m"
+     "label": "Speedrun WR — Any% (No WW/OoB)",
+     "time": "0:48:57",
+     "note": "speedrun.com world record by Nitroz",
+     "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
     }
    ],
    "links": [
     {
-     "label": "Cradle project page",
-     "url": "https://baai-agents.github.io/Cradle"
-    }
-   ]
-  },
-  {
-   "id": "sekiro",
-   "order": 6,
-   "title": "Sekiro: Shadows Die Twice",
-   "platform": "PC / PS4 / Xbox One",
-   "release_year": 2019,
-   "genre": "Action",
-   "icon": "katana",
-   "theme": [
-    "#7a1a1a",
-    "#161210"
-   ],
-   "skin": "shinobi",
-   "deco": "隻狼",
-   "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
-   "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
-   "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",
-   "milestones": [
-    {
-     "id": "gyoubu",
-     "name": "Gyoubu Masataka Oniwa"
-    },
-    {
-     "id": "lady-butterfly",
-     "name": "Lady Butterfly"
-    },
-    {
-     "id": "genichiro",
-     "name": "Genichiro Ashina"
-    },
-    {
-     "id": "folding-screen-monkeys",
-     "name": "Folding Screen Monkeys"
-    },
-    {
-     "id": "guardian-ape",
-     "name": "Guardian Ape"
-    },
-    {
-     "id": "corrupted-monk",
-     "name": "Corrupted Monk"
-    },
-    {
-     "id": "great-shinobi-owl",
-     "name": "Great Shinobi Owl"
-    },
-    {
-     "id": "divine-dragon",
-     "name": "Divine Dragon"
-    },
-    {
-     "id": "final-boss",
-     "name": "Final boss of any ending",
-     "description": "Isshin, the Sword Saint, or the Shura ending's final fight",
-     "final": true
-    }
-   ],
-   "human_baselines": [
-    {
-     "label": "Speedrun WR — Immortal Severance (PC, Glitchless)",
-     "time": "0:38:57",
-     "note": "speedrun.com world record by Yeruka",
-     "source": "https://www.speedrun.com/sekiro/runs/y6jrqeqm"
-    },
-    {
-     "label": "Speedrun WR — Shura (PC, Glitchless)",
-     "time": "0:27:59",
-     "note": "speedrun.com world record by Yeruka",
-     "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
-    }
-   ],
-   "links": [
-    {
-     "label": "CombatVLA (isolated Sekiro / Wukong fights)",
-     "url": "https://arxiv.org/html/2503.09527v2"
-    },
-    {
-     "label": "Fextralife: Bosses",
-     "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"
-    }
-   ]
-  },
-  {
-   "id": "black-myth-wukong",
-   "order": 7,
-   "title": "Black Myth: Wukong",
-   "platform": "PC / PS5",
-   "release_year": 2024,
-   "genre": "Action RPG",
-   "icon": "staff",
-   "theme": [
-    "#9a7020",
-    "#2a1608"
-   ],
-   "skin": "wukong",
-   "deco": "黑神话·悟空",
-   "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
-   "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
-   "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",
-   "milestones": [
-    {
-     "id": "ch1",
-     "name": "Chapter 1: Black Wind Mountain"
-    },
-    {
-     "id": "ch2",
-     "name": "Chapter 2: Yellow Wind Ridge"
-    },
-    {
-     "id": "ch3",
-     "name": "Chapter 3: The New West"
-    },
-    {
-     "id": "ch4",
-     "name": "Chapter 4: The Webbed Hollow"
-    },
-    {
-     "id": "ch5",
-     "name": "Chapter 5: Flaming Mountains"
-    },
-    {
-     "id": "ch6",
-     "name": "Chapter 6: Mount Huaguo — credits",
-     "final": true
-    }
-   ],
-   "human_baselines": [
-    {
-     "label": "Speedrun WR — Any% (PC, Glitchless)",
-     "time": "2:31:34",
-     "note": "speedrun.com world record by XiaoYume (2:31:34.630)",
-     "source": "https://www.speedrun.com/BMW/runs/m38kpxdy"
-    },
-    {
-     "label": "Speedrun WR — Any% (PC, Unrestricted)",
-     "time": "0:46:15",
-     "note": "speedrun.com world record by Non_Come (46:15.780)",
-     "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
-    }
-   ],
-   "links": [
-    {
-     "label": "VARP agent (arXiv 2409.12889)",
-     "url": "https://arxiv.org/abs/2409.12889"
-    },
-    {
-     "label": "CombatVLA",
-     "url": "https://arxiv.org/html/2503.09527v2"
+     "label": "VideoGameBench",
+     "url": "https://www.vgbench.com/"
     }
    ]
   },
   {
    "id": "super-mario-bros",
-   "order": 8,
+   "order": 26,
+   "tier": "classic",
    "title": "Super Mario Bros.",
    "platform": "NES",
    "release_year": 1985,
@@ -713,218 +1364,6 @@
     {
      "label": "lmgame-bench",
      "url": "https://arxiv.org/abs/2505.15146"
-    }
-   ]
-  },
-  {
-   "id": "nethack",
-   "order": 9,
-   "title": "NetHack",
-   "platform": "PC (terminal)",
-   "release_year": 1987,
-   "genre": "Roguelike",
-   "icon": "at",
-   "theme": [
-    "#3a4a3a",
-    "#141c22"
-   ],
-   "skin": "terminal",
-   "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
-   "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
-   "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
-   "timing": "Elapsed real time where known; report game turns in notes.",
-   "milestones": [
-    {
-     "id": "dlvl-5",
-     "name": "Reach Dungeon Level 5"
-    },
-    {
-     "id": "minetown",
-     "name": "Reach Minetown"
-    },
-    {
-     "id": "sokoban",
-     "name": "Complete Sokoban"
-    },
-    {
-     "id": "oracle",
-     "name": "Reach the Oracle"
-    },
-    {
-     "id": "quest",
-     "name": "Enter the Quest"
-    },
-    {
-     "id": "medusa",
-     "name": "Kill Medusa"
-    },
-    {
-     "id": "castle",
-     "name": "Reach the Castle"
-    },
-    {
-     "id": "gehennom",
-     "name": "Enter Gehennom (Valley of the Dead)"
-    },
-    {
-     "id": "amulet",
-     "name": "Retrieve the Amulet of Yendor"
-    },
-    {
-     "id": "planes",
-     "name": "Reach the Elemental Planes"
-    },
-    {
-     "id": "astral",
-     "name": "Reach the Astral Plane"
-    },
-    {
-     "id": "ascend",
-     "name": "Ascend",
-     "final": true
-    }
-   ],
-   "human_baselines": [
-    {
-     "label": "Speedrun WR — Any% (3.7, real time)",
-     "time": "0:49:00",
-     "note": "speedrun.com world record by luxidream",
-     "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
-    }
-   ],
-   "links": [
-    {
-     "label": "BALROG leaderboard",
-     "url": "https://balrogai.com/"
-    },
-    {
-     "label": "NetHackWiki: Ascension",
-     "url": "https://nethackwiki.com/wiki/Ascension"
-    }
-   ]
-  },
-  {
-   "id": "slay-the-spire",
-   "order": 10,
-   "title": "Slay the Spire",
-   "platform": "PC",
-   "release_year": 2017,
-   "genre": "Deckbuilder roguelike",
-   "icon": "spire",
-   "theme": [
-    "#4d2470",
-    "#5c1d2a"
-   ],
-   "skin": "spire",
-   "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
-   "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
-   "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",
-   "milestones": [
-    {
-     "id": "act1",
-     "name": "Act 1 boss defeated"
-    },
-    {
-     "id": "act2",
-     "name": "Act 2 boss defeated"
-    },
-    {
-     "id": "act3",
-     "name": "Act 3 boss defeated — victory",
-     "final": true
-    },
-    {
-     "id": "heart",
-     "name": "Corrupt Heart defeated",
-     "description": "Act 4, post-game"
-    }
-   ],
-   "human_baselines": [
-    {
-     "label": "Speedrun WR — Any% Unseeded (The Silent)",
-     "time": "0:03:02",
-     "note": "speedrun.com world record by Zelda19 (3:02.600)",
-     "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
-    }
-   ],
-   "links": [
-    {
-     "label": "Epoch AI: SpireClimb results",
-     "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
-    },
-    {
-     "label": "SpireBench",
-     "url": "https://papers.cool/arxiv/2610.12596"
-    }
-   ]
-  },
-  {
-   "id": "zelda-links-awakening-dx",
-   "order": 11,
-   "title": "The Legend of Zelda: Link's Awakening DX",
-   "platform": "Game Boy Color",
-   "release_year": 1998,
-   "genre": "Action-adventure",
-   "icon": "shield",
-   "theme": [
-    "#1f6a48",
-    "#2a3d14"
-   ],
-   "skin": "gb-adventure",
-   "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
-   "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
-   "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",
-   "milestones": [
-    {
-     "id": "d1",
-     "name": "Level 1: Tail Cave"
-    },
-    {
-     "id": "d2",
-     "name": "Level 2: Bottle Grotto"
-    },
-    {
-     "id": "d3",
-     "name": "Level 3: Key Cavern"
-    },
-    {
-     "id": "d4",
-     "name": "Level 4: Angler's Tunnel"
-    },
-    {
-     "id": "d5",
-     "name": "Level 5: Catfish's Maw"
-    },
-    {
-     "id": "d6",
-     "name": "Level 6: Face Shrine"
-    },
-    {
-     "id": "d7",
-     "name": "Level 7: Eagle's Tower"
-    },
-    {
-     "id": "d8",
-     "name": "Level 8: Turtle Rock"
-    },
-    {
-     "id": "wind-fish",
-     "name": "Wind Fish's Egg — final boss",
-     "final": true
-    }
-   ],
-   "human_baselines": [
-    {
-     "label": "Speedrun WR — Any% (No WW/OoB)",
-     "time": "0:48:57",
-     "note": "speedrun.com world record by Nitroz",
-     "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
-    }
-   ],
-   "links": [
-    {
-     "label": "VideoGameBench",
-     "url": "https://www.vgbench.com/"
     }
    ]
   }
@@ -1000,37 +1439,57 @@
      "id": "crafting-table"
     },
     {
-     "id": "stone-age"
+     "id": "stone-age",
+     "elapsed": "0:06:00",
+     "approx": true
     },
     {
-     "id": "getting-an-upgrade"
+     "id": "getting-an-upgrade",
+     "elapsed": "0:06:00",
+     "approx": true
     },
     {
-     "id": "acquire-hardware"
+     "id": "acquire-hardware",
+     "elapsed": "0:14:00",
+     "approx": true
     },
     {
-     "id": "isnt-it-iron-pick"
+     "id": "isnt-it-iron-pick",
+     "elapsed": "0:14:00",
+     "approx": true
     },
     {
      "id": "diamonds"
     },
     {
-     "id": "we-need-to-go-deeper"
+     "id": "we-need-to-go-deeper",
+     "elapsed": "1:42:00",
+     "approx": true
     },
     {
-     "id": "a-terrible-fortress"
+     "id": "a-terrible-fortress",
+     "elapsed": "2:57:00",
+     "approx": true
     },
     {
-     "id": "into-fire"
+     "id": "into-fire",
+     "elapsed": "4:17:00",
+     "approx": true
     },
     {
-     "id": "eye-of-ender"
+     "id": "eye-of-ender",
+     "elapsed": "10:43:00",
+     "approx": true
     },
     {
-     "id": "eye-spy"
+     "id": "eye-spy",
+     "elapsed": "13:17:00",
+     "approx": true
     },
     {
-     "id": "the-end"
+     "id": "the-end",
+     "elapsed": "13:33:00",
+     "approx": true
     },
     {
      "id": "free-the-end",
@@ -1047,7 +1506,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage."
+   "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage. Intermediate times are read from the paper's progress chart (time since the first program); the chart marks team steps, so 'We Need to Go Deeper' uses the portal-lit time and 'Eye Spy' the End-portal-lit time. Crafting table and diamonds are not timed separately. The times include about 20 minutes of server restarts."
   },
   {
    "id": "2026-09-gpt-6-astra-nethack-ascension",
@@ -1067,39 +1526,63 @@
     {
      "label": "Winning dumplog (Hardfought)",
      "url": "https://www.hardfought.org/userdata/C/CodexDelver/nethack/dumplog/1788964024.nh.txt"
+    },
+    {
+     "label": "Replay timeline (blog viewer data)",
+     "url": "https://kenforthewin.github.io/blog/replays/astra-v3/manifest.json"
     }
    ],
    "videos": [],
    "milestones": [
     {
-     "id": "dlvl-5"
+     "id": "dlvl-5",
+     "elapsed": "1:11:24",
+     "approx": true
     },
     {
-     "id": "oracle"
+     "id": "oracle",
+     "elapsed": "6:34:12",
+     "approx": true
     },
     {
-     "id": "quest"
+     "id": "quest",
+     "elapsed": "40:00:00",
+     "approx": true
     },
     {
-     "id": "medusa"
+     "id": "medusa",
+     "elapsed": "21:48:00",
+     "approx": true
     },
     {
-     "id": "castle"
+     "id": "castle",
+     "elapsed": "21:48:00",
+     "approx": true
     },
     {
-     "id": "gehennom"
+     "id": "gehennom",
+     "elapsed": "37:00:00",
+     "approx": true
     },
     {
-     "id": "amulet"
+     "id": "amulet",
+     "elapsed": "53:00:00",
+     "approx": true
     },
     {
-     "id": "planes"
+     "id": "planes",
+     "elapsed": "58:06:00",
+     "approx": true
     },
     {
-     "id": "astral"
+     "id": "astral",
+     "elapsed": "60:00:00",
+     "approx": true
     },
     {
-     "id": "ascend"
+     "id": "ascend",
+     "elapsed": "60:24:00",
+     "approx": true
     }
    ],
    "method": {
@@ -1111,7 +1594,7 @@
     "code": "https://github.com/kenforthewin/nethack_astra"
    },
    "hardware": {},
-   "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs."
+   "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs. Times are active play hours, estimated from the replay viewer's timeline with long idle pauses removed; they are not a published figure. Wall-clock from start to ascension was about 294 hours across 12 days. Medusa's time is an upper bound (arrival at the Castle). The Quest was entered after Gehennom (turn 28,330)."
   },
   {
    "id": "2025-08-gpt-plays-pokemon-crystal-gpt-5",
@@ -1131,6 +1614,18 @@
     {
      "label": "AIbase",
      "url": "https://news.aibase.com/news/20856"
+    },
+    {
+     "label": "Badge log (archived)",
+     "url": "https://web.archive.org/web/20251018122101/https://gpt-plays-pokemon.clad3815.dev/crystal/data_sync/badges_log.json"
+    },
+    {
+     "label": "Room-visit log (archived)",
+     "url": "https://web.archive.org/web/20250823195241/https://gpt-plays-pokemon.clad3815.dev/crystal/data_sync/map_visits.json"
+    },
+    {
+     "label": "Community timing sheet (GPT tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=1821408135&single=true"
     }
    ],
    "videos": [
@@ -1142,51 +1637,68 @@
    ],
    "milestones": [
     {
-     "id": "zephyr-badge"
+     "id": "zephyr-badge",
+     "elapsed": "8:20:14"
     },
     {
-     "id": "hive-badge"
+     "id": "hive-badge",
+     "elapsed": "14:39:46"
     },
     {
-     "id": "plain-badge"
+     "id": "plain-badge",
+     "elapsed": "30:38:30"
     },
     {
-     "id": "fog-badge"
+     "id": "fog-badge",
+     "elapsed": "35:46:38"
     },
     {
-     "id": "storm-badge"
+     "id": "storm-badge",
+     "elapsed": "54:09:03"
     },
     {
-     "id": "mineral-badge"
+     "id": "mineral-badge",
+     "elapsed": "50:21:43"
     },
     {
-     "id": "glacier-badge"
+     "id": "glacier-badge",
+     "elapsed": "66:10:19"
     },
     {
-     "id": "rising-badge"
+     "id": "rising-badge",
+     "elapsed": "103:42:16"
     },
     {
-     "id": "e4-will"
+     "id": "e4-will",
+     "elapsed": "118:43:37",
+     "approx": true
     },
     {
-     "id": "e4-koga"
+     "id": "e4-koga",
+     "elapsed": "123:08:17",
+     "approx": true
     },
     {
-     "id": "e4-bruno"
+     "id": "e4-bruno",
+     "elapsed": "124:01:19",
+     "approx": true
     },
     {
-     "id": "e4-karen"
+     "id": "e4-karen",
+     "elapsed": "136:41:46",
+     "approx": true
     },
     {
-     "id": "champion-lance"
+     "id": "champion-lance",
+     "elapsed": "150:50:11"
     },
     {
-     "id": "kanto-badges"
+     "id": "kanto-badges",
+     "elapsed": "194:19:09"
     },
     {
      "id": "red",
-     "elapsed": "202:00:00",
-     "approx": true
+     "elapsed": "202:02:08"
     }
    ],
    "method": {
@@ -1197,7 +1709,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Self-reported; the source estimates ~202 hours. Defeating Red implies all 16 badges and the Champion."
+   "notes": "Self-reported. Times come from a community timing sheet and match the operator's archived badge log; they include about 3 hours of downtime. Elite Four times are upper bounds: when the agent first walked into the next room, from the archived room-visit log. The Elite Four took several attempts, so these are the first wins, not the winning pass. Defeating Red implies all 16 badges and the Champion."
   },
   {
    "id": "2025-12-gemini-plays-pokemon-crystal-3-pro",
@@ -1213,6 +1725,14 @@
     {
      "label": "Harness branch (GitHub)",
      "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/tree/crystal_race_gemini_3"
+    },
+    {
+     "label": "Milestone chart (operator's blog image)",
+     "url": "https://cdn.hashnode.com/res/hashnode/image/upload/v1765438549887/b7d4f2b9-3dcc-4b9f-8404-87302ce21c7b.png"
+    },
+    {
+     "label": "Community timing sheet (Gemini tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=629417885&single=true"
     }
    ],
    "videos": [
@@ -1224,50 +1744,83 @@
    ],
    "milestones": [
     {
-     "id": "zephyr-badge"
+     "id": "zephyr-badge",
+     "elapsed": "22:00:00",
+     "approx": true
     },
     {
-     "id": "hive-badge"
+     "id": "hive-badge",
+     "elapsed": "33:48:00",
+     "approx": true
     },
     {
-     "id": "plain-badge"
+     "id": "plain-badge",
+     "elapsed": "53:42:00",
+     "approx": true
     },
     {
-     "id": "fog-badge"
+     "id": "fog-badge",
+     "elapsed": "71:30:00",
+     "approx": true
     },
     {
-     "id": "storm-badge"
+     "id": "storm-badge",
+     "elapsed": "96:48:00",
+     "approx": true
     },
     {
-     "id": "mineral-badge"
+     "id": "mineral-badge",
+     "elapsed": "98:12:00",
+     "approx": true
     },
     {
-     "id": "glacier-badge"
+     "id": "glacier-badge",
+     "elapsed": "123:48:00",
+     "approx": true
     },
     {
-     "id": "rising-badge"
+     "id": "rising-badge",
+     "elapsed": "250:12:00",
+     "approx": true
     },
     {
-     "id": "e4-will"
+     "id": "e4-will",
+     "elapsed": "265:09:00",
+     "approx": true,
+     "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/864f81b09f50c29d9da1438dbd1634acc4b63dc9"
     },
     {
-     "id": "e4-koga"
+     "id": "e4-koga",
+     "elapsed": "265:36:00",
+     "approx": true,
+     "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/77298a03d52f2755ef6d61eb60bd8b046bb72173"
     },
     {
-     "id": "e4-bruno"
+     "id": "e4-bruno",
+     "elapsed": "266:08:00",
+     "approx": true,
+     "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/43d1e2311491583ea11324240b8f1e215c01574b"
     },
     {
-     "id": "e4-karen"
+     "id": "e4-karen",
+     "elapsed": "266:49:00",
+     "approx": true,
+     "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/eb2f1a5876119003fad6a13371de1c21bbc6f499"
     },
     {
-     "id": "champion-lance"
+     "id": "champion-lance",
+     "elapsed": "268:39:05",
+     "approx": true,
+     "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/030359935287fe19f29fa929ab711e076195647c"
     },
     {
-     "id": "kanto-badges"
+     "id": "kanto-badges",
+     "elapsed": "391:36:00",
+     "approx": true
     },
     {
      "id": "red",
-     "elapsed": "408:00:00",
+     "elapsed": "424:24:00",
      "approx": true
     }
    ],
@@ -1279,7 +1832,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run. Time to Red is approximate (about 17 days, as reported in coverage of the race)."
+   "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). Times are harness session hours read from the operator's milestone chart. They include about 74 hours of API downtime; with that removed, the operator's sheet gives about 350 hours to Red. Elite Four times are from the per-turn notepad commits on GitHub, converted to hours. A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
   },
   {
    "id": "2025-12-pokeagent-heatz",
@@ -1322,6 +1875,10 @@
     {
      "label": "TechCrunch",
      "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    },
+    {
+     "label": "Community timing sheet (Claude tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=546130155&single=true"
     }
    ],
    "videos": [
@@ -1338,13 +1895,19 @@
    ],
    "milestones": [
     {
-     "id": "boulder-badge"
+     "id": "boulder-badge",
+     "elapsed": "32:03:05",
+     "approx": true
     },
     {
-     "id": "cascade-badge"
+     "id": "cascade-badge",
+     "elapsed": "111:48:37",
+     "approx": true
     },
     {
-     "id": "thunder-badge"
+     "id": "thunder-badge",
+     "elapsed": "306:44:00",
+     "approx": true
     }
    ],
    "method": {
@@ -1355,7 +1918,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified."
+   "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified. The plotted times are from the public stream's restarted run (begun around 2025-03-05), which reached Thunder after about 307 hours; a community sheet estimated them from VODs. The stream's first run stalled at 2 badges and was reset."
   },
   {
    "id": "2025-05-gemini-plays-pokemon-2-5-pro",
@@ -1375,6 +1938,10 @@
     {
      "label": "TechCrunch",
      "url": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help"
+    },
+    {
+     "label": "Community timing sheet (Gemini tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=629417885&single=true"
     }
    ],
    "videos": [
@@ -1386,28 +1953,44 @@
    ],
    "milestones": [
     {
-     "id": "boulder-badge"
+     "id": "boulder-badge",
+     "elapsed": "44:00:00",
+     "approx": true
     },
     {
-     "id": "cascade-badge"
+     "id": "cascade-badge",
+     "elapsed": "157:00:00",
+     "approx": true
     },
     {
-     "id": "thunder-badge"
+     "id": "thunder-badge",
+     "elapsed": "206:44:34",
+     "approx": true
     },
     {
-     "id": "rainbow-badge"
+     "id": "rainbow-badge",
+     "elapsed": "430:50:00",
+     "approx": true
     },
     {
-     "id": "soul-badge"
+     "id": "soul-badge",
+     "elapsed": "487:00:00",
+     "approx": true
     },
     {
-     "id": "marsh-badge"
+     "id": "marsh-badge",
+     "elapsed": "568:30:06",
+     "approx": true
     },
     {
-     "id": "volcano-badge"
+     "id": "volcano-badge",
+     "elapsed": "638:44:57",
+     "approx": true
     },
     {
-     "id": "earth-badge"
+     "id": "earth-badge",
+     "elapsed": "645:40:22",
+     "approx": true
     },
     {
      "id": "e4-lorelei"
@@ -1423,7 +2006,7 @@
     },
     {
      "id": "champion",
-     "elapsed": "813:00:00",
+     "elapsed": "813:15:39",
      "approx": true
     }
    ],
@@ -1435,7 +2018,7 @@
     "human_intervention": "One manual context clear during this run (operator's blog). The second run reports zero manual interventions."
    },
    "hardware": {},
-   "notes": "Played Blue. Elapsed time is approximate, from the operator's write-up."
+   "notes": "Played Blue. Badge and Champion times come from a community timing sheet, which estimated them from a Google progress graph and Discord timestamps; the Elite Four fights are not timed one by one. The harness was changed during the run and the operator stepped in at times."
   },
   {
    "id": "2025-08-gpt-plays-pokemon-gpt-5",
@@ -1451,48 +2034,77 @@
     {
      "label": "CO/AI",
      "url": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record"
+    },
+    {
+     "label": "Badge log (archived)",
+     "url": "https://web.archive.org/web/20250815045942/https://gpt-plays-pokemon.clad3815.dev/data_sync/badges_log.json"
+    },
+    {
+     "label": "Room-visit log (archived)",
+     "url": "https://web.archive.org/web/20250815045942/https://gpt-plays-pokemon.clad3815.dev/data_sync/map_visits.json"
+    },
+    {
+     "label": "Community timing sheet (GPT tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=1821408135&single=true"
     }
    ],
    "videos": [],
    "milestones": [
     {
-     "id": "boulder-badge"
+     "id": "boulder-badge",
+     "elapsed": "13:44:42"
     },
     {
-     "id": "cascade-badge"
+     "id": "cascade-badge",
+     "elapsed": "47:46:24"
     },
     {
-     "id": "thunder-badge"
+     "id": "thunder-badge",
+     "elapsed": "49:42:33"
     },
     {
-     "id": "rainbow-badge"
+     "id": "rainbow-badge",
+     "elapsed": "83:21:47"
     },
     {
-     "id": "soul-badge"
+     "id": "soul-badge",
+     "elapsed": "135:22:59"
     },
     {
-     "id": "marsh-badge"
+     "id": "marsh-badge",
+     "elapsed": "105:24:16"
     },
     {
-     "id": "volcano-badge"
+     "id": "volcano-badge",
+     "elapsed": "145:52:23"
     },
     {
-     "id": "earth-badge"
+     "id": "earth-badge",
+     "elapsed": "148:11:30"
     },
     {
-     "id": "e4-lorelei"
+     "id": "e4-lorelei",
+     "elapsed": "160:41:40",
+     "approx": true
     },
     {
-     "id": "e4-bruno"
+     "id": "e4-bruno",
+     "elapsed": "160:53:20",
+     "approx": true
     },
     {
-     "id": "e4-agatha"
+     "id": "e4-agatha",
+     "elapsed": "161:04:36",
+     "approx": true
     },
     {
-     "id": "e4-lance"
+     "id": "e4-lance",
+     "elapsed": "161:36:59",
+     "approx": true
     },
     {
-     "id": "champion"
+     "id": "champion",
+     "elapsed": "161:56:39"
     }
    ],
    "method": {
@@ -1503,7 +2115,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Step counts, not wall-clock time, are reported. No post by the operator and no video of the run was found; the figure traces back to a Reddit post cited by TechRadar."
+   "notes": "Finished in 6,470 steps. Badge times come from the operator's archived badge log and match a community timing sheet; the start (2025-08-07 18:16 UTC) is derived from that log. Elite Four times are upper bounds: when the agent first walked into the next room, from the archived room-visit log. No operator write-up or video of the run was found; the headline figure was first reported on Reddit and cited by TechRadar."
   },
   {
    "id": "2026-01-claude-plays-pokemon-opus-4-5",
@@ -1519,6 +2131,10 @@
     {
      "label": "Earlier analysis (LessWrong)",
      "url": "https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon"
+    },
+    {
+     "label": "Community timing sheet (Claude tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=546130155&single=true"
     }
    ],
    "videos": [
@@ -1540,28 +2156,38 @@
    ],
    "milestones": [
     {
-     "id": "boulder-badge"
+     "id": "boulder-badge",
+     "elapsed": "10:55:57"
     },
     {
-     "id": "cascade-badge"
+     "id": "cascade-badge",
+     "elapsed": "27:45:09"
     },
     {
-     "id": "thunder-badge"
+     "id": "thunder-badge",
+     "elapsed": "34:39:06"
     },
     {
-     "id": "rainbow-badge"
+     "id": "rainbow-badge",
+     "elapsed": "208:14:11"
     },
     {
-     "id": "soul-badge"
+     "id": "soul-badge",
+     "elapsed": "604:08:57"
     },
     {
-     "id": "marsh-badge"
+     "id": "marsh-badge",
+     "elapsed": "593:22:15"
     },
     {
-     "id": "volcano-badge"
+     "id": "volcano-badge",
+     "elapsed": "1398:06:43",
+     "approx": true
     },
     {
-     "id": "earth-badge"
+     "id": "earth-badge",
+     "elapsed": "1400:18:42",
+     "approx": true
     }
    ],
    "method": {
@@ -1572,7 +2198,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06."
+   "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06. Times come from a community timing sheet. The stream had downtime after the Pokémon Mansion, so the sheet estimates the Volcano and Earth times from the step rate. The run reached Victory Road but never the Indigo Plateau."
   },
   {
    "id": "2026-05-claude-plays-pokemon-opus-4-7",
@@ -1592,6 +2218,10 @@
     {
      "label": "Step-count spreadsheet",
      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml"
+    },
+    {
+     "label": "Community timing sheet (Claude tab)",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=546130155&single=true"
     }
    ],
    "videos": [
@@ -1613,28 +2243,36 @@
    ],
    "milestones": [
     {
-     "id": "boulder-badge"
+     "id": "boulder-badge",
+     "elapsed": "5:54:40"
     },
     {
-     "id": "cascade-badge"
+     "id": "cascade-badge",
+     "elapsed": "18:15:37"
     },
     {
-     "id": "thunder-badge"
+     "id": "thunder-badge",
+     "elapsed": "35:14:45"
     },
     {
-     "id": "rainbow-badge"
+     "id": "rainbow-badge",
+     "elapsed": "87:46:31"
     },
     {
-     "id": "soul-badge"
+     "id": "soul-badge",
+     "elapsed": "83:00:40"
     },
     {
-     "id": "marsh-badge"
+     "id": "marsh-badge",
+     "elapsed": "135:07:58"
     },
     {
-     "id": "volcano-badge"
+     "id": "volcano-badge",
+     "elapsed": "176:39:05"
     },
     {
-     "id": "earth-badge"
+     "id": "earth-badge",
+     "elapsed": "179:59:02"
     },
     {
      "id": "e4-lorelei"
@@ -1649,7 +2287,8 @@
      "id": "e4-lance"
     },
     {
-     "id": "champion"
+     "id": "champion",
+     "elapsed": "258:42:23"
     }
    ],
    "method": {
@@ -1660,7 +2299,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "The write-up is by a community member, not the stream's operator. Stream VODs are archived by a fan channel."
+   "notes": "The write-up is by a community member, not the stream's operator. Stream VODs are archived by a fan channel. Milestone times come from a community timing sheet; the Elite Four fights are not timed one by one (the agent needed a couple of tries)."
   },
   {
    "id": "2024-03-cradle-rdr2",

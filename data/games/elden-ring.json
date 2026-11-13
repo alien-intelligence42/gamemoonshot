@@ -1,0 +1,104 @@
+{
+  "id": "elden-ring",
+  "order": 1,
+  "tier": "modern",
+  "title": "Elden Ring",
+  "platform": "PC / PS4 / PS5 / Xbox",
+  "release_year": 2022,
+  "genre": "Action RPG",
+  "icon": "tree",
+  "theme": [
+    "#8a6a24",
+    "#14130f"
+  ],
+  "skin": "erdtree",
+  "description": "Real-time third-person combat with tight dodge timing, and a 30–60 hour open world whose route is never spelled out: two of five demigods must fall before the capital opens. No AI agent has reported story progress yet; hobby RL bots train against Margit in a fixed arena and none reports a win.",
+  "clear_condition": "Defeat Radagon and the Elden Beast (base game, any ending).",
+  "timing": "Run time from the first input after character creation to the 'God Slain' banner.",
+  "rules": "Unmodified game, any patch (state it); base game only. Spirit Ashes and NPC summons are allowed; other players (co-op or invasions) are not — play offline. No cheats, trainers or frame-rate unlock mods unless disclosed. Shardbearers can be beaten in any order.",
+  "milestones": [
+    {
+      "id": "reach-limgrave",
+      "name": "Reach Limgrave",
+      "description": "Leave the Stranded Graveyard; the 'Limgrave' area title appears"
+    },
+    {
+      "id": "margit",
+      "name": "Margit, the Fell Omen",
+      "description": "First major boss on the usual route; skippable by going around Stormveil"
+    },
+    {
+      "id": "first-shardbearer",
+      "name": "First shardbearer",
+      "description": "Any of Godrick, Rennala, Radahn, Rykard or Mohg — usually Godrick the Grafted"
+    },
+    {
+      "id": "second-shardbearer",
+      "name": "Second shardbearer",
+      "description": "Two Great Runes open the way to the capital"
+    },
+    {
+      "id": "reach-leyndell",
+      "name": "Reach Leyndell, Royal Capital",
+      "description": "Area title 'Leyndell, Royal Capital'"
+    },
+    {
+      "id": "morgott",
+      "name": "Morgott, the Omen King"
+    },
+    {
+      "id": "fire-giant",
+      "name": "Fire Giant"
+    },
+    {
+      "id": "godskin-duo",
+      "name": "Godskin Duo"
+    },
+    {
+      "id": "maliketh",
+      "name": "Maliketh, the Black Blade"
+    },
+    {
+      "id": "hoarah-loux",
+      "name": "Godfrey, First Elden Lord (Hoarah Loux)"
+    },
+    {
+      "id": "elden-beast",
+      "name": "Radagon and the Elden Beast",
+      "description": "'God Slain', then an ending",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Glitchless (PC)",
+      "time": "0:51:45",
+      "note": "speedrun.com world record by Karlitto (v1.07)",
+      "source": "https://www.speedrun.com/eldenring/runs/zqo84jxy"
+    },
+    {
+      "label": "Speedrun WR — All Remembrances, No DLC, Glitchless (PC)",
+      "time": "1:46:07",
+      "note": "speedrun.com world record by Yzqanghii; beats every remembrance boss",
+      "source": "https://www.speedrun.com/eldenring/runs/m349rkgz"
+    }
+  ],
+  "links": [
+    {
+      "label": "G.A.L.E. — hobby PPO agent vs. Margit (no win yet)",
+      "url": "https://github.com/mr-raichman/eldenring-ai"
+    },
+    {
+      "label": "EldenRL — hobby RL boss arena (no boss defeated)",
+      "url": "https://github.com/ocram444/EldenRL"
+    },
+    {
+      "label": "3A-VLA — zero-shot combat transfer, 'hit' rate only",
+      "url": "https://arxiv.org/abs/2602.02212"
+    },
+    {
+      "label": "Elden Ring wiki: bosses and which are mandatory",
+      "url": "https://eldenring.wiki.gg/wiki/Bosses"
+    }
+  ]
+}

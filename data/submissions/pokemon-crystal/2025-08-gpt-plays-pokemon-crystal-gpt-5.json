@@ -16,6 +16,18 @@
     {
       "label": "AIbase",
       "url": "https://news.aibase.com/news/20856"
+    },
+    {
+      "label": "Badge log (archived)",
+      "url": "https://web.archive.org/web/20251018122101/https://gpt-plays-pokemon.clad3815.dev/crystal/data_sync/badges_log.json"
+    },
+    {
+      "label": "Room-visit log (archived)",
+      "url": "https://web.archive.org/web/20250823195241/https://gpt-plays-pokemon.clad3815.dev/crystal/data_sync/map_visits.json"
+    },
+    {
+      "label": "Community timing sheet (GPT tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=1821408135&single=true"
     }
   ],
   "videos": [
@@ -27,51 +39,68 @@
   ],
   "milestones": [
     {
-      "id": "zephyr-badge"
+      "id": "zephyr-badge",
+      "elapsed": "8:20:14"
     },
     {
-      "id": "hive-badge"
+      "id": "hive-badge",
+      "elapsed": "14:39:46"
     },
     {
-      "id": "plain-badge"
+      "id": "plain-badge",
+      "elapsed": "30:38:30"
     },
     {
-      "id": "fog-badge"
+      "id": "fog-badge",
+      "elapsed": "35:46:38"
     },
     {
-      "id": "storm-badge"
+      "id": "storm-badge",
+      "elapsed": "54:09:03"
     },
     {
-      "id": "mineral-badge"
+      "id": "mineral-badge",
+      "elapsed": "50:21:43"
     },
     {
-      "id": "glacier-badge"
+      "id": "glacier-badge",
+      "elapsed": "66:10:19"
     },
     {
-      "id": "rising-badge"
+      "id": "rising-badge",
+      "elapsed": "103:42:16"
     },
     {
-      "id": "e4-will"
+      "id": "e4-will",
+      "elapsed": "118:43:37",
+      "approx": true
     },
     {
-      "id": "e4-koga"
+      "id": "e4-koga",
+      "elapsed": "123:08:17",
+      "approx": true
     },
     {
-      "id": "e4-bruno"
+      "id": "e4-bruno",
+      "elapsed": "124:01:19",
+      "approx": true
     },
     {
-      "id": "e4-karen"
+      "id": "e4-karen",
+      "elapsed": "136:41:46",
+      "approx": true
     },
     {
-      "id": "champion-lance"
+      "id": "champion-lance",
+      "elapsed": "150:50:11"
     },
     {
-      "id": "kanto-badges"
+      "id": "kanto-badges",
+      "elapsed": "194:19:09"
     },
     {
       "id": "red",
-      "elapsed": "202:00:00",
-      "approx": true
+      "elapsed": "202:02:08"
     }
   ],
   "method": {
@@ -82,5 +111,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Self-reported; the source estimates ~202 hours. Defeating Red implies all 16 badges and the Champion."
+  "notes": "Self-reported. Times come from a community timing sheet and match the operator's archived badge log; they include about 3 hours of downtime. Elite Four times are upper bounds: when the agent first walked into the next room, from the archived room-visit log. The Elite Four took several attempts, so these are the first wins, not the winning pass. Defeating Red implies all 16 badges and the Champion."
 }

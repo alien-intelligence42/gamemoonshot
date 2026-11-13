@@ -1,0 +1,106 @@
+{
+  "id": "cyberpunk-2077",
+  "order": 2,
+  "tier": "modern",
+  "title": "Cyberpunk 2077",
+  "platform": "PC / PS5 / Xbox Series",
+  "release_year": 2020,
+  "genre": "Open-world RPG",
+  "icon": "chip",
+  "theme": [
+    "#8a2a3a",
+    "#0c1420"
+  ],
+  "skin": "neon",
+  "description": "A first-person open world that keeps switching modes: gunfights, driving, branching dialogue, breach minigames and inventory, in a dense vertical city where the quest marker doesn't show the way. No AI agent has reported finishing a main job yet.",
+  "clear_condition": "Reach the credits of any ending (base game or Phantom Liberty).",
+  "timing": "Run time from leaving character creation to the start of the final cutscene, as on speedrun.com.",
+  "rules": "Unmodified game, any patch (state it; 2.0+ and pre-2.0 play differently). Any lifepath and difficulty (state it). No cheats, trainers or console commands. Mods that only read game state for the agent are allowed on the harness track and must be disclosed.",
+  "milestones": [
+    {
+      "id": "the-rescue",
+      "name": "The Rescue",
+      "description": "First job after the lifepath prologue"
+    },
+    {
+      "id": "the-ripperdoc",
+      "name": "The Ripperdoc"
+    },
+    {
+      "id": "the-pickup",
+      "name": "The Pickup"
+    },
+    {
+      "id": "the-heist",
+      "name": "The Heist",
+      "description": "End of Act 1 (Konpeki Plaza)"
+    },
+    {
+      "id": "love-like-fire",
+      "name": "Love Like Fire",
+      "description": "Interlude into Act 2"
+    },
+    {
+      "id": "playing-for-time",
+      "name": "Playing for Time",
+      "description": "First Act 2 job"
+    },
+    {
+      "id": "automatic-love",
+      "name": "Automatic Love"
+    },
+    {
+      "id": "double-life",
+      "name": "Double Life"
+    },
+    {
+      "id": "transmission",
+      "name": "Transmission",
+      "description": "End of the Voodoo Boys line"
+    },
+    {
+      "id": "search-and-destroy",
+      "name": "Search and Destroy",
+      "description": "End of the Hanako line"
+    },
+    {
+      "id": "nocturne-op55n1",
+      "name": "Nocturne Op55N1",
+      "description": "Point of no return"
+    },
+    {
+      "id": "ending",
+      "name": "Any ending",
+      "description": "Credits roll after any final mission",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% (2.0+, PC)",
+      "time": "2:56:14",
+      "note": "speedrun.com world record by _Wutz_ (real time)",
+      "source": "https://www.speedrun.com/cyberpunk_2077/runs/ydn37wwm"
+    },
+    {
+      "label": "Speedrun WR — Any% Glitchless (pre-2.0, PC)",
+      "time": "3:12:10",
+      "note": "speedrun.com world record by _Wutz_ (load-removed)",
+      "source": "https://www.speedrun.com/cyberpunk_2077/runs/mkv5knxy"
+    }
+  ],
+  "links": [
+    {
+      "label": "CyberpunkAgent — hobby LLM agent via a game-state mod (no missions reported)",
+      "url": "https://github.com/Oli97430/CyberpunkAgent"
+    },
+    {
+      "label": "NitroGen — NVIDIA's generalist gamepad model (press says it was shown on Cyberpunk; the paper doesn't name it)",
+      "url": "https://arxiv.org/abs/2601.02427"
+    },
+    {
+      "label": "Main missions list (gamepressure)",
+      "url": "https://www.gamepressure.com/cyberpunk-2077/main-missions/zcc7aa"
+    }
+  ]
+}

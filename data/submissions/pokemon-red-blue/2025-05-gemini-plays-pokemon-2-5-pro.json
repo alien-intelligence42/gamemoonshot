@@ -16,6 +16,10 @@
     {
       "label": "TechCrunch",
       "url": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help"
+    },
+    {
+      "label": "Community timing sheet (Gemini tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=629417885&single=true"
     }
   ],
   "videos": [
@@ -27,28 +31,44 @@
   ],
   "milestones": [
     {
-      "id": "boulder-badge"
+      "id": "boulder-badge",
+      "elapsed": "44:00:00",
+      "approx": true
     },
     {
-      "id": "cascade-badge"
+      "id": "cascade-badge",
+      "elapsed": "157:00:00",
+      "approx": true
     },
     {
-      "id": "thunder-badge"
+      "id": "thunder-badge",
+      "elapsed": "206:44:34",
+      "approx": true
     },
     {
-      "id": "rainbow-badge"
+      "id": "rainbow-badge",
+      "elapsed": "430:50:00",
+      "approx": true
     },
     {
-      "id": "soul-badge"
+      "id": "soul-badge",
+      "elapsed": "487:00:00",
+      "approx": true
     },
     {
-      "id": "marsh-badge"
+      "id": "marsh-badge",
+      "elapsed": "568:30:06",
+      "approx": true
     },
     {
-      "id": "volcano-badge"
+      "id": "volcano-badge",
+      "elapsed": "638:44:57",
+      "approx": true
     },
     {
-      "id": "earth-badge"
+      "id": "earth-badge",
+      "elapsed": "645:40:22",
+      "approx": true
     },
     {
       "id": "e4-lorelei"
@@ -64,7 +84,7 @@
     },
     {
       "id": "champion",
-      "elapsed": "813:00:00",
+      "elapsed": "813:15:39",
       "approx": true
     }
   ],
@@ -76,5 +96,5 @@
     "human_intervention": "One manual context clear during this run (operator's blog). The second run reports zero manual interventions."
   },
   "hardware": {},
-  "notes": "Played Blue. Elapsed time is approximate, from the operator's write-up."
+  "notes": "Played Blue. Badge and Champion times come from a community timing sheet, which estimated them from a Google progress graph and Discord timestamps; the Elite Four fights are not timed one by one. The harness was changed during the run and the operator stepped in at times."
 }

@@ -1,6 +1,7 @@
 {
   "id": "pokemon-emerald",
-  "order": 3,
+  "order": 23,
+  "tier": "classic",
   "title": "Pokémon Emerald",
   "platform": "Game Boy Advance",
   "release_year": 2004,

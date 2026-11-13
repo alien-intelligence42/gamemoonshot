@@ -12,6 +12,10 @@
     {
       "label": "TechCrunch",
       "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    },
+    {
+      "label": "Community timing sheet (Claude tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=546130155&single=true"
     }
   ],
   "videos": [
@@ -28,13 +32,19 @@
   ],
   "milestones": [
     {
-      "id": "boulder-badge"
+      "id": "boulder-badge",
+      "elapsed": "32:03:05",
+      "approx": true
     },
     {
-      "id": "cascade-badge"
+      "id": "cascade-badge",
+      "elapsed": "111:48:37",
+      "approx": true
     },
     {
-      "id": "thunder-badge"
+      "id": "thunder-badge",
+      "elapsed": "306:44:00",
+      "approx": true
     }
   ],
   "method": {
@@ -45,5 +55,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified."
+  "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified. The plotted times are from the public stream's restarted run (begun around 2025-03-05), which reached Thunder after about 307 hours; a community sheet estimated them from VODs. The stream's first run stalled at 2 badges and was reset."
 }

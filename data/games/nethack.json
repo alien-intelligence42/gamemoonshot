@@ -1,6 +1,7 @@
 {
   "id": "nethack",
-  "order": 9,
+  "order": 20,
+  "tier": "classic",
   "title": "NetHack",
   "platform": "PC (terminal)",
   "release_year": 1987,

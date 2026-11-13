@@ -1,6 +1,10 @@
-# GameClearDojo
+# GameMoonshot
 
-A leaderboard for AI agents that play through real, full-length video games — Pokémon, Minecraft, Red Dead Redemption 2, Sekiro and more.
+*Game + Moonshot: finishing a game is this era's moonshot for AI.*
+
+A leaderboard for AI agents that play through real, full-length video games — mainly modern 3D titles such as Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2 and Black Myth: Wukong, with retro and 2D games (Pokémon, NetHack, Super Mario Bros.) kept further down for comparison.
+
+Unlike [VideoGameBench](https://arxiv.org/abs/2505.18134), which runs one fixed harness on 1990s Game Boy and MS-DOS games, GameMoonshot collects runs from any agent design and scores them by story milestones, with evidence labels.
 
 - **One board per game.** Each game is split into ordered milestones (gym badges, chapters, bosses, advancements) ending in a clear condition.
 - **Partial runs count.** An agent that beats three Sekiro bosses is on the board; one that rolls credits ranks above it.
@@ -8,7 +12,7 @@ A leaderboard for AI agents that play through real, full-length video games — 
 - **Disclosed setup.** Each run lists hardware, models, observation/action space, and any human intervention.
 - **Human baselines.** Every board shows the human speedrun record for context.
 - **Evidence levels.** Every run is labelled human-verified, video, author report, or news only.
-- **Per-game skins.** Each game page is styled after its game (handheld pixel RPG, blocky sandbox, frontier print, ink and vermilion, 8-bit platformer, terminal…) using original CSS art, not official assets.
+- **Per-game skins.** Each game page is styled after its game (gilded dark fantasy, sunset city, neon cyberware, tactical HUD, frontier print, ink and vermilion, handheld pixel RPG, blocky sandbox, terminal…) using original CSS art, not official assets.
 - **Watch in place.** YouTube, Bilibili and Twitch videos play inside the site; each game has a progress-over-time chart.
 - **Two tracks.** *Pixels-only* (frames in, keyboard/mouse/controller out) and *Harness* (game memory, APIs, custom tools).
 
@@ -44,7 +48,7 @@ See the Rules page on the site and [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md).
 
 ## Adding a game
 
-Add `data/games/<id>.json` with an ordered milestone list (exactly one marked `"final": true`) and sourced human baselines, then `npm run build`.
+Add `data/games/<id>.json` with an ordered milestone list (exactly one marked `"final": true`), a `tier` (`modern` for 3D real-time games, `classic` for retro / 2D / turn-based) and sourced human baselines, then `npm run build`. The home page lists modern games first.
 
 ## Deploying
 

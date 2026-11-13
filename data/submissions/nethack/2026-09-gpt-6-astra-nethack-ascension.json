@@ -16,39 +16,63 @@
     {
       "label": "Winning dumplog (Hardfought)",
       "url": "https://www.hardfought.org/userdata/C/CodexDelver/nethack/dumplog/1788964024.nh.txt"
+    },
+    {
+      "label": "Replay timeline (blog viewer data)",
+      "url": "https://kenforthewin.github.io/blog/replays/astra-v3/manifest.json"
     }
   ],
   "videos": [],
   "milestones": [
     {
-      "id": "dlvl-5"
+      "id": "dlvl-5",
+      "elapsed": "1:11:24",
+      "approx": true
     },
     {
-      "id": "oracle"
+      "id": "oracle",
+      "elapsed": "6:34:12",
+      "approx": true
     },
     {
-      "id": "quest"
+      "id": "quest",
+      "elapsed": "40:00:00",
+      "approx": true
     },
     {
-      "id": "medusa"
+      "id": "medusa",
+      "elapsed": "21:48:00",
+      "approx": true
     },
     {
-      "id": "castle"
+      "id": "castle",
+      "elapsed": "21:48:00",
+      "approx": true
     },
     {
-      "id": "gehennom"
+      "id": "gehennom",
+      "elapsed": "37:00:00",
+      "approx": true
     },
     {
-      "id": "amulet"
+      "id": "amulet",
+      "elapsed": "53:00:00",
+      "approx": true
     },
     {
-      "id": "planes"
+      "id": "planes",
+      "elapsed": "58:06:00",
+      "approx": true
     },
     {
-      "id": "astral"
+      "id": "astral",
+      "elapsed": "60:00:00",
+      "approx": true
     },
     {
-      "id": "ascend"
+      "id": "ascend",
+      "elapsed": "60:24:00",
+      "approx": true
     }
   ],
   "method": {
@@ -60,5 +84,5 @@
     "code": "https://github.com/kenforthewin/nethack_astra"
   },
   "hardware": {},
-  "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs."
+  "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs. Times are active play hours, estimated from the replay viewer's timeline with long idle pauses removed; they are not a published figure. Wall-clock from start to ascension was about 294 hours across 12 days. Medusa's time is an upper bound (arrival at the Castle). The Quest was entered after Gehennom (turn 28,330)."
 }

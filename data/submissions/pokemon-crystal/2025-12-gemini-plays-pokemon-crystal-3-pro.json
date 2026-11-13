@@ -12,6 +12,14 @@
     {
       "label": "Harness branch (GitHub)",
       "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/tree/crystal_race_gemini_3"
+    },
+    {
+      "label": "Milestone chart (operator's blog image)",
+      "url": "https://cdn.hashnode.com/res/hashnode/image/upload/v1765438549887/b7d4f2b9-3dcc-4b9f-8404-87302ce21c7b.png"
+    },
+    {
+      "label": "Community timing sheet (Gemini tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=629417885&single=true"
     }
   ],
   "videos": [
@@ -23,50 +31,83 @@
   ],
   "milestones": [
     {
-      "id": "zephyr-badge"
+      "id": "zephyr-badge",
+      "elapsed": "22:00:00",
+      "approx": true
     },
     {
-      "id": "hive-badge"
+      "id": "hive-badge",
+      "elapsed": "33:48:00",
+      "approx": true
     },
     {
-      "id": "plain-badge"
+      "id": "plain-badge",
+      "elapsed": "53:42:00",
+      "approx": true
     },
     {
-      "id": "fog-badge"
+      "id": "fog-badge",
+      "elapsed": "71:30:00",
+      "approx": true
     },
     {
-      "id": "storm-badge"
+      "id": "storm-badge",
+      "elapsed": "96:48:00",
+      "approx": true
     },
     {
-      "id": "mineral-badge"
+      "id": "mineral-badge",
+      "elapsed": "98:12:00",
+      "approx": true
     },
     {
-      "id": "glacier-badge"
+      "id": "glacier-badge",
+      "elapsed": "123:48:00",
+      "approx": true
     },
     {
-      "id": "rising-badge"
+      "id": "rising-badge",
+      "elapsed": "250:12:00",
+      "approx": true
     },
     {
-      "id": "e4-will"
+      "id": "e4-will",
+      "elapsed": "265:09:00",
+      "approx": true,
+      "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/864f81b09f50c29d9da1438dbd1634acc4b63dc9"
     },
     {
-      "id": "e4-koga"
+      "id": "e4-koga",
+      "elapsed": "265:36:00",
+      "approx": true,
+      "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/77298a03d52f2755ef6d61eb60bd8b046bb72173"
     },
     {
-      "id": "e4-bruno"
+      "id": "e4-bruno",
+      "elapsed": "266:08:00",
+      "approx": true,
+      "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/43d1e2311491583ea11324240b8f1e215c01574b"
     },
     {
-      "id": "e4-karen"
+      "id": "e4-karen",
+      "elapsed": "266:49:00",
+      "approx": true,
+      "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/eb2f1a5876119003fad6a13371de1c21bbc6f499"
     },
     {
-      "id": "champion-lance"
+      "id": "champion-lance",
+      "elapsed": "268:39:05",
+      "approx": true,
+      "evidence": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/commit/030359935287fe19f29fa929ab711e076195647c"
     },
     {
-      "id": "kanto-badges"
+      "id": "kanto-badges",
+      "elapsed": "391:36:00",
+      "approx": true
     },
     {
       "id": "red",
-      "elapsed": "408:00:00",
+      "elapsed": "424:24:00",
       "approx": true
     }
   ],
@@ -78,5 +119,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run. Time to Red is approximate (about 17 days, as reported in coverage of the race)."
+  "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). Times are harness session hours read from the operator's milestone chart. They include about 74 hours of API downtime; with that removed, the operator's sheet gives about 350 hours to Red. Elite Four times are from the per-turn notepad commits on GitHub, converted to hours. A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
 }

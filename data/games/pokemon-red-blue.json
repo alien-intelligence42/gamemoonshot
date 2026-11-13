@@ -1,6 +1,7 @@
 {
   "id": "pokemon-red-blue",
-  "order": 1,
+  "order": 24,
+  "tier": "classic",
   "title": "Pokémon Red / Blue",
   "platform": "Game Boy",
   "release_year": 1996,

@@ -12,6 +12,10 @@
     {
       "label": "Earlier analysis (LessWrong)",
       "url": "https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon"
+    },
+    {
+      "label": "Community timing sheet (Claude tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=546130155&single=true"
     }
   ],
   "videos": [
@@ -33,28 +37,38 @@
   ],
   "milestones": [
     {
-      "id": "boulder-badge"
+      "id": "boulder-badge",
+      "elapsed": "10:55:57"
     },
     {
-      "id": "cascade-badge"
+      "id": "cascade-badge",
+      "elapsed": "27:45:09"
     },
     {
-      "id": "thunder-badge"
+      "id": "thunder-badge",
+      "elapsed": "34:39:06"
     },
     {
-      "id": "rainbow-badge"
+      "id": "rainbow-badge",
+      "elapsed": "208:14:11"
     },
     {
-      "id": "soul-badge"
+      "id": "soul-badge",
+      "elapsed": "604:08:57"
     },
     {
-      "id": "marsh-badge"
+      "id": "marsh-badge",
+      "elapsed": "593:22:15"
     },
     {
-      "id": "volcano-badge"
+      "id": "volcano-badge",
+      "elapsed": "1398:06:43",
+      "approx": true
     },
     {
-      "id": "earth-badge"
+      "id": "earth-badge",
+      "elapsed": "1400:18:42",
+      "approx": true
     }
   ],
   "method": {
@@ -65,5 +79,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06."
+  "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06. Times come from a community timing sheet. The stream had downtime after the Pokémon Mansion, so the sheet estimates the Volcano and Earth times from the step rate. The run reached Victory Road but never the Indigo Plateau."
 }

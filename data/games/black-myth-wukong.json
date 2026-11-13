@@ -1,6 +1,7 @@
 {
   "id": "black-myth-wukong",
-  "order": 7,
+  "order": 5,
+  "tier": "modern",
   "title": "Black Myth: Wukong",
   "platform": "PC / PS5",
   "release_year": 2024,

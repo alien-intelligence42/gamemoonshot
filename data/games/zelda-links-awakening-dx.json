@@ -1,6 +1,7 @@
 {
   "id": "zelda-links-awakening-dx",
-  "order": 11,
+  "order": 25,
+  "tier": "classic",
   "title": "The Legend of Zelda: Link's Awakening DX",
   "platform": "Game Boy Color",
   "release_year": 1998,

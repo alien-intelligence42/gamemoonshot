@@ -1,6 +1,7 @@
 {
   "id": "sekiro",
   "order": 6,
+  "tier": "modern",
   "title": "Sekiro: Shadows Die Twice",
   "platform": "PC / PS4 / Xbox One",
   "release_year": 2019,

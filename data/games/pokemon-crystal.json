@@ -1,6 +1,7 @@
 {
   "id": "pokemon-crystal",
-  "order": 2,
+  "order": 22,
+  "tier": "classic",
   "title": "Pokémon Crystal",
   "platform": "Game Boy Color",
   "release_year": 2000,

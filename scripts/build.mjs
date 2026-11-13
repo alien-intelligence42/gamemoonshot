@@ -20,8 +20,8 @@ export const STATUSES = ["verified", "pending", "curated", "rejected"];
 const SOURCE_TYPES = ["author", "news"];
 // Emblem names defined in icons.js.
 // Skin names defined in skins.css / app.js SKINS.
-const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire"];
-const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield"];
+const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire", "erdtree", "sunset", "neon", "tactical"];
+const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield", "tree", "palm", "chip", "dogtag"];
 const ID_RE = /^[a-z0-9][a-z0-9-]*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_RE = /^(\d+):([0-5]\d):([0-5]\d)$/; // H:MM:SS, hours unbounded
@@ -102,6 +102,7 @@ function validateGame(file, g) {
     checkUrlField(file, b, "source", `human_baselines[${i}].source`, true);
   }
   for (const [i, l] of (g.links ?? []).entries()) checkUrlField(file, l, "url", `links[${i}].url`, true);
+  if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (3D, real-time, long-form) or "classic" (retro / 2D / turn-based)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
   if (g.icon != null && !ICONS.includes(g.icon)) err(file, `icon must be one of ${ICONS.join(", ")}`);
   if (g.theme != null && !(Array.isArray(g.theme) && g.theme.length === 2 && g.theme.every((c) => /^#[0-9a-f]{6}$/i.test(c)))) {

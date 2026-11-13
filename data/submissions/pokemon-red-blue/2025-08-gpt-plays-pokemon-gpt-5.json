@@ -12,48 +12,77 @@
     {
       "label": "CO/AI",
       "url": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record"
+    },
+    {
+      "label": "Badge log (archived)",
+      "url": "https://web.archive.org/web/20250815045942/https://gpt-plays-pokemon.clad3815.dev/data_sync/badges_log.json"
+    },
+    {
+      "label": "Room-visit log (archived)",
+      "url": "https://web.archive.org/web/20250815045942/https://gpt-plays-pokemon.clad3815.dev/data_sync/map_visits.json"
+    },
+    {
+      "label": "Community timing sheet (GPT tab)",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml?gid=1821408135&single=true"
     }
   ],
   "videos": [],
   "milestones": [
     {
-      "id": "boulder-badge"
+      "id": "boulder-badge",
+      "elapsed": "13:44:42"
     },
     {
-      "id": "cascade-badge"
+      "id": "cascade-badge",
+      "elapsed": "47:46:24"
     },
     {
-      "id": "thunder-badge"
+      "id": "thunder-badge",
+      "elapsed": "49:42:33"
     },
     {
-      "id": "rainbow-badge"
+      "id": "rainbow-badge",
+      "elapsed": "83:21:47"
     },
     {
-      "id": "soul-badge"
+      "id": "soul-badge",
+      "elapsed": "135:22:59"
     },
     {
-      "id": "marsh-badge"
+      "id": "marsh-badge",
+      "elapsed": "105:24:16"
     },
     {
-      "id": "volcano-badge"
+      "id": "volcano-badge",
+      "elapsed": "145:52:23"
     },
     {
-      "id": "earth-badge"
+      "id": "earth-badge",
+      "elapsed": "148:11:30"
     },
     {
-      "id": "e4-lorelei"
+      "id": "e4-lorelei",
+      "elapsed": "160:41:40",
+      "approx": true
     },
     {
-      "id": "e4-bruno"
+      "id": "e4-bruno",
+      "elapsed": "160:53:20",
+      "approx": true
     },
     {
-      "id": "e4-agatha"
+      "id": "e4-agatha",
+      "elapsed": "161:04:36",
+      "approx": true
     },
     {
-      "id": "e4-lance"
+      "id": "e4-lance",
+      "elapsed": "161:36:59",
+      "approx": true
     },
     {
-      "id": "champion"
+      "id": "champion",
+      "elapsed": "161:56:39"
     }
   ],
   "method": {
@@ -64,5 +93,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Step counts, not wall-clock time, are reported. No post by the operator and no video of the run was found; the figure traces back to a Reddit post cited by TechRadar."
+  "notes": "Finished in 6,470 steps. Badge times come from the operator's archived badge log and match a community timing sheet; the start (2025-08-07 18:16 UTC) is derived from that log. Elite Four times are upper bounds: when the agent first walked into the next room, from the archived room-visit log. No operator write-up or video of the run was found; the headline figure was first reported on Reddit and cited by TechRadar."
 }

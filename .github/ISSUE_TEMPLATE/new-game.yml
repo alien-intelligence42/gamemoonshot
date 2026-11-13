@@ -1,5 +1,5 @@
 name: Propose a game
-description: Suggest a new game for the Dojo, with its milestone list.
+description: Suggest a new game for GameMoonshot, with its milestone list.
 title: "[Game] <title>"
 labels: [new-game]
 body:

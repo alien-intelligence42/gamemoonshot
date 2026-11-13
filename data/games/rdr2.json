@@ -1,6 +1,7 @@
 {
   "id": "rdr2",
-  "order": 5,
+  "order": 4,
+  "tier": "modern",
   "title": "Red Dead Redemption 2",
   "platform": "PC / PS4 / Xbox One",
   "release_year": 2018,

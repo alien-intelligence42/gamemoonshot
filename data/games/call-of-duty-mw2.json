@@ -1,0 +1,109 @@
+{
+  "id": "call-of-duty-mw2",
+  "order": 7,
+  "tier": "modern",
+  "title": "Call of Duty: Modern Warfare 2",
+  "platform": "PC (2009)",
+  "release_year": 2009,
+  "genre": "First-person shooter (campaign)",
+  "icon": "dogtag",
+  "theme": [
+    "#4a5a2a",
+    "#10120f"
+  ],
+  "skin": "tactical",
+  "description": "The single-player campaign: real-time aiming at sub-second speed, timed set pieces like the snowmobile chase, and checkpoint-only saves — hard for agents that act on slow, sparse screenshots. No AI agent has reported playing any Call of Duty campaign; the nearest research is on ViZDoom.",
+  "clear_condition": "Finish the final level, Endgame (the knife throw).",
+  "timing": "Run time from the end of the S.S.D.D. load to the knife throw in Endgame, as on speedrun.com.",
+  "rules": "Original 2009 PC release, unmodified (Campaign Remastered is a different game). Any difficulty — state it; Recruit and Veteran are compared separately. No console commands, trainers or aim assistance outside the game's own. Levels may be selected from the menu only after they were reached in the run.",
+  "milestones": [
+    {
+      "id": "ssdd",
+      "name": "S.S.D.D.",
+      "description": "Training level"
+    },
+    {
+      "id": "team-player",
+      "name": "Team Player"
+    },
+    {
+      "id": "cliffhanger",
+      "name": "Cliffhanger"
+    },
+    {
+      "id": "takedown",
+      "name": "Takedown",
+      "description": "No Russian, before it, can be skipped and is not counted"
+    },
+    {
+      "id": "wolverines",
+      "name": "Wolverines!"
+    },
+    {
+      "id": "the-hornets-nest",
+      "name": "The Hornet's Nest"
+    },
+    {
+      "id": "exodus",
+      "name": "Exodus"
+    },
+    {
+      "id": "the-only-easy-day-was-yesterday",
+      "name": "The Only Easy Day... Was Yesterday"
+    },
+    {
+      "id": "the-gulag",
+      "name": "The Gulag"
+    },
+    {
+      "id": "of-their-own-accord",
+      "name": "Of Their Own Accord"
+    },
+    {
+      "id": "contingency",
+      "name": "Contingency"
+    },
+    {
+      "id": "whiskey-hotel",
+      "name": "Whiskey Hotel"
+    },
+    {
+      "id": "loose-ends",
+      "name": "Loose Ends"
+    },
+    {
+      "id": "just-like-old-times",
+      "name": "Just Like Old Times"
+    },
+    {
+      "id": "endgame",
+      "name": "Endgame",
+      "description": "The knife throw ends the run",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Recruit (PC)",
+      "time": "1:19:21",
+      "note": "speedrun.com world record by medz",
+      "source": "https://www.speedrun.com/mw2/runs/zxp49ogy"
+    },
+    {
+      "label": "Speedrun WR — Any% Veteran (PC)",
+      "time": "1:35:41",
+      "note": "speedrun.com world record by cryynbtw (load-removed)",
+      "source": "https://www.speedrun.com/mw2/runs/y4vlr8ny"
+    }
+  ],
+  "links": [
+    {
+      "label": "Speedrun.com: Modern Warfare 2 Any%",
+      "url": "https://www.speedrun.com/mw2?h=any&x=xd13zwk8"
+    },
+    {
+      "label": "Game-TARS — nearest FPS agent result (ViZDoom, not CoD)",
+      "url": "https://arxiv.org/abs/2510.23691"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "id": "super-mario-bros",
-  "order": 8,
+  "order": 26,
+  "tier": "classic",
   "title": "Super Mario Bros.",
   "platform": "NES",
   "release_year": 1985,

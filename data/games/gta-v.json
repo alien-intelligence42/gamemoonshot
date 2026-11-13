@@ -1,0 +1,109 @@
+{
+  "id": "gta-v",
+  "order": 3,
+  "tier": "modern",
+  "title": "Grand Theft Auto V",
+  "platform": "PC / PS4 / PS5 / Xbox",
+  "release_year": 2013,
+  "genre": "Open-world action",
+  "icon": "palm",
+  "theme": [
+    "#c0566a",
+    "#2a1d4a"
+  ],
+  "skin": "sunset",
+  "description": "About 32 hours of story for a typical player (HowLongToBeat): driving, flying, boating and cover shooting under strict fail conditions, three switchable characters and heist plans. No AI agent has reported passing a full story mission yet; the GTAGym benchmark tests sub-tasks, not whole missions.",
+  "clear_condition": "Finish the story: pass any of the three final missions (The Third Way, Something Sensible, or The Time's Come).",
+  "timing": "Run time from the 'Ludendorff, North Yankton' title to the end of the final mission.",
+  "rules": "Story mode, unmodified game, any version (state Legacy or Enhanced). No cheat codes, trainers or taxi fast travel; do not use the skip offered after failing a mission three times. Mods that only read game state for the agent are allowed on the harness track and must be disclosed.",
+  "milestones": [
+    {
+      "id": "prologue",
+      "name": "Prologue (North Yankton)",
+      "description": "Done once Franklin's story starts in Los Santos"
+    },
+    {
+      "id": "franklin-and-lamar",
+      "name": "Franklin and Lamar"
+    },
+    {
+      "id": "the-jewel-store-job",
+      "name": "The Jewel Store Job"
+    },
+    {
+      "id": "mr-philips",
+      "name": "Mr. Philips",
+      "description": "Trevor's introduction"
+    },
+    {
+      "id": "friends-reunited",
+      "name": "Friends Reunited"
+    },
+    {
+      "id": "threes-company",
+      "name": "Three's Company"
+    },
+    {
+      "id": "the-merryweather-heist",
+      "name": "The Merryweather Heist"
+    },
+    {
+      "id": "blitz-play",
+      "name": "Blitz Play"
+    },
+    {
+      "id": "the-paleto-score",
+      "name": "The Paleto Score"
+    },
+    {
+      "id": "the-bureau-raid",
+      "name": "The Bureau Raid"
+    },
+    {
+      "id": "lamar-down",
+      "name": "Lamar Down"
+    },
+    {
+      "id": "the-big-score",
+      "name": "The Big Score"
+    },
+    {
+      "id": "ending",
+      "name": "Any ending",
+      "description": "The Third Way, Something Sensible, or The Time's Come — 'Mission Passed'",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Any% Classic, no glitches (PC)",
+      "time": "5:36:54",
+      "note": "speedrun.com world record by UnNameD; Classic rules: no taxis, no mission skips, The Third Way ending",
+      "source": "https://www.speedrun.com/gtav/runs/m7oqel5y"
+    },
+    {
+      "label": "Speedrun WR — All Missions (PC)",
+      "time": "11:00:22",
+      "note": "speedrun.com world record by UnNameD; every story mission plus Strangers and Freaks",
+      "source": "https://www.speedrun.com/gtav/runs/y2nvj2wy"
+    }
+  ],
+  "links": [
+    {
+      "label": "GTAGym / GTAVBench — benchmark of story sub-tasks (arXiv 2611.13028)",
+      "url": "https://arxiv.org/abs/2611.13028"
+    },
+    {
+      "label": "WANTED — hobby Claude agent via a game-state mod (no mission passed yet)",
+      "url": "https://github.com/devzer0x/wanted"
+    },
+    {
+      "label": "HowLongToBeat: Grand Theft Auto V",
+      "url": "https://howlongtobeat.com/game/4064"
+    },
+    {
+      "label": "Missions in GTA V (Grand Theft Wiki)",
+      "url": "https://www.grandtheftwiki.com/Missions_in_GTA_V"
+    }
+  ]
+}

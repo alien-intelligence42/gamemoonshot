@@ -19,8 +19,9 @@ data/
 | `clear_condition` | yes | what "beating the game" means for this board |
 | `timing` | no | how elapsed time is measured (default: run time from first input) |
 | `rules` | no | game-specific rules (allowed difficulty, version, glitches…) |
-| `order` | no | sort order on the home page |
-| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield |
+| `tier` | yes | `modern` (3D, real-time, long-form — listed first) or `classic` (retro / 2D / turn-based — listed below for comparison) |
+| `order` | no | sort order within its tier on the home page |
+| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag |
 | `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |
 | `milestones[]` | yes | ordered; each `{ id, name, description?, final? }`. Exactly one has `"final": true` — reaching it means the game is cleared |
 | `human_baselines[]` | no | `{ label, time: "H:MM:SS", note?, source: url }` |
@@ -56,6 +57,9 @@ Milestones should be things a reviewer can confirm on video in a few seconds: a 
     // "approx": true when elapsed is an estimate from a public report (shown as "~"); explain it in notes
     { "id": "genichiro", "elapsed": "5:00:00", "approx": true }
   ],
+  // optional: model family for the chart icon and line color — "claude" | "gemini" | "openai" | "other".
+  // Usually left out: it is guessed from method.models.
+  "vendor": "openai",
 
   "method": {
     "summary": "How the agent works.",
@@ -77,6 +81,15 @@ Milestones should be things a reviewer can confirm on video in a few seconds: a 
   "notes": ""
 }
 ```
+
+## Progress chart
+
+Each game page plots milestones done (y) against play time (x, log scale). Every milestone with an `elapsed` value becomes a step on the run's line, so give times for intermediate milestones too, not just the last one.
+
+- Milestones may be reached out of list order (e.g. Marsh before Soul); the line counts what is done by each time.
+- A milestone without `elapsed` counts as done by the earliest timed milestone listed after it. For example, untimed Elite Four fights join the Champion step.
+- When a time is an upper bound (e.g. "entered the next room by then"), mark it `"approx": true` and say so in `notes`.
+- The run's furthest point shows its model icon, with a ring for the evidence level. Runs with no `elapsed` at all are listed under the chart as not plotted.
 
 ## Evidence level
 
