@@ -29,7 +29,9 @@
       "id": "a-terrible-fortress"
     },
     {
-      "id": "into-fire"
+      "id": "into-fire",
+      "elapsed": "141:00:00",
+      "approx": true
     }
   ],
   "method": {
@@ -42,5 +44,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified."
+  "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
 }

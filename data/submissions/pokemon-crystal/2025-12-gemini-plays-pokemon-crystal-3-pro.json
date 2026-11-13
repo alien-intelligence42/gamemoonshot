@@ -65,7 +65,9 @@
       "id": "kanto-badges"
     },
     {
-      "id": "red"
+      "id": "red",
+      "elapsed": "408:00:00",
+      "approx": true
     }
   ],
   "method": {
@@ -76,5 +78,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
+  "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run. Time to Red is approximate (about 17 days, as reported in coverage of the race)."
 }

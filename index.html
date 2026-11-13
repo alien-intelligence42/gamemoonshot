@@ -22,6 +22,15 @@
     <script src="config.js"></script>
   </head>
   <body>
+    <script>
+      // Set the color scheme before first paint: saved choice, else the system preference.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("dojo-theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.body.dataset.tone = t;
+      })();
+    </script>
     <header class="topbar">
       <a class="brand" href="#/">
         <img src="favicon.svg" alt="" width="30" height="30" />
@@ -30,7 +39,8 @@
       <nav aria-label="Main">
         <a href="#/" data-nav="home">Games</a>
         <a href="#/rules" data-nav="rules">Rules</a>
-        <a href="#/submit" data-nav="submit" class="cta">Submit a run</a>
+        <a href="#/submit" data-nav="submit" class="cta">Submit<span class="hide-xs"> a run</span></a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color scheme"></button>
       </nav>
     </header>
     <main id="app" aria-live="polite">

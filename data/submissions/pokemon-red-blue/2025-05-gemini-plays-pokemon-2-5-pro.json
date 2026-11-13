@@ -64,7 +64,8 @@
     },
     {
       "id": "champion",
-      "elapsed": "813:00:00"
+      "elapsed": "813:00:00",
+      "approx": true
     }
   ],
   "method": {

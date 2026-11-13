@@ -52,7 +52,9 @@ Milestones should be things a reviewer can confirm on video in a few seconds: a 
   "milestones": [
     // video = index into videos[], timestamp = position in that video, elapsed = run time so far
     { "id": "gyoubu-oniwa", "video": 0, "timestamp": "1:02:10", "elapsed": "1:02:10" },
-    { "id": "lady-butterfly", "video": 0, "timestamp": "2:40:05", "elapsed": "2:40:05", "evidence": "https://..." }
+    { "id": "lady-butterfly", "video": 0, "timestamp": "2:40:05", "elapsed": "2:40:05", "evidence": "https://..." },
+    // "approx": true when elapsed is an estimate from a public report (shown as "~"); explain it in notes
+    { "id": "genichiro", "elapsed": "5:00:00", "approx": true }
   ],
 
   "method": {
@@ -88,6 +90,12 @@ Each run shows one evidence badge, derived (never typed by hand) in this order:
 | 📰 News only | everything else |
 
 Author submissions must include video, so they start at *Video, unverified*. Curated entries start at *Author report* or *News only* until someone links footage.
+
+## Chart
+
+Each game page plots milestones reached (y) against the agent's elapsed play time (x, log scale), using
+each milestone's `elapsed`. Human records are drawn as hollow rings at the clear line. Runs with no
+`elapsed` anywhere are listed under the chart as "not plotted".
 
 ## Ranking
 

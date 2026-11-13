@@ -183,6 +183,7 @@ function validateSubmission(file, s, gamesById) {
       warn(file, `milestones[${i}] "${r.id}" is verified without a video timestamp or evidence link`);
     }
     if (r.evidence != null) checkUrlField(file, r, "evidence", `milestones[${i}].evidence`);
+    if (r.approx != null && (typeof r.approx !== "boolean" || r.elapsed == null)) err(file, `milestones[${i}].approx must be true/false and needs "elapsed"`);
   }
 }
 

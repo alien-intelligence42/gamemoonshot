@@ -32,26 +32,38 @@ function evidenceOf(run) {
 const footageNote = (run) =>
   evidenceOf(run) === "video" ? ((run.videos ?? []).some((v) => v.full) ? "full run on video" : "partial footage only") : "";
 
-// Per-game skins (see skins.css). family groups shared rules; tone picks the evidence palette.
+// Per-game skins (see skins.css); family groups shared rules. Every skin has a light and a dark variant,
+// chosen by the site-wide color scheme (body[data-tone]), which also picks the evidence palette.
 const SKINS = {
-  "gb-dmg": { family: "pixel", tone: "light" },
-  "gb-crystal": { family: "pixel", tone: "light" },
-  "gba-emerald": { family: "pixel", tone: "light" },
-  "gb-adventure": { family: "pixel", tone: "dark" },
-  blocky: { family: "blocky", tone: "light" },
-  western: { family: "western", tone: "light" },
-  shinobi: { family: "shinobi", tone: "dark" },
-  wukong: { family: "wukong", tone: "dark" },
-  platformer: { family: "platformer", tone: "light" },
-  terminal: { family: "terminal", tone: "dark" },
-  spire: { family: "spire", tone: "dark" },
+  "gb-dmg": { family: "pixel" }, "gb-crystal": { family: "pixel" }, "gba-emerald": { family: "pixel" }, "gb-adventure": { family: "pixel" },
+  blocky: { family: "blocky" }, western: { family: "western" }, shinobi: { family: "shinobi" }, wukong: { family: "wukong" },
+  platformer: { family: "platformer" }, terminal: { family: "terminal" }, spire: { family: "spire" },
 };
+const THEME_KEY = "dojo-theme";
+let THEME = document.body.dataset.tone === "light" ? "light" : "dark";
+function syncTheme() {
+  document.body.dataset.tone = THEME;
+  const btn = document.getElementById("themeToggle");
+  if (btn) {
+    btn.innerHTML = THEME === "dark" ? UI.sun : UI.moon;
+    btn.setAttribute("aria-label", THEME === "dark" ? "Switch to light scheme" : "Switch to dark scheme");
+    btn.title = btn.getAttribute("aria-label");
+  }
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", getComputedStyle(document.body).getPropertyValue("--bg").trim() || "#0c0a08");
+}
+document.getElementById("themeToggle")?.addEventListener("click", () => {
+  THEME = THEME === "dark" ? "light" : "dark";
+  try { localStorage.setItem(THEME_KEY, THEME); } catch {}
+  syncTheme();
+  const m = location.hash.match(/^#\/game\/([^?]+)/);
+  if (m && DATA) drawChart(DATA.games.find((g) => g.id === decodeURIComponent(m[1])));
+});
 function applySkin(game) {
   const b = document.body.dataset;
   const sk = game && SKINS[game.skin];
-  if (sk) Object.assign(b, { skin: game.skin, family: sk.family, tone: sk.tone });
-  else { delete b.skin; delete b.family; delete b.tone; }
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", sk ? getComputedStyle(document.body).getPropertyValue("--bg").trim() || "#0c0a08" : "#0c0a08");
+  if (sk) Object.assign(b, { skin: game.skin, family: sk.family });
+  else { delete b.skin; delete b.family; }
+  syncTheme();
 }
 // Progress bar. data-level lets skins color it like a health bar.
 function bar(n, total, { cleared = false, human = false, lg = false } = {}) {
@@ -85,7 +97,6 @@ function fmtDuration(sec) {
   if (h > 0) return `${h}h ${String(m).padStart(2, "0")}m`;
   return `${m}m ${String(sec % 60).padStart(2, "0")}s`;
 }
-const fmtDate = (d) => new Date(`${d}T00:00:00Z`).toLocaleDateString("en", { year: "numeric", month: "short", timeZone: "UTC" });
 const roman = (n) =>
   [[10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]].reduce((s, [v, r]) => {
     while (n >= v) { s += r; n -= v; }
@@ -242,6 +253,7 @@ function scoreRun(game, run) {
     cleared: reached.some((r) => r.id === finalId),
     furthest: furthest ? game.milestones[order.get(furthest.id)] : null,
     time: furthest ? parseTime(furthest.elapsed) ?? (elapsedVals.length ? Math.max(...elapsedVals) : null) : null,
+    approx: reached.some((r) => r.approx),
   };
 }
 const rankRuns = (game, runs) =>
@@ -445,7 +457,7 @@ function runDetail(game, sc) {
       const hit = r.milestones.find((x) => x.id === ms.id);
       if (!hit) return `<li class="miss"><span>·</span><span>${esc(ms.name)}</span><span></span></li>`;
       const v = videos[hit.video ?? 0];
-      let right = hit.elapsed ? `<span class="mono">${esc(hit.elapsed)}</span>` : "";
+      let right = hit.elapsed ? `<span class="mono">${hit.approx ? "~" : ""}${esc(hit.elapsed)}</span>` : "";
       if (v && hit.timestamp) {
         const id = regVideo({ url: v.url, ts: hit.timestamp, title: `${r.agent} — ${ms.name}`, sub: `${v.label ?? "Video"} at ${hit.timestamp}` });
         right += ` <a href="${esc(videoAt(v.url, hit.timestamp))}" data-play="${id}">▶ ${esc(hit.timestamp)}</a>`;
@@ -539,7 +551,7 @@ function viewGame(id) {
         </div>
         <div class="c-meta">
           <div class="c-track"><span class="badge track" title="${esc(TRACK_HELP[r.track])}">${esc(TRACK_LABEL[r.track] ?? r.track)}</span></div>
-          <div class="c-time num time ${sc.time == null ? "unknown" : ""}">${esc(fmtDuration(sc.time))}</div>
+          <div class="c-time num time ${sc.time == null ? "unknown" : ""}" ${sc.approx ? 'title="approximate, from public reports"' : ""}>${sc.approx && sc.time != null ? "~" : ""}${esc(fmtDuration(sc.time))}</div>
           <div class="c-ev ev">${evidenceBadge(r)}${footageNote(r) ? `<div class="note">${esc(footageNote(r))}</div>` : ""}</div>
           <div class="c-date date num">${esc(r.submitted_at)}</div>
         </div>
@@ -595,8 +607,8 @@ function viewGame(id) {
       </dl>
 
       <section class="section">
-        <div class="section-head"><div><h2><span class="ico">${UI.chart}</span>Progress over time</h2>
-        <div class="sub">Each mark is one AI run: when it was reported (across) and how many milestones it reached (up). The line is the best result so far.</div></div></div>
+        <div class="section-head"><div><h2><span class="ico">${UI.chart}</span>Progress vs. play time</h2>
+        <div class="sub">How long each agent played (across, log scale) to reach each milestone (up). The hollow ring is the human record for the whole game. Times marked “about” are approximate figures from public reports.</div></div></div>
         <div class="panel"><div class="chart-wrap" id="chart"></div></div>
       </section>
 
@@ -646,106 +658,131 @@ function viewGame(id) {
     </div>`;
 }
 
-// ---------- chart: progress over time ----------
+// ---------- chart: progress vs. time spent ----------
+// x = the agent's elapsed run time when it reached a milestone (log scale, so minutes and
+// hundreds of hours fit together); y = milestones reached. Human records are plotted for scale.
+const fmtTick = (sec) => (sec < 3600 ? `${Math.round(sec / 60)}m` : `${Math.round(sec / 3600)}h`);
 function drawChart(game) {
   const host = app.querySelector("#chart");
   if (!host) return;
-  const scored = rankRuns(game, runsFor(game.id)).filter((sc) => /^\d{4}-\d{2}-\d{2}$/.test(sc.run.submitted_at ?? ""));
-  if (!scored.length) {
-    host.innerHTML = `<div class="chart-empty">No AI runs yet — the first submission will start this chart.</div>`;
+  const N = game.milestones.length;
+  const order = new Map(game.milestones.map((m, i) => [m.id, i]));
+  const ranked = rankRuns(game, runsFor(game.id));
+  const series = ranked
+    .map((sc) => {
+      const reached = sc.run.milestones.filter((r) => order.has(r.id)).sort((a, b) => order.get(a.id) - order.get(b.id));
+      const pts = reached
+        .map((r, i) => ({ t: parseTime(r.elapsed), y: i + 1, ms: game.milestones[order.get(r.id)], approx: !!r.approx }))
+        .filter((p) => p.t != null && p.t > 0)
+        .sort((a, b) => a.t - b.t);
+      return { sc, pts };
+    });
+  const plotted = series.filter((s) => s.pts.length);
+  const missing = series.filter((s) => !s.pts.length);
+  const humans = (game.human_baselines ?? []).map((b) => ({ b, t: parseTime(b.time) })).filter((h) => h.t);
+  const missingNote = missing.length
+    ? `<p class="muted chart-note">Not plotted — no time reported: ${missing.map((s) => esc(s.sc.run.agent)).join(", ")}.</p>`
+    : "";
+  if (!plotted.length && !humans.length) {
+    host.innerHTML = `<div class="chart-empty">No AI run has reported how long it took yet.</div>${missingNote}`;
     return;
   }
-  const W = Math.max(320, host.clientWidth);
-  const H = W < 560 ? 260 : 320;
-  const M = { l: 40, r: W < 560 ? 16 : 132, t: 26, b: 34 };
-  const N = game.milestones.length;
-  const t = (d) => Date.parse(`${d}T00:00:00Z`);
-  const pts = scored.map((sc) => ({ sc, x0: t(sc.run.submitted_at) })).sort((a, b) => a.x0 - b.x0);
-  let lo = pts[0].x0, hi = pts[pts.length - 1].x0;
-  const pad = Math.max(45 * 864e5, (hi - lo) * 0.08);
-  lo -= pad; hi += pad;
-  const X = (v) => M.l + ((v - lo) / (hi - lo)) * (W - M.l - M.r);
-  const Y = (n) => M.t + (1 - n / N) * (H - M.t - M.b);
 
-  // x ticks: quarters or years, at most ~6
-  const ticks = [];
-  const d0 = new Date(lo), d1 = new Date(hi);
-  const spanM = (d1.getUTCFullYear() - d0.getUTCFullYear()) * 12 + d1.getUTCMonth() - d0.getUTCMonth();
-  const step = [1, 3, 6, 12, 24].find((s) => spanM / s <= (W < 560 ? 4 : 6)) ?? 24;
-  for (let y = d0.getUTCFullYear(), m = 0; ; m += step) {
-    const d = Date.UTC(y, m, 1);
-    if (d > hi) break;
-    if (d >= lo) ticks.push(d);
-  }
+  const W = Math.max(320, host.clientWidth);
+  const H = W < 560 ? 270 : 330;
+  const M = { l: 40, r: W < 560 ? 16 : 150, t: 26, b: 40 };
+  const all = [...plotted.flatMap((s) => s.pts.map((p) => p.t)), ...humans.map((h) => h.t)];
+  const lo = Math.log10(Math.min(...all) / 2.5), hi = Math.log10(Math.max(...all) * 2.5);
+  const X = (t) => M.l + ((Math.log10(t) - lo) / (hi - lo)) * (W - M.l - M.r);
+  const Y = (n) => M.t + (1 - n / N) * (H - M.t - M.b);
+  const ticks = [60, 600, 3600, 36000, 360000, 3600000].filter((t) => Math.log10(t) >= lo && Math.log10(t) <= hi);
   const yTicks = [...new Set([0, Math.round(N / 2), N])];
 
-  // frontier: running max, step-after
-  let best = 0, path = "", area = "";
-  pts.forEach((p, i) => {
-    const x = X(p.x0);
-    if (i === 0) { path = `M${x},${Y(p.sc.n)}`; best = p.sc.n; return; }
-    path += `H${x}`;
-    if (p.sc.n > best) { path += `V${Y(p.sc.n)}`; best = p.sc.n; }
-  });
-  path += `H${W - M.r}`;
-  area = `${path}V${Y(0)}H${X(pts[0].x0)}Z`;
-  const firstClear = pts.find((p) => p.sc.cleared);
-  const labelPt = firstClear ?? pts.reduce((a, b) => (b.sc.n > a.sc.n ? b : a));
-  const wr = (game.human_baselines ?? [])[0];
+  const tipItems = [];
+  const mark = (cx, cy, shape, color, item, r = 6) => {
+    tipItems.push(item);
+    const i = tipItems.length - 1;
+    return `<g data-i="${i}">${shapeSvg(shape, cx, cy, r, `class="pt" fill="${color}"`)}<circle class="hit" cx="${cx}" cy="${cy}" r="14" tabindex="0" aria-label="${esc(item.aria)}"/></g>`;
+  };
 
-  const marks = pts
-    .map((p, i) => {
-      const k = evidenceOf(p.sc.run);
-      const cx = X(p.x0), cy = Y(p.sc.n);
-      return `<g data-i="${i}">${shapeSvg(EV[k].shape, cx, cy, 6, `class="pt" fill="${EV[k].color}"`)}<circle class="hit" cx="${cx}" cy="${cy}" r="14" tabindex="0" aria-label="${esc(p.sc.run.agent)}: ${p.sc.n} of ${N} milestones, ${esc(p.sc.run.submitted_at)}, ${esc(EV[k].label)}"/></g>`;
+  const lines = plotted
+    .map((s) => {
+      const k = evidenceOf(s.sc.run);
+      if (s.pts.length < 2) return "";
+      let d = `M${X(s.pts[0].t)},${Y(s.pts[0].y)}`;
+      for (const p of s.pts.slice(1)) d += `H${X(p.t)}V${Y(p.y)}`;
+      return `<path d="${d}" fill="none" stroke="${EV[k].color}" stroke-width="2" opacity=".9"/>`;
     })
     .join("");
-  const lx = X(labelPt.x0), ly = Y(labelPt.sc.n);
-  const labelRight = lx < (W - M.r) * 0.55;
-  const labelText = `${labelPt.sc.run.agent}${labelPt.sc.cleared ? " — first clear" : ""}`;
+  const marks = plotted
+    .flatMap((s) => {
+      const k = evidenceOf(s.sc.run);
+      return s.pts.map((p) =>
+        mark(X(p.t), Y(p.y), EV[k].shape, EV[k].color, {
+          title: s.sc.run.agent,
+          lines: [`${p.ms.name} — ${p.y}/${N}`, `${p.approx ? "about " : ""}${fmtDuration(p.t)} of play`, EV[k].label],
+          aria: `${s.sc.run.agent}: ${p.ms.name} after ${p.approx ? "about " : ""}${fmtDuration(p.t)}`,
+          x: X(p.t), y: Y(p.y),
+        })
+      );
+    })
+    .join("");
+  const humanMarks = humans
+    .map((h) => {
+      tipItems.push({ title: h.b.label, lines: [h.b.note ?? "Human reference", `${fmtDuration(h.t)} for the whole game`], x: X(h.t), y: Y(N) });
+      const i = tipItems.length - 1;
+      return `<g data-i="${i}"><circle class="pt human-pt" cx="${X(h.t)}" cy="${Y(N)}" r="6"/><circle class="hit" cx="${X(h.t)}" cy="${Y(N)}" r="14" tabindex="0" aria-label="${esc(h.b.label)}: ${esc(fmtDuration(h.t))}"/></g>`;
+    })
+    .join("");
+
+  // direct labels: each AI run at its last point, plus the fastest human record
+  const labels = [];
+  const placeLabel = (x, y, text, cls = "") => {
+    const right = x < W - M.r - 150;
+    let ly = y + (y < M.t + 24 ? 20 : -12);
+    while (labels.some((l) => Math.abs(l.y - ly) < 15 && Math.abs(l.x - x) < 170)) ly += 15;
+    labels.push({ x, y: ly });
+    return `<text class="dlabel ${cls}" x="${right ? x + 12 : x - 12}" y="${ly}" text-anchor="${right ? "start" : "end"}">${esc(text)}</text>`;
+  };
+  const aiLabels = plotted.map((s) => { const p = s.pts[s.pts.length - 1]; return placeLabel(X(p.t), Y(p.y), s.sc.run.agent); }).join("");
+  const fastest = humans.sort((a, b) => a.t - b.t)[0];
+  const humanLabel = fastest ? placeLabel(X(fastest.t), Y(N), `Human record ${fmtDuration(fastest.t)}`, "human-label") : "";
 
   host.innerHTML = `
     <div class="chart-legend">
       ${EVIDENCE.map((e) => `<span>${shapeIcon(e.key)}${esc(e.label)}</span>`).join("")}
-      <span><svg viewBox="0 0 14 14"><path d="M1 10H6V4H13" fill="none" stroke="var(--ink)" stroke-width="2"/></svg>Best so far</span>
+      <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="none" stroke="var(--human)" stroke-width="2"/></svg>Human record</span>
     </div>
-    <svg width="${W}" height="${H}" role="img" aria-label="AI progress on ${esc(game.title)} over time">
-      <defs><linearGradient id="frontierFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--gold);stop-opacity:.22"/><stop offset="1" style="stop-color:var(--gold);stop-opacity:0"/></linearGradient></defs>
-      <g class="grid">${yTicks.map((n) => `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(n)}" y2="${Y(n)}"/>`).join("")}</g>
+    <svg width="${W}" height="${H}" role="img" aria-label="Milestones reached against play time on ${esc(game.title)}">
+      <g class="grid">${yTicks.map((n) => `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(n)}" y2="${Y(n)}"/>`).join("")}${ticks.map((t) => `<line x1="${X(t)}" x2="${X(t)}" y1="${M.t}" y2="${Y(0)}"/>`).join("")}</g>
       ${yTicks.map((n) => `<text x="${M.l - 10}" y="${Y(n) + 4}" text-anchor="end">${n}</text>`).join("")}
-      ${ticks.map((d) => `<text x="${X(d)}" y="${H - 10}" text-anchor="middle">${esc(step >= 12 ? String(new Date(d).getUTCFullYear()) : `${new Date(d).toLocaleDateString("en", { month: "short", timeZone: "UTC" })} ’${String(new Date(d).getUTCFullYear()).slice(2)}`)}</text>`).join("")}
+      ${ticks.map((t) => `<text x="${X(t)}" y="${H - 18}" text-anchor="middle">${fmtTick(t)}</text>`).join("")}
+      <text x="${(M.l + W - M.r) / 2}" y="${H - 2}" text-anchor="middle" class="axis-title">play time (log scale)</text>
       <line class="baseline" x1="${M.l}" x2="${W - M.r}" y1="${Y(0)}" y2="${Y(0)}"/>
       <line class="goal" x1="${M.l}" x2="${W - M.r}" y1="${Y(N)}" y2="${Y(N)}"/>
-      ${W >= 560 ? `<text class="goal-label" x="${W - M.r + 8}" y="${Y(N) + 4}">CLEARED</text>${wr ? `<text x="${W - M.r + 8}" y="${Y(N) + 20}">human record</text><text x="${W - M.r + 8}" y="${Y(N) + 35}">${esc(fmtDuration(parseTime(wr.time)))}</text>` : ""}` : ""}
-      <path class="frontier-area" d="${area}"/>
-      <path class="frontier-line" d="${path}"/>
-      ${marks}
-      <text x="${labelRight ? lx + 12 : lx - 12}" y="${ly + (ly < M.t + 24 ? 22 : -12)}" text-anchor="${labelRight ? "start" : "end"}" style="fill:var(--ink);font-weight:600;paint-order:stroke;stroke:var(--surface);stroke-width:4px">${esc(labelText)}</text>
+      ${W >= 560 ? `<text class="goal-label" x="${W - M.r + 8}" y="${Y(N) + 4}">CLEARED</text>` : ""}
+      ${lines}${humanMarks}${marks}${aiLabels}${humanLabel}
     </svg>
-    <div class="tooltip" hidden></div>`;
+    <div class="tooltip" hidden></div>
+    ${!plotted.length ? `<p class="muted chart-note">No AI run has reported how long it took yet — only the human record is shown.</p>` : ""}
+    ${missingNote}`;
 
   const tip = host.querySelector(".tooltip");
-  const show = (g) => {
-    const p = pts[Number(g.dataset.i)];
-    const k = evidenceOf(p.sc.run);
-    tip.innerHTML = `<b>${esc(p.sc.run.agent)}</b>${esc(p.sc.run.team)}<br/>${p.sc.n}/${N} milestones${p.sc.cleared ? " · cleared" : ""}<br/>${esc(fmtDate(p.sc.run.submitted_at))} · ${esc(EV[k].label)}`;
-    tip.hidden = false;
-    tip.style.left = `${Math.min(Math.max(X(p.x0), 110), W - 110)}px`;
-    tip.style.top = `${Y(p.sc.n) + host.querySelector("svg").getBoundingClientRect().top - host.getBoundingClientRect().top}px`;
-    tip.classList.toggle("below", Y(p.sc.n) < H * 0.45);
-  };
+  const svgTop = () => host.querySelector("svg").getBoundingClientRect().top - host.getBoundingClientRect().top;
   host.querySelectorAll("g[data-i]").forEach((g) => {
+    const it = tipItems[Number(g.dataset.i)];
     const hit = g.querySelector(".hit");
-    hit.addEventListener("mouseenter", () => show(g));
-    hit.addEventListener("focus", () => show(g));
+    const show = () => {
+      tip.innerHTML = `<b>${esc(it.title)}</b>${it.lines.map(esc).join("<br/>")}`;
+      tip.hidden = false;
+      tip.style.left = `${Math.min(Math.max(it.x, 120), W - 120)}px`;
+      tip.style.top = `${it.y + svgTop()}px`;
+      tip.classList.toggle("below", it.y < H * 0.45);
+    };
+    hit.addEventListener("mouseenter", show);
+    hit.addEventListener("focus", show);
     hit.addEventListener("mouseleave", () => (tip.hidden = true));
     hit.addEventListener("blur", () => (tip.hidden = true));
-    hit.addEventListener("click", () => {
-      const id = pts[Number(g.dataset.i)].sc.run.id;
-      gameState.open.add(id);
-      render();
-      document.querySelector(`[data-run="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "center" });
-    });
   });
 }
 

@@ -961,7 +961,9 @@
      "id": "a-terrible-fortress"
     },
     {
-     "id": "into-fire"
+     "id": "into-fire",
+     "elapsed": "141:00:00",
+     "approx": true
     }
    ],
    "method": {
@@ -974,7 +976,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified."
+   "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
   },
   {
    "id": "2026-10-deepmind-gemini-minecraft",
@@ -1182,7 +1184,9 @@
      "id": "kanto-badges"
     },
     {
-     "id": "red"
+     "id": "red",
+     "elapsed": "202:00:00",
+     "approx": true
     }
    ],
    "method": {
@@ -1262,7 +1266,9 @@
      "id": "kanto-badges"
     },
     {
-     "id": "red"
+     "id": "red",
+     "elapsed": "408:00:00",
+     "approx": true
     }
    ],
    "method": {
@@ -1273,7 +1279,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
+   "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run. Time to Red is approximate (about 17 days, as reported in coverage of the race)."
   },
   {
    "id": "2025-12-pokeagent-heatz",
@@ -1417,7 +1423,8 @@
     },
     {
      "id": "champion",
-     "elapsed": "813:00:00"
+     "elapsed": "813:00:00",
+     "approx": true
     }
    ],
    "method": {

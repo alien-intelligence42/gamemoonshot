@@ -40,6 +40,43 @@
   color-scheme: dark;
 }
 
+/* Light scheme for the base theme (home, rules, submit). Game skins define their own light/dark tokens in skins.css. */
+body[data-tone="light"] {
+  --bg: #f6f1e7; --bg-2: #efe8da; --surface: #fffdf8; --surface-2: #f7f1e5; --surface-3: #ece3d2;
+  --line: rgb(120 90 40 / 17%); --line-strong: rgb(120 90 40 / 34%);
+  --ink: #241d14; --ink-2: #4a3f30; --muted: #74685a;
+  --gold: #a07a32; --gold-hi: #7a5a1e; --gold-lo: #c9a25a; --ember: #c4602e; --crimson: #a9302a; --human: #2f6aa8;
+  --on-gold: #fffaf0; --track: #ece3d2; --tip-bg: #fffdf8f8; --m2: rgb(226 212 184 / 80%);
+  --page-bg: radial-gradient(1200px 600px at 80% -10%, rgb(160 122 50 / 8%), transparent 60%), #f6f1e7;
+  color-scheme: light;
+}
+body[data-tone="light"]::before { opacity: .025; }
+body[data-tone="light"] .hero h1 { background: linear-gradient(180deg, #9a7128 0%, #7a5518 55%, #5a3c0c 100%); -webkit-background-clip: text; background-clip: text; filter: none; }
+body[data-tone="light"] .hero::before { background: radial-gradient(circle, rgb(226 140 80 / 18%), rgb(214 176 106 / 8%) 45%, transparent 70%); }
+body[data-tone="light"] .stats-inner { box-shadow: 0 16px 40px rgb(90 60 20 / 10%); }
+body[data-tone="light"] .bossbar { box-shadow: inset 0 1px 2px rgb(0 0 0 / 12%); }
+body[data-tone="light"] .banner h1 { text-shadow: none; }
+body[data-tone="light"] .card:hover { box-shadow: 0 14px 36px rgb(90 60 20 / 14%), 0 0 0 1px rgb(160 122 50 / 25%); }
+
+/* The top bar is site chrome: it keeps the base look on every page and only follows light/dark,
+   so it re-declares the base tokens and fonts instead of inheriting a game skin's. */
+.topbar {
+  --bg: #0c0a08; --surface-2: #1c1813; --line: rgb(214 176 106 / 16%); --line-strong: rgb(214 176 106 / 34%);
+  --ink: #efe6d3; --ink-2: #c9bda5; --gold: #d6b06a; --gold-hi: #f3d996; --on-gold: #1a120a; --ember: #e2662f;
+  --display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+  --body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
+  font: 15px/1.6 var(--body); letter-spacing: normal; color: var(--ink);
+}
+body[data-tone="light"] .topbar {
+  --bg: #f6f1e7; --surface-2: #f7f1e5; --line: rgb(120 90 40 / 17%); --line-strong: rgb(120 90 40 / 34%);
+  --ink: #241d14; --ink-2: #4a3f30; --gold: #a07a32; --gold-hi: #7a5a1e; --on-gold: #fffaf0; --ember: #c4602e;
+}
+
+/* theme toggle */
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-2); }
+.theme-toggle:hover { color: var(--gold-hi); border-color: var(--gold); }
+.theme-toggle svg { width: 18px; height: 18px; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -222,7 +259,7 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
 .card:hover { color: var(--ink); transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 18px 50px rgb(0 0 0 / 55%), 0 0 0 1px color-mix(in srgb, var(--gold) 20%, transparent); }
 .keyart {
   position: relative; height: 180px; overflow: hidden; isolation: isolate;
-  background: radial-gradient(120% 90% at 75% 20%, var(--ta, #6b2a14), transparent 65%), linear-gradient(135deg, var(--tb, #2a1a10), #0c0a08 85%);
+  background: radial-gradient(120% 90% at 75% 20%, color-mix(in srgb, var(--ta, #6b2a14) 62%, transparent), transparent 65%), linear-gradient(135deg, color-mix(in srgb, var(--tb, #2a1a10) 70%, #0c0a08), #0c0a08 85%);
 }
 .keyart .mountains { height: 60%; }
 .keyart .mountains .m3 { fill: var(--surface); }
@@ -243,7 +280,7 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
 .banner {
   position: relative; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--line);
   padding: 44px var(--gutter) 96px;
-  background: radial-gradient(70% 120% at 85% 0%, var(--ta), transparent 70%), linear-gradient(160deg, var(--tb), var(--bg) 75%);
+  background: radial-gradient(70% 120% at 85% 0%, color-mix(in srgb, var(--ta) 60%, transparent), transparent 70%), linear-gradient(160deg, color-mix(in srgb, var(--tb) 70%, var(--bg)), var(--bg) 75%);
 }
 .banner .mountains { height: 55%; }
 .banner .emblem { position: absolute; right: max(24px, calc(var(--gutter) + 8px)); top: 40px; width: clamp(120px, 18vw, 220px); height: clamp(120px, 18vw, 220px); color: color-mix(in srgb, var(--emblem) 85%, transparent); opacity: .9; z-index: -1; filter: drop-shadow(0 0 30px var(--emblem-glow)); }
@@ -289,6 +326,11 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
 }
 .tooltip b { color: var(--ink); display: block; margin-bottom: 2px; }
 .chart-empty { padding: 36px; text-align: center; color: var(--muted); }
+.chart-note { font-size: 13px; margin: 10px 0 0; }
+.chart-wrap .human-pt { fill: var(--surface); stroke: var(--human); stroke-width: 2.5; }
+.chart-wrap .dlabel { fill: var(--ink) !important; font-weight: 600; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.chart-wrap .human-label { fill: var(--human) !important; }
+.chart-wrap .axis-title { font-size: 11px; letter-spacing: .06em; }
 
 /* ---------- leaderboard ---------- */
 .controls { display: flex; gap: 10px 14px; align-items: center; flex-wrap: wrap; }
@@ -482,6 +524,7 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
 .empty { padding: 34px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line-strong); border-radius: var(--radius); }
 .callout { border: 1px solid var(--line); border-left: 3px solid var(--gold); background: var(--surface); border-radius: 10px; padding: 14px 18px; color: var(--ink-2); }
 
+@media (max-width: 480px) { .hide-xs { display: none; } }
 @media (max-width: 640px) {
   .hero { padding-top: 48px; padding-bottom: 120px; }
   .hero .brush { display: none; }
@@ -492,6 +535,8 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
   .topbar { gap: 8px; }
   nav a { padding: 7px 8px; font-size: 11.5px; letter-spacing: .06em; }
   nav a[data-nav="home"] { display: none; }
+  nav { gap: 2px; flex-wrap: nowrap; }
+  .theme-toggle { width: 32px; height: 32px; }
   .brand { gap: 8px; }
   .brand span { font-size: 13.5px; letter-spacing: .06em; white-space: nowrap; }
   .banner { padding-bottom: 80px; }
