@@ -1021,9 +1021,15 @@ function viewWhy() {
   const cleared = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
   const started = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.n > 0).length;
 
-  const shelf = DATA.games
-    .map((g) => `<a class="cart" href="game/${esc(g.id)}/" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
-    .join("");
+  // A tidy block of game emblems plus a "propose a game" tile. Columns: whichever of 5, 4, 6 leaves the
+  // fewest empty slots in the last row (5 wins ties), so the block stays a clean rectangle as games are added.
+  const shelf =
+    DATA.games
+      .map((g) => `<a class="cart" href="game/${esc(g.id)}/" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
+      .join("") +
+    `<a class="cart add" href="${esc(repoUrl("/issues/new?template=new-game.yml"))}" target="_blank" rel="noopener" title="${L("Propose a game", "推荐游戏")}" aria-label="${L("Propose a game", "推荐游戏")}">+</a>`;
+  const tiles = DATA.games.length + 1;
+  const shelfCols = [5, 4, 6].reduce((best, c) => ((-tiles % c + c) % c < (-tiles % best + best) % best ? c : best));
 
   const stages = [
     { n: 1, icon: UI.gamepad, state: "now", status: L("In progress", "进行中"), title: L("Clear the game", "打通游戏"),
@@ -1047,11 +1053,13 @@ function viewWhy() {
     <canvas id="embers" aria-hidden="true"></canvas>
     ${MOUNTAINS}
     <div class="why-hero-inner">
-      <div class="eyebrow">${L("Manifesto · Player 1", "宣言 · 玩家 1")}</div>
-      <h1>${L("Why games", "为何是游戏")}</h1>
-      <p class="slogan big">${sloganHtml()}</p>
-      <p class="lede">${L("Games are not a side quest on the way to general AI. They are the main quest.", "游戏不是通往通用 AI 路上的支线任务，而是主线任务。")}</p>
-      <div class="shelf" aria-label="${L("Games on the board", "上榜游戏")}">${shelf}</div>
+      <div class="why-copy">
+        <div class="eyebrow">${L("Manifesto · Player 1", "宣言 · 玩家 1")}</div>
+        <h1>${L("Why games", "为何是游戏")}</h1>
+        <p class="slogan big">${sloganHtml()}</p>
+        <p class="lede">${L("Games are not a side quest on the way to general AI. They are the main quest.", "游戏不是通往通用 AI 路上的支线任务，而是主线任务。")}</p>
+      </div>
+      <div class="shelf" style="--cols:${shelfCols}" aria-label="${L("Games on the board", "上榜游戏")}">${shelf}</div>
     </div>
   </section>
 
