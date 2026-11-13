@@ -4,7 +4,7 @@
   "agent": "Cradle",
   "team": "BAAI, Skywork AI, NTU, PKU et al.",
   "track": "pixels",
-  "status": "curated",
+  "status": "verified",
   "submitted_at": "2024-03-05",
   "source": "https://baai-agents.github.io/Cradle",
   "source_type": "author",
@@ -18,6 +18,8 @@
       "url": "https://github.com/BAAI-Agents/Cradle"
     }
   ],
+  "verified_by": "rainwangphy",
+  "verified_at": "2026-11-14",
   "videos": [
     {
       "url": "https://www.youtube.com/watch?v=fkkSJw1iJJ8",
@@ -30,9 +32,16 @@
       "covers": "Official Cradle upload: open-ended RDR2 tasks at 16× speed, 1:26"
     }
   ],
-  "milestones": [],
+  "milestones": [
+    {
+      "id": "ch1-colter",
+      "video": 0,
+      "elapsed": "1:59:28",
+      "approx": true
+    }
+  ],
   "method": {
-    "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Completed early main-story missions (roughly 40 minutes of story), including ‘Follow Dutch’ and ‘Buy Supply’ style tasks.",
+    "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Played through the Chapter 1 story missions, ending with Eastward Bound.",
     "models": [
       "GPT-4V",
       "GPT-4o"
@@ -44,6 +53,9 @@
     "paper": "https://arxiv.org/abs/2403.03186",
     "code": "https://github.com/BAAI-Agents/Cradle"
   },
-  "hardware": {},
-  "notes": "No full chapter clear reported, so no milestone yet. Authors are welcome to submit full details and footage."
+  "hardware": {
+    "inference": "OpenAI API",
+    "gpu": "not disclosed"
+  },
+  "notes": "Chapter 1 clear (Eastward Bound) checked against the official Chapter 1 video by a maintainer. Run time is estimated from that video: 7:28 at 16× speed ≈ 1:59:28 of play. The upload may be trimmed, so the real run could have been longer. Hardware was not disclosed."
 }

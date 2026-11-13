@@ -12,7 +12,7 @@
     "#2a1a10"
   ],
   "skin": "western",
-  "description": "A AAA open world with long, story-gated chapters. Cradle showed a general computer-control agent could play early story missions from screenshots alone; no AI chapter clear has been reported yet.",
+  "description": "A AAA open world with long, story-gated chapters. Cradle, a general computer-control agent playing from screenshots alone, cleared Chapter 1; no agent has gone further yet.",
   "clear_condition": "Complete the final Epilogue mission “American Venom”.",
   "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
   "milestones": [
