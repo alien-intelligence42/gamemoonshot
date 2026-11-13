@@ -1,0 +1,95 @@
+{
+  "id": "civilization-vi",
+  "order": 10,
+  "tier": "modern",
+  "title": "Sid Meier's Civilization VI",
+  "platform": "PC / consoles",
+  "release_year": 2016,
+  "genre": "4X grand strategy",
+  "icon": "laurel",
+  "theme": [
+    "#2d5f86",
+    "#8e6a1e"
+  ],
+  "skin": "atlas",
+  "description": "Hundreds of turns of expansion, economy, diplomacy and war against rivals playing the same game. On Deity, those rivals start with large bonuses. LLM agents have won a few games on Prince and King at Quick speed through an API harness; none has reported a Deity win.",
+  "clear_condition": "Win a Science Victory on Deity: the Exoplanet Expedition reaches its destination (Gathering Storm rules).",
+  "timing": "Run time from the first input on turn 1 to the Victory screen. Also report the final turn number in notes: the human references are counted in turns.",
+  "rules": "Gathering Storm ruleset, Deity difficulty, Standard speed, Standard map size with its default number of civilizations, Ancient start, all victory types enabled. State the patch, map type and civilization. No gameplay mods. Reloads must be disclosed under restarts. Driving the game through an API or MCP server is the Harness track.",
+  "milestones": [
+    {
+      "id": "education",
+      "name": "Research Education",
+      "description": "Unlocks universities"
+    },
+    {
+      "id": "scientific-theory",
+      "name": "Research Scientific Theory"
+    },
+    {
+      "id": "rocketry",
+      "name": "Research Rocketry"
+    },
+    {
+      "id": "spaceport",
+      "name": "Build a Spaceport"
+    },
+    {
+      "id": "earth-satellite",
+      "name": "Launch Earth Satellite"
+    },
+    {
+      "id": "moon-landing",
+      "name": "Launch Moon Landing"
+    },
+    {
+      "id": "mars-colony",
+      "name": "Launch Mars Colony"
+    },
+    {
+      "id": "exoplanet-expedition",
+      "name": "Launch the Exoplanet Expedition",
+      "description": "The ship then has to travel 50 light-years"
+    },
+    {
+      "id": "science-victory",
+      "name": "Science Victory",
+      "description": "Victory screen on Deity",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Fastest Deity Science Victory (CivFanatics) — 144 turns",
+      "note": "Bangau (Peter, Russia); Gathering Storm, Standard speed; the winner calls his settings 'cooked'",
+      "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
+    },
+    {
+      "label": "Fastest Deity Science Victory (CivFanatics) — 173 turns",
+      "note": "whacker (Qin Shi Huang); same competition",
+      "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
+    }
+  ],
+  "links": [
+    {
+      "label": "CivBench (Civ VI) — 3 science wins in 23 games on Prince/King, Quick speed, via MCP",
+      "url": "https://arxiv.org/abs/2609.02459"
+    },
+    {
+      "label": "civ6-mcp — the MCP server behind it",
+      "url": "https://github.com/lmwilki/civ6-mcp"
+    },
+    {
+      "label": "CivRealm (Freeciv, ICLR 2024) — agents struggle in the full game",
+      "url": "https://arxiv.org/abs/2401.10568"
+    },
+    {
+      "label": "CivBench (Civ V) — LLM strategists at best tie the built-in AI",
+      "url": "https://arxiv.org/abs/2604.07733"
+    },
+    {
+      "label": "Civilization wiki: Victory (Civ6)",
+      "url": "https://civilization.fandom.com/wiki/Victory_(Civ6)"
+    }
+  ]
+}

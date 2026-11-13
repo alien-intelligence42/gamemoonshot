@@ -1,0 +1,68 @@
+{
+  "id": "2026-10-truta-claude-opus-5-5-bg3",
+  "game": "baldurs-gate-3",
+  "agent": "Claude Opus 5.5 (bg3-agent-harness)",
+  "team": "Bogdan Truța",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-10-18",
+  "game_version": "Patch 8 Hotfix 10 (native Linux)",
+  "source": "https://bogdantruta.com/blog/claude-finished-baldurs-gate-3/",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "bg3-agent-harness (code)",
+      "url": "https://github.com/Bogzx/bg3-agent-harness"
+    }
+  ],
+  "videos": [],
+  "milestones": [
+    {
+      "id": "escape-nautiloid"
+    },
+    {
+      "id": "reach-moonrise-road"
+    },
+    {
+      "id": "nightsong"
+    },
+    {
+      "id": "infiltrate-moonrise"
+    },
+    {
+      "id": "ketheric"
+    },
+    {
+      "id": "help-your-protector"
+    },
+    {
+      "id": "orin-netherstone"
+    },
+    {
+      "id": "gortash-netherstone"
+    },
+    {
+      "id": "elder-brain"
+    },
+    {
+      "id": "netherbrain",
+      "elapsed": "38:54:00",
+      "approx": true
+    }
+  ],
+  "method": {
+    "summary": "Claude Opus 5.5 driving the game through a Lua mod and an MCP server whose policy is to expose only what a player could see. Beat the Netherbrain on its 12th attempt and played the ending.",
+    "models": [
+      "Claude Opus 5.5"
+    ],
+    "observation": "Game state from a Lua mod via MCP, limited to player-visible information",
+    "action": "MCP tool calls (20,809 over the run)",
+    "human_intervention": "The author fixed the harness between sessions",
+    "restarts": "Save reloads allowed; 91 of 149 fights used at least one",
+    "code": "https://github.com/Bogzx/bg3-agent-harness"
+  },
+  "hardware": {},
+  "wall_clock": "38.9 hours over 96 sessions",
+  "cost": "~$712 API",
+  "notes": "Explorer difficulty (the easiest). Self-reported by the author, not a controlled measurement. Only the final time is published, so the earlier milestones are untimed and the 38.9 h total is marked approximate."
+}

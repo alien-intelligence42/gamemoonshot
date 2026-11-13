@@ -1,0 +1,100 @@
+{
+  "id": "factorio",
+  "order": 11,
+  "tier": "modern",
+  "title": "Factorio",
+  "platform": "PC / Switch",
+  "release_year": 2020,
+  "genre": "Factory automation",
+  "icon": "gear",
+  "theme": [
+    "#a8701e",
+    "#1c1a17"
+  ],
+  "skin": "factory",
+  "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. An LLM agent has launched a rocket with enemies switched off (listed below for reference); none has reported one on default settings.",
+  "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
+  "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
+  "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
+  "milestones": [
+    {
+      "id": "steam-power",
+      "name": "Steam power online"
+    },
+    {
+      "id": "automation-science",
+      "name": "First lab running automation science (red)"
+    },
+    {
+      "id": "electric-mining",
+      "name": "Research Electric mining drill"
+    },
+    {
+      "id": "automation",
+      "name": "Research Automation",
+      "description": "First assembling machine"
+    },
+    {
+      "id": "logistic-science",
+      "name": "Research Logistic science pack (green)"
+    },
+    {
+      "id": "oil-processing",
+      "name": "Research Oil processing"
+    },
+    {
+      "id": "chemical-science",
+      "name": "Research Chemical science pack (blue)"
+    },
+    {
+      "id": "production-science",
+      "name": "Research Production science pack (purple)"
+    },
+    {
+      "id": "utility-science",
+      "name": "Research Utility science pack (yellow)"
+    },
+    {
+      "id": "rocket-silo",
+      "name": "Research Rocket silo"
+    },
+    {
+      "id": "rocket-launch",
+      "name": "Launch a rocket",
+      "description": "Victory screen",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Default Settings (2.x)",
+      "time": "1:59:01",
+      "note": "speedrun.com world record by Zaspar (v2.0.77)",
+      "source": "https://www.speedrun.com/factorio/runs/yvk04e8m"
+    },
+    {
+      "label": "Speedrun WR — Any% (2.x)",
+      "time": "1:42:41",
+      "note": "speedrun.com world record by JeHor (v2.0.28); any map settings and set seeds allowed",
+      "source": "https://www.speedrun.com/factorio/runs/y8ovjjwm"
+    }
+  ],
+  "links": [
+    {
+      "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported",
+      "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
+    },
+    {
+      "label": "Factorio Learning Environment (2025) — LLMs stall before complex automation",
+      "url": "https://arxiv.org/abs/2503.09617"
+    },
+    {
+      "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
+      "url": "https://ryanmadden.net/claude-plays-factorio/"
+    },
+    {
+      "label": "Factorio wiki: Technologies",
+      "url": "https://wiki.factorio.com/Technologies"
+    }
+  ]
+}

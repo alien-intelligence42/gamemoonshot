@@ -380,7 +380,7 @@ function viewHome() {
       <section class="section" id="games">
         <div class="section-head">
           <div><h2><span class="ico">${UI.sword}</span>The moonshots</h2>
-          <div class="sub">Modern 3D games: real-time combat, open worlds, stories that take a human 20–100 hours. No AI has finished one yet. Partial runs count — every milestone reached is on the board.</div></div>
+          <div class="sub">Modern games that take a person tens of hours or more: real-time combat and open worlds, plus grand strategy, factory building, spaceflight and a dialogue-heavy party RPG. Partial runs count — every milestone reached is on the board.</div></div>
           <a class="btn small" href="${esc(repoUrl("/issues/new?template=new-game.yml"))}" target="_blank" rel="noopener">Propose a game</a>
         </div>
         <div class="grid">${modern}</div>
@@ -459,6 +459,7 @@ function startEmbers() {
 // ---------- game page ----------
 const gameState = { track: "all", minEvidence: "news", open: new Set() };
 
+const hostOf = (url) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "source"; } };
 function humanRow(game, b) {
   return `
     <div class="row human" role="listitem">
@@ -469,7 +470,7 @@ function humanRow(game, b) {
       <div class="c-meta">
         <div class="c-track"><span class="badge human">Human</span></div>
         <div class="c-time num time">${esc(fmtDuration(parseTime(b.time)))}</div>
-        <div class="c-ev">${link(b.source, "speedrun.com ↗")}</div>
+        <div class="c-ev">${link(b.source, `${hostOf(b.source)} ↗`)}</div>
         <div class="c-date"></div>
       </div>
     </div>`;
@@ -635,7 +636,7 @@ function viewGame(id) {
     <div class="wrap">
       <dl class="facts">
         <div class="fact"><dt>Clear condition</dt><dd>${esc(game.clear_condition)}</dd></div>
-        <div class="fact"><dt>Human record</dt><dd>${wr ? `${esc(fmtDuration(parseTime(wr.time)))} — ${esc(wr.label.replace(/^Speedrun WR — /, ""))}` : "—"}</dd></div>
+        <div class="fact"><dt>Human record</dt><dd>${wr ? `${parseTime(wr.time) != null ? `${esc(fmtDuration(parseTime(wr.time)))} — ` : ""}${esc(wr.label.replace(/^Speedrun WR — /, ""))}` : "—"}</dd></div>
         <div class="fact"><dt>Game rules</dt><dd>${esc(game.rules ?? "Unmodified game; disclose version and settings.")}</dd></div>
       </dl>
 
@@ -1013,8 +1014,9 @@ function viewRules() {
       (Doom II, Civilization I, Link's Awakening DX, Pokémon Crystal and others) from raw frames, scored at fixed checkpoints.</p>
       <p>GameMoonshot asks a different question: how far does <i>any</i> agent get through the games people actually play today?</p>
       <ul>
-        <li><b>Games.</b> The main boards are modern 3D titles — Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2, Black Myth: Wukong —
-        with real-time combat, open worlds and stories that take a human 20–100 hours. Retro and 2D boards stay as a lower rung for comparison;
+        <li><b>Games.</b> The main boards are modern titles — Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2, Black Myth: Wukong —
+        with real-time combat, open worlds and stories that take a human 20–100 hours, plus games that test other skills: grand strategy
+        (Civilization VI), factory automation (Factorio), orbital engineering (Kerbal Space Program) and a dialogue-heavy party RPG (Baldur's Gate 3). Retro and 2D boards stay as a lower rung for comparison;
         a few of them (Pokémon Red, Pokémon Crystal, Link's Awakening DX) overlap with VideoGameBench's games.</li>
         <li><b>Agents.</b> Any design is welcome: a frontier model in a custom harness, an RL policy, a multi-agent team. Runs are split into a
         pixels-only and a harness track and must disclose their tools and any human help, rather than all sharing one harness.</li>

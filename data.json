@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15",
+ "updated": "2026-10-31",
  "games": [
   {
    "id": "elden-ring",
@@ -776,6 +776,391 @@
    ]
   },
   {
+   "id": "baldurs-gate-3",
+   "order": 9,
+   "tier": "modern",
+   "title": "Baldur's Gate 3",
+   "platform": "PC / PS5 / Xbox Series / macOS",
+   "release_year": 2023,
+   "genre": "Party RPG (turn-based)",
+   "icon": "d20",
+   "theme": [
+    "#5a3a8a",
+    "#17111c"
+   ],
+   "skin": "tome",
+   "description": "A story that runs for dozens of hours, carried by dialogue, skill checks and turn-based fights with a full tabletop rulebook behind them. Reading, persuading and remembering matter more than reflexes. One self-reported Claude playthrough on the easiest difficulty reached the credits in 2026, with save reloads; it is listed below as an author report.",
+   "clear_condition": "Defeat the Netherbrain and reach the credits (any ending).",
+   "timing": "Run time from the opening Nautiloid cutscene to the start of the credits, as on speedrun.com.",
+   "rules": "Unmodified game, any patch (state it). Any difficulty except Custom (state it: Explorer, Balanced, Tactician or Honour). Reloading saves is allowed but must be disclosed under restarts, with a count. Mods that only read game state for the agent go in the Harness track and must be disclosed. Milestones may be reached in any order the story allows.",
+   "milestones": [
+    {
+     "id": "escape-nautiloid",
+     "name": "Escape the Nautiloid",
+     "description": "Crash cinematic, then waking on the Ravaged Beach"
+    },
+    {
+     "id": "reach-moonrise-road",
+     "name": "Leave Act One for the Shadow-Cursed Lands",
+     "description": "Travel to Moonrise Towers via the Mountain Pass or the Underdark"
+    },
+    {
+     "id": "nightsong",
+     "name": "Find the Nightsong",
+     "description": "Kill or free her"
+    },
+    {
+     "id": "infiltrate-moonrise",
+     "name": "Infiltrate Moonrise Towers",
+     "description": "Rooftop confrontation with Ketheric"
+    },
+    {
+     "id": "ketheric",
+     "name": "Defeat Ketheric Thorm",
+     "description": "Mind Flayer Colony; ends Act Two"
+    },
+    {
+     "id": "help-your-protector",
+     "name": "Help Your Protector",
+     "description": "Opening of Act Three: the fight inside the Astral Prism"
+    },
+    {
+     "id": "orin-netherstone",
+     "name": "Take Orin's Netherstone",
+     "description": "Temple of Bhaal"
+    },
+    {
+     "id": "gortash-netherstone",
+     "name": "Take Gortash's Netherstone",
+     "description": "Wyrm's Rock Fortress, by fighting him or after the Morphic Pool"
+    },
+    {
+     "id": "elder-brain",
+     "name": "Confront the Elder Brain",
+     "description": "Morphic Pool, all three Netherstones in hand"
+    },
+    {
+     "id": "netherbrain",
+     "name": "Defeat the Netherbrain",
+     "description": "Ending cinematic and credits",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — No Major Glitches (Honour, PC)",
+     "time": "0:26:52",
+     "note": "speedrun.com world record by Kinslayer202 (26:52.032 load-removed, Patch 5)",
+     "source": "https://www.speedrun.com/baldurs_gate_3/runs/zpo233nm"
+    },
+    {
+     "label": "Speedrun WR — Any% All Acts (Explorer, PC)",
+     "time": "0:16:57",
+     "note": "speedrun.com world record by bisc (16:57.720 load-removed, Patch 5); uses major glitches",
+     "source": "https://www.speedrun.com/baldurs_gate_3/runs/zxqdp98m"
+    }
+   ],
+   "links": [
+    {
+     "label": "Claude Opus 5.5 plays to the credits on Explorer — self-reported, with reloads and harness fixes between sessions",
+     "url": "https://bogdantruta.com/blog/claude-finished-baldurs-gate-3/"
+    },
+    {
+     "label": "bg3-agent-harness — Lua mod + MCP server, 28-scenario benchmark",
+     "url": "https://github.com/Bogzx/bg3-agent-harness"
+    },
+    {
+     "label": "bg3.wiki: Quests",
+     "url": "https://bg3.wiki/wiki/Quests"
+    }
+   ]
+  },
+  {
+   "id": "civilization-vi",
+   "order": 10,
+   "tier": "modern",
+   "title": "Sid Meier's Civilization VI",
+   "platform": "PC / consoles",
+   "release_year": 2016,
+   "genre": "4X grand strategy",
+   "icon": "laurel",
+   "theme": [
+    "#2d5f86",
+    "#8e6a1e"
+   ],
+   "skin": "atlas",
+   "description": "Hundreds of turns of expansion, economy, diplomacy and war against rivals playing the same game. On Deity, those rivals start with large bonuses. LLM agents have won a few games on Prince and King at Quick speed through an API harness; none has reported a Deity win.",
+   "clear_condition": "Win a Science Victory on Deity: the Exoplanet Expedition reaches its destination (Gathering Storm rules).",
+   "timing": "Run time from the first input on turn 1 to the Victory screen. Also report the final turn number in notes: the human references are counted in turns.",
+   "rules": "Gathering Storm ruleset, Deity difficulty, Standard speed, Standard map size with its default number of civilizations, Ancient start, all victory types enabled. State the patch, map type and civilization. No gameplay mods. Reloads must be disclosed under restarts. Driving the game through an API or MCP server is the Harness track.",
+   "milestones": [
+    {
+     "id": "education",
+     "name": "Research Education",
+     "description": "Unlocks universities"
+    },
+    {
+     "id": "scientific-theory",
+     "name": "Research Scientific Theory"
+    },
+    {
+     "id": "rocketry",
+     "name": "Research Rocketry"
+    },
+    {
+     "id": "spaceport",
+     "name": "Build a Spaceport"
+    },
+    {
+     "id": "earth-satellite",
+     "name": "Launch Earth Satellite"
+    },
+    {
+     "id": "moon-landing",
+     "name": "Launch Moon Landing"
+    },
+    {
+     "id": "mars-colony",
+     "name": "Launch Mars Colony"
+    },
+    {
+     "id": "exoplanet-expedition",
+     "name": "Launch the Exoplanet Expedition",
+     "description": "The ship then has to travel 50 light-years"
+    },
+    {
+     "id": "science-victory",
+     "name": "Science Victory",
+     "description": "Victory screen on Deity",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Fastest Deity Science Victory (CivFanatics) — 144 turns",
+     "note": "Bangau (Peter, Russia); Gathering Storm, Standard speed; the winner calls his settings 'cooked'",
+     "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
+    },
+    {
+     "label": "Fastest Deity Science Victory (CivFanatics) — 173 turns",
+     "note": "whacker (Qin Shi Huang); same competition",
+     "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
+    }
+   ],
+   "links": [
+    {
+     "label": "CivBench (Civ VI) — 3 science wins in 23 games on Prince/King, Quick speed, via MCP",
+     "url": "https://arxiv.org/abs/2609.02459"
+    },
+    {
+     "label": "civ6-mcp — the MCP server behind it",
+     "url": "https://github.com/lmwilki/civ6-mcp"
+    },
+    {
+     "label": "CivRealm (Freeciv, ICLR 2024) — agents struggle in the full game",
+     "url": "https://arxiv.org/abs/2401.10568"
+    },
+    {
+     "label": "CivBench (Civ V) — LLM strategists at best tie the built-in AI",
+     "url": "https://arxiv.org/abs/2604.07733"
+    },
+    {
+     "label": "Civilization wiki: Victory (Civ6)",
+     "url": "https://civilization.fandom.com/wiki/Victory_(Civ6)"
+    }
+   ]
+  },
+  {
+   "id": "factorio",
+   "order": 11,
+   "tier": "modern",
+   "title": "Factorio",
+   "platform": "PC / Switch",
+   "release_year": 2020,
+   "genre": "Factory automation",
+   "icon": "gear",
+   "theme": [
+    "#a8701e",
+    "#1c1a17"
+   ],
+   "skin": "factory",
+   "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. An LLM agent has launched a rocket with enemies switched off (listed below for reference); none has reported one on default settings.",
+   "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
+   "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
+   "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
+   "milestones": [
+    {
+     "id": "steam-power",
+     "name": "Steam power online"
+    },
+    {
+     "id": "automation-science",
+     "name": "First lab running automation science (red)"
+    },
+    {
+     "id": "electric-mining",
+     "name": "Research Electric mining drill"
+    },
+    {
+     "id": "automation",
+     "name": "Research Automation",
+     "description": "First assembling machine"
+    },
+    {
+     "id": "logistic-science",
+     "name": "Research Logistic science pack (green)"
+    },
+    {
+     "id": "oil-processing",
+     "name": "Research Oil processing"
+    },
+    {
+     "id": "chemical-science",
+     "name": "Research Chemical science pack (blue)"
+    },
+    {
+     "id": "production-science",
+     "name": "Research Production science pack (purple)"
+    },
+    {
+     "id": "utility-science",
+     "name": "Research Utility science pack (yellow)"
+    },
+    {
+     "id": "rocket-silo",
+     "name": "Research Rocket silo"
+    },
+    {
+     "id": "rocket-launch",
+     "name": "Launch a rocket",
+     "description": "Victory screen",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Default Settings (2.x)",
+     "time": "1:59:01",
+     "note": "speedrun.com world record by Zaspar (v2.0.77)",
+     "source": "https://www.speedrun.com/factorio/runs/yvk04e8m"
+    },
+    {
+     "label": "Speedrun WR — Any% (2.x)",
+     "time": "1:42:41",
+     "note": "speedrun.com world record by JeHor (v2.0.28); any map settings and set seeds allowed",
+     "source": "https://www.speedrun.com/factorio/runs/y8ovjjwm"
+    }
+   ],
+   "links": [
+    {
+     "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported",
+     "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
+    },
+    {
+     "label": "Factorio Learning Environment (2025) — LLMs stall before complex automation",
+     "url": "https://arxiv.org/abs/2503.09617"
+    },
+    {
+     "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
+     "url": "https://ryanmadden.net/claude-plays-factorio/"
+    },
+    {
+     "label": "Factorio wiki: Technologies",
+     "url": "https://wiki.factorio.com/Technologies"
+    }
+   ]
+  },
+  {
+   "id": "kerbal-space-program",
+   "order": 12,
+   "tier": "modern",
+   "title": "Kerbal Space Program",
+   "platform": "PC / PS4 / Xbox One",
+   "release_year": 2015,
+   "genre": "Spaceflight simulation",
+   "icon": "rocket",
+   "theme": [
+    "#2a5a7a",
+    "#0a0d16"
+   ],
+   "skin": "orbital",
+   "description": "Design a rocket from parts, then fly it through ascent, orbit, a transfer burn and a powered landing on the Mun, and bring the crew home. Orbital physics punishes every design mistake. A Vals AI benchmark reports Claude Opus 5.5 landing on the Mun and returning in its own harness; it is listed below as an author report, with no timing published.",
+   "clear_condition": "Land a crewed vessel on the Mun and recover the crew alive on Kerbin.",
+   "timing": "Run time from the first input in a new save to the recovery dialog, as in speedrun.com's “Mun and Back” category.",
+   "rules": "KSP 1 (not KSP 2), any 1.x version (state it), no DLC parts unless disclosed. Career or Science mode (state which); Sandbox runs are listed but say so in notes. Launch from a Kerbin launch site. No gameplay mods or autopilots such as MechJeb; telemetry/control APIs such as kRPC go in the Harness track. Reverts must be disclosed under restarts.",
+   "milestones": [
+    {
+     "id": "reach-space",
+     "name": "Reach space",
+     "description": "Above 70 km with crew aboard"
+    },
+    {
+     "id": "kerbin-orbit",
+     "name": "Orbit Kerbin",
+     "description": "Apoapsis and periapsis above 70 km"
+    },
+    {
+     "id": "mun-soi",
+     "name": "Enter the Mun's sphere of influence"
+    },
+    {
+     "id": "mun-orbit",
+     "name": "Orbit the Mun"
+    },
+    {
+     "id": "mun-landing",
+     "name": "Land on the Mun",
+     "description": "Vessel status: Landed, Mun"
+    },
+    {
+     "id": "leave-mun",
+     "name": "Leave the Mun's sphere of influence"
+    },
+    {
+     "id": "reentry",
+     "name": "Reenter Kerbin's atmosphere"
+    },
+    {
+     "id": "recovery",
+     "name": "Recover the crew alive",
+     "description": "Recovery dialog",
+     "final": true
+    }
+   ],
+   "human_baselines": [
+    {
+     "label": "Speedrun WR — Mun and Back, Career (glitchless)",
+     "time": "0:05:43",
+     "note": "speedrun.com world record by ElectroLlama (v1.10, real time)",
+     "source": "https://www.speedrun.com/ksp/runs/z091ejoz"
+    },
+    {
+     "label": "Speedrun WR — Mun and Back, Science (glitchless)",
+     "time": "0:07:46",
+     "note": "speedrun.com world record by Frog23 (v1.12, real time)",
+     "source": "https://www.speedrun.com/ksp/runs/m3wg8p6y"
+    }
+   ],
+   "links": [
+    {
+     "label": "Vals AI Time Horizon Index — KSP mission ladder; rung 2 is Mun landing and return",
+     "url": "https://www.vals.ai/benchmarks/time_horizon_index"
+    },
+    {
+     "label": "LLMs as Autonomous Spacecraft Operators in KSP (2025) — orbital pursuit tasks, no landing",
+     "url": "https://arxiv.org/abs/2505.19896"
+    },
+    {
+     "label": "KSPDG / SpaceGym — orbital differential games",
+     "url": "https://github.com/mit-ll/spacegym-kspdg"
+    },
+    {
+     "label": "KSP wiki: Mun",
+     "url": "https://wiki.kerbalspaceprogram.com/wiki/Mun"
+    }
+   ]
+  },
+  {
    "id": "nethack",
    "order": 20,
    "tier": "classic",
@@ -1369,6 +1754,191 @@
   }
  ],
  "submissions": [
+  {
+   "id": "2026-10-truta-claude-opus-5-5-bg3",
+   "game": "baldurs-gate-3",
+   "agent": "Claude Opus 5.5 (bg3-agent-harness)",
+   "team": "Bogdan Truța",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-10-18",
+   "game_version": "Patch 8 Hotfix 10 (native Linux)",
+   "source": "https://bogdantruta.com/blog/claude-finished-baldurs-gate-3/",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "bg3-agent-harness (code)",
+     "url": "https://github.com/Bogzx/bg3-agent-harness"
+    }
+   ],
+   "videos": [],
+   "milestones": [
+    {
+     "id": "escape-nautiloid"
+    },
+    {
+     "id": "reach-moonrise-road"
+    },
+    {
+     "id": "nightsong"
+    },
+    {
+     "id": "infiltrate-moonrise"
+    },
+    {
+     "id": "ketheric"
+    },
+    {
+     "id": "help-your-protector"
+    },
+    {
+     "id": "orin-netherstone"
+    },
+    {
+     "id": "gortash-netherstone"
+    },
+    {
+     "id": "elder-brain"
+    },
+    {
+     "id": "netherbrain",
+     "elapsed": "38:54:00",
+     "approx": true
+    }
+   ],
+   "method": {
+    "summary": "Claude Opus 5.5 driving the game through a Lua mod and an MCP server whose policy is to expose only what a player could see. Beat the Netherbrain on its 12th attempt and played the ending.",
+    "models": [
+     "Claude Opus 5.5"
+    ],
+    "observation": "Game state from a Lua mod via MCP, limited to player-visible information",
+    "action": "MCP tool calls (20,809 over the run)",
+    "human_intervention": "The author fixed the harness between sessions",
+    "restarts": "Save reloads allowed; 91 of 149 fights used at least one",
+    "code": "https://github.com/Bogzx/bg3-agent-harness"
+   },
+   "hardware": {},
+   "wall_clock": "38.9 hours over 96 sessions",
+   "cost": "~$712 API",
+   "notes": "Explorer difficulty (the easiest). Self-reported by the author, not a controlled measurement. Only the final time is published, so the earlier milestones are untimed and the 38.9 h total is marked approximate."
+  },
+  {
+   "id": "2026-10-madden-gpt-5-6-sol-factorio",
+   "game": "factorio",
+   "agent": "GPT-5.6 Sol (Codex)",
+   "team": "Ryan Madden",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-10-31",
+   "source": "https://ryanmadden.net/gpt-56-beats-factorio/",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "Hacker News discussion",
+     "url": "https://news.ycombinator.com/item?id=50318871"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs",
+     "label": "Timelapse",
+     "covers": "Timelapse of the run, not real-time footage"
+    }
+   ],
+   "milestones": [
+    {
+     "id": "steam-power"
+    },
+    {
+     "id": "automation-science"
+    },
+    {
+     "id": "electric-mining"
+    },
+    {
+     "id": "automation"
+    },
+    {
+     "id": "logistic-science"
+    },
+    {
+     "id": "oil-processing"
+    },
+    {
+     "id": "chemical-science"
+    },
+    {
+     "id": "production-science"
+    },
+    {
+     "id": "utility-science"
+    },
+    {
+     "id": "rocket-silo"
+    },
+    {
+     "id": "rocket-launch",
+     "elapsed": "13:30:00",
+     "approx": true
+    }
+   ],
+   "method": {
+    "summary": "GPT-5.6 Sol in the Codex harness, with player reach and fog-of-war limits. Launched a rocket; in the late game it hand-ferried supplies instead of building automated connections.",
+    "models": [
+     "GPT-5.6 Sol"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Peaceful mode (no biters), so this run does not meet the board's Default-preset clear condition; it is listed for reference. 13.5 h is in-game time as reported by the author, so the time is marked approximate."
+  },
+  {
+   "id": "2026-10-vals-claude-opus-5-5-ksp",
+   "game": "kerbal-space-program",
+   "agent": "Claude Opus 5.5 (OpenCode)",
+   "team": "Vals AI",
+   "track": "harness",
+   "status": "curated",
+   "submitted_at": "2026-10-07",
+   "source": "https://www.vals.ai/benchmarks/time_horizon_index",
+   "source_type": "author",
+   "videos": [],
+   "milestones": [
+    {
+     "id": "reach-space"
+    },
+    {
+     "id": "kerbin-orbit"
+    },
+    {
+     "id": "mun-soi"
+    },
+    {
+     "id": "mun-orbit"
+    },
+    {
+     "id": "mun-landing"
+    },
+    {
+     "id": "leave-mun"
+    },
+    {
+     "id": "reentry"
+    },
+    {
+     "id": "recovery"
+    }
+   ],
+   "method": {
+    "summary": "Vals AI Time Horizon Index: a 30-rung KSP mission ladder with a 120-hour budget, run in the OpenCode harness and scored from telemetry. Rung 2 is a Mun landing and safe return of the same Kerbal. Vals reports Claude Opus 5.5 verified all 27 missions through the Eve landing (91.33%).",
+    "models": [
+     "Claude Opus 5.5"
+    ],
+    "human_intervention": "unknown"
+   },
+   "hardware": {},
+   "notes": "Game version and mode are not stated, and no per-rung timing is published, so this run is not plotted. The Mun landing and return is claimed because Vals reports every mission up to rung 27 verified."
+  },
   {
    "id": "2026-09-vals-gpt-6-astra-minecraft",
    "game": "minecraft",

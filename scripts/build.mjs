@@ -102,7 +102,7 @@ function validateGame(file, g) {
     checkUrlField(file, b, "source", `human_baselines[${i}].source`, true);
   }
   for (const [i, l] of (g.links ?? []).entries()) checkUrlField(file, l, "url", `links[${i}].url`, true);
-  if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (3D, real-time, long-form) or "classic" (retro / 2D / turn-based)`);
+  if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
   if (g.icon != null && !ICONS.includes(g.icon)) err(file, `icon must be one of ${ICONS.join(", ")}`);
   if (g.theme != null && !(Array.isArray(g.theme) && g.theme.length === 2 && g.theme.every((c) => /^#[0-9a-f]{6}$/i.test(c)))) {

@@ -1,0 +1,100 @@
+{
+  "id": "baldurs-gate-3",
+  "order": 9,
+  "tier": "modern",
+  "title": "Baldur's Gate 3",
+  "platform": "PC / PS5 / Xbox Series / macOS",
+  "release_year": 2023,
+  "genre": "Party RPG (turn-based)",
+  "icon": "d20",
+  "theme": [
+    "#5a3a8a",
+    "#17111c"
+  ],
+  "skin": "tome",
+  "description": "A story that runs for dozens of hours, carried by dialogue, skill checks and turn-based fights with a full tabletop rulebook behind them. Reading, persuading and remembering matter more than reflexes. One self-reported Claude playthrough on the easiest difficulty reached the credits in 2026, with save reloads; it is listed below as an author report.",
+  "clear_condition": "Defeat the Netherbrain and reach the credits (any ending).",
+  "timing": "Run time from the opening Nautiloid cutscene to the start of the credits, as on speedrun.com.",
+  "rules": "Unmodified game, any patch (state it). Any difficulty except Custom (state it: Explorer, Balanced, Tactician or Honour). Reloading saves is allowed but must be disclosed under restarts, with a count. Mods that only read game state for the agent go in the Harness track and must be disclosed. Milestones may be reached in any order the story allows.",
+  "milestones": [
+    {
+      "id": "escape-nautiloid",
+      "name": "Escape the Nautiloid",
+      "description": "Crash cinematic, then waking on the Ravaged Beach"
+    },
+    {
+      "id": "reach-moonrise-road",
+      "name": "Leave Act One for the Shadow-Cursed Lands",
+      "description": "Travel to Moonrise Towers via the Mountain Pass or the Underdark"
+    },
+    {
+      "id": "nightsong",
+      "name": "Find the Nightsong",
+      "description": "Kill or free her"
+    },
+    {
+      "id": "infiltrate-moonrise",
+      "name": "Infiltrate Moonrise Towers",
+      "description": "Rooftop confrontation with Ketheric"
+    },
+    {
+      "id": "ketheric",
+      "name": "Defeat Ketheric Thorm",
+      "description": "Mind Flayer Colony; ends Act Two"
+    },
+    {
+      "id": "help-your-protector",
+      "name": "Help Your Protector",
+      "description": "Opening of Act Three: the fight inside the Astral Prism"
+    },
+    {
+      "id": "orin-netherstone",
+      "name": "Take Orin's Netherstone",
+      "description": "Temple of Bhaal"
+    },
+    {
+      "id": "gortash-netherstone",
+      "name": "Take Gortash's Netherstone",
+      "description": "Wyrm's Rock Fortress, by fighting him or after the Morphic Pool"
+    },
+    {
+      "id": "elder-brain",
+      "name": "Confront the Elder Brain",
+      "description": "Morphic Pool, all three Netherstones in hand"
+    },
+    {
+      "id": "netherbrain",
+      "name": "Defeat the Netherbrain",
+      "description": "Ending cinematic and credits",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — No Major Glitches (Honour, PC)",
+      "time": "0:26:52",
+      "note": "speedrun.com world record by Kinslayer202 (26:52.032 load-removed, Patch 5)",
+      "source": "https://www.speedrun.com/baldurs_gate_3/runs/zpo233nm"
+    },
+    {
+      "label": "Speedrun WR — Any% All Acts (Explorer, PC)",
+      "time": "0:16:57",
+      "note": "speedrun.com world record by bisc (16:57.720 load-removed, Patch 5); uses major glitches",
+      "source": "https://www.speedrun.com/baldurs_gate_3/runs/zxqdp98m"
+    }
+  ],
+  "links": [
+    {
+      "label": "Claude Opus 5.5 plays to the credits on Explorer — self-reported, with reloads and harness fixes between sessions",
+      "url": "https://bogdantruta.com/blog/claude-finished-baldurs-gate-3/"
+    },
+    {
+      "label": "bg3-agent-harness — Lua mod + MCP server, 28-scenario benchmark",
+      "url": "https://github.com/Bogzx/bg3-agent-harness"
+    },
+    {
+      "label": "bg3.wiki: Quests",
+      "url": "https://bg3.wiki/wiki/Quests"
+    }
+  ]
+}

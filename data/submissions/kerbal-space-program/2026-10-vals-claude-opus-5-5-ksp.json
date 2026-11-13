@@ -1,0 +1,47 @@
+{
+  "id": "2026-10-vals-claude-opus-5-5-ksp",
+  "game": "kerbal-space-program",
+  "agent": "Claude Opus 5.5 (OpenCode)",
+  "team": "Vals AI",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-10-07",
+  "source": "https://www.vals.ai/benchmarks/time_horizon_index",
+  "source_type": "author",
+  "videos": [],
+  "milestones": [
+    {
+      "id": "reach-space"
+    },
+    {
+      "id": "kerbin-orbit"
+    },
+    {
+      "id": "mun-soi"
+    },
+    {
+      "id": "mun-orbit"
+    },
+    {
+      "id": "mun-landing"
+    },
+    {
+      "id": "leave-mun"
+    },
+    {
+      "id": "reentry"
+    },
+    {
+      "id": "recovery"
+    }
+  ],
+  "method": {
+    "summary": "Vals AI Time Horizon Index: a 30-rung KSP mission ladder with a 120-hour budget, run in the OpenCode harness and scored from telemetry. Rung 2 is a Mun landing and safe return of the same Kerbal. Vals reports Claude Opus 5.5 verified all 27 missions through the Eve landing (91.33%).",
+    "models": [
+      "Claude Opus 5.5"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Game version and mode are not stated, and no per-rung timing is published, so this run is not plotted. The Mun landing and return is claimed because Vals reports every mission up to rung 27 verified."
+}

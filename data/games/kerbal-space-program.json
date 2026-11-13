@@ -1,0 +1,90 @@
+{
+  "id": "kerbal-space-program",
+  "order": 12,
+  "tier": "modern",
+  "title": "Kerbal Space Program",
+  "platform": "PC / PS4 / Xbox One",
+  "release_year": 2015,
+  "genre": "Spaceflight simulation",
+  "icon": "rocket",
+  "theme": [
+    "#2a5a7a",
+    "#0a0d16"
+  ],
+  "skin": "orbital",
+  "description": "Design a rocket from parts, then fly it through ascent, orbit, a transfer burn and a powered landing on the Mun, and bring the crew home. Orbital physics punishes every design mistake. A Vals AI benchmark reports Claude Opus 5.5 landing on the Mun and returning in its own harness; it is listed below as an author report, with no timing published.",
+  "clear_condition": "Land a crewed vessel on the Mun and recover the crew alive on Kerbin.",
+  "timing": "Run time from the first input in a new save to the recovery dialog, as in speedrun.com's “Mun and Back” category.",
+  "rules": "KSP 1 (not KSP 2), any 1.x version (state it), no DLC parts unless disclosed. Career or Science mode (state which); Sandbox runs are listed but say so in notes. Launch from a Kerbin launch site. No gameplay mods or autopilots such as MechJeb; telemetry/control APIs such as kRPC go in the Harness track. Reverts must be disclosed under restarts.",
+  "milestones": [
+    {
+      "id": "reach-space",
+      "name": "Reach space",
+      "description": "Above 70 km with crew aboard"
+    },
+    {
+      "id": "kerbin-orbit",
+      "name": "Orbit Kerbin",
+      "description": "Apoapsis and periapsis above 70 km"
+    },
+    {
+      "id": "mun-soi",
+      "name": "Enter the Mun's sphere of influence"
+    },
+    {
+      "id": "mun-orbit",
+      "name": "Orbit the Mun"
+    },
+    {
+      "id": "mun-landing",
+      "name": "Land on the Mun",
+      "description": "Vessel status: Landed, Mun"
+    },
+    {
+      "id": "leave-mun",
+      "name": "Leave the Mun's sphere of influence"
+    },
+    {
+      "id": "reentry",
+      "name": "Reenter Kerbin's atmosphere"
+    },
+    {
+      "id": "recovery",
+      "name": "Recover the crew alive",
+      "description": "Recovery dialog",
+      "final": true
+    }
+  ],
+  "human_baselines": [
+    {
+      "label": "Speedrun WR — Mun and Back, Career (glitchless)",
+      "time": "0:05:43",
+      "note": "speedrun.com world record by ElectroLlama (v1.10, real time)",
+      "source": "https://www.speedrun.com/ksp/runs/z091ejoz"
+    },
+    {
+      "label": "Speedrun WR — Mun and Back, Science (glitchless)",
+      "time": "0:07:46",
+      "note": "speedrun.com world record by Frog23 (v1.12, real time)",
+      "source": "https://www.speedrun.com/ksp/runs/m3wg8p6y"
+    }
+  ],
+  "links": [
+    {
+      "label": "Vals AI Time Horizon Index — KSP mission ladder; rung 2 is Mun landing and return",
+      "url": "https://www.vals.ai/benchmarks/time_horizon_index"
+    },
+    {
+      "label": "LLMs as Autonomous Spacecraft Operators in KSP (2025) — orbital pursuit tasks, no landing",
+      "url": "https://arxiv.org/abs/2505.19896"
+    },
+    {
+      "label": "KSPDG / SpaceGym — orbital differential games",
+      "url": "https://github.com/mit-ll/spacegym-kspdg"
+    },
+    {
+      "label": "KSP wiki: Mun",
+      "url": "https://wiki.kerbalspaceprogram.com/wiki/Mun"
+    }
+  ]
+}

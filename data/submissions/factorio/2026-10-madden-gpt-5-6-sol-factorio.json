@@ -1,0 +1,70 @@
+{
+  "id": "2026-10-madden-gpt-5-6-sol-factorio",
+  "game": "factorio",
+  "agent": "GPT-5.6 Sol (Codex)",
+  "team": "Ryan Madden",
+  "track": "harness",
+  "status": "curated",
+  "submitted_at": "2026-10-31",
+  "source": "https://ryanmadden.net/gpt-56-beats-factorio/",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "Hacker News discussion",
+      "url": "https://news.ycombinator.com/item?id=50318871"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs",
+      "label": "Timelapse",
+      "covers": "Timelapse of the run, not real-time footage"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "steam-power"
+    },
+    {
+      "id": "automation-science"
+    },
+    {
+      "id": "electric-mining"
+    },
+    {
+      "id": "automation"
+    },
+    {
+      "id": "logistic-science"
+    },
+    {
+      "id": "oil-processing"
+    },
+    {
+      "id": "chemical-science"
+    },
+    {
+      "id": "production-science"
+    },
+    {
+      "id": "utility-science"
+    },
+    {
+      "id": "rocket-silo"
+    },
+    {
+      "id": "rocket-launch",
+      "elapsed": "13:30:00",
+      "approx": true
+    }
+  ],
+  "method": {
+    "summary": "GPT-5.6 Sol in the Codex harness, with player reach and fog-of-war limits. Launched a rocket; in the late game it hand-ferried supplies instead of building automated connections.",
+    "models": [
+      "GPT-5.6 Sol"
+    ],
+    "human_intervention": "unknown"
+  },
+  "hardware": {},
+  "notes": "Peaceful mode (no biters), so this run does not meet the board's Default-preset clear condition; it is listed for reference. 13.5 h is in-game time as reported by the author, so the time is marked approximate."
+}
