@@ -22,7 +22,8 @@ data/
 | `tier` | yes | `modern` (current, long-form games — listed first) or `classic` (retro / 2D / turn-based — listed below for comparison) |
 | `order` | no | sort order within its tier on the home page |
 | `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag, gear, rocket, laurel, d20 |
-| `steam_appid` | no | the game's Steam app id (the number in `store.steampowered.com/app/<id>`). The home page card then shows the official Steam header image, loaded from Steam; without it, or if the image fails, the card shows the emblem art |
+| `steam_appid` | no | the game's Steam app id (the number in `store.steampowered.com/app/<id>`). The home page card then shows the official Steam header image and the game page banner shows Steam's background art, both loaded from Steam. Without art, or if an image fails, the emblem art is shown |
+| `art` | no | official images from the publisher's own site for games not on Steam (or to replace Steam's): `{ "card": url, "banner": url }`, https only. `card` is a wide image with the logo (about 2:1); `banner` is larger background art |
 | `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |
 | `milestones[]` | yes | ordered; each `{ id, name, description?, final? }`. Exactly one has `"final": true` — reaching it means the game is cleared |
 | `human_baselines[]` | no | `{ label, time: "H:MM:SS", note?, source: url }` |

@@ -303,7 +303,17 @@ async function load() {
 const runsFor = (gameId) => DATA.submissions.filter((s) => s.game === gameId && s.status !== "rejected");
 
 // ---------- home ----------
+// The logo SVG lives once, inline in index.html's header; the hero reuses that markup.
+const logoSvg = () => document.querySelector(".brand .logo")?.outerHTML.replace('class="logo"', "") ?? "";
 const STEAM_ART = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps";
+// Official art for a game: its own "art" links (publisher sites), else its Steam images. card = a wide
+// header image with the logo; banner = background art for the game page. Null when the game has neither.
+function artFor(g) {
+  const steam = g.steam_appid ? `${STEAM_ART}/${Number(g.steam_appid)}` : null;
+  const card = g.art?.card ?? (steam && `${steam}/header.jpg`);
+  const banner = g.art?.banner ?? (steam && `${steam}/library_hero.jpg`);
+  return card || banner ? { card, banner } : null;
+}
 function viewHome() {
   const all = DATA.submissions.filter((s) => s.status !== "rejected");
   const clearedGames = DATA.games.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
@@ -314,10 +324,10 @@ function viewHome() {
       const ranked = rankRuns(g, runsFor(g.id));
       const best = ranked[0];
       const vids = ranked.reduce((n, sc) => n + (sc.run.videos?.length ?? 0), 0);
-      // Official Steam header art, loaded from Steam, for games that set steam_appid. If it fails to load,
-      // the card falls back to the emblem art.
-      const art = g.steam_appid
-        ? `<img class="art" src="${STEAM_ART}/${Number(g.steam_appid)}/header.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"
+      // Official header art (see artFor). If it fails to load, the card falls back to the emblem art.
+      const cardUrl = artFor(g)?.card;
+      const art = cardUrl
+        ? `<img class="art" src="${esc(cardUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer"
              onerror="this.parentNode.classList.remove('has-art'); this.remove()" />`
         : "";
       return `
@@ -361,6 +371,7 @@ function viewHome() {
   return `
     <section class="hero">
       <canvas id="embers" aria-hidden="true"></canvas>
+      <div class="moon-art" aria-hidden="true">${logoSvg()}</div>
       <div class="hero-inner">
         <div class="eyebrow">This era's moonshot · AI agents · real games</div>
         <h1>Can your agent<br/>finish the game?</h1>
@@ -624,8 +635,16 @@ function viewGame(id) {
   const tab = (val, label) => `<button type="button" data-track="${val}" aria-pressed="${gameState.track === val}">${label}</button>`;
   const wr = (game.human_baselines ?? [])[0];
 
+  // Official background art (see artFor); it fills the right of the banner and fades into the skin's own
+  // background, so the text keeps the colors the skin chose. On error the banner goes back to the emblem art.
+  const bannerUrl = artFor(game)?.banner;
+  const heroArt = bannerUrl
+    ? `<img class="art" src="${esc(bannerUrl)}" alt="" decoding="async" referrerpolicy="no-referrer"
+         onerror="this.parentNode.classList.remove('has-art'); this.remove()" />`
+    : "";
   return `
-    <section class="banner" style="${themeStyle(game)}">
+    <section class="banner${heroArt ? " has-art" : ""}" style="${themeStyle(game)}">
+      ${heroArt}
       <div class="emblem">${emblem(game)}</div>
       ${game.deco ? `<div class="deco" aria-hidden="true">${esc(game.deco)}</div>` : ""}
       ${MOUNTAINS}

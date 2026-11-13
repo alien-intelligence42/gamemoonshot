@@ -120,9 +120,13 @@ svg { display: block; }
   border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-.brand .logo { width: auto; height: 40px; flex: none; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--gold) 25%, transparent)); }
-/* on the light scheme a glow washes the pale gold out; a thin darker edge keeps the shape */
-body[data-tone="light"] .brand .logo { filter: drop-shadow(0 0 .6px rgb(120 78 14 / 85%)) saturate(1.15); }
+.brand .logo { height: 40px; width: auto; aspect-ratio: 922 / 788; flex: none; }
+/* the logo (header and hero) is an inline SVG in three tones from the site palette */
+:root { --logo-base: #c9ae7e; --logo-shade: #86704c; --logo-light: #e8d6ae; }
+body[data-tone="light"] { --logo-base: #a3844c; --logo-shade: #6f5630; --logo-light: #d4bb88; }
+.lg-base { fill: var(--logo-base); }
+.lg-shade { fill: var(--logo-shade); }
+.lg-light { fill: var(--logo-light); }
 .brand span { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: .04em; }
 .brand b { color: var(--gold); font-weight: 700; }
 nav { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
@@ -170,18 +174,17 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
   content: ""; position: absolute; z-index: -2; width: 720px; height: 720px; right: -120px; top: -260px; border-radius: 50%;
   background: radial-gradient(circle, color-mix(in srgb, var(--gold) 9%, transparent), transparent 70%);
 }
-/* the moon the whole site is aiming at: the logo artwork, large, drifting slowly */
-.hero::after {
-  content: ""; position: absolute; z-index: -1; right: calc(var(--gutter) - 6px); top: 48px;
-  width: clamp(150px, 20vw, 280px); aspect-ratio: 560 / 479;
-  background: url("assets/moon-hero.webp") center / contain no-repeat;
-  filter: drop-shadow(0 0 28px rgb(240 190 90 / 22%));
+/* the moon the whole site is aiming at: the logo, large, drifting slowly */
+.hero .moon-art {
+  position: absolute; z-index: -1; right: calc(var(--gutter) - 6px); top: 48px;
+  width: clamp(150px, 20vw, 280px); aspect-ratio: 922 / 788; pointer-events: none;
+  filter: drop-shadow(0 0 26px color-mix(in srgb, var(--gold) 22%, transparent));
   animation: moon-drift 9s ease-in-out infinite alternate;
 }
-body[data-tone="light"] .hero::after { filter: drop-shadow(0 0 .8px rgb(120 78 14 / 80%)) drop-shadow(0 6px 22px rgb(201 150 60 / 28%)) saturate(1.15); }
+.hero .moon-art svg { display: block; width: 100%; height: 100%; }
 @keyframes moon-drift { to { transform: translateY(-8px) rotate(-1.5deg); } }
-@media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
-@media (max-width: 640px) { .hero::after { top: 10px; width: 84px; opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .hero .moon-art { animation: none; } }
+@media (max-width: 640px) { .hero .moon-art { top: 10px; width: 84px; opacity: .5; } }
 .hero canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
 .hero-inner { max-width: 980px; position: relative; }
 .eyebrow { font-family: var(--display); color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
@@ -290,7 +293,7 @@ body[data-tone="light"] .hero::after { filter: drop-shadow(0 0 .8px rgb(120 78 1
 .card:hover .keyart .emblem { transform: scale(1.06) rotate(-3deg); }
 .keyart .year { position: absolute; left: 20px; top: 16px; font-family: var(--display); font-size: 12px; letter-spacing: .25em; color: color-mix(in srgb, var(--emblem) 70%, transparent); }
 /* official Steam header art (games with steam_appid): the art fills the panel, the emblem becomes a small badge */
-.keyart .art { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.keyart .art { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .5s ease; }
 .card:hover .keyart .art { transform: scale(1.04); }
 .keyart.has-art::after { content: ""; position: absolute; inset: auto 0 0; height: 28%; z-index: -1; background: linear-gradient(transparent, var(--surface)); }
 .keyart.has-art .mountains { display: none; }
@@ -315,6 +318,20 @@ body[data-tone="light"] .hero::after { filter: drop-shadow(0 0 .8px rgb(120 78 1
 }
 .banner .mountains { height: 55%; }
 .banner .emblem { position: absolute; right: max(24px, calc(var(--gutter) + 8px)); top: 40px; width: clamp(120px, 18vw, 220px); height: clamp(120px, 18vw, 220px); color: color-mix(in srgb, var(--emblem) 85%, transparent); opacity: .9; z-index: -1; filter: drop-shadow(0 0 30px var(--emblem-glow)); }
+/* official Steam background art (games with steam_appid): right side, fading left and down into the banner */
+.banner.has-art .art {
+  position: absolute; z-index: -1; top: 0; right: 0; width: min(62%, 1100px); height: 100%; object-fit: cover; object-position: center 30%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 12%, #000 62%), linear-gradient(#000 60%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 12%, #000 62%), linear-gradient(#000 60%, transparent);
+  mask-composite: intersect;
+}
+body[data-tone="dark"] .banner.has-art .art { filter: brightness(.82); } /* bright art (e.g. snowfields) would glare on the dark scheme */
+.banner.has-art .emblem, .banner.has-art .mountains { display: none; }
+@media (max-width: 760px) { /* phones: the art becomes a strip above the title */
+  .banner.has-art { padding-top: 180px; }
+  .banner.has-art .art { width: 100%; height: 210px; -webkit-mask-image: linear-gradient(#000 50%, transparent); mask-image: linear-gradient(#000 50%, transparent); }
+}
 .crumbs { font-size: 13px; color: var(--ink-2); margin-bottom: 18px; font-family: var(--display); letter-spacing: .12em; text-transform: uppercase; }
 .crumbs a { color: var(--ink-2); text-decoration: none; }
 .crumbs a:hover { color: var(--gold-hi); }

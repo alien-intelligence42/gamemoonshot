@@ -109,6 +109,13 @@ function validateGame(file, g) {
   if (g.steam_appid != null && !(Number.isInteger(g.steam_appid) && g.steam_appid > 0)) {
     err(file, `steam_appid must be the game's numeric Steam app id (from store.steampowered.com/app/<id>)`);
   }
+  if (g.art != null) {
+    if (typeof g.art !== "object") err(file, `art must be { "card": url, "banner": url }`);
+    else for (const k of Object.keys(g.art)) {
+      if (!["card", "banner"].includes(k)) err(file, `art.${k}: only "card" and "banner" are allowed`);
+      else if (!/^https:\/\/\S+$/.test(g.art[k])) err(file, `art.${k} must be an https URL`);
+    }
+  }
   if (g.theme != null && !(Array.isArray(g.theme) && g.theme.length === 2 && g.theme.every((c) => /^#[0-9a-f]{6}$/i.test(c)))) {
     err(file, `theme must be two hex colors, e.g. ["#8a2420", "#1f2a5c"]`);
   }
