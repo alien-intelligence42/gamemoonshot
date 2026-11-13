@@ -20,6 +20,8 @@ data/
 | `timing` | no | how elapsed time is measured (default: run time from first input) |
 | `rules` | no | game-specific rules (allowed difficulty, version, glitches…) |
 | `order` | no | sort order on the home page |
+| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield |
+| `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |
 | `milestones[]` | yes | ordered; each `{ id, name, description?, final? }`. Exactly one has `"final": true` — reaching it means the game is cleared |
 | `human_baselines[]` | no | `{ label, time: "H:MM:SS", note?, source: url }` |
 | `links[]` | no | `{ label, url }` — references, prior work |
@@ -44,7 +46,9 @@ Milestones should be things a reviewer can confirm on video in a few seconds: a 
   "verified_by": "maintainer-handle",     // required once status is "verified"
   "verified_at": "2026-11-20",            // required once status is "verified"
 
-  "videos": [ { "url": "https://www.youtube.com/watch?v=...", "label": "Part 1" } ],
+  // YouTube, Bilibili and Twitch links play inside the site. "full": true when the videos together cover
+  // the whole run; "covers" says what a partial video shows.
+  "videos": [ { "url": "https://www.youtube.com/watch?v=...", "label": "Part 1", "full": true, "covers": "..." } ],
   "milestones": [
     // video = index into videos[], timestamp = position in that video, elapsed = run time so far
     { "id": "gyoubu-oniwa", "video": 0, "timestamp": "1:02:10", "elapsed": "1:02:10" },

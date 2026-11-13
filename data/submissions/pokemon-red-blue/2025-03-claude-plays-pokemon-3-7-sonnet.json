@@ -5,10 +5,27 @@
   "team": "Anthropic",
   "track": "harness",
   "status": "curated",
-  "submitted_at": "2025-02-25",
-  "source": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly",
-  "source_type": "news",
-  "videos": [],
+  "submitted_at": "2025-02-24",
+  "source": "https://www.anthropic.com/research/visible-extended-thinking",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "TechCrunch",
+      "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=aB1B7Aezaw8",
+      "label": "Stream debut (fan VOD archive)",
+      "covers": "Stream VOD 2025-02-26 part 1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=pAkElOzD5Rw",
+      "label": "Highlights (fan upload)",
+      "covers": "Highlights compilation, 2025-03-09"
+    }
+  ],
   "milestones": [
     {
       "id": "boulder-badge"
@@ -27,5 +44,6 @@
     ],
     "human_intervention": "unknown"
   },
-  "hardware": {}
+  "hardware": {},
+  "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified."
 }

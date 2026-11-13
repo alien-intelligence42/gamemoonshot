@@ -5,6 +5,12 @@
   "platform": "PC",
   "release_year": 2017,
   "genre": "Deckbuilder roguelike",
+  "icon": "spire",
+  "theme": [
+    "#4d2470",
+    "#5c1d2a"
+  ],
+  "skin": "spire",
   "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
   "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
   "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",

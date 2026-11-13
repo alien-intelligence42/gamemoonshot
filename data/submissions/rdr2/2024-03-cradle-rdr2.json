@@ -8,7 +8,28 @@
   "submitted_at": "2024-03-05",
   "source": "https://baai-agents.github.io/Cradle",
   "source_type": "author",
-  "videos": [],
+  "extra_sources": [
+    {
+      "label": "Paper (arXiv 2403.03186)",
+      "url": "https://arxiv.org/abs/2403.03186"
+    },
+    {
+      "label": "Code (GitHub)",
+      "url": "https://github.com/BAAI-Agents/Cradle"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=fkkSJw1iJJ8",
+      "label": "Chapter 1 tasks (16×)",
+      "covers": "Official Cradle upload: tasks from Chapter 1 at 16× speed, 7:28"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ay5gBqzPcDE",
+      "label": "Open-ended tasks (16×)",
+      "covers": "Official Cradle upload: open-ended RDR2 tasks at 16× speed, 1:26"
+    }
+  ],
   "milestones": [],
   "method": {
     "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Completed early main-story missions (roughly 40 minutes of story), including ‘Follow Dutch’ and ‘Buy Supply’ style tasks.",
@@ -19,7 +40,9 @@
     "observation": "Screenshots",
     "action": "Keyboard + mouse",
     "human_intervention": "unknown",
-    "project": "https://baai-agents.github.io/Cradle"
+    "project": "https://baai-agents.github.io/Cradle",
+    "paper": "https://arxiv.org/abs/2403.03186",
+    "code": "https://github.com/BAAI-Agents/Cradle"
   },
   "hardware": {},
   "notes": "No full chapter clear reported, so no milestone yet. Authors are welcome to submit full details and footage."

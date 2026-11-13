@@ -5,6 +5,12 @@
   "platform": "Game Boy Advance",
   "release_year": 2004,
   "genre": "RPG",
+  "icon": "emerald",
+  "theme": [
+    "#16674c",
+    "#0e2a33"
+  ],
+  "skin": "gba-emerald",
   "description": "Used by the NeurIPS 2025 PokeAgent speedrun track, which only went as far as the first gym. No full AI clear is known yet.",
   "clear_condition": "Defeat Champion Wallace and enter the Hall of Fame.",
   "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",

@@ -5,6 +5,12 @@
   "platform": "NES",
   "release_year": 1985,
   "genre": "Platformer",
+  "icon": "flag",
+  "theme": [
+    "#1f5c9a",
+    "#5a1d1d"
+  ],
+  "skin": "platformer",
   "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
   "clear_condition": "Defeat Bowser in World 8-4.",
   "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",

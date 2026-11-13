@@ -6,9 +6,25 @@
   "track": "harness",
   "status": "curated",
   "submitted_at": "2025-08-30",
-  "source": "https://news.aibase.com/news/20856",
+  "source": "https://www.qbitai.com/2025/08/326166.html",
   "source_type": "news",
-  "videos": [],
+  "extra_sources": [
+    {
+      "label": "Operator's post on X (not opened)",
+      "url": "https://x.com/Clad3815/status/1959856362059387098"
+    },
+    {
+      "label": "AIbase",
+      "url": "https://news.aibase.com/news/20856"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.twitch.tv/videos/2549204340",
+      "label": "“RED Defeated” (Twitch VOD)",
+      "covers": "Operator's stream VOD of the final battle; Twitch VODs can expire"
+    }
+  ],
   "milestones": [
     {
       "id": "zephyr-badge"

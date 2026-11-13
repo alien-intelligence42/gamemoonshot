@@ -8,7 +8,19 @@
   "submitted_at": "2025-12-12",
   "source": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal",
   "source_type": "author",
-  "videos": [],
+  "extra_sources": [
+    {
+      "label": "Harness branch (GitHub)",
+      "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/tree/crystal_race_gemini_3"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.twitch.tv/gemini_plays_pokemon/clip/YummyBraveHawkWow-rDnLmD1pCH59OHjK",
+      "label": "“Gemini 3 Pro wins the race” (Twitch clip)",
+      "covers": "Clip of the win"
+    }
+  ],
   "milestones": [
     {
       "id": "zephyr-badge"
@@ -63,5 +75,6 @@
     ],
     "human_intervention": "unknown"
   },
-  "hardware": {}
+  "hardware": {},
+  "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
 }

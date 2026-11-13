@@ -5,6 +5,12 @@
   "platform": "Game Boy Color",
   "release_year": 2000,
   "genre": "RPG",
+  "icon": "crystal",
+  "theme": [
+    "#1f5d80",
+    "#2b1d4f"
+  ],
+  "skin": "gb-crystal",
   "description": "Longer than Red/Blue, with a second region after the credits. The story clear is the Champion; the 16-badge post-game and Red are tracked as extra milestones.",
   "clear_condition": "Defeat Champion Lance and enter the Hall of Fame. Post-game milestones (Kanto badges, Red) rank above that.",
   "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",

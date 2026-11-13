@@ -2,12 +2,18 @@
   "id": "2026-10-deepmind-gemini-minecraft",
   "game": "minecraft",
   "agent": "Gemini multi-agent (Gemini 4 Argon ×4)",
-  "team": "Google DeepMind",
+  "team": "Faldor, Singh, Raileanu (reported as Google DeepMind)",
   "track": "harness",
   "status": "curated",
-  "submitted_at": "2026-10-20",
-  "source": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/",
-  "source_type": "news",
+  "submitted_at": "2026-10-15",
+  "source": "https://arxiv.org/abs/2610.22319",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "The AI Insider",
+      "url": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/"
+    }
+  ],
   "videos": [],
   "milestones": [
     {
@@ -61,5 +67,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. Reported via press, not verified."
+  "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage."
 }

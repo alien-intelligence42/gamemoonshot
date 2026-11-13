@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20",
+ "updated": "2026-10-15",
  "games": [
   {
    "id": "pokemon-red-blue",
@@ -8,6 +8,12 @@
    "platform": "Game Boy",
    "release_year": 1996,
    "genre": "RPG",
+   "icon": "badge",
+   "theme": [
+    "#8a2420",
+    "#1f2a5c"
+   ],
+   "skin": "gb-dmg",
    "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
    "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
    "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",
@@ -101,6 +107,12 @@
    "platform": "Game Boy Color",
    "release_year": 2000,
    "genre": "RPG",
+   "icon": "crystal",
+   "theme": [
+    "#1f5d80",
+    "#2b1d4f"
+   ],
+   "skin": "gb-crystal",
    "description": "Longer than Red/Blue, with a second region after the credits. The story clear is the Champion; the 16-badge post-game and Red are tracked as extra milestones.",
    "clear_condition": "Defeat Champion Lance and enter the Hall of Fame. Post-game milestones (Kanto badges, Red) rank above that.",
    "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
@@ -199,6 +211,12 @@
    "platform": "Game Boy Advance",
    "release_year": 2004,
    "genre": "RPG",
+   "icon": "emerald",
+   "theme": [
+    "#16674c",
+    "#0e2a33"
+   ],
+   "skin": "gba-emerald",
    "description": "Used by the NeurIPS 2025 PokeAgent speedrun track, which only went as far as the first gym. No full AI clear is known yet.",
    "clear_condition": "Defeat Champion Wallace and enter the Hall of Fame.",
    "rules": "Unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed.",
@@ -291,6 +309,12 @@
    "platform": "PC",
    "release_year": 2011,
    "genre": "Sandbox / survival",
+   "icon": "pickaxe",
+   "theme": [
+    "#3e6e2e",
+    "#3b2a1a"
+   ],
+   "skin": "blocky",
    "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
    "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
    "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
@@ -396,6 +420,12 @@
    "platform": "PC / PS4 / Xbox One",
    "release_year": 2018,
    "genre": "Open-world action",
+   "icon": "horseshoe",
+   "theme": [
+    "#8a3a18",
+    "#2a1a10"
+   ],
+   "skin": "western",
    "description": "A AAA open world with long, story-gated chapters. Cradle showed a general computer-control agent could play early story missions from screenshots alone; no AI chapter clear has been reported yet.",
    "clear_condition": "Complete the final Epilogue mission “American Venom”.",
    "rules": "PC version preferred (state platform and patch). Any difficulty/settings. Each milestone is the final mission of that chapter.",
@@ -470,6 +500,13 @@
    "platform": "PC / PS4 / Xbox One",
    "release_year": 2019,
    "genre": "Action",
+   "icon": "katana",
+   "theme": [
+    "#7a1a1a",
+    "#161210"
+   ],
+   "skin": "shinobi",
+   "deco": "隻狼",
    "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
    "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
    "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",
@@ -545,6 +582,13 @@
    "platform": "PC / PS5",
    "release_year": 2024,
    "genre": "Action RPG",
+   "icon": "staff",
+   "theme": [
+    "#9a7020",
+    "#2a1608"
+   ],
+   "skin": "wukong",
+   "deco": "黑神话·悟空",
    "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
    "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
    "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",
@@ -607,6 +651,12 @@
    "platform": "NES",
    "release_year": 1985,
    "genre": "Platformer",
+   "icon": "flag",
+   "theme": [
+    "#1f5c9a",
+    "#5a1d1d"
+   ],
+   "skin": "platformer",
    "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
    "clear_condition": "Defeat Bowser in World 8-4.",
    "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",
@@ -673,6 +723,12 @@
    "platform": "PC (terminal)",
    "release_year": 1987,
    "genre": "Roguelike",
+   "icon": "at",
+   "theme": [
+    "#3a4a3a",
+    "#141c22"
+   ],
+   "skin": "terminal",
    "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
    "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
    "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
@@ -754,6 +810,12 @@
    "platform": "PC",
    "release_year": 2017,
    "genre": "Deckbuilder roguelike",
+   "icon": "spire",
+   "theme": [
+    "#4d2470",
+    "#5c1d2a"
+   ],
+   "skin": "spire",
    "description": "Turn-based, but each run is a long chain of decisions. Benchmarks report win rates; here a single submitted run counts, so state the character and Ascension level.",
    "clear_condition": "Defeat the Act 3 boss (standard victory). The Corrupt Heart is a post-game milestone.",
    "rules": "Any character, any Ascension level (state both). One run per submission; for win rates, link the full set of runs in notes.",
@@ -803,6 +865,12 @@
    "platform": "Game Boy Color",
    "release_year": 1998,
    "genre": "Action-adventure",
+   "icon": "shield",
+   "theme": [
+    "#1f6a48",
+    "#2a3d14"
+   ],
+   "skin": "gb-adventure",
    "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
    "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
    "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",
@@ -869,10 +937,22 @@
    "team": "Vals AI",
    "track": "pixels",
    "status": "curated",
-   "submitted_at": "2026-09-25",
+   "submitted_at": "2026-09-15",
    "source": "https://the-decoder.com/gpt-6-astra-pokemon-champion-in-18-hours-potato-farmer-after-one-creeper-mishap/",
    "source_type": "news",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Vals AI post on X (not opened)",
+     "url": "https://x.com/ValsAI/status/2099975438886207798"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=MRsUPs8IY8I",
+     "label": "Early segment (Vals AI upload)",
+     "covers": "3-hour upload by Vals AI: early game through building a Nether portal; does not show the blaze rods"
+    }
+   ],
    "milestones": [
     {
      "id": "we-need-to-go-deeper"
@@ -900,12 +980,18 @@
    "id": "2026-10-deepmind-gemini-minecraft",
    "game": "minecraft",
    "agent": "Gemini multi-agent (Gemini 4 Argon ×4)",
-   "team": "Google DeepMind",
+   "team": "Faldor, Singh, Raileanu (reported as Google DeepMind)",
    "track": "harness",
    "status": "curated",
-   "submitted_at": "2026-10-20",
-   "source": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/",
-   "source_type": "news",
+   "submitted_at": "2026-10-15",
+   "source": "https://arxiv.org/abs/2610.22319",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "The AI Insider",
+     "url": "https://theaiinsider.tech/2026/10/20/google-deepmind-ai-agents-beat-minecraft-after-27-hours-and-605-deaths/"
+    }
+   ],
    "videos": [],
    "milestones": [
     {
@@ -959,7 +1045,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. Reported via press, not verified."
+   "notes": "Earlier milestones are inferred from the clear; diamonds are not strictly required. The paper says logs were recorded but links no video or logs. The DeepMind affiliation comes from press coverage."
   },
   {
    "id": "2026-09-gpt-6-astra-nethack-ascension",
@@ -971,6 +1057,16 @@
    "submitted_at": "2026-09-21",
    "source": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/",
    "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "Evidence release (ttyrecs, ledger)",
+     "url": "https://github.com/kenforthewin/nethack_astra/releases/tag/v1.0.0"
+    },
+    {
+     "label": "Winning dumplog (Hardfought)",
+     "url": "https://www.hardfought.org/userdata/C/CodexDelver/nethack/dumplog/1788964024.nh.txt"
+    }
+   ],
    "videos": [],
    "milestones": [
     {
@@ -1009,10 +1105,11 @@
     "models": [
      "GPT-6 Astra"
     ],
-    "human_intervention": "A human handled setup and resumed sessions (as reported)."
+    "human_intervention": "A human handled setup and resumed sessions (as reported).",
+    "code": "https://github.com/kenforthewin/nethack_astra"
    },
    "hardware": {},
-   "notes": "Minetown and Sokoban are not claimed (not required for ascension). The other milestones follow from the ascension."
+   "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs."
   },
   {
    "id": "2025-08-gpt-plays-pokemon-crystal-gpt-5",
@@ -1022,9 +1119,25 @@
    "track": "harness",
    "status": "curated",
    "submitted_at": "2025-08-30",
-   "source": "https://news.aibase.com/news/20856",
+   "source": "https://www.qbitai.com/2025/08/326166.html",
    "source_type": "news",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Operator's post on X (not opened)",
+     "url": "https://x.com/Clad3815/status/1959856362059387098"
+    },
+    {
+     "label": "AIbase",
+     "url": "https://news.aibase.com/news/20856"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.twitch.tv/videos/2549204340",
+     "label": "“RED Defeated” (Twitch VOD)",
+     "covers": "Operator's stream VOD of the final battle; Twitch VODs can expire"
+    }
+   ],
    "milestones": [
     {
      "id": "zephyr-badge"
@@ -1092,7 +1205,19 @@
    "submitted_at": "2025-12-12",
    "source": "https://blog.jcz.dev/gemini-3-pro-vs-25-pro-in-pokemon-crystal",
    "source_type": "author",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Harness branch (GitHub)",
+     "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public/tree/crystal_race_gemini_3"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.twitch.tv/gemini_plays_pokemon/clip/YummyBraveHawkWow-rDnLmD1pCH59OHjK",
+     "label": "“Gemini 3 Pro wins the race” (Twitch clip)",
+     "covers": "Clip of the win"
+    }
+   ],
    "milestones": [
     {
      "id": "zephyr-badge"
@@ -1147,13 +1272,14 @@
     ],
     "human_intervention": "unknown"
    },
-   "hardware": {}
+   "hardware": {},
+   "notes": "Red was defeated at turn 24,178 using 1.88B tokens (operator's blog). A later full-game timelapse exists for a different Gemini 3 Pro run on a 'continuous thinking' harness; it is not this run."
   },
   {
    "id": "2025-12-pokeagent-heatz",
    "game": "pokemon-emerald",
    "agent": "Heatz (PokeAgent winner)",
-   "team": "PokeAgent Challenge participant",
+   "team": "Team Heatz (Junik Bae et al.)",
    "track": "harness",
    "status": "curated",
    "submitted_at": "2025-12-06",
@@ -1174,7 +1300,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "The competition ended at the first gym; per the paper, a top human speedrunner takes ~18 minutes to get there."
+   "notes": "The competition ended at the first gym; per the paper, a top human speedrunner takes about 18 minutes to get there. No video of this run was found."
   },
   {
    "id": "2025-03-claude-plays-pokemon-3-7-sonnet",
@@ -1183,10 +1309,27 @@
    "team": "Anthropic",
    "track": "harness",
    "status": "curated",
-   "submitted_at": "2025-02-25",
-   "source": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly",
-   "source_type": "news",
-   "videos": [],
+   "submitted_at": "2025-02-24",
+   "source": "https://www.anthropic.com/research/visible-extended-thinking",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=aB1B7Aezaw8",
+     "label": "Stream debut (fan VOD archive)",
+     "covers": "Stream VOD 2025-02-26 part 1"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=pAkElOzD5Rw",
+     "label": "Highlights (fan upload)",
+     "covers": "Highlights compilation, 2025-03-09"
+    }
+   ],
    "milestones": [
     {
      "id": "boulder-badge"
@@ -1205,7 +1348,8 @@
     ],
     "human_intervention": "unknown"
    },
-   "hardware": {}
+   "hardware": {},
+   "notes": "Anthropic's post reports 3 gym badges from internal testing; the badge count reached on the public Twitch stream was not separately verified."
   },
   {
    "id": "2025-05-gemini-plays-pokemon-2-5-pro",
@@ -1215,9 +1359,25 @@
    "track": "harness",
    "status": "curated",
    "submitted_at": "2025-05-02",
-   "source": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help",
-   "source_type": "news",
-   "videos": [],
+   "source": "https://blog.jcz.dev/the-making-of-gemini-plays-pokemon",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "Harness code (GitHub)",
+     "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=Htob1nCDSlE",
+     "label": "Final battle (fan upload)",
+     "covers": "Indigo Plateau, Elite Four, Champion and credits; 2h12m, uploaded by a viewer"
+    }
+   ],
    "milestones": [
     {
      "id": "boulder-badge"
@@ -1261,14 +1421,14 @@
     }
    ],
    "method": {
-    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). The run took about 813 hours; a second run took about 406 hours.",
+    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). First completion May 2, 2025 after about 813 hours; a second run on June 9, 2025 finished in about 406 hours.",
     "models": [
      "Gemini 2.5 Pro"
     ],
-    "human_intervention": "Developer adjusted the harness during the run (as reported)."
+    "human_intervention": "One manual context clear during this run (operator's blog). The second run reports zero manual interventions."
    },
    "hardware": {},
-   "notes": "Played Blue. Elapsed time is approximate, from the press report."
+   "notes": "Played Blue. Elapsed time is approximate, from the operator's write-up."
   },
   {
    "id": "2025-08-gpt-plays-pokemon-gpt-5",
@@ -1278,8 +1438,14 @@
    "track": "harness",
    "status": "curated",
    "submitted_at": "2025-08-15",
-   "source": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record",
+   "source": "https://www.techradar.com/ai-platforms-assistants/chatgpt/gpt-5-just-completed-pokemon-red-in-a-new-world-record-time-claude-gemini-and-chatgpt-o3-arent-even-close",
    "source_type": "news",
+   "extra_sources": [
+    {
+     "label": "CO/AI",
+     "url": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record"
+    }
+   ],
    "videos": [],
    "milestones": [
     {
@@ -1330,7 +1496,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Step counts, not wall-clock time, are reported. Date is approximate (August 2025)."
+   "notes": "Step counts, not wall-clock time, are reported. No post by the operator and no video of the run was found; the figure traces back to a Reddit post cited by TechRadar."
   },
   {
    "id": "2026-01-claude-plays-pokemon-opus-4-5",
@@ -1339,10 +1505,32 @@
    "team": "Anthropic",
    "track": "harness",
    "status": "curated",
-   "submitted_at": "2026-01-15",
+   "submitted_at": "2026-01-29",
    "source": "https://www.lesswrong.com/posts/gogZyeistdaDFuhbG/claude-plays-pokemon-opus-4-5-follow-up",
    "source_type": "news",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Earlier analysis (LessWrong)",
+     "url": "https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=ZqjMXGPAPvQ",
+     "label": "Run start (fan VOD archive)",
+     "covers": "Stream VOD 2025-11-26 part 1"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=QCo5a0kPnwM",
+     "label": "Victory Road (fan VOD archive)",
+     "covers": "Stream VOD 2026-02-05 part 1"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=0mjwDO5t7H0",
+     "label": "Last moments (fan VOD archive)",
+     "covers": "Stream VOD 2026-02-05 part 2: end of the Opus 4.5 run"
+    }
+   ],
    "milestones": [
     {
      "id": "boulder-badge"
@@ -1377,7 +1565,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Date approximate (late 2025 / early 2026)."
+   "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06."
   },
   {
    "id": "2026-05-claude-plays-pokemon-opus-4-7",
@@ -1389,7 +1577,33 @@
    "submitted_at": "2026-05-16",
    "source": "https://www.lesswrong.com/posts/sehJYg5Yny9fvpbpt/a-year-late-claude-finally-beats-pokemon",
    "source_type": "news",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Harness changelog",
+     "url": "https://docs.google.com/document/u/1/d/e/2PACX-1vRIsu2pLI21W4KjfYbN13or8E-8cvJYw570wGMEp4UQU63ZhEh9FPGgj2ark8Yk7Vyrtt9MWq3jnn4h/pub"
+    },
+    {
+     "label": "Step-count spreadsheet",
+     "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDvsy5Dt_-Pg2PGe6LXRM8lokpUn4y6DQ4ShQLQPCGw5AOCPDG42pGnFfMOoqFU7eb7mPfHoGIB_c1/pubhtml"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=O-UyiTLAZg0",
+     "label": "Run start (fan VOD archive)",
+     "covers": "Stream VOD 2026-05-03 part 1: start of the Opus 4.7 run"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=i6jFyABObtE",
+     "label": "End-game (fan VOD archive)",
+     "covers": "Stream VOD 2026-05-15 part 4: end-game window; exact Champion part not identified"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=8fbvzyYJueY",
+     "label": "Finale (fan VOD archive)",
+     "covers": "Stream VOD 2026-05-17 part 4: after beating the Elite Four and the Champion"
+    }
+   ],
    "milestones": [
     {
      "id": "boulder-badge"
@@ -1438,7 +1652,8 @@
     ],
     "human_intervention": "unknown"
    },
-   "hardware": {}
+   "hardware": {},
+   "notes": "The write-up is by a community member, not the stream's operator. Stream VODs are archived by a fan channel."
   },
   {
    "id": "2024-03-cradle-rdr2",
@@ -1450,7 +1665,28 @@
    "submitted_at": "2024-03-05",
    "source": "https://baai-agents.github.io/Cradle",
    "source_type": "author",
-   "videos": [],
+   "extra_sources": [
+    {
+     "label": "Paper (arXiv 2403.03186)",
+     "url": "https://arxiv.org/abs/2403.03186"
+    },
+    {
+     "label": "Code (GitHub)",
+     "url": "https://github.com/BAAI-Agents/Cradle"
+    }
+   ],
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=fkkSJw1iJJ8",
+     "label": "Chapter 1 tasks (16×)",
+     "covers": "Official Cradle upload: tasks from Chapter 1 at 16× speed, 7:28"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=ay5gBqzPcDE",
+     "label": "Open-ended tasks (16×)",
+     "covers": "Official Cradle upload: open-ended RDR2 tasks at 16× speed, 1:26"
+    }
+   ],
    "milestones": [],
    "method": {
     "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Completed early main-story missions (roughly 40 minutes of story), including ‘Follow Dutch’ and ‘Buy Supply’ style tasks.",
@@ -1461,7 +1697,9 @@
     "observation": "Screenshots",
     "action": "Keyboard + mouse",
     "human_intervention": "unknown",
-    "project": "https://baai-agents.github.io/Cradle"
+    "project": "https://baai-agents.github.io/Cradle",
+    "paper": "https://arxiv.org/abs/2403.03186",
+    "code": "https://github.com/BAAI-Agents/Cradle"
    },
    "hardware": {},
    "notes": "No full chapter clear reported, so no milestone yet. Authors are welcome to submit full details and footage."

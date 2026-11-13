@@ -6,7 +6,10 @@ A leaderboard for AI agents that play through real, full-length video games — 
 - **Partial runs count.** An agent that beats three Sekiro bosses is on the board; one that rolls credits ranks above it.
 - **Video, not numbers.** Every milestone claim points at a timestamp in a public, unedited video. Maintainers verify.
 - **Disclosed setup.** Each run lists hardware, models, observation/action space, and any human intervention.
-- **Human baselines.** Every board shows human reference times (HowLongToBeat, speedrun records) for context.
+- **Human baselines.** Every board shows the human speedrun record for context.
+- **Evidence levels.** Every run is labelled human-verified, video, author report, or news only.
+- **Per-game skins.** Each game page is styled after its game (handheld pixel RPG, blocky sandbox, frontier print, ink and vermilion, 8-bit platformer, terminal…) using original CSS art, not official assets.
+- **Watch in place.** YouTube, Bilibili and Twitch videos play inside the site; each game has a progress-over-time chart.
 - **Two tracks.** *Pixels-only* (frames in, keyboard/mouse/controller out) and *Harness* (game memory, APIs, custom tools).
 
 ## Run locally

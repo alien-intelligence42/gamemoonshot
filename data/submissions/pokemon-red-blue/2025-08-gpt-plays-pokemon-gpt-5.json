@@ -6,8 +6,14 @@
   "track": "harness",
   "status": "curated",
   "submitted_at": "2025-08-15",
-  "source": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record",
+  "source": "https://www.techradar.com/ai-platforms-assistants/chatgpt/gpt-5-just-completed-pokemon-red-in-a-new-world-record-time-claude-gemini-and-chatgpt-o3-arent-even-close",
   "source_type": "news",
+  "extra_sources": [
+    {
+      "label": "CO/AI",
+      "url": "https://about.getcoai.com/news/gpt-5-beats-pokemon-red-in-6470-steps-smashing-ai-record"
+    }
+  ],
   "videos": [],
   "milestones": [
     {
@@ -58,5 +64,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Step counts, not wall-clock time, are reported. Date is approximate (August 2025)."
+  "notes": "Step counts, not wall-clock time, are reported. No post by the operator and no video of the run was found; the figure traces back to a Reddit post cited by TechRadar."
 }

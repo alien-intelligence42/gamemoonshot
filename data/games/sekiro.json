@@ -5,6 +5,13 @@
   "platform": "PC / PS4 / Xbox One",
   "release_year": 2019,
   "genre": "Action",
+  "icon": "katana",
+  "theme": [
+    "#7a1a1a",
+    "#161210"
+  ],
+  "skin": "shinobi",
+  "deco": "隻狼",
   "description": "A boss gauntlet that punishes slow reactions. Prior agent work covers isolated fights; nobody has reported story progress yet.",
   "clear_condition": "Defeat the final boss of any ending (Isshin, the Sword Saint, or the Shura ending's final fight).",
   "rules": "Unmodified game, any patch (state it). No trainers, no frame-rate or game-speed mods unless disclosed under game speed. Bosses may be claimed in any order.",

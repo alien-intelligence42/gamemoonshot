@@ -6,9 +6,25 @@
   "track": "harness",
   "status": "curated",
   "submitted_at": "2025-05-02",
-  "source": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help",
-  "source_type": "news",
-  "videos": [],
+  "source": "https://blog.jcz.dev/the-making-of-gemini-plays-pokemon",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "Harness code (GitHub)",
+      "url": "https://github.com/waylaidwanderer/gemini-plays-pokemon-public"
+    },
+    {
+      "label": "TechCrunch",
+      "url": "https://techcrunch.com/2025/05/03/googles-gemini-has-beaten-pokemon-blue-with-a-little-help"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=Htob1nCDSlE",
+      "label": "Final battle (fan upload)",
+      "covers": "Indigo Plateau, Elite Four, Champion and credits; 2h12m, uploaded by a viewer"
+    }
+  ],
   "milestones": [
     {
       "id": "boulder-badge"
@@ -52,12 +68,12 @@
     }
   ],
   "method": {
-    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). The run took about 813 hours; a second run took about 406 hours.",
+    "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). First completion May 2, 2025 after about 813 hours; a second run on June 9, 2025 finished in about 406 hours.",
     "models": [
       "Gemini 2.5 Pro"
     ],
-    "human_intervention": "Developer adjusted the harness during the run (as reported)."
+    "human_intervention": "One manual context clear during this run (operator's blog). The second run reports zero manual interventions."
   },
   "hardware": {},
-  "notes": "Played Blue. Elapsed time is approximate, from the press report."
+  "notes": "Played Blue. Elapsed time is approximate, from the operator's write-up."
 }

@@ -5,6 +5,12 @@
   "platform": "Game Boy",
   "release_year": 1996,
   "genre": "RPG",
+  "icon": "badge",
+  "theme": [
+    "#8a2420",
+    "#1f2a5c"
+  ],
+  "skin": "gb-dmg",
   "description": "The most-attempted game for LLM agents. Several models have finished it, each with a different harness, which is exactly why the board separates tracks and asks for harness details.",
   "clear_condition": "Defeat the Champion and enter the Hall of Fame.",
   "rules": "Red or Blue (any language), unmodified ROM on an emulator or original hardware. Emulator speed-up allowed if disclosed. FireRed/LeafGreen are a different game and not eligible for this board.",

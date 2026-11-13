@@ -5,10 +5,32 @@
   "team": "Anthropic",
   "track": "harness",
   "status": "curated",
-  "submitted_at": "2026-01-15",
+  "submitted_at": "2026-01-29",
   "source": "https://www.lesswrong.com/posts/gogZyeistdaDFuhbG/claude-plays-pokemon-opus-4-5-follow-up",
   "source_type": "news",
-  "videos": [],
+  "extra_sources": [
+    {
+      "label": "Earlier analysis (LessWrong)",
+      "url": "https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=ZqjMXGPAPvQ",
+      "label": "Run start (fan VOD archive)",
+      "covers": "Stream VOD 2025-11-26 part 1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=QCo5a0kPnwM",
+      "label": "Victory Road (fan VOD archive)",
+      "covers": "Stream VOD 2026-02-05 part 1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=0mjwDO5t7H0",
+      "label": "Last moments (fan VOD archive)",
+      "covers": "Stream VOD 2026-02-05 part 2: end of the Opus 4.5 run"
+    }
+  ],
   "milestones": [
     {
       "id": "boulder-badge"
@@ -43,5 +65,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Date approximate (late 2025 / early 2026)."
+  "notes": "The write-up is by a community member, not the stream's operator. Opus 4.6 took over the stream on 2026-02-06."
 }

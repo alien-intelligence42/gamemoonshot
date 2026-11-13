@@ -8,6 +8,16 @@
   "submitted_at": "2026-09-21",
   "source": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/",
   "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "Evidence release (ttyrecs, ledger)",
+      "url": "https://github.com/kenforthewin/nethack_astra/releases/tag/v1.0.0"
+    },
+    {
+      "label": "Winning dumplog (Hardfought)",
+      "url": "https://www.hardfought.org/userdata/C/CodexDelver/nethack/dumplog/1788964024.nh.txt"
+    }
+  ],
   "videos": [],
   "milestones": [
     {
@@ -46,8 +56,9 @@
     "models": [
       "GPT-6 Astra"
     ],
-    "human_intervention": "A human handled setup and resumed sessions (as reported)."
+    "human_intervention": "A human handled setup and resumed sessions (as reported).",
+    "code": "https://github.com/kenforthewin/nethack_astra"
   },
   "hardware": {},
-  "notes": "Minetown and Sokoban are not claimed (not required for ascension). The other milestones follow from the ascension."
+  "notes": "NetHack 3.6.7. Minetown and Sokoban are not claimed (not required for ascension); the other milestones follow from the ascension. No video found; the evidence is ttyrec recordings and dumplogs."
 }

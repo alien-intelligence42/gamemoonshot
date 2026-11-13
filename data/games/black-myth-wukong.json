@@ -5,6 +5,13 @@
   "platform": "PC / PS5",
   "release_year": 2024,
   "genre": "Action RPG",
+  "icon": "staff",
+  "theme": [
+    "#9a7020",
+    "#2a1608"
+  ],
+  "skin": "wukong",
+  "deco": "黑神话·悟空",
   "description": "A recent AAA action RPG split into six boss-gated chapters. VLM agents have handled individual fights from screenshots; no chapter clear has been reported.",
   "clear_condition": "Finish Chapter 6 and reach the end credits (either ending).",
   "rules": "Unmodified game, any difficulty and patch (state them). A chapter counts when its final boss is defeated and the chapter-end sequence plays.",

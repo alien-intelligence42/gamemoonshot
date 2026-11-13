@@ -1,0 +1,597 @@
+/* Per-game skins. A game page sets <body data-skin="…" data-family="…">.
+   Skins evoke each game's look with palettes, type and CSS-drawn texture only — no official logos or art.
+   Light skins use the light evidence palette, validated for CVD separation on their panel surfaces. */
+
+/* ======================================================================
+   Shared: light evidence palette + generic light-skin fixes
+   ====================================================================== */
+body[data-tone="light"] {
+  --ev-verified: #1d9470;
+  --ev-video: #2c5cb4;
+  --ev-author: #a87210;
+  --ev-news: #951c38;
+  color-scheme: light;
+}
+body[data-skin]::before { opacity: 0; }
+body[data-skin] .banner .brush, body[data-skin] .deco { pointer-events: none; }
+.deco { position: absolute; z-index: -1; right: var(--gutter); bottom: 64px; writing-mode: vertical-rl; white-space: nowrap; line-height: 1; user-select: none; }
+
+/* ======================================================================
+   PIXEL family — handheld-era RPG/adventure: dialog boxes, HP bars, menu cursor
+   ====================================================================== */
+body[data-family="pixel"] {
+  --display: "Press Start 2P", ui-monospace, monospace;
+  --body: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius: 6px;
+  --page-bg:
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 8px 8px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 8px 8px,
+    var(--bg);
+  font-size: 16px;
+}
+body[data-family="pixel"] * { letter-spacing: 0 !important; }
+body[data-family="pixel"] .mountains { display: none; }
+body[data-family="pixel"] .card, body[data-family="pixel"] .row, body[data-family="pixel"] .fact,
+body[data-family="pixel"] .panel, body[data-family="pixel"] .step, body[data-family="pixel"] fieldset,
+body[data-family="pixel"] .detail, body[data-family="pixel"] .empty, body[data-family="pixel"] .tabs {
+  border: 3px solid var(--frame);
+  box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5px var(--frame);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+body[data-family="pixel"] .detail { padding: 24px; }
+body[data-family="pixel"] .row:hover, body[data-family="pixel"] .row[aria-expanded="true"] { background: var(--surface-2); box-shadow: inset 0 0 0 3px var(--surface-2), inset 0 0 0 5px var(--frame); }
+body[data-family="pixel"] .row.human { background: var(--surface); }
+body[data-family="pixel"] .topbar { background: var(--surface); border-bottom: 4px solid var(--frame); backdrop-filter: none; }
+body[data-family="pixel"] .brand span { font-size: 12px; }
+body[data-family="pixel"] nav a { font-size: 10px; padding: 8px 10px; border-radius: 4px; }
+body[data-family="pixel"] nav a.active::before { content: "▶ "; }
+body[data-family="pixel"] nav a.active { background: none; color: var(--ink); }
+body[data-family="pixel"] nav a.cta { background: var(--frame); color: var(--surface); box-shadow: none; }
+body[data-family="pixel"] .btn { font-size: 10px; border: 3px solid var(--frame); border-radius: 4px; background: var(--surface); color: var(--ink); box-shadow: none; }
+body[data-family="pixel"] .btn.primary { background: var(--frame); color: var(--surface); }
+body[data-family="pixel"] .crumbs { font-size: 10px; color: var(--banner-ink-2); }
+body[data-family="pixel"] .crumbs a { color: var(--banner-ink-2); }
+body[data-family="pixel"] .section-head h2 { font-size: clamp(14px, 1.8vw, 18px); line-height: 1.5; text-transform: none; }
+body[data-family="pixel"] .section-head h2 .ico { display: none; }
+body[data-family="pixel"] .section-head h2::before { content: "▶"; font-size: .8em; color: var(--gold); }
+body[data-family="pixel"] .fact dt, body[data-family="pixel"] .detail h4, body[data-family="pixel"] .board-head,
+body[data-family="pixel"] .vcard .vg, body[data-family="pixel"] legend { font-size: 9px; line-height: 1.6; text-transform: none; }
+body[data-family="pixel"] .frontier .label { font-size: 10px; text-transform: none; color: var(--banner-ink); }
+body[data-family="pixel"] .frontier .label span:last-child { font-size: 14px; color: var(--banner-ink-2); }
+body[data-family="pixel"] .badge { border-radius: 4px; }
+body[data-family="pixel"] .badge.cleared { font-family: var(--display); font-size: 8px; background: var(--frame); color: var(--surface); text-transform: none; }
+body[data-family="pixel"] .tabs button[aria-pressed="true"] { background: var(--frame); color: var(--surface); box-shadow: none; }
+
+/* HP bar */
+body[data-family="pixel"] .bossbar { height: 12px; margin-left: 30px; border: 2px solid var(--frame); border-radius: 7px; background: var(--surface-2); box-shadow: none; }
+body[data-family="pixel"] .bossbar::after { display: none; }
+body[data-family="pixel"] .bossbar::before {
+  content: "HP"; left: -30px; width: auto; height: auto; transform: translateY(-50%); background: none; box-shadow: none;
+  font: 9px var(--display); color: var(--gold);
+}
+body[data-family="pixel"] .bossbar > i { inset: 2px auto 2px 2px; border-radius: 4px; box-shadow: none; background: #38b848; }
+body[data-family="pixel"] .bossbar[data-level="mid"] > i { background: #f0c020; }
+body[data-family="pixel"] .bossbar[data-level="low"] > i { background: #e03828; }
+body[data-family="pixel"] .bossbar.human > i { background: #5890e0; }
+
+/* medals → menu tiles */
+body[data-family="pixel"] .medal { border-radius: 4px; width: 38px; height: 38px; font: 11px var(--display); background: var(--surface-2); color: var(--ink); border: 2px solid var(--frame); box-shadow: none; }
+body[data-family="pixel"] .medal.r1 { background: #f8d030; color: #302000; border: 2px solid var(--frame); }
+body[data-family="pixel"] .medal.r2 { background: #d0d8e0; color: #202830; border: 2px solid var(--frame); }
+body[data-family="pixel"] .medal.r3 { background: #e0a060; color: #301800; border: 2px solid var(--frame); }
+body[data-family="pixel"] .medal.h { background: #5890e0; color: #fff; border: 2px solid var(--frame); }
+
+/* path nodes → square tiles */
+body[data-family="pixel"] .path::before { background: var(--frame); width: 3px; left: 26.5px; opacity: .5; }
+body[data-family="pixel"] .node { transform: none; border-radius: 3px; border: 2px solid var(--frame); background: var(--surface); width: 24px; height: 24px; }
+body[data-family="pixel"] .node span { transform: none; font: 7px var(--display); }
+body[data-family="pixel"] .path li.final .node { width: 30px; height: 30px; }
+body[data-family="pixel"] .path li.hit .node { background: var(--gold); border-color: var(--frame); box-shadow: none; }
+body[data-family="pixel"] .path li.hit .node span { color: var(--surface); }
+body[data-family="pixel"] .path li.hit { background: var(--surface); border: 3px solid var(--frame); }
+body[data-family="pixel"] .path li.final .name { font-size: 12px; line-height: 1.6; color: var(--ink); }
+
+/* banner → handheld screen with a dialog box */
+body[data-family="pixel"] .banner {
+  background: repeating-linear-gradient(0deg, rgb(0 0 0 / 5%) 0 1px, transparent 1px 3px), var(--screen);
+  border-bottom: 4px solid var(--frame); padding-bottom: 88px;
+}
+body[data-family="pixel"] .banner h1 { font-size: clamp(20px, 3.2vw, 34px); line-height: 1.45; color: var(--banner-ink); text-shadow: none; max-width: 24ch; }
+body[data-family="pixel"] .banner .tag { border-radius: 4px; background: var(--surface); border: 2px solid var(--frame); color: var(--ink); }
+body[data-family="pixel"] .banner p.desc {
+  position: relative; background: var(--surface); color: var(--ink); border: 3px solid var(--frame); border-radius: var(--radius);
+  box-shadow: inset 0 0 0 3px var(--surface), inset 0 0 0 5px var(--frame); padding: 16px 20px 22px; max-width: 70ch; font-size: 17px;
+}
+body[data-family="pixel"] .banner p.desc::after { content: "▼"; position: absolute; right: 16px; bottom: 6px; font-size: 11px; color: var(--frame); animation: blink 1s steps(2) infinite; }
+body[data-family="pixel"] .banner .emblem { color: var(--frame); filter: none; opacity: .85; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { body[data-family="pixel"] .banner p.desc::after { animation: none; } }
+
+/* -- palette: monochrome-green handheld (Pokémon Red/Blue) -- */
+body[data-skin="gb-dmg"] {
+  --bg: #c4cfa1; --bg-2: #d3dcb0; --surface: #e6ecca; --surface-2: #d6dfb6; --surface-3: #c4cfa1;
+  --ink: #0f380f; --ink-2: #2a4a1c; --muted: #4c6634; --frame: #0f380f; --grid: rgb(15 56 15 / 6%);
+  --gold: #306230; --gold-hi: #0f380f; --gold-lo: #306230; --ember: #306230; --on-gold: #e6ecca;
+  --line: rgb(15 56 15 / 22%); --line-strong: rgb(15 56 15 / 45%); --human: #306230; --tip-bg: #e6eccaf5; --track: #d6dfb6;
+  --screen: linear-gradient(180deg, #9bbc0f, #8bac0f); --banner-ink: #0f380f; --banner-ink-2: #306230; --emblem: #0f380f;
+}
+body[data-skin="gb-dmg"] .bossbar > i { background: #306230; }
+body[data-skin="gb-dmg"] .bossbar[data-level="mid"] > i, body[data-skin="gb-dmg"] .bossbar[data-level="low"] > i { background: #0f380f; }
+body[data-skin="gb-dmg"] .bossbar.human > i { background: #8bac0f; }
+body[data-skin="gb-dmg"] .medal.r1, body[data-skin="gb-dmg"] .medal.r2, body[data-skin="gb-dmg"] .medal.r3 { background: #306230; color: #e6ecca; }
+body[data-skin="gb-dmg"] .medal.h { background: #8bac0f; color: #0f380f; }
+
+/* -- palette: color handheld, crystal blue (Pokémon Crystal) -- */
+body[data-skin="gb-crystal"] {
+  --bg: #dbe6f2; --bg-2: #e8eff7; --surface: #ffffff; --surface-2: #eef4fa; --surface-3: #dbe6f2;
+  --ink: #16304c; --ink-2: #2c4867; --muted: #556f8e; --frame: #24466c; --grid: rgb(36 70 108 / 7%);
+  --gold: #3577c0; --gold-hi: #1f4f86; --gold-lo: #3577c0; --ember: #3577c0; --on-gold: #ffffff;
+  --line: rgb(36 70 108 / 20%); --line-strong: rgb(36 70 108 / 42%); --human: #3577c0; --tip-bg: #fffffff5; --track: #eef4fa;
+  --screen: linear-gradient(180deg, #8fd0f8 0%, #c8ecff 55%, #f0f8ff 100%); --banner-ink: #16304c; --banner-ink-2: #2c4867; --emblem: #24466c;
+}
+
+/* -- palette: advance handheld, emerald (Pokémon Emerald) -- */
+body[data-skin="gba-emerald"] {
+  --radius: 10px;
+  --bg: #dbefe3; --bg-2: #e6f6ec; --surface: #fbfffc; --surface-2: #eaf7ef; --surface-3: #dbefe3;
+  --ink: #153a2a; --ink-2: #285440; --muted: #4d7562; --frame: #1f7a55; --grid: rgb(31 122 85 / 7%);
+  --gold: #1a8a5c; --gold-hi: #116a45; --gold-lo: #1a8a5c; --ember: #1a8a5c; --on-gold: #ffffff;
+  --line: rgb(31 122 85 / 22%); --line-strong: rgb(31 122 85 / 45%); --human: #2a8ad0; --tip-bg: #fbfffcf5; --track: #eaf7ef;
+  --screen: linear-gradient(180deg, #68d0a0 0%, #b8f0d0 60%, #e8fff2 100%); --banner-ink: #0f3424; --banner-ink-2: #1f5c42; --emblem: #116a45;
+}
+
+/* -- palette: color-handheld adventure, dark dialog boxes (Link's Awakening DX) -- */
+body[data-skin="gb-adventure"] {
+  --bg: #20341a; --bg-2: #18280f; --surface: #0b0b0b; --surface-2: #181818; --surface-3: #262626;
+  --ink: #f8f8f0; --ink-2: #d8d8c8; --muted: #a8a890; --frame: #f8f8f0; --grid: rgb(248 248 240 / 4%);
+  --gold: #f8d038; --gold-hi: #f8d038; --gold-lo: #c8a020; --ember: #e83030; --on-gold: #0b0b0b;
+  --line: rgb(248 248 240 / 20%); --line-strong: rgb(248 248 240 / 45%); --human: #78b8f8; --tip-bg: #0b0b0bf5; --track: #181818;
+  --screen: linear-gradient(180deg, #78c8f8 0%, #a8e0f8 30%, #58a848 30.5%, #4a9a3c 70%, #d8b878 70.5%, #c8a868 100%);
+  --banner-ink: #0b0b0b; --banner-ink-2: #1c3a14; --emblem: #0b0b0b;
+}
+body[data-skin="gb-adventure"] .banner h1 { color: #f8f8f0; text-shadow: 3px 3px 0 #0b0b0b; }
+body[data-skin="gb-adventure"] .crumbs, body[data-skin="gb-adventure"] .crumbs a { color: #0b2a10; }
+body[data-skin="gb-adventure"] .frontier .label, body[data-skin="gb-adventure"] .frontier .label span:last-child { color: #0b0b0b; }
+body[data-skin="gb-adventure"] .bossbar::before { content: "♥"; font-size: 13px; color: #e83030; }
+body[data-skin="gb-adventure"] .bossbar > i, body[data-skin="gb-adventure"] .bossbar[data-level] > i { background: #e83030; }
+
+/* ======================================================================
+   BLOCKY — sandbox survival: bevelled inventory panels, slots, XP bar
+   ====================================================================== */
+body[data-skin="blocky"] {
+  --display: "Pixelify Sans", ui-monospace, monospace;
+  --body: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius: 0px;
+  --bg: #9a9a9a; --bg-2: #b0b0b0; --surface: #c6c6c6; --surface-2: #d2d2d2; --surface-3: #8b8b8b;
+  --ink: #262626; --ink-2: #383838; --muted: #4f4f4f; --frame: #000;
+  --gold: #2f8f1c; --gold-hi: #236f14; --gold-lo: #2f8f1c; --ember: #3fbf2a; --on-gold: #fff;
+  --line: rgb(0 0 0 / 22%); --line-strong: rgb(0 0 0 / 45%); --human: #3a6fd0; --tip-bg: #c6c6c6f8; --track: #1b1b1b;
+  --emblem: #ffffff;
+  --page-bg:
+    conic-gradient(from 90deg at 50% 50%, #a3a3a3 0 25%, #959595 0 50%, #9e9e9e 0 75%, #929292 0) 0 0 / 32px 32px,
+    #9a9a9a;
+  font-size: 16px;
+}
+body[data-skin="blocky"] * { letter-spacing: 0 !important; }
+body[data-skin="blocky"] .card, body[data-skin="blocky"] .row, body[data-skin="blocky"] .fact, body[data-skin="blocky"] .panel,
+body[data-skin="blocky"] .step, body[data-skin="blocky"] fieldset, body[data-skin="blocky"] .detail, body[data-skin="blocky"] .empty,
+body[data-skin="blocky"] .tabs, body[data-skin="blocky"] .path li.hit {
+  background: var(--surface); border-radius: 0; border: 3px solid; border-color: #fff #555 #555 #fff; box-shadow: 0 0 0 2px #000;
+}
+body[data-skin="blocky"] .row:hover, body[data-skin="blocky"] .row[aria-expanded="true"] { background: var(--surface-2); }
+body[data-skin="blocky"] .row.human { background: var(--surface); }
+body[data-skin="blocky"] .detail { background: #b7b7b7; }
+body[data-skin="blocky"] .topbar { background: #6f6f6f; border-bottom: 3px solid #000; backdrop-filter: none; }
+body[data-skin="blocky"] .topbar, body[data-skin="blocky"] .topbar a { color: #fff; text-shadow: 2px 2px 0 #3f3f3f; }
+body[data-skin="blocky"] .brand b { color: #ffff55; }
+body[data-skin="blocky"] nav a { text-transform: none; font-size: 15px; border-radius: 0; }
+body[data-skin="blocky"] nav a.active { background: #8b8b8b; color: #ffffa0; }
+body[data-skin="blocky"] nav a.cta, body[data-skin="blocky"] .btn, body[data-skin="blocky"] .btn.primary {
+  font: 16px var(--body); text-transform: none; color: #fff; text-shadow: 2px 2px 0 #3f3f3f; border-radius: 0;
+  background: #7d7d7d; border: 2px solid; border-color: #b4b4b4 #3c3c3c #3c3c3c #b4b4b4; box-shadow: 0 0 0 2px #000;
+}
+body[data-skin="blocky"] .btn:hover, body[data-skin="blocky"] nav a.cta:hover { background: #7f8fbf; color: #ffffa0; filter: none; }
+body[data-skin="blocky"] .section-head h2 { text-transform: none; font-size: 26px; color: #fff; text-shadow: 3px 3px 0 #3f3f3f; }
+body[data-skin="blocky"] .section-head h2 .ico { color: #fff; }
+body[data-skin="blocky"] .section-head .sub { color: #1e1e1e; }
+body[data-skin="blocky"] .fact dt, body[data-skin="blocky"] .detail h4, body[data-skin="blocky"] .board-head, body[data-skin="blocky"] .vcard .vg,
+body[data-skin="blocky"] legend { text-transform: none; font-size: 14px; color: #3f3f3f; }
+body[data-skin="blocky"] .board-head { color: #fff; text-shadow: 2px 2px 0 #3f3f3f; }
+body[data-skin="blocky"] .badge { border-radius: 0; background: #d8d8d8; }
+body[data-skin="blocky"] .badge.cleared { background: #2f8f1c; color: #fff; font-size: 12px; text-transform: none; }
+body[data-skin="blocky"] .tag { border-radius: 0; background: #d0d0d0; color: #262626; border-color: #555; }
+body[data-skin="blocky"] .tabs button[aria-pressed="true"] { background: #8b8b8b; color: #fff; box-shadow: none; border-radius: 0; }
+/* XP bar */
+body[data-skin="blocky"] .bossbar { height: 12px; border: 2px solid #000; border-radius: 0; background: #2a2a2a; box-shadow: none; }
+body[data-skin="blocky"] .bossbar::before, body[data-skin="blocky"] .bossbar::after { display: none; }
+body[data-skin="blocky"] .bossbar > i {
+  inset: 0 auto 0 0; border-radius: 0; box-shadow: none;
+  background: repeating-linear-gradient(90deg, transparent 0 calc(100% / 13 - 2px), #1b1b1b calc(100% / 13 - 2px) calc(100% / 13)), linear-gradient(180deg, #c0ff60, #80ff20 50%, #4cbf10);
+}
+body[data-skin="blocky"] .bossbar.human > i { background: linear-gradient(180deg, #a8d0ff, #5890e0); }
+/* slots */
+body[data-skin="blocky"] .medal, body[data-skin="blocky"] .medal.r1, body[data-skin="blocky"] .medal.r2, body[data-skin="blocky"] .medal.r3, body[data-skin="blocky"] .medal.h {
+  border-radius: 0; width: 40px; height: 40px; background: #8b8b8b; border: 2px solid; border-color: #373737 #fff #fff #373737; box-shadow: none;
+  font: 20px var(--body); color: #fff; text-shadow: 2px 2px 0 #3f3f3f;
+}
+body[data-skin="blocky"] .medal.r1 { color: #ffff55; }
+body[data-skin="blocky"] .path::before { background: #555; }
+body[data-skin="blocky"] .node, body[data-skin="blocky"] .path li.final .node {
+  transform: none; width: 28px; height: 28px; border-radius: 0; background: #8b8b8b; border: 2px solid; border-color: #373737 #fff #fff #373737;
+}
+body[data-skin="blocky"] .node span { transform: none; font: 12px var(--body); color: #fff; }
+body[data-skin="blocky"] .path li.hit .node { background: #3fbf2a; box-shadow: none; }
+body[data-skin="blocky"] .path li.final .name { color: var(--ink); font-size: 17px; }
+/* banner: grass over dirt */
+body[data-skin="blocky"] .banner {
+  border-bottom: 3px solid #000;
+  background:
+    linear-gradient(180deg, #6aaa3a 0 22px, #4f8a2a 22px 30px, transparent 30px),
+    radial-gradient(circle at 20% 30%, #6b4a2f 0 3px, transparent 4px) 0 0 / 28px 28px,
+    radial-gradient(circle at 70% 60%, #9a7048 0 3px, transparent 4px) 0 0 / 36px 36px,
+    radial-gradient(circle at 40% 80%, #5e3f27 0 2px, transparent 3px) 0 0 / 22px 22px,
+    #866043;
+}
+body[data-skin="blocky"] .banner .mountains { display: none; }
+body[data-skin="blocky"] .banner h1 { color: #fff; text-shadow: 4px 4px 0 #3f3f3f; font-size: clamp(32px, 5vw, 60px); text-transform: none; }
+body[data-skin="blocky"] .banner p.desc, body[data-skin="blocky"] .crumbs, body[data-skin="blocky"] .crumbs a,
+body[data-skin="blocky"] .frontier .label, body[data-skin="blocky"] .frontier .label span:last-child { color: #fff; text-shadow: 2px 2px 0 #3f3f3f; }
+body[data-skin="blocky"] .banner .crumbs { margin-top: 10px; }
+body[data-skin="blocky"] .banner .tag { background: rgb(0 0 0 / 35%); color: #fff; border-color: #000; }
+body[data-skin="blocky"] .banner .emblem { filter: drop-shadow(5px 5px 0 #3f3f3f); }
+
+/* ======================================================================
+   WESTERN — frontier print: parchment, woodtype headings, double rules
+   ====================================================================== */
+body[data-skin="western"] {
+  --display: "Rye", "Rockwell", serif;
+  --body: "Lora", Georgia, serif;
+  --radius: 2px;
+  --bg: #e6d7b8; --bg-2: #efe3c8; --surface: #f3ead4; --surface-2: #ebdfc2; --surface-3: #dccaa3;
+  --ink: #2a1c10; --ink-2: #4a3622; --muted: #75604a; --frame: #2a1c10;
+  --gold: #8c1c13; --gold-hi: #6e140e; --gold-lo: #8c1c13; --ember: #8c1c13; --on-gold: #f3ead4;
+  --line: rgb(42 28 16 / 25%); --line-strong: rgb(42 28 16 / 55%); --human: #2c5a8a; --tip-bg: #f3ead4f8; --track: #e0d1b0;
+  --emblem: #fff3dc; --emblem-glow: rgb(60 20 0 / 50%); --m2: #6a3a1c;
+  --page-bg:
+    radial-gradient(130% 90% at 50% 40%, transparent 60%, rgb(90 50 20 / 22%) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    #e6d7b8;
+}
+body[data-skin="western"] .card, body[data-skin="western"] .row, body[data-skin="western"] .fact, body[data-skin="western"] .panel,
+body[data-skin="western"] .step, body[data-skin="western"] fieldset, body[data-skin="western"] .detail, body[data-skin="western"] .empty {
+  background: var(--surface); border: 2px solid var(--ink); border-radius: 2px; box-shadow: inset 0 0 0 4px var(--surface), inset 0 0 0 5px var(--ink);
+}
+body[data-skin="western"] .detail { padding: 26px; }
+body[data-skin="western"] .row:hover, body[data-skin="western"] .row[aria-expanded="true"] { background: #fbf4e2; }
+body[data-skin="western"] .row.human { background: var(--surface); }
+body[data-skin="western"] .topbar { background: #2a1c10; border-bottom: 3px double #c9a66b; }
+body[data-skin="western"] .topbar a, body[data-skin="western"] .brand span { color: #f3ead4; }
+body[data-skin="western"] .brand b { color: #e0a86a; }
+body[data-skin="western"] nav a { font-family: var(--display); letter-spacing: .06em; }
+body[data-skin="western"] nav a.active { background: rgb(243 234 212 / 12%); color: #fff; }
+body[data-skin="western"] nav a.cta { background: #8c1c13; color: #f3ead4; box-shadow: none; }
+body[data-skin="western"] .btn { font-family: var(--display); border: 2px solid var(--ink); border-radius: 2px; color: var(--ink); background: transparent; }
+body[data-skin="western"] .btn.primary { background: #8c1c13; color: #f3ead4; border-color: #2a1c10; box-shadow: none; }
+body[data-skin="western"] .section-head h2 { font-weight: 400; letter-spacing: .04em; }
+body[data-skin="western"] .section-head h2 .ico { display: none; }
+body[data-skin="western"] .section-head h2::before, body[data-skin="western"] .section-head h2::after { content: "★"; font-size: .6em; color: var(--gold); }
+body[data-skin="western"] .fact dt, body[data-skin="western"] .detail h4, body[data-skin="western"] .board-head, body[data-skin="western"] legend { font-weight: 400; color: var(--gold); }
+body[data-skin="western"] .badge { border-radius: 2px; }
+body[data-skin="western"] .badge.cleared { background: #2a1c10; color: #f3ead4; }
+body[data-skin="western"] .tag { border-radius: 2px; }
+body[data-skin="western"] .tabs { background: transparent; border: 2px solid var(--ink); border-radius: 2px; }
+body[data-skin="western"] .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--surface); box-shadow: none; border-radius: 0; }
+body[data-skin="western"] .bossbar { background: transparent; border: 2px solid var(--ink); border-radius: 0; box-shadow: none; height: 14px; }
+body[data-skin="western"] .bossbar::before, body[data-skin="western"] .bossbar::after { background: var(--ink); box-shadow: none; }
+body[data-skin="western"] .bossbar > i { inset: 2px auto 2px 2px; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(45deg, #8c1c13 0 6px, #a8281c 6px 12px); }
+body[data-skin="western"] .bossbar.cleared > i { background: repeating-linear-gradient(45deg, #2a1c10 0 6px, #4a3622 6px 12px); }
+body[data-skin="western"] .bossbar.human > i { background: repeating-linear-gradient(45deg, #2c5a8a 0 6px, #3a6ea0 6px 12px); }
+body[data-skin="western"] .medal { font-family: var(--display); font-weight: 400; background: transparent; border: 2px dashed var(--ink); color: var(--ink); }
+body[data-skin="western"] .medal.r1 { background: #b08a3e; color: #2a1c10; border: 2px solid #2a1c10; box-shadow: none; }
+body[data-skin="western"] .medal.r2 { background: #a8a39a; border: 2px solid #2a1c10; }
+body[data-skin="western"] .medal.r3 { background: #a0683a; border: 2px solid #2a1c10; }
+body[data-skin="western"] .medal.h { background: #2c5a8a; color: #f3ead4; }
+body[data-skin="western"] .path::before { background: repeating-linear-gradient(180deg, var(--ink) 0 6px, transparent 6px 10px); width: 2px; }
+body[data-skin="western"] .node { background: var(--surface); border-color: var(--ink); }
+body[data-skin="western"] .path li.hit .node { background: #8c1c13; border-color: #2a1c10; box-shadow: none; }
+body[data-skin="western"] .path li.hit .node span { color: #f3ead4; }
+body[data-skin="western"] .path li.hit { background: rgb(140 28 19 / 7%); border-color: var(--line-strong); }
+body[data-skin="western"] .path li.final .name { color: var(--gold); font-weight: 400; }
+/* banner: dusk over the mesas */
+body[data-skin="western"] .banner { background: linear-gradient(180deg, #f4b56a 0%, #d9773a 38%, #8a3a1c 70%, #3a1c0e 100%); border-bottom: 3px double var(--ink); }
+body[data-skin="western"] .banner::before { content: ""; position: absolute; z-index: -2; width: 340px; height: 340px; border-radius: 50%; left: 52%; top: 26%; background: radial-gradient(circle, #ffe2a0, #f4b56a 60%, transparent 70%); }
+body[data-skin="western"] .banner .mountains .m1 { fill: #b5562a; }
+body[data-skin="western"] .banner .mountains .m2 { fill: #6a2e14; }
+body[data-skin="western"] .banner .mountains .m3 { fill: var(--bg); }
+body[data-skin="western"] .banner h1 { font-weight: 400; color: #fff3dc; text-shadow: 3px 3px 0 #3a1c0e; letter-spacing: .03em; }
+body[data-skin="western"] .banner p.desc, body[data-skin="western"] .crumbs, body[data-skin="western"] .crumbs a { color: #fff3dc; }
+body[data-skin="western"] .frontier .label, body[data-skin="western"] .frontier .label span:last-child { color: #fff3dc; }
+body[data-skin="western"] .banner .tag { background: rgb(42 28 16 / 45%); color: #fff3dc; border-color: rgb(255 243 220 / 40%); }
+body[data-skin="western"] .banner .bossbar { border-color: #fff3dc; }
+body[data-skin="western"] .banner .bossbar::before, body[data-skin="western"] .banner .bossbar::after { background: #fff3dc; }
+
+/* ======================================================================
+   SHINOBI — ink and vermilion: washi grain, seal stamps, red moon
+   ====================================================================== */
+body[data-skin="shinobi"] {
+  --display: "Shippori Mincho B1", "Yu Mincho", serif;
+  --bg: #0e0d0c; --bg-2: #131110; --surface: #171513; --surface-2: #1e1b18; --surface-3: #27231f;
+  --ink: #ebe5d9; --ink-2: #c8bfb0; --muted: #8d8478;
+  --gold: #c8321f; --gold-hi: #e8573f; --gold-lo: #8a1e12; --ember: #c8321f; --on-gold: #f6efe4;
+  --line: rgb(235 229 217 / 11%); --line-strong: rgb(200 50 31 / 45%); --human: #8fb0c8; --track: #090808;
+  --emblem: #ebe5d9; --emblem-glow: rgb(200 50 31 / 40%); --m2: #161412;
+  --page-bg:
+    radial-gradient(900px 500px at 75% -10%, rgb(200 50 31 / 10%), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.02 .4' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .88 0 0 0 0 .84 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    #0e0d0c;
+}
+body[data-skin="shinobi"] .card, body[data-skin="shinobi"] .row, body[data-skin="shinobi"] .fact, body[data-skin="shinobi"] .panel,
+body[data-skin="shinobi"] .step, body[data-skin="shinobi"] fieldset, body[data-skin="shinobi"] .detail { border-radius: 2px; }
+body[data-skin="shinobi"] .row { border-left: 3px solid var(--gold); }
+body[data-skin="shinobi"] .row.human { border-left-color: var(--human); background: var(--surface); }
+body[data-skin="shinobi"] .section-head h2 { font-weight: 800; letter-spacing: .12em; }
+body[data-skin="shinobi"] .section-head h2 .ico { display: none; }
+body[data-skin="shinobi"] .section-head h2::before { content: ""; width: 26px; height: 26px; border-radius: 4px; background: var(--gold); transform: rotate(-6deg); box-shadow: inset 0 0 0 3px #1a0a06, inset 0 0 0 5px var(--gold); }
+body[data-skin="shinobi"] .btn.primary, body[data-skin="shinobi"] nav a.cta { background: var(--gold); color: #f6efe4; box-shadow: none; }
+body[data-skin="shinobi"] .badge.cleared { background: var(--gold); color: #f6efe4; }
+body[data-skin="shinobi"] .bossbar { height: 8px; border: 0; border-radius: 0; background: #0a0909; box-shadow: inset 0 0 0 1px rgb(235 229 217 / 18%); }
+body[data-skin="shinobi"] .bossbar::before, body[data-skin="shinobi"] .bossbar::after { width: 2px; height: 16px; transform: translateY(-50%); background: var(--ink); box-shadow: none; }
+body[data-skin="shinobi"] .bossbar::before { left: -4px; } body[data-skin="shinobi"] .bossbar::after { right: -4px; }
+body[data-skin="shinobi"] .bossbar > i { inset: 0 auto 0 0; border-radius: 0; background: linear-gradient(90deg, #8a1e12, #c8321f 60%, #f08a3a); box-shadow: 0 0 10px rgb(200 50 31 / 45%); }
+body[data-skin="shinobi"] .bossbar.cleared > i { background: linear-gradient(90deg, #c8bfb0, #ebe5d9); box-shadow: 0 0 10px rgb(235 229 217 / 35%); }
+body[data-skin="shinobi"] .bossbar.human > i { background: #8fb0c8; box-shadow: none; }
+/* seals */
+body[data-skin="shinobi"] .medal { border-radius: 5px; transform: rotate(-5deg); background: transparent; border: 2px solid var(--muted); font-family: var(--display); }
+body[data-skin="shinobi"] .medal.r1, body[data-skin="shinobi"] .medal.r2, body[data-skin="shinobi"] .medal.r3 {
+  background: var(--gold); color: #f6efe4; border: 0; box-shadow: inset 0 0 0 3px #1a0a06, inset 0 0 0 5px var(--gold);
+}
+body[data-skin="shinobi"] .medal.r2, body[data-skin="shinobi"] .medal.r3 { background: #8a1e12; box-shadow: inset 0 0 0 3px #1a0a06, inset 0 0 0 5px #8a1e12; }
+body[data-skin="shinobi"] .medal.h { background: #8fb0c8; transform: none; border-radius: 50%; }
+body[data-skin="shinobi"] .node, body[data-skin="shinobi"] .path li.final .node { transform: none; border-radius: 50%; width: 24px; height: 24px; }
+body[data-skin="shinobi"] .path li.final .node { width: 32px; height: 32px; }
+body[data-skin="shinobi"] .node span { transform: none; }
+body[data-skin="shinobi"] .path li.hit .node { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 14px rgb(200 50 31 / 55%); }
+body[data-skin="shinobi"] .path li.hit .node span { color: #f6efe4; }
+body[data-skin="shinobi"] .path li.hit { background: linear-gradient(90deg, rgb(200 50 31 / 9%), transparent 70%); }
+body[data-skin="shinobi"] .path li.final .name { color: var(--ink); font-weight: 800; }
+/* banner: red moon over ink ridges */
+body[data-skin="shinobi"] .banner { background: linear-gradient(180deg, #1a1210 0%, #0e0d0c 100%); }
+body[data-skin="shinobi"] .banner::before {
+  content: ""; position: absolute; z-index: -2; width: clamp(220px, 30vw, 380px); aspect-ratio: 1; border-radius: 50%;
+  right: calc(var(--gutter) + 40px); top: 24px; background: radial-gradient(circle at 40% 40%, #e84a30, #a8200f 70%); box-shadow: 0 0 120px rgb(200 50 31 / 45%);
+}
+body[data-skin="shinobi"] .banner .emblem { color: #0e0d0c; filter: none; opacity: 1; right: calc(var(--gutter) + 80px); top: 64px; z-index: -1; }
+body[data-skin="shinobi"] .banner .mountains .m1 { fill: rgb(235 229 217 / 5%); }
+body[data-skin="shinobi"] .banner h1 { font-weight: 800; letter-spacing: .08em; }
+body[data-skin="shinobi"] .deco { font-family: "Shippori Mincho B1", serif; font-weight: 800; font-size: clamp(56px, 8vw, 112px); color: rgb(235 229 217 / 10%); right: calc(var(--gutter) - 8px); bottom: 40px; }
+
+/* ======================================================================
+   WUKONG — the base gold-and-ink theme, plus calligraphy and auspicious clouds
+   ====================================================================== */
+body[data-skin="wukong"] .banner { background: radial-gradient(70% 120% at 85% 0%, #9a7020, transparent 70%), linear-gradient(160deg, #2a1608, var(--bg) 75%); }
+body[data-skin="wukong"] .banner::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .16;
+  background:
+    radial-gradient(circle at 0 100%, transparent 14px, var(--gold) 15px 16px, transparent 17px) 0 0 / 64px 32px,
+    radial-gradient(circle at 100% 100%, transparent 14px, var(--gold) 15px 16px, transparent 17px) 0 0 / 64px 32px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+}
+body[data-skin="wukong"] .deco { font-family: "Ma Shan Zheng", "STKaiti", serif; font-size: clamp(40px, 5.6vw, 76px); color: transparent; -webkit-text-stroke: 1px rgb(243 217 150 / 35%); bottom: 34px; }
+body[data-skin="wukong"] .banner .emblem { right: calc(var(--gutter) + 120px); }
+body[data-skin="wukong"] .section-head h2::after { content: ""; width: 42px; height: 14px; background: radial-gradient(circle at 25% 100%, transparent 5px, var(--gold) 6px 7px, transparent 8px), radial-gradient(circle at 75% 100%, transparent 5px, var(--gold) 6px 7px, transparent 8px); opacity: .7; }
+
+/* ======================================================================
+   PLATFORMER — 8-bit side-scroller: sky, bricks, chunky outlines
+   ====================================================================== */
+body[data-skin="platformer"] {
+  --display: "Press Start 2P", ui-monospace, monospace;
+  --body: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius: 0px;
+  --bg: #6b8cff; --bg-2: #7d9aff; --surface: #fff8e6; --surface-2: #ffefc8; --surface-3: #ffe2a0;
+  --ink: #111111; --ink-2: #1e2238; --muted: #2c3255;
+  --gold: #e45c10; --gold-hi: #b8400a; --gold-lo: #e45c10; --ember: #e45c10; --on-gold: #fff;
+  --line: rgb(0 0 0 / 28%); --line-strong: #000; --human: #2c5cb4; --tip-bg: #fff8e6f8; --track: #ffffff;
+  --emblem: #ffffff;
+  --page-bg: #6b8cff;
+  font-size: 16px;
+}
+body[data-skin="platformer"] * { letter-spacing: 0 !important; }
+body[data-skin="platformer"] .card, body[data-skin="platformer"] .row, body[data-skin="platformer"] .fact, body[data-skin="platformer"] .panel,
+body[data-skin="platformer"] .step, body[data-skin="platformer"] fieldset, body[data-skin="platformer"] .detail, body[data-skin="platformer"] .empty,
+body[data-skin="platformer"] .tabs, body[data-skin="platformer"] .path li.hit {
+  background: var(--surface); border: 3px solid #000; border-radius: 0; box-shadow: 5px 5px 0 #000;
+}
+body[data-skin="platformer"] .row:hover, body[data-skin="platformer"] .row[aria-expanded="true"] { background: var(--surface-2); transform: translate(-1px, -1px); box-shadow: 6px 6px 0 #000; }
+body[data-skin="platformer"] .row.human { background: var(--surface); }
+body[data-skin="platformer"] .topbar { background: #000; border-bottom: 0; backdrop-filter: none; }
+body[data-skin="platformer"] .topbar a, body[data-skin="platformer"] .brand span { color: #fff; }
+body[data-skin="platformer"] .brand span { font-size: 12px; }
+body[data-skin="platformer"] .brand b { color: #fcbc3c; }
+body[data-skin="platformer"] nav a { font-size: 10px; }
+body[data-skin="platformer"] nav a.active { background: none; color: #fcbc3c; }
+body[data-skin="platformer"] nav a.cta { background: #e45c10; color: #fff; box-shadow: none; border-radius: 0; }
+body[data-skin="platformer"] .btn { font-size: 10px; border: 3px solid #000; border-radius: 0; background: #fff; color: #000; box-shadow: 4px 4px 0 #000; }
+body[data-skin="platformer"] .btn.primary { background: #e45c10; color: #fff; }
+body[data-skin="platformer"] .section-head h2 { font-size: clamp(14px, 1.8vw, 18px); line-height: 1.5; color: #fff; text-shadow: 3px 3px 0 #000; text-transform: none; }
+body[data-skin="platformer"] .section-head h2 .ico { display: none; }
+body[data-skin="platformer"] .section-head .sub { color: #0b0f2a; }
+body[data-skin="platformer"] .fact dt, body[data-skin="platformer"] .detail h4, body[data-skin="platformer"] .vcard .vg, body[data-skin="platformer"] legend { font-size: 9px; line-height: 1.6; text-transform: none; color: #e45c10; }
+body[data-skin="platformer"] .board-head { font-size: 9px; color: #fff; text-shadow: 2px 2px 0 #000; }
+body[data-skin="platformer"] .vcard .vt, body[data-skin="platformer"] .vcard .vs { color: #0b0f2a; }
+body[data-skin="platformer"] .badge { border-radius: 0; border: 2px solid #000; background: #fff; }
+body[data-skin="platformer"] .badge.cleared { font-family: var(--display); font-size: 8px; background: #00a800; color: #fff; }
+body[data-skin="platformer"] .tag { border-radius: 0; border: 2px solid #000; background: #fff; color: #000; }
+body[data-skin="platformer"] .tabs button[aria-pressed="true"] { background: #000; color: #fcbc3c; border-radius: 0; box-shadow: none; }
+body[data-skin="platformer"] .bossbar { height: 14px; border: 3px solid #000; border-radius: 0; background: #fff; box-shadow: none; }
+body[data-skin="platformer"] .bossbar::before, body[data-skin="platformer"] .bossbar::after { display: none; }
+body[data-skin="platformer"] .bossbar > i { inset: 0 auto 0 0; border-radius: 0; box-shadow: none; background: repeating-linear-gradient(90deg, #fcbc3c 0 10px, #e45c10 10px 12px); }
+body[data-skin="platformer"] .bossbar.cleared > i { background: #00a800; }
+body[data-skin="platformer"] .bossbar.human > i { background: #2c5cb4; }
+/* medals → item blocks */
+body[data-skin="platformer"] .medal, body[data-skin="platformer"] .medal.r1, body[data-skin="platformer"] .medal.r2, body[data-skin="platformer"] .medal.r3 {
+  border-radius: 0; width: 40px; height: 40px; background: #fcbc3c; color: #000; border: 3px solid #000; font: 12px var(--display);
+  box-shadow: inset -4px -4px 0 #c86c10, inset 4px 4px 0 #ffe08a;
+}
+body[data-skin="platformer"] .medal { background: #c8a070; box-shadow: inset -4px -4px 0 #8a6a40, inset 4px 4px 0 #e8c898; }
+body[data-skin="platformer"] .medal.h { border-radius: 0; background: #2c5cb4; color: #fff; border: 3px solid #000; }
+body[data-skin="platformer"] .path::before { background: #000; width: 3px; }
+body[data-skin="platformer"] .node, body[data-skin="platformer"] .path li.final .node { transform: none; border-radius: 0; width: 26px; height: 26px; background: #c84c0c; border: 3px solid #000; }
+body[data-skin="platformer"] .node span { transform: none; font: 7px var(--display); color: #fff; }
+body[data-skin="platformer"] .path li.hit .node { background: #fcbc3c; box-shadow: none; }
+body[data-skin="platformer"] .path li.hit .node span { color: #000; }
+body[data-skin="platformer"] .path li:not(.hit) .name, body[data-skin="platformer"] .path li:not(.hit) .claim, body[data-skin="platformer"] .path li:not(.hit) .muted { color: #0b0f2a; }
+body[data-skin="platformer"] .path li.final .name { font-size: 12px; line-height: 1.6; color: var(--ink); }
+/* banner: sky, clouds, brick ground */
+body[data-skin="platformer"] .banner {
+  border-bottom: 0; padding-bottom: 120px;
+  background:
+    linear-gradient(180deg, transparent calc(100% - 56px), #000 calc(100% - 56px) calc(100% - 53px), transparent calc(100% - 53px)),
+    repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 48px) 0 calc(100% - 28px) / 100% 25px no-repeat,
+    repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 48px) 24px 100% / 100% 28px no-repeat,
+    linear-gradient(180deg, transparent calc(100% - 28px), #000 calc(100% - 28px) calc(100% - 25px), transparent calc(100% - 25px)),
+    linear-gradient(180deg, transparent calc(100% - 53px), #c84c0c calc(100% - 53px)),
+    radial-gradient(28px 20px at 58% 70%, #fff 98%, transparent), radial-gradient(22px 16px at 60.5% 66%, #fff 98%, transparent),
+    radial-gradient(34px 22px at 68% 14%, #fff 98%, transparent), radial-gradient(24px 16px at 71% 10%, #fff 98%, transparent),
+    #6b8cff;
+}
+body[data-skin="platformer"] .banner .mountains { display: none; }
+body[data-skin="platformer"] .banner h1 { font-size: clamp(20px, 3.2vw, 34px); line-height: 1.45; color: #fff; text-shadow: 4px 4px 0 #000; }
+body[data-skin="platformer"] .banner p.desc { color: #fff; text-shadow: 2px 2px 0 #000; font-size: 17px; }
+body[data-skin="platformer"] .crumbs, body[data-skin="platformer"] .crumbs a { font-size: 10px; color: #fff; text-shadow: 2px 2px 0 #000; }
+body[data-skin="platformer"] .frontier .label { font-size: 10px; color: #fff; text-shadow: 2px 2px 0 #000; }
+body[data-skin="platformer"] .frontier .label span:last-child { font-size: 15px; color: #fff; text-shadow: 2px 2px 0 #000; }
+body[data-skin="platformer"] .banner .num { color: #fff; text-shadow: 2px 2px 0 #000; }
+body[data-skin="platformer"] .banner .emblem { filter: drop-shadow(4px 4px 0 #000); }
+body[data-skin="platformer"] .facts { margin-top: 24px; }
+
+/* ======================================================================
+   TERMINAL — roguelike tty: monospace, green blocks, scanlines
+   ====================================================================== */
+body[data-skin="terminal"] {
+  --display: "VT323", ui-monospace, monospace;
+  --body: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --radius: 0px;
+  --bg: #000; --bg-2: #050505; --surface: #070707; --surface-2: #101010; --surface-3: #1a1a1a;
+  --ink: #c8c8c8; --ink-2: #aaaaaa; --muted: #7c7c7c;
+  --gold: #ffff55; --gold-hi: #ffff55; --gold-lo: #aaaa00; --ember: #ff5555; --on-gold: #000;
+  --line: #2e2e2e; --line-strong: #6a6a6a; --human: #55ffff; --track: #000; --tip-bg: #000000f5;
+  --emblem: #ffffff; --emblem-glow: rgb(85 255 85 / 30%);
+  --page-bg: #000;
+  font-size: 14px;
+}
+body[data-skin="terminal"]::before { opacity: 1; background: repeating-linear-gradient(0deg, rgb(0 0 0 / 22%) 0 1px, transparent 1px 3px); }
+body[data-skin="terminal"] * { border-radius: 0 !important; letter-spacing: 0 !important; }
+body[data-skin="terminal"] .card, body[data-skin="terminal"] .row, body[data-skin="terminal"] .fact, body[data-skin="terminal"] .panel,
+body[data-skin="terminal"] .step, body[data-skin="terminal"] fieldset, body[data-skin="terminal"] .detail { background: var(--surface); border: 1px solid var(--line-strong); box-shadow: none; }
+body[data-skin="terminal"] .row:hover, body[data-skin="terminal"] .row[aria-expanded="true"] { background: #0c140c; border-color: #55ff55; }
+body[data-skin="terminal"] .row.human { background: var(--surface); border-color: #2a5a5a; }
+body[data-skin="terminal"] .topbar { background: #000; border-bottom: 1px solid var(--line-strong); }
+body[data-skin="terminal"] .brand span, body[data-skin="terminal"] nav a, body[data-skin="terminal"] .btn { font-family: var(--display); font-size: 20px; text-transform: none; }
+body[data-skin="terminal"] nav a.cta, body[data-skin="terminal"] .btn.primary { background: #aaaaaa; color: #000; box-shadow: none; }
+body[data-skin="terminal"] .btn { border: 1px solid var(--line-strong); background: none; color: var(--ink); }
+body[data-skin="terminal"] .section-head h2 { font-size: 30px; text-transform: none; font-weight: 400; color: #55ff55; }
+body[data-skin="terminal"] .section-head h2 .ico { display: none; }
+body[data-skin="terminal"] .section-head h2::before { content: "#"; color: var(--muted); }
+body[data-skin="terminal"] .fact dt, body[data-skin="terminal"] .detail h4, body[data-skin="terminal"] .board-head, body[data-skin="terminal"] .vcard .vg,
+body[data-skin="terminal"] legend { font-family: var(--display); font-size: 18px; text-transform: none; color: #55ffff; font-weight: 400; }
+body[data-skin="terminal"] .badge.cleared { background: #ffff55; color: #000; }
+body[data-skin="terminal"] .bossbar { height: 14px; border: 1px solid var(--ink-2); background: #000; box-shadow: none; }
+body[data-skin="terminal"] .bossbar::before, body[data-skin="terminal"] .bossbar::after { content: "["; transform: translateY(-50%) rotate(0); width: auto; height: auto; background: none; box-shadow: none; font: 20px var(--display); color: var(--ink-2); left: -10px; }
+body[data-skin="terminal"] .bossbar::after { content: "]"; left: auto; right: -10px; }
+body[data-skin="terminal"] .bossbar > i { inset: 2px auto 2px 2px; box-shadow: none; background: repeating-linear-gradient(90deg, #55ff55 0 8px, transparent 8px 10px); }
+body[data-skin="terminal"] .bossbar.cleared > i { background: repeating-linear-gradient(90deg, #ffff55 0 8px, transparent 8px 10px); }
+body[data-skin="terminal"] .bossbar.human > i { background: repeating-linear-gradient(90deg, #55ffff 0 8px, transparent 8px 10px); }
+body[data-skin="terminal"] .medal, body[data-skin="terminal"] .medal.r1, body[data-skin="terminal"] .medal.r2, body[data-skin="terminal"] .medal.r3, body[data-skin="terminal"] .medal.h {
+  display: inline-flex; align-items: center; white-space: nowrap; background: none; border: 0; box-shadow: none; font: 24px var(--display); color: var(--ink-2); width: auto;
+}
+body[data-skin="terminal"] .medal::before { content: "["; } body[data-skin="terminal"] .medal::after { content: "]"; }
+body[data-skin="terminal"] .medal.r1 { color: #ffff55; } body[data-skin="terminal"] .medal.h { color: #55ffff; }
+body[data-skin="terminal"] .medal.h svg { display: none; } body[data-skin="terminal"] .medal.h::before { content: "[H"; }
+body[data-skin="terminal"] .path::before { background: none; border-left: 1px dashed var(--line-strong); }
+body[data-skin="terminal"] .node, body[data-skin="terminal"] .path li.final .node { transform: none; width: 24px; height: 24px; background: #000; border: 1px solid var(--line-strong); }
+body[data-skin="terminal"] .node span { transform: none; font: 16px var(--display); }
+body[data-skin="terminal"] .path li.hit .node { background: #55ff55; border-color: #55ff55; box-shadow: none; }
+body[data-skin="terminal"] .path li.hit .node span { color: #000; }
+body[data-skin="terminal"] .path li.hit { background: #050f05; border-color: #1e3a1e; }
+body[data-skin="terminal"] .path li.final .name { font-family: var(--body); color: #ffff55; }
+body[data-skin="terminal"] .banner { background: radial-gradient(80% 140% at 80% 0%, #0a200a, #000 70%); border-bottom: 1px solid var(--line-strong); }
+body[data-skin="terminal"] .banner .mountains { display: none; }
+body[data-skin="terminal"] .banner h1 { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 7vw, 84px); color: #55ff55; text-shadow: 0 0 12px rgb(85 255 85 / 45%); }
+body[data-skin="terminal"] .banner h1::after { content: "▌"; animation: blink 1s steps(2) infinite; margin-left: 6px; }
+body[data-skin="terminal"] .banner .emblem { opacity: .9; filter: drop-shadow(0 0 16px rgb(255 255 255 / 25%)); }
+body[data-skin="terminal"] .frontier .label { font-family: var(--display); font-size: 20px; text-transform: none; color: #ffff55; }
+body[data-skin="terminal"] .crumbs { font-family: var(--display); font-size: 18px; text-transform: none; }
+@media (prefers-reduced-motion: reduce) { body[data-skin="terminal"] .banner h1::after { animation: none; } }
+
+/* ======================================================================
+   SPIRE — deck-building climb: card frames, energy orbs, map nodes
+   ====================================================================== */
+body[data-skin="spire"] {
+  --display: "Kreon", Georgia, serif;
+  --radius: 16px;
+  --bg: #0c1a20; --bg-2: #10222a; --surface: #15282f; --surface-2: #1b323a; --surface-3: #24414b;
+  --ink: #f2ead8; --ink-2: #cdc6b4; --muted: #8fa2a6;
+  --gold: #e2b24a; --gold-hi: #ffd77a; --gold-lo: #9a7428; --ember: #d94a3a; --on-gold: #1a1206;
+  --line: rgb(226 178 74 / 16%); --line-strong: rgb(226 178 74 / 40%); --track: #0a1418; --m2: #10222a;
+  --emblem: #f2ead8;
+  --page-bg:
+    radial-gradient(900px 600px at 85% -10%, rgb(120 60 170 / 22%), transparent 60%),
+    radial-gradient(800px 500px at -10% 40%, rgb(217 74 58 / 10%), transparent 60%),
+    #0c1a20;
+}
+body[data-skin="spire"] .card, body[data-skin="spire"] .row, body[data-skin="spire"] .fact, body[data-skin="spire"] .panel,
+body[data-skin="spire"] .step, body[data-skin="spire"] fieldset, body[data-skin="spire"] .detail {
+  border: 2px solid var(--line-strong); box-shadow: inset 0 0 0 4px rgb(0 0 0 / 25%), inset 0 0 0 5px rgb(226 178 74 / 18%);
+}
+body[data-skin="spire"] .section-head h2, body[data-skin="spire"] .banner h1, body[data-skin="spire"] .fact dt, body[data-skin="spire"] .detail h4 { letter-spacing: .02em; }
+body[data-skin="spire"] .section-head h2 { text-transform: none; font-size: clamp(22px, 2.6vw, 30px); }
+body[data-skin="spire"] .banner h1 { text-transform: none; }
+body[data-skin="spire"] .bossbar { height: 14px; border-radius: 8px; border: 2px solid #2a1010; background: #2a1414; }
+body[data-skin="spire"] .bossbar::before, body[data-skin="spire"] .bossbar::after { display: none; }
+body[data-skin="spire"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 6px; background: linear-gradient(180deg, #ff7a6a, #d94a3a 50%, #8a2018); }
+body[data-skin="spire"] .bossbar.cleared > i { background: linear-gradient(180deg, #fff0b0, #e2b24a 50%, #9a7428); }
+body[data-skin="spire"] .bossbar.human > i { background: linear-gradient(180deg, #a8d0ff, #4a8ccc 50%, #24507a); }
+body[data-skin="spire"] .medal, body[data-skin="spire"] .medal.r1, body[data-skin="spire"] .medal.r2, body[data-skin="spire"] .medal.r3 {
+  border: 0; color: #fff; font-family: var(--display); font-size: 18px; text-shadow: 0 1px 2px #000;
+  background: radial-gradient(circle at 40% 35%, #ffb070, #d94a3a 55%, #6a1810); box-shadow: 0 0 0 3px #2a1010, 0 0 16px rgb(217 74 58 / 45%);
+}
+body[data-skin="spire"] .medal { background: radial-gradient(circle at 40% 35%, #7a9aa6, #3a5560 60%, #1a2a30); box-shadow: 0 0 0 3px #0a1418; }
+body[data-skin="spire"] .medal.r1 { background: radial-gradient(circle at 40% 35%, #fff0b0, #e2b24a 55%, #6a4a10); color: #1a1206; text-shadow: none; }
+body[data-skin="spire"] .node, body[data-skin="spire"] .path li.final .node { transform: none; border-radius: 50%; width: 26px; height: 26px; border: 3px solid #4a6670; background: var(--bg); }
+body[data-skin="spire"] .path li.final .node { width: 36px; height: 36px; border-color: #d94a3a; }
+body[data-skin="spire"] .node span { transform: none; }
+body[data-skin="spire"] .path li.hit .node { background: radial-gradient(circle, #ffd77a, #9a7428); border-color: #ffd77a; }
+body[data-skin="spire"] .path::before { background: repeating-linear-gradient(180deg, #4a6670 0 5px, transparent 5px 11px); }
+body[data-skin="spire"] .banner { background: radial-gradient(70% 120% at 85% 0%, #5a2a80, transparent 70%), radial-gradient(60% 90% at 10% 100%, #7a1e28, transparent 70%), linear-gradient(160deg, #142a33, var(--bg) 75%); }
+body[data-skin="spire"] .banner .mountains .m1 { fill: rgb(242 234 216 / 4%); }
+
+body[data-skin="wukong"]::before, body[data-skin="spire"]::before, body[data-skin="shinobi"]::before { opacity: .05; }
+
+/* ======================================================================
+   Home-page cards: a hint of each game's skin (title type + key-art texture)
+   ====================================================================== */
+.card[data-skin="gb-dmg"] h3, .card[data-skin="gb-crystal"] h3, .card[data-skin="gba-emerald"] h3,
+.card[data-skin="gb-adventure"] h3, .card[data-skin="platformer"] h3 { font-family: "Press Start 2P", monospace; font-size: 13px; line-height: 1.6; letter-spacing: 0; }
+.card[data-skin="blocky"] h3 { font-family: "Pixelify Sans", monospace; font-size: 22px; letter-spacing: 0; }
+.card[data-skin="western"] h3 { font-family: "Rye", serif; font-weight: 400; }
+.card[data-skin="shinobi"] h3 { font-family: "Shippori Mincho B1", serif; font-weight: 800; }
+.card[data-skin="terminal"] h3 { font-family: "VT323", monospace; font-size: 28px; font-weight: 400; color: #55ff55; letter-spacing: 0; }
+.card[data-skin="spire"] h3 { font-family: "Kreon", serif; }
+.card[data-skin^="gb"] .keyart, .card[data-skin="gba-emerald"] .keyart, .card[data-skin="platformer"] .keyart {
+  background-image: linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px),
+    radial-gradient(120% 90% at 75% 20%, var(--ta), transparent 65%), linear-gradient(135deg, var(--tb), #0c0a08 85%);
+  background-size: 8px 8px, 8px 8px, auto, auto;
+}
+.card[data-skin="terminal"] .keyart { background: repeating-linear-gradient(0deg, rgb(85 255 85 / 6%) 0 1px, transparent 1px 3px), radial-gradient(120% 90% at 75% 20%, #0f3a0f, #000 70%); }
+.card[data-skin="blocky"] .keyart { background: linear-gradient(180deg, #6aaa3a 0 14px, #4f8a2a 14px 20px, transparent 20px), radial-gradient(circle at 30% 40%, #6b4a2f 0 3px, transparent 4px) 0 0 / 24px 24px, #6e4f36; }
+.card[data-skin="western"] .keyart { background: linear-gradient(180deg, #f4b56a 0%, #c8642a 50%, #3a1c0e 100%); }
+.card[data-skin="shinobi"] .keyart { background: radial-gradient(circle at 78% 42%, #c8321f 0 22%, transparent 23%), linear-gradient(180deg, #1a1210, #0c0a08); }
+.card[data-skin="shinobi"] .keyart .emblem { color: #0e0d0c; filter: none; }
+.card[data-skin="blocky"] .keyart .mountains, .card[data-skin="terminal"] .keyart .mountains, .card[data-skin^="gb"] .keyart .mountains,
+.card[data-skin="gba-emerald"] .keyart .mountains, .card[data-skin="platformer"] .keyart .mountains { display: none; }
+
+/* banner progress count sits on the banner art, not a panel */
+body[data-family="pixel"] .banner .num { color: var(--banner-ink); }
+body[data-skin="gb-adventure"] .banner .num { color: #0b0b0b; }
+body[data-skin="blocky"] .banner .num, body[data-skin="western"] .banner .num { color: #fff; text-shadow: 2px 2px 0 rgb(0 0 0 / 60%); }

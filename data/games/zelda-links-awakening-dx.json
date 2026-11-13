@@ -5,6 +5,12 @@
   "platform": "Game Boy Color",
   "release_year": 1998,
   "genre": "Action-adventure",
+  "icon": "shield",
+  "theme": [
+    "#1f6a48",
+    "#2a3d14"
+  ],
+  "skin": "gb-adventure",
   "description": "A dungeon-gated adventure with puzzles and item gating. VideoGameBench agents scored 0% on it in 2025.",
   "clear_condition": "Defeat the final boss in the Wind Fish's Egg and wake the Wind Fish.",
   "rules": "Unmodified ROM. The optional Color Dungeon is not a milestone.",

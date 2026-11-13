@@ -2,7 +2,7 @@
   "id": "2025-12-pokeagent-heatz",
   "game": "pokemon-emerald",
   "agent": "Heatz (PokeAgent winner)",
-  "team": "PokeAgent Challenge participant",
+  "team": "Team Heatz (Junik Bae et al.)",
   "track": "harness",
   "status": "curated",
   "submitted_at": "2025-12-06",
@@ -23,5 +23,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "The competition ended at the first gym; per the paper, a top human speedrunner takes ~18 minutes to get there."
+  "notes": "The competition ended at the first gym; per the paper, a top human speedrunner takes about 18 minutes to get there. No video of this run was found."
 }

@@ -5,10 +5,22 @@
   "team": "Vals AI",
   "track": "pixels",
   "status": "curated",
-  "submitted_at": "2026-09-25",
+  "submitted_at": "2026-09-15",
   "source": "https://the-decoder.com/gpt-6-astra-pokemon-champion-in-18-hours-potato-farmer-after-one-creeper-mishap/",
   "source_type": "news",
-  "videos": [],
+  "extra_sources": [
+    {
+      "label": "Vals AI post on X (not opened)",
+      "url": "https://x.com/ValsAI/status/2099975438886207798"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=MRsUPs8IY8I",
+      "label": "Early segment (Vals AI upload)",
+      "covers": "3-hour upload by Vals AI: early game through building a Nether portal; does not show the blaze rods"
+    }
+  ],
   "milestones": [
     {
       "id": "we-need-to-go-deeper"

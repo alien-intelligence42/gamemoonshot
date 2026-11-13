@@ -5,6 +5,12 @@
   "platform": "PC (terminal)",
   "release_year": 1987,
   "genre": "Roguelike",
+  "icon": "at",
+  "theme": [
+    "#3a4a3a",
+    "#141c22"
+  ],
+  "skin": "terminal",
   "description": "Procedurally generated, permadeath and very long. Ascension is an unambiguous clear. BALROG tracks partial progress for zero-shot LLMs.",
   "clear_condition": "Ascend: offer the Amulet of Yendor at your god's high altar on the Astral Plane.",
   "rules": "NetHack 3.6 or 3.7 (state it), any role. Public servers with dumplogs (e.g. Hardfought) count as evidence alongside video. Disclose wiki/spoiler access. Milestones need not be reached in order.",
