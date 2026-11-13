@@ -191,7 +191,9 @@ body[data-tone="light"] .hero::after { box-shadow: 0 0 50px rgb(201 162 90 / 30%
   font-size: clamp(40px, 7.2vw, 88px); margin: 18px 0 20px;
   color: var(--gold-hi);
 }
-.hero p.lede { font-size: clamp(16px, 1.6vw, 18px); color: var(--ink-2); max-width: 64ch; margin: 0; }
+/* Width 0 + min-width 100%: the lede adds nothing to .hero-inner's shrink-to-fit width,
+   so it spans exactly as wide as the headline above it instead of setting its own measure. */
+.hero p.lede { font-size: clamp(16px, 1.6vw, 18px); color: var(--ink-2); width: 0; min-width: 100%; margin: 0; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 
 .mountains { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 46%; z-index: -1; }
