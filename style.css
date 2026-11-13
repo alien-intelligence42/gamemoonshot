@@ -1,4 +1,4 @@
-/* GameClear Dojo — dark, cinematic theme: ink-black, aged gold, ember. */
+/* GameClearDojo — dark, cinematic theme: ink-black, aged gold, ember. */
 :root {
   --bg: #0c0a08;
   --bg-2: #120f0b;
@@ -119,7 +119,7 @@ svg { display: block; }
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .brand .logo { width: 34px; height: 34px; color: var(--gold); flex: none; }
-.brand span { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: .12em; text-transform: uppercase; }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: .04em; }
 .brand b { color: var(--gold); font-weight: 700; }
 nav { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
 nav a {
@@ -167,12 +167,6 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
   background: radial-gradient(circle, color-mix(in srgb, var(--ember) 28%, transparent), color-mix(in srgb, var(--gold) 8%, transparent) 45%, transparent 70%);
 }
 .hero canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
-.hero .brush {
-  position: absolute; z-index: -1; right: var(--gutter); top: 50%; transform: translateY(-58%);
-  font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", serif; font-size: clamp(64px, 9vw, 128px); line-height: 1; white-space: nowrap;
-  color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--gold) 22%, transparent);
-  writing-mode: vertical-rl; letter-spacing: .05em; user-select: none;
-}
 .hero-inner { max-width: 980px; position: relative; }
 .eyebrow { font-family: var(--display); color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
 .eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--gold); }
@@ -529,7 +523,6 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
 @media (max-width: 480px) { .hide-xs { display: none; } }
 @media (max-width: 640px) {
   .hero { padding-top: 48px; padding-bottom: 120px; }
-  .hero .brush { display: none; }
   .topbar { padding-top: 10px; padding-bottom: 10px; }
   .brand .logo { width: 26px; height: 26px; }
   .stat { padding: 14px 16px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -540,7 +533,7 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
   nav { gap: 2px; flex-wrap: nowrap; }
   .theme-toggle { width: 32px; height: 32px; }
   .brand { gap: 8px; }
-  .brand span { font-size: 13.5px; letter-spacing: .06em; white-space: nowrap; }
+  .brand span { font-size: 15px; letter-spacing: .02em; white-space: nowrap; }
   .banner { padding-bottom: 80px; }
   .banner .emblem { opacity: .25; }
 }

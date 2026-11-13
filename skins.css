@@ -13,7 +13,6 @@ body[data-tone="light"] {
   color-scheme: light;
 }
 body[data-skin]::before { opacity: 0; }
-body[data-skin] .banner .brush,
 body[data-skin] .deco { pointer-events: none; }
 .deco { position: absolute; z-index: -1; right: var(--gutter); bottom: 64px; writing-mode: vertical-rl; white-space: nowrap; line-height: 1; user-select: none; }
 

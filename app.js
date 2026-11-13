@@ -1,4 +1,4 @@
-// GameClear Dojo — static, dependency-free leaderboard.
+// GameClearDojo — static, dependency-free leaderboard.
 // Data comes from data.json, which scripts/build.mjs assembles from data/.
 import { EMBLEMS, UI, MOUNTAINS } from "./icons.js";
 
@@ -329,11 +329,10 @@ function viewHome() {
   return `
     <section class="hero">
       <canvas id="embers" aria-hidden="true"></canvas>
-      <div class="brush" aria-hidden="true">通关道场</div>
       <div class="hero-inner">
         <div class="eyebrow">AI agents · real games · video proof</div>
         <h1>Can your agent<br/>finish the game?</h1>
-        <p class="lede">GameClear Dojo tracks AI agents playing full-length games — Pokémon, Minecraft, Red Dead Redemption 2,
+        <p class="lede">GameClearDojo tracks AI agents playing full-length games — Pokémon, Minecraft, Red Dead Redemption 2,
         Sekiro, Black Myth: Wukong and more. Each game is split into milestones (gyms, chapters, bosses); every claim shows
         how well it is evidenced, and every board shows where human players stand.</p>
         <div class="hero-actions">
@@ -1024,7 +1023,7 @@ function bindSubmit() {
     const issue = new URL(repoUrl("/issues/new"));
     issue.searchParams.set("title", `[Run] ${gameTitle} — ${sub.agent} (${sub.team})`);
     issue.searchParams.set("labels", "submission");
-    issue.searchParams.set("body", `Submission generated on the GameClear Dojo site.\n\n\`\`\`json\n${json}\n\`\`\`\n`);
+    issue.searchParams.set("body", `Submission generated on the GameClearDojo site.\n\n\`\`\`json\n${json}\n\`\`\`\n`);
     app.querySelector("#issue").href = issue.toString();
     app.querySelector("#copy").onclick = async () => {
       try { await navigator.clipboard.writeText(json); app.querySelector("#copy").textContent = "Copied"; }
@@ -1047,13 +1046,13 @@ function render() {
     html = viewGame(id);
     bind = () => bindGame(id);
     nav = "home";
-    document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameClear Dojo`;
+    document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameClearDojo`;
   } else if (parts[0] === "rules") {
-    html = viewRules(); nav = "rules"; document.title = "Rules · GameClear Dojo";
+    html = viewRules(); nav = "rules"; document.title = "Rules · GameClearDojo";
   } else if (parts[0] === "submit") {
-    html = viewSubmit(params); bind = bindSubmit; nav = "submit"; document.title = "Submit a run · GameClear Dojo";
+    html = viewSubmit(params); bind = bindSubmit; nav = "submit"; document.title = "Submit a run · GameClearDojo";
   } else {
-    html = viewHome(); bind = startEmbers; nav = "home"; document.title = "GameClear Dojo";
+    html = viewHome(); bind = startEmbers; nav = "home"; document.title = "GameClearDojo";
   }
   applySkin(parts[0] === "game" ? DATA.games.find((g) => g.id === decodeURIComponent(parts[1] ?? "")) : null);
   app.innerHTML = html;

@@ -1,4 +1,4 @@
-# GameClear Dojo
+# GameClearDojo
 
 A leaderboard for AI agents that play through real, full-length video games — Pokémon, Minecraft, Red Dead Redemption 2, Sekiro and more.
 

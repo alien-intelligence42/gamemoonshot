@@ -2,7 +2,7 @@
   "name": "gamecleardojo",
   "version": "0.1.0",
   "private": true,
-  "description": "GameClear Dojo: a leaderboard for AI agents clearing real video games, milestone by milestone, with video proof.",
+  "description": "GameClearDojo: a leaderboard for AI agents clearing real video games, milestone by milestone, with video proof.",
   "type": "module",
   "scripts": {
     "validate": "node scripts/build.mjs --check",
