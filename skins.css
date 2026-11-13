@@ -449,12 +449,12 @@ body[data-skin="wukong"] .section-head h2::after { content: ""; width: 42px; hei
 body[data-skin="platformer"] {
   --display: "Press Start 2P", ui-monospace, monospace;
   --radius: 0px;
-  --bg: #b9cbff; --bg-2: #eef2ff; --surface: #fff8e6; --surface-2: #ffefc8; --surface-3: #ffe2a0;
+  --bg: #c9d3ee; --bg-2: #eef1f8; --surface: #fdf9ef; --surface-2: #f8efd9; --surface-3: #f0e2bd;
   --ink: #16182a; --ink-2: #2a2e48; --muted: #3c4266;
   --gold: #c8642e; --gold-hi: #a44e20; --gold-lo: #c8642e; --ember: #c8642e; --on-gold: #fff;
   --line: rgb(0 0 0 / 28%); --line-strong: #000; --human: #2c5cb4; --tip-bg: #fff8e6f8; --track: #ffffff;
   --emblem: #ffffff; --chip: #ffffff;
-  --page-bg: #dfe7ff;
+  --page-bg: #e9edf6;
 }
 body[data-skin="platformer"] main * { letter-spacing: 0 !important; }
 body[data-skin="platformer"] .card,
@@ -1016,11 +1016,11 @@ body[data-skin="wukong"][data-tone="light"] .deco { -webkit-text-stroke: 1px rgb
 
 /* -- platformer, dark: night level -- */
 body[data-skin="platformer"][data-tone="dark"] {
-  --bg: #1b1f3d; --bg-2: #20254a; --surface: #2a2f57; --surface-2: #333966; --surface-3: #3d4475;
+  --bg: #1c1e2c; --bg-2: #212435; --surface: #272a3d; --surface-2: #2f3348; --surface-3: #393d55;
   --ink: #f2f0ff; --ink-2: #cdcfea; --muted: #a2a7cf;
   --gold: #e09a6a; --gold-hi: #f0b48a; --gold-lo: #c8642e; --ember: #e09a6a; --on-gold: #1b1f3d;
-  --line: rgb(255 255 255 / 16%); --human: #8fb4ff; --tip-bg: #2a2f57f8; --track: #1b1f3d; --chip: #3d4475;
-  --page-bg: #1b1f3d;
+  --line: rgb(255 255 255 / 14%); --human: #8fb4ff; --tip-bg: #272a3df8; --track: #1c1e2c; --chip: #393d55;
+  --page-bg: #1c1e2c;
 }
 body[data-skin="platformer"][data-tone="dark"] .banner {
   background:
@@ -1106,7 +1106,7 @@ body[data-skin="neon"][data-tone="light"] .banner {
     linear-gradient(104deg, transparent 0 66%, rgb(21 23 28 / 85%) 66% 67%, transparent 67% 69%, rgb(21 23 28 / 40%) 69% 69.4%, transparent 69.4%),
     linear-gradient(rgb(21 23 28 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
     linear-gradient(90deg, rgb(21 23 28 / 7%) 1px, transparent 1px) 0 0 / 34px 34px,
-    #e8dc6a;
+    #ece6b8;
 }
 body[data-skin="neon"][data-tone="light"] .banner::before { background: repeating-linear-gradient(0deg, rgb(0 0 0 / 5%) 0 1px, transparent 1px 3px); }
 body[data-skin="neon"][data-tone="light"] .banner h1 { color: #15171c; text-shadow: 2px 0 rgb(194 58 72 / 55%), -2px 0 rgb(19 127 138 / 55%); }
@@ -1142,3 +1142,15 @@ body[data-skin="tactical"][data-tone="light"] .banner .mountains .m1 { fill: #cf
 body[data-skin="tactical"][data-tone="light"] .banner .mountains .m2 { fill: #ddd8c6; }
 body[data-skin="tactical"][data-tone="light"] .bossbar > i { background: repeating-linear-gradient(90deg, #b07e1e 0 9px, transparent 9px 12px); }
 body[data-skin="tactical"][data-tone="light"] .badge.cleared { color: #fbfaf4; }
+
+/* ======================================================================
+   COMFORT — every skin keeps its look, but at lower saturation and
+   without glow, so long reading sessions are easier on the eyes.
+   ====================================================================== */
+body[data-skin] .banner { filter: saturate(.7); }
+.keyart { filter: saturate(.75); }
+body[data-skin="erdtree"] .banner .emblem { filter: drop-shadow(0 0 18px rgb(242 205 110 / 28%)); }
+.card[data-skin="erdtree"] .keyart .emblem { filter: drop-shadow(0 0 12px rgb(242 205 110 / 28%)); }
+body[data-skin="terminal"] .banner .emblem { filter: none; }
+body[data-skin] .section-head .sub, body[data-skin] .chart-note { color: var(--ink-2); }
+body[data-skin="blocky"] .banner p.desc { display: inline-block; background: rgb(0 0 0 / 38%); padding: 10px 14px; text-shadow: none; }
