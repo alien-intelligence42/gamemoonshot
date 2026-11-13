@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Fill in the submission form on the site
-    url: https://alien-intelligence42.github.io/gamecleardojo/#/submit
+    url: https://alien-intelligence42.github.io/gamemoonshot/#/submit
     about: The site generates the JSON for you and pre-fills the run issue.
