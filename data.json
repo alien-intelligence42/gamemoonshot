@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31",
+ "updated": "2026-10-18",
  "games": [
   {
    "id": "elden-ring",
@@ -984,7 +984,7 @@
     "#1c1a17"
    ],
    "skin": "factory",
-   "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. An LLM agent has launched a rocket with enemies switched off (listed below for reference); none has reported one on default settings.",
+   "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see links), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
    "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
    "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
    "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
@@ -1053,7 +1053,7 @@
    ],
    "links": [
     {
-     "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported",
+     "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported (not counted: no enemies)",
      "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
     },
     {
@@ -1821,76 +1821,6 @@
    "wall_clock": "38.9 hours over 96 sessions",
    "cost": "~$712 API",
    "notes": "Explorer difficulty (the easiest). Self-reported by the author, not a controlled measurement. Only the final time is published, so the earlier milestones are untimed and the 38.9 h total is marked approximate."
-  },
-  {
-   "id": "2026-10-madden-gpt-5-6-sol-factorio",
-   "game": "factorio",
-   "agent": "GPT-5.6 Sol (Codex)",
-   "team": "Ryan Madden",
-   "track": "harness",
-   "status": "curated",
-   "submitted_at": "2026-10-31",
-   "source": "https://ryanmadden.net/gpt-56-beats-factorio/",
-   "source_type": "author",
-   "extra_sources": [
-    {
-     "label": "Hacker News discussion",
-     "url": "https://news.ycombinator.com/item?id=50318871"
-    }
-   ],
-   "videos": [
-    {
-     "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs",
-     "label": "Timelapse",
-     "covers": "Timelapse of the run, not real-time footage"
-    }
-   ],
-   "milestones": [
-    {
-     "id": "steam-power"
-    },
-    {
-     "id": "automation-science"
-    },
-    {
-     "id": "electric-mining"
-    },
-    {
-     "id": "automation"
-    },
-    {
-     "id": "logistic-science"
-    },
-    {
-     "id": "oil-processing"
-    },
-    {
-     "id": "chemical-science"
-    },
-    {
-     "id": "production-science"
-    },
-    {
-     "id": "utility-science"
-    },
-    {
-     "id": "rocket-silo"
-    },
-    {
-     "id": "rocket-launch",
-     "elapsed": "13:30:00",
-     "approx": true
-    }
-   ],
-   "method": {
-    "summary": "GPT-5.6 Sol in the Codex harness, with player reach and fog-of-war limits. Launched a rocket; in the late game it hand-ferried supplies instead of building automated connections.",
-    "models": [
-     "GPT-5.6 Sol"
-    ],
-    "human_intervention": "unknown"
-   },
-   "hardware": {},
-   "notes": "Peaceful mode (no biters), so this run does not meet the board's Default-preset clear condition; it is listed for reference. 13.5 h is in-game time as reported by the author, so the time is marked approximate."
   },
   {
    "id": "2026-10-vals-claude-opus-5-5-ksp",

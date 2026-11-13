@@ -12,7 +12,7 @@
     "#1c1a17"
   ],
   "skin": "factory",
-  "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. An LLM agent has launched a rocket with enemies switched off (listed below for reference); none has reported one on default settings.",
+  "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see links), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
   "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
   "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
   "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
@@ -81,7 +81,7 @@
   ],
   "links": [
     {
-      "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported",
+      "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported (not counted: no enemies)",
       "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
     },
     {
