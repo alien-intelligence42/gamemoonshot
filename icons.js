@@ -98,6 +98,21 @@ export const UI = {
   chevron: U(`<path d="M9 6l6 6-6 6"/>`),
   sun: U(`<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>`),
   moon: U(`<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>`),
+  // Why-games page
+  gamepad: U(`<path d="M6.5 7.5h11A4.5 4.5 0 0 1 22 12l-.4 3.6a2.8 2.8 0 0 1-4.9 1.5L15 15.5H9l-1.7 1.6a2.8 2.8 0 0 1-4.9-1.5L2 12a4.5 4.5 0 0 1 4.5-4.5z"/><path d="M7.5 10.5v3M6 12h3"/><circle cx="15.5" cy="11" r=".9" fill="currentColor" stroke="none"/><circle cx="17.8" cy="13" r=".9" fill="currentColor" stroke="none"/>`),
+  lock: U(`<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4M12 15v2"/>`),
+  crown: U(`<path d="M3 7.5l4.5 4L12 4.5l4.5 7 4.5-4-2 10.5H5z"/><path d="M5 21h14"/>`),
+  skull: U(`<path d="M12 3a8 8 0 0 0-8 8c0 2.8 1.4 4.8 3.5 6v3.5h9V17c2.1-1.2 3.5-3.2 3.5-6a8 8 0 0 0-8-8z"/><circle cx="9" cy="11" r="1.7" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1.7" fill="currentColor" stroke="none"/><path d="M10.5 20.5v-2M13.5 20.5v-2M12 13.8l-.9 1.8h1.8z"/>`),
+  heart: U(`<path d="M12 20s-7.2-4.4-9.1-9A4.6 4.6 0 0 1 12 8.6 4.6 4.6 0 0 1 21.1 11C19.2 15.6 12 20 12 20z"/>`),
+  code: U(`<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>`),
+  sigma: U(`<path d="M18 5H6l6.5 7L6 19h12"/>`),
+  flask: U(`<path d="M9 3h6M10 3v6l-5.6 9.4A1.7 1.7 0 0 0 5.9 21h12.2a1.7 1.7 0 0 0 1.5-2.6L14 9V3M7.3 15h9.4"/>`),
+  robot: U(`<rect x="5" y="8" width="14" height="11" rx="2.5"/><path d="M12 5v3M9 16h6M3 12.5v3M21 12.5v3"/><circle cx="12" cy="4" r="1"/><circle cx="9.5" cy="12.5" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12.5" r="1" fill="currentColor" stroke="none"/>`),
+  globe: U(`<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>`),
+  target: U(`<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/>`),
+  star: U(`<path d="M12 2.8l2.7 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.7 3.3 1.4-6.4-4.9-4.4 6.5-.7z"/>`),
+  check: U(`<path d="M5 12.5l4.5 4.5L19 7"/>`),
+  coin: U(`<circle cx="12" cy="12" r="9"/><path d="M14.8 8.6c-.6-.8-1.6-1.3-2.8-1.3-1.6 0-2.8.9-2.8 2.2 0 3 5.8 1.6 5.8 4.8 0 1.3-1.3 2.3-3 2.3-1.3 0-2.4-.6-3-1.5M12 5.5v1.8M12 16.7v1.8"/>`),
 };
 
 // Ink-wash mountain silhouettes for banners; colors come from CSS custom properties.

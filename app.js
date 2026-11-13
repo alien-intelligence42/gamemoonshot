@@ -884,44 +884,116 @@ addEventListener("resize", () => {
 const SLOGAN = ["Clear the game.", "Gamify every task.", "Reach AGI."];
 const SLOGAN_HTML = SLOGAN.map((s, i) => `<span class="slogan-step">${i ? `<i aria-hidden="true">→</i>` : ""}${s}</span>`).join("");
 
+const GAMIFY = [
+  { icon: "code", task: "Software", world: "A codebase and its issue tracker", moves: "Read, edit, run commands", goal: "The feature ships", score: "Tests pass, review approves" },
+  { icon: "sigma", task: "Mathematics", world: "Axioms and known results", moves: "Proof steps", goal: "The theorem", score: "A proof checker accepts it" },
+  { icon: "flask", task: "Science", world: "A lab or a simulator", moves: "Design and run experiments", goal: "Answer the question", score: "Results that replicate" },
+  { icon: "robot", task: "Robotics", world: "A workcell", moves: "Motor commands", goal: "The part is assembled", score: "Success rate, cycle time" },
+  { icon: "coin", task: "Business", world: "A market", moves: "Price, build, sell", goal: "Hit the target", score: "Revenue, retention" },
+];
+
+const BOSSES = [
+  { name: "The Toy Critic", quote: "Games are toys.",
+    counter: "A game is a world built so a newcomer, with no manual, can learn its rules, set goals and get better until they win. That is the exact problem a general learner has to solve. Games are toys the way flight simulators are toys." },
+  { name: "The Old Champion", quote: "Games are solved. Atari, Go, StarCraft, Dota — done.",
+    counter: "Those were specialists: one system per game, trained on far more play than any person gets, often reading game state through an API. None could be handed a new game and finish it. No agent has yet picked up a modern 3D game it wasn't built for and played it to the credits from the screen." },
+  { name: "The Serious Adult", quote: "Real work matters more — code, science, robots.",
+    counter: "A 60-hour game is a long-horizon task with a clear finish line: see, remember what happened ten hours ago, plan, act in real time, recover from mistakes. A month-long project needs the same skills. An agent that loses the thread halfway through Elden Ring will lose it halfway through your codebase too." },
+  { name: "The Reality Gap", quote: "Games aren't the real world.",
+    counter: "That is what stage two is for. Any task can be written as a game — a world, the moves allowed, a goal and a score — and every training environment for an agent is a game under another name. Clearing a game you have never seen is doing a task you have never seen." },
+  { name: "The Skeptic", quote: "Playing games is a stunt, not a measurement.",
+    counter: "A game ends in a way anyone can check: the credits roll, or they don't. This board scores story milestones against play time, asks for unedited video and labels every claim by its evidence. Few benchmarks are this hard to fake and this easy to verify." },
+];
+
 function viewWhy() {
-  const objections = [
-    ["“Games are toys.”",
-     "A game is a world built for one purpose: so that a newcomer, with no manual, can learn its rules, set goals and get better until they win. That is the exact problem a general learner has to solve. Games are toys the way flight simulators are toys."],
-    ["“Games are solved. Atari, Go, StarCraft, Dota — done.”",
-     "Those were specialists: one system per game, trained on far more play than any person gets, often reading game state through an API. None of them could be handed a new game and finish it. Nobody has yet shown an agent that picks up a modern 3D game it was not built for and plays it to the credits from what is on screen. That is the open problem."],
-    ["“Real work matters more — code, science, robots.”",
-     "A 60-hour game is a long-horizon task with a clear finish line: see the screen, remember what happened ten hours ago, plan, act in real time, recover from mistakes, and not drift off course. Those are the same skills a month-long project needs, tested where every attempt is cheap, safe and repeatable. An agent that loses the thread halfway through Elden Ring will lose it halfway through your codebase too."],
-    ["“Games aren't the real world.”",
-     "That is what the second step is for. Any task can be written as a game: a world, the moves allowed in it, a goal and a score. Passing tests, proving a theorem, hitting a sales target, landing a robot arm on a part — each is a game once you state the rules and the win condition, and every training environment for an agent is a game under another name. The skill of clearing a game you have never seen is the skill of doing a task you have never seen."],
-    ["“Playing games is a stunt, not a measurement.”",
-     "A game ends in a way anyone can check: the credits roll, or they don't. That is why this board scores story milestones against play time, asks for unedited video and labels every claim by its evidence. Few benchmarks are this hard to game and this easy to verify."],
+  const modern = DATA.games.filter((g) => g.tier === "modern");
+  const cleared = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
+  const started = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.n > 0).length;
+
+  const shelf = DATA.games
+    .map((g) => `<a class="cart" href="#/game/${esc(g.id)}" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
+    .join("");
+
+  const stages = [
+    { n: 1, icon: UI.gamepad, state: "now", status: "In progress", title: "Clear the game",
+      body: "A modern game is the richest test we can build and still score: real-time perception, control, memory across tens of hours, planning, and a story that only ends if you keep going. An AI that sits down at a game it has never seen and plays it to the end has learned a whole world, not just answered questions about one.",
+      foot: `<div class="frontier"><div class="label"><span>Modern games cleared by AI</span><span>${cleared} of ${modern.length} · ${started} started</span></div>${bar(cleared, modern.length, { lg: true })}</div>` },
+    { n: 2, icon: UI.target, state: "locked", status: "Unlocks next", title: "Gamify every task",
+      body: "Then turn the problem around. Give any task a world, rules, a goal and a score, and it becomes a game. The better we get at writing tasks as games, the more of the world an agent that clears games can take on.",
+      foot: `<div class="tags">${GAMIFY.map((t) => `<span class="tag">${UI[t.icon]}${esc(t.task)}</span>`).join("")}</div>` },
+    { n: 3, icon: UI.crown, state: "final", status: "Final boss", title: "Reach AGI",
+      body: "An agent that can clear any game you hand it, in a world where any task can be made into a game, is a general agent. Game-clearing is not a narrow skill beside general intelligence — with every task gamified, it is general intelligence, measured.",
+      foot: `<div class="tags"><span class="tag">${UI.star}Any game</span><span class="tag">${UI.star}Any task</span><span class="tag">${UI.star}No manual</span></div>` },
   ];
+
+  const field = (icon, label, val) => `<div><dt>${UI[icon]}${label}</dt><dd>${esc(val)}</dd></div>`;
+
   return `
-  <div class="wrap">
-    <div class="page-head"><h1>Why games</h1>
+  <section class="why-hero">
+    <canvas id="embers" aria-hidden="true"></canvas>
+    ${MOUNTAINS}
+    <div class="why-hero-inner">
+      <div class="eyebrow">Manifesto · Player 1</div>
+      <h1>Why games</h1>
       <p class="slogan big">${SLOGAN_HTML}</p>
-      <p>Games are not a side quest on the way to general AI. They are the road.</p></div>
-    <article class="prose">
-      <h2>1. Clear the game</h2>
-      <p>A modern game is the richest test we can build and still score: real-time perception, control, memory across tens of hours,
-      planning, and a story that only ends if you keep going. It is designed so a human can learn it from scratch. An AI that can do
-      the same — sit down at a game it has not seen and play it to the end — has shown it can learn a whole world, not just answer
-      questions about one. No AI has finished a modern 3D game yet. That is why it is this era's moonshot.</p>
-      <h2>2. Gamify every task</h2>
-      <p>Then turn the problem around. Give any task a world, rules, a goal and a score, and it becomes a game. Software has tests,
-      mathematics has proofs, science has experiments that work or don't, businesses have numbers to hit. The better we get at
-      writing tasks as games, the more of the world an agent that clears games can take on.</p>
-      <h2>3. Reach AGI</h2>
-      <p>An agent that can clear any game you hand it, in a world where any task can be made into a game, is a general agent.
-      That is the whole argument: game-clearing is not a narrow skill that sits beside general intelligence — with every task
-      gamified, it is general intelligence, measured.</p>
-      <h2>Answers to the usual objections</h2>
-      <dl class="objections">${objections.map(([q, a]) => `<dt>${q}</dt><dd>${a}</dd>`).join("")}</dl>
-      <h2>What this board is for</h2>
-      <p>GameMoonshot tracks step one, in public: how far agents get through the games people actually play, milestone by milestone,
-      with video. See the <a href="#/">boards</a>, read the <a href="#/rules">rules</a>, or <a href="#/submit">submit a run</a>.</p>
-    </article>
+      <p class="lede">Games are not a side quest on the way to general AI. They are the main quest.</p>
+      <div class="shelf" aria-label="Games on the board">${shelf}</div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section">
+      <div class="section-head"><div><h2><span class="ico">${UI.scroll}</span>The main quest</h2>
+      <div class="sub">Three stages. GameMoonshot tracks stage one, in public.</div></div></div>
+      <ol class="quest">${stages
+        .map(
+          (s) => `<li class="stage" data-state="${s.state}">
+          <div class="stage-top"><span class="stage-ico">${s.icon}</span>
+            <span class="stage-n">Stage ${s.n}</span>
+            <span class="stage-status">${s.state === "locked" ? UI.lock : s.state === "final" ? UI.skull : UI.flame}${s.status}</span></div>
+          <h3>${s.title}</h3><p>${s.body}</p>${s.foot}</li>`
+        )
+        .join("")}</ol>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2><span class="ico">${UI.gamepad}</span>Every task is a game</h2>
+      <div class="sub">State the world, the moves, the goal and the score, and a task becomes something an agent can clear.</div></div></div>
+      <div class="carts">${GAMIFY.map(
+        (t) => `<article class="taskcart"><header><span class="ico">${UI[t.icon]}</span><h3>${esc(t.task)}</h3></header>
+        <dl>${field("globe", "World", t.world)}${field("gamepad", "Moves", t.moves)}${field("target", "Goal", t.goal)}${field("trophy", "Score", t.score)}</dl></article>`
+      ).join("")}</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2><span class="ico">${UI.skull}</span>Boss rush</h2>
+      <div class="sub">Five arguments that games don't matter, and the counter that brings each one down.</div></div></div>
+      <div class="bosses">${BOSSES.map(
+        (b, i) => `<article class="boss">
+          <div class="boss-head"><span class="boss-ico">${UI.skull}</span>
+            <div><div class="boss-n">Boss ${i + 1} / ${BOSSES.length}</div><h3>${esc(b.name)}</h3></div>
+            <span class="defeated">Defeated</span></div>
+          <div class="hp"><span>HP</span><div class="bossbar"><i style="width:0"></i></div><span>0</span></div>
+          <blockquote>“${esc(b.quote)}”</blockquote>
+          <p><b>${UI.sword}Counter</b> ${esc(b.counter)}</p>
+        </article>`
+      ).join("")}
+        <a class="boss next" href="${esc(repoUrl("/issues/new"))}" target="_blank" rel="noopener">
+          <div class="q" aria-hidden="true">?</div>
+          <h3>A new challenger</h3>
+          <p>Have an argument we haven't answered? Open an issue and it joins the boss rush.</p>
+        </a></div>
+    </section>
+
+    <section class="press-start">
+      <div class="blink">Press start</div>
+      <p>Stage one is open. ${cleared ? `${cleared} modern game${cleared === 1 ? "" : "s"} cleared so far.` : "No AI has cleared a modern game yet."} Bring an agent.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#/">${UI.sword} Choose a game</a>
+        <a class="btn" href="#/submit">${UI.scroll} Submit a run</a>
+        <a class="btn" href="#/rules">${UI.check} Read the rules</a>
+      </div>
+    </section>
   </div>`;
 }
 
@@ -1172,7 +1244,7 @@ function render() {
     nav = "home";
     document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameMoonshot`;
   } else if (parts[0] === "why") {
-    html = viewWhy(); nav = "why"; document.title = "Why games · GameMoonshot";
+    html = viewWhy(); bind = startEmbers; nav = "why"; document.title = "Why games · GameMoonshot";
   } else if (parts[0] === "rules") {
     html = viewRules(); nav = "rules"; document.title = "Rules · GameMoonshot";
   } else if (parts[0] === "submit") {
