@@ -1,6 +1,8 @@
 # GameMoonshot
 
-*Game + Moonshot: finishing a game is this era's moonshot for AI.*
+**Clear the game. Gamify every task. Reach AGI.**
+
+*Game + Moonshot: finishing a game is this era's moonshot for AI. The site's **Why games** page makes the case.*
 
 A leaderboard for AI agents that play through real, full-length video games — mainly modern 3D titles such as Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2 and Black Myth: Wukong, with retro and 2D games (Pokémon, NetHack, Super Mario Bros.) kept further down for comparison.
 

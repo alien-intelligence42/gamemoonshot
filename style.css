@@ -527,6 +527,16 @@ input:focus, select:focus, textarea:focus { outline: 2px solid color-mix(in srgb
 .prose p, .prose li { color: var(--ink-2); }
 .prose li { margin: 8px 0; }
 .prose b { color: var(--ink); }
+.slogan { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin: 0 0 22px; text-decoration: none; color: var(--gold-hi);
+  font-family: var(--display); font-weight: 700; letter-spacing: .06em; font-size: clamp(15px, 1.8vw, 20px); }
+.slogan-step { display: inline-flex; align-items: baseline; gap: 10px; }
+.slogan-step i { font-style: normal; color: var(--ember); }
+.slogan-more { font-family: var(--body, inherit); font-weight: 500; letter-spacing: .02em; font-size: 13px; color: var(--muted); margin-left: 6px; }
+a.slogan:hover .slogan-more { color: var(--gold-hi); }
+.page-head .slogan.big { font-size: clamp(18px, 2.6vw, 28px); color: var(--gold-hi); margin: 14px 0 0; max-width: none; }
+.objections { margin: 0; }
+.objections dt { font-family: var(--display); color: var(--ink); font-weight: 700; letter-spacing: .03em; margin-top: 22px; }
+.objections dd { margin: 6px 0 0; color: var(--ink-2); padding-left: 14px; border-left: 2px solid var(--line-strong); }
 form.submit { display: grid; gap: 20px; max-width: 940px; margin-top: 28px; }
 fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px 20px; background: var(--surface); margin: 0; min-width: 0; }
 legend { padding: 0 8px; font-family: var(--display); letter-spacing: .14em; text-transform: uppercase; font-size: 13px; color: var(--gold); }
@@ -570,3 +580,4 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
 @media (prefers-reduced-motion: reduce) {
   .card, .keyart .emblem, .thumb img, .thumb .play { transition: none; }
 }
+@media (max-width: 480px) { nav { gap: 2px; } nav a { padding: 7px 6px; letter-spacing: .04em; } }

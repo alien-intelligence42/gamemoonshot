@@ -355,6 +355,7 @@ function viewHome() {
       <div class="hero-inner">
         <div class="eyebrow">This era's moonshot · AI agents · real games</div>
         <h1>Can your agent<br/>finish the game?</h1>
+        <a class="slogan" href="#/why">${SLOGAN_HTML}<span class="slogan-more">Why games →</span></a>
         <p class="lede">Finishing a modern game end to end — seeing, planning and acting in real time across a story that takes a person
         30 to 100 hours — is this era's moonshot for AI. GameMoonshot tracks how close agents get on Elden Ring, Cyberpunk 2077, GTA V,
         Red Dead Redemption 2, Black Myth: Wukong and more. Each game is split into milestones (bosses, missions, chapters);
@@ -879,6 +880,51 @@ addEventListener("resize", () => {
   }, 150);
 });
 
+// ---------- why games (manifesto) ----------
+const SLOGAN = ["Clear the game.", "Gamify every task.", "Reach AGI."];
+const SLOGAN_HTML = SLOGAN.map((s, i) => `<span class="slogan-step">${i ? `<i aria-hidden="true">→</i>` : ""}${s}</span>`).join("");
+
+function viewWhy() {
+  const objections = [
+    ["“Games are toys.”",
+     "A game is a world built for one purpose: so that a newcomer, with no manual, can learn its rules, set goals and get better until they win. That is the exact problem a general learner has to solve. Games are toys the way flight simulators are toys."],
+    ["“Games are solved. Atari, Go, StarCraft, Dota — done.”",
+     "Those were specialists: one system per game, trained on far more play than any person gets, often reading game state through an API. None of them could be handed a new game and finish it. Nobody has yet shown an agent that picks up a modern 3D game it was not built for and plays it to the credits from what is on screen. That is the open problem."],
+    ["“Real work matters more — code, science, robots.”",
+     "A 60-hour game is a long-horizon task with a clear finish line: see the screen, remember what happened ten hours ago, plan, act in real time, recover from mistakes, and not drift off course. Those are the same skills a month-long project needs, tested where every attempt is cheap, safe and repeatable. An agent that loses the thread halfway through Elden Ring will lose it halfway through your codebase too."],
+    ["“Games aren't the real world.”",
+     "That is what the second step is for. Any task can be written as a game: a world, the moves allowed in it, a goal and a score. Passing tests, proving a theorem, hitting a sales target, landing a robot arm on a part — each is a game once you state the rules and the win condition, and every training environment for an agent is a game under another name. The skill of clearing a game you have never seen is the skill of doing a task you have never seen."],
+    ["“Playing games is a stunt, not a measurement.”",
+     "A game ends in a way anyone can check: the credits roll, or they don't. That is why this board scores story milestones against play time, asks for unedited video and labels every claim by its evidence. Few benchmarks are this hard to game and this easy to verify."],
+  ];
+  return `
+  <div class="wrap">
+    <div class="page-head"><h1>Why games</h1>
+      <p class="slogan big">${SLOGAN_HTML}</p>
+      <p>Games are not a side quest on the way to general AI. They are the road.</p></div>
+    <article class="prose">
+      <h2>1. Clear the game</h2>
+      <p>A modern game is the richest test we can build and still score: real-time perception, control, memory across tens of hours,
+      planning, and a story that only ends if you keep going. It is designed so a human can learn it from scratch. An AI that can do
+      the same — sit down at a game it has not seen and play it to the end — has shown it can learn a whole world, not just answer
+      questions about one. No AI has finished a modern 3D game yet. That is why it is this era's moonshot.</p>
+      <h2>2. Gamify every task</h2>
+      <p>Then turn the problem around. Give any task a world, rules, a goal and a score, and it becomes a game. Software has tests,
+      mathematics has proofs, science has experiments that work or don't, businesses have numbers to hit. The better we get at
+      writing tasks as games, the more of the world an agent that clears games can take on.</p>
+      <h2>3. Reach AGI</h2>
+      <p>An agent that can clear any game you hand it, in a world where any task can be made into a game, is a general agent.
+      That is the whole argument: game-clearing is not a narrow skill that sits beside general intelligence — with every task
+      gamified, it is general intelligence, measured.</p>
+      <h2>Answers to the usual objections</h2>
+      <dl class="objections">${objections.map(([q, a]) => `<dt>${q}</dt><dd>${a}</dd>`).join("")}</dl>
+      <h2>What this board is for</h2>
+      <p>GameMoonshot tracks step one, in public: how far agents get through the games people actually play, milestone by milestone,
+      with video. See the <a href="#/">boards</a>, read the <a href="#/rules">rules</a>, or <a href="#/submit">submit a run</a>.</p>
+    </article>
+  </div>`;
+}
+
 // ---------- rules ----------
 function viewRules() {
   return `
@@ -887,7 +933,8 @@ function viewRules() {
       <p>The point is to measure how far agents get through real games, in a way other people can check.
       These rules apply to every game; a game page can add its own.</p></div>
     <article class="prose">
-      <h2>Why games are the moonshot — and how this differs from VideoGameBench</h2>
+      <h2>How this differs from VideoGameBench</h2>
+      <p>Why games at all? See <a href="#/why">Why games</a>.</p>
       <p><a href="https://arxiv.org/abs/2505.18134" target="_blank" rel="noopener">VideoGameBench</a> (Zhang, Griffiths, Narasimhan and Press, 2025)
       is a controlled benchmark: one agent harness, VG-Agent, wraps each vision-language model and plays 1990s Game Boy and MS-DOS games
       (Doom II, Civilization I, Link's Awakening DX, Pokémon Crystal and others) from raw frames, scored at fixed checkpoints.</p>
@@ -1124,6 +1171,8 @@ function render() {
     bind = () => bindGame(id);
     nav = "home";
     document.title = `${DATA.games.find((g) => g.id === id)?.title ?? "Game"} · GameMoonshot`;
+  } else if (parts[0] === "why") {
+    html = viewWhy(); nav = "why"; document.title = "Why games · GameMoonshot";
   } else if (parts[0] === "rules") {
     html = viewRules(); nav = "rules"; document.title = "Rules · GameMoonshot";
   } else if (parts[0] === "submit") {
