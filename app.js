@@ -745,7 +745,7 @@ function drawChart(game) {
     return;
   }
 
-  const W = Math.max(320, host.clientWidth);
+  const W = Math.max(240, host.clientWidth); // follows its container down to small phones
   const H = W < 560 ? 290 : 360;
   const M = { l: 40, r: W < 560 ? 20 : 170, t: 30, b: 42 };
   const all = [...plotted.flatMap((s) => s.pts.map((p) => p.t)), ...humans.map((h) => h.t)];
