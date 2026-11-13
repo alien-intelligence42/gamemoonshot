@@ -79,6 +79,7 @@ body[data-tone="light"] .topbar {
 /* theme toggle */
 .theme-toggle { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-2); }
 .theme-toggle:hover { color: var(--gold-hi); border-color: var(--gold); }
+.lang-toggle { font: 600 13px/1 var(--body); letter-spacing: 0; text-transform: none; }
 .theme-toggle svg { width: 18px; height: 18px; }
 
 * { box-sizing: border-box; }
@@ -174,9 +175,8 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
   content: ""; position: absolute; z-index: -2; width: 720px; height: 720px; right: -120px; top: -260px; border-radius: 50%;
   background: radial-gradient(circle, color-mix(in srgb, var(--gold) 9%, transparent), transparent 70%);
 }
-/* the moon the whole site is aiming at: the logo, large, drifting slowly */
+/* the moon the whole site is aiming at: the logo, large, drifting slowly, centred beside the headline */
 .hero .moon-art {
-  position: absolute; z-index: -1; right: calc(var(--gutter) - 6px); top: 48px;
   width: clamp(150px, 20vw, 280px); aspect-ratio: 922 / 788; pointer-events: none;
   filter: drop-shadow(0 0 26px color-mix(in srgb, var(--gold) 22%, transparent));
   animation: moon-drift 9s ease-in-out infinite alternate;
@@ -184,9 +184,14 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
 .hero .moon-art svg { display: block; width: 100%; height: 100%; }
 @keyframes moon-drift { to { transform: translateY(-8px) rotate(-1.5deg); } }
 @media (prefers-reduced-motion: reduce) { .hero .moon-art { animation: none; } }
-@media (max-width: 640px) { .hero .moon-art { top: 10px; width: 84px; opacity: .5; } }
 .hero canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
-.hero-inner { max-width: 980px; position: relative; }
+.hero-inner { width: 100%; position: relative; }
+.hero-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 48px; }
+.hero-head { min-width: 0; }
+@media (max-width: 640px) {
+  .hero-top { grid-template-columns: minmax(0, 1fr); }
+  .hero .moon-art { order: -1; width: 104px; margin-bottom: 4px; }
+}
 .eyebrow { font-family: var(--display); color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
 .eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--gold); }
 .hero h1 {
@@ -194,9 +199,8 @@ main { width: 100%; flex: 1; padding-bottom: 72px; }
   font-size: clamp(40px, 7.2vw, 88px); margin: 18px 0 20px;
   color: var(--gold-hi);
 }
-/* Width 0 + min-width 100%: the lede adds nothing to .hero-inner's shrink-to-fit width,
-   so it spans exactly as wide as the headline above it instead of setting its own measure. */
-.hero p.lede { font-size: clamp(16px, 1.6vw, 18px); color: var(--ink-2); width: 0; min-width: 100%; margin: 0; }
+/* the lede spans the full content column, under both the headline and the logo */
+.hero p.lede { font-size: clamp(16px, 1.6vw, 18px); line-height: 1.75; color: var(--ink-2); margin: 6px 0 0; text-wrap: pretty; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 
 .mountains { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 46%; z-index: -1; }
@@ -707,11 +711,19 @@ pre.out { background: var(--bg-2); border: 1px solid var(--line); border-radius:
   .brand { gap: 5px; }
   .brand span { font-size: clamp(12px, 3.5vw, 14px); letter-spacing: 0; }
   nav a { padding: 7px 5px; letter-spacing: .02em; }
-  .theme-toggle { width: 30px; height: 30px; }
+  .theme-toggle { width: 28px; height: 28px; }
+  .lang-toggle { font-size: 12px; }
 }
 /* very narrow (≤340px): the logo alone stands for the name */
 @media (max-width: 340px) { .brand span { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .card, .keyart .emblem, .thumb img, .thumb .play { transition: none; }
 }
-@media (max-width: 480px) { nav { gap: 2px; } nav a { padding: 7px 6px; letter-spacing: .04em; } }
+@media (min-width: 401px) and (max-width: 480px) { nav { gap: 2px; } nav a { padding: 7px 6px; letter-spacing: .04em; } }
+
+/* ---------- Chinese ---------- */
+/* Latin display faces have no CJK glyphs, so Chinese falls through each font stack to the system CJK face.
+   Drop the wide letter-spacing meant for small capitals, which only spreads Chinese characters apart. */
+html:lang(zh-CN) :is(.eyebrow, nav a, .section-head h2, .stage-n, .stage h3, .taskcart h3, .taskcart dt, .fact dt, .frontier .label, .crumbs, .btn, .boss-n, .detail h4, legend, .board-head, .stat span, .slogan, .page-head h1, .prose h2) { letter-spacing: .04em; }
+html:lang(zh-CN) .hero h1, html:lang(zh-CN) .why-hero h1 { letter-spacing: .02em; line-height: 1.15; }
+html:lang(zh-CN) .prose p, html:lang(zh-CN) .prose li, html:lang(zh-CN) .section-head .sub { line-height: 1.8; }

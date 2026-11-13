@@ -31,6 +31,11 @@
         try { t = localStorage.getItem("moonshot-theme") || localStorage.getItem("dojo-theme"); } catch (e) {}
         if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         document.body.dataset.tone = t;
+        // Language: saved choice, else the browser language (app.js translates the page).
+        var l = null;
+        try { l = localStorage.getItem("moonshot-lang"); } catch (e) {}
+        if (l !== "en" && l !== "zh") l = /^zh\b/i.test(navigator.language || "") ? "zh" : "en";
+        document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
       })();
     </script>
     <header class="topbar">
@@ -43,6 +48,7 @@
         <a href="why/" data-nav="why">Why<span class="hide-xs"> games</span></a>
         <a href="rules/" data-nav="rules">Rules</a>
         <a href="submit/" data-nav="submit" class="cta">Submit<span class="hide-xs"> a run</span></a>
+        <button type="button" class="theme-toggle lang-toggle" id="langToggle" aria-label="Switch language">中</button>
         <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color scheme"></button>
       </nav>
     </header>
