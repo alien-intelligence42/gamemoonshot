@@ -76,11 +76,14 @@
       "name": "CivBench (Civ VI)",
       "date": "2026-09",
       "result": "LLM agents playing through an MCP server won 3 science victories in 23 games on Prince and King difficulty, at Quick speed.",
+      "result_zh": "通过 MCP 服务器玩游戏的 LLM 智能体，在王子和国王难度、快速模式下，23 局里赢了 3 次科技胜利。",
       "why_not": "This board requires Deity difficulty at Standard speed.",
+      "why_not_zh": "本榜要求神级难度、标准速度。",
       "url": "https://arxiv.org/abs/2609.02459",
       "links": [
         {
           "label": "civ6-mcp (the MCP server)",
+          "label_zh": "civ6-mcp（所用的 MCP 服务器）",
           "url": "https://github.com/lmwilki/civ6-mcp"
         }
       ]

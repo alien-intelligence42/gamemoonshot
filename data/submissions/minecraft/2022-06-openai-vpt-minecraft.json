@@ -1,0 +1,61 @@
+{
+  "id": "2022-06-openai-vpt-minecraft",
+  "game": "minecraft",
+  "agent": "VPT (Video PreTraining) + RL fine-tuning",
+  "team": "OpenAI",
+  "track": "pixels",
+  "status": "curated",
+  "submitted_at": "2022-06-23",
+  "game_version": "Not stated in the paper; the released code uses MineRL 1.0 (Minecraft 1.16.5)",
+  "source": "https://arxiv.org/abs/2206.11795",
+  "source_type": "author",
+  "extra_sources": [
+    {
+      "label": "OpenAI blog post",
+      "url": "https://openai.com/index/vpt"
+    }
+  ],
+  "videos": [],
+  "milestones": [
+    {
+      "id": "crafting-table"
+    },
+    {
+      "id": "stone-age"
+    },
+    {
+      "id": "getting-an-upgrade"
+    },
+    {
+      "id": "acquire-hardware"
+    },
+    {
+      "id": "isnt-it-iron-pick"
+    },
+    {
+      "id": "diamonds",
+      "elapsed": "0:10:00",
+      "approx": true
+    }
+  ],
+  "vendor": "openai",
+  "method": {
+    "summary": "A model pretrained on 70,000 hours of unlabeled Minecraft video (actions inferred by an inverse dynamics model), then fine-tuned with reinforcement learning toward a diamond pickaxe. With RL it makes an iron pickaxe in over 80% of 10-minute episodes, collects diamonds in almost 20% and crafts a diamond pickaxe in 2.5%.",
+    "interface": "Screen pixels → keyboard and mouse at 20 Hz",
+    "interface_zh": "屏幕像素 → 键盘鼠标（20 Hz）",
+    "models": [
+      "VPT foundation model (~0.5B parameters) with RL fine-tuning"
+    ],
+    "observation": "Raw pixels with the HUD, 128x128 (rendered at 640x360)",
+    "action": "Full keyboard and mouse at 20 Hz, crafting through the normal crafting GUI",
+    "human_intervention": "none reported",
+    "game_speed": "real-time (20 Hz)",
+    "restarts": "Fresh survival world each episode; on death the agent drops its items and respawns, and the episode continues",
+    "paper": "https://arxiv.org/abs/2206.11795",
+    "code": "https://github.com/openai/Video-Pre-Training"
+  },
+  "hardware": {
+    "inference": "OpenAI internal"
+  },
+  "notes": "The paper reports rates over many 10-minute episodes; the milestones are those of its best episodes, where diamonds were collected (iron pickaxe, smelted iron and stone tools are required to mine diamonds). Each episode lasts 10 minutes, so 0:10:00 is an upper bound. Difficulty and seed are not stated. No full-episode video has been checked."
+}

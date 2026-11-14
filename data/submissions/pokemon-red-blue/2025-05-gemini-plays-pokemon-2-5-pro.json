@@ -90,6 +90,8 @@
   ],
   "method": {
     "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). First completion May 2, 2025 after about 813 hours; a second run on June 9, 2025 finished in about 406 hours.",
+    "interface": "Screenshots plus a minimap and pathfinding help → button presses",
+    "interface_zh": "截图加小地图和寻路辅助 → 按键",
     "models": [
       "Gemini 2.5 Pro"
     ],

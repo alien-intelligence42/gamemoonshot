@@ -75,11 +75,46 @@
       "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "BALROG leaderboard",
-      "url": "https://balrogai.com/"
+      "name": "BALROG",
+      "team": "UCL AI Centre and others (ICLR 2025)",
+      "team_zh": "伦敦大学学院 AI 中心等（ICLR 2025）",
+      "date": "2024-11",
+      "models": [
+        "GPT-6 Astra Max",
+        "Claude Opus 5 Max",
+        "Gemini 3 Pro"
+      ],
+      "result": "LLM agents play NetHack as text, zero-shot. Progress is scored as the chance that a human who reached the same dungeon or experience level went on to win. The leaderboard's best is GPT-6 Astra Max at 13.2% average progression; when the paper came out the best was o1-preview at about 1.5%.",
+      "result_zh": "LLM 智能体以文本形式零样本玩 NetHack。进度的算法是：到达同样地牢层数或经验等级的人类玩家最终获胜的概率。排行榜上最好的是 GPT-6 Astra Max，平均进度 13.2%；论文发表时最好的是 o1-preview，约 1.5%。",
+      "why_not": "An average over runs on a probability scale, not the milestones of a single run.",
+      "why_not_zh": "这是多局在一个概率刻度上的平均值，不是单局达成的里程碑。",
+      "url": "https://arxiv.org/abs/2411.13543",
+      "links": [
+        {
+          "label": "Leaderboard",
+          "url": "https://balrogai.com/"
+        }
+      ]
     },
+    {
+      "name": "NetHack Challenge (NeurIPS 2021)",
+      "name_zh": "NetHack 挑战赛（NeurIPS 2021）",
+      "team": "Competition on the NetHack Learning Environment",
+      "team_zh": "基于 NetHack 学习环境的比赛",
+      "date": "2022-03",
+      "models": [
+        "AutoAscend (rule-based)"
+      ],
+      "result": "The winner, the rule-based bot AutoAscend, had a median score of about 5,300, and the best rule-based entries scored nearly three times the best neural ones. In over half a million evaluation games, no agent ascended.",
+      "result_zh": "冠军是基于规则的机器人 AutoAscend，得分中位数约 5,300；最好的规则型参赛作品得分接近最好的神经网络作品的三倍。在超过 50 万局评测中，没有任何智能体飞升。",
+      "why_not": "Scores are summarized over many games; no individual game has been submitted with its recording.",
+      "why_not_zh": "成绩是对大量对局的汇总，没有提交任何一局的录像。",
+      "url": "https://arxiv.org/abs/2203.11889"
+    }
+  ],
+  "links": [
     {
       "label": "NetHackWiki: Ascension",
       "url": "https://nethackwiki.com/wiki/Ascension"

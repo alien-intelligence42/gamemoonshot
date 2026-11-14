@@ -73,9 +73,12 @@
   "attempts": [
     {
       "name": "LLMs as Autonomous Spacecraft Operators in KSP",
+      "name_zh": "LLM 担任坎巴拉太空计划中的自主航天器操作员",
       "date": "2025-05",
       "result": "LLM agents fly orbital pursuit tasks in KSP.",
+      "result_zh": "LLM 智能体在 KSP 里执行轨道追踪任务。",
       "why_not": "The tasks are orbital pursuits with no launch or landing, so no milestone is reached.",
+      "why_not_zh": "任务都是轨道追踪，不涉及发射或着陆，所以没有达成里程碑。",
       "url": "https://arxiv.org/abs/2505.19896"
     }
   ],

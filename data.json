@@ -91,22 +91,30 @@
     {
      "name": "G.A.L.E.",
      "team": "Hobby project",
+     "team_zh": "业余项目",
      "result": "A PPO reinforcement-learning agent training against Margit, the Fell Omen.",
+     "result_zh": "用 PPO 强化学习训练智能体对战恶兆妖鬼玛尔基特。",
      "why_not": "No win against Margit reported yet.",
+     "why_not_zh": "还没有报告战胜玛尔基特。",
      "url": "https://github.com/mr-raichman/eldenring-ai"
     },
     {
      "name": "EldenRL",
      "team": "Hobby project",
+     "team_zh": "业余项目",
      "result": "A reinforcement-learning setup that trains agents against bosses in a fixed arena.",
+     "result_zh": "一套在固定竞技场里训练智能体打 Boss 的强化学习环境。",
      "why_not": "No boss defeated.",
+     "why_not_zh": "没有击败任何 Boss。",
      "url": "https://github.com/ocram444/EldenRL"
     },
     {
      "name": "3A-VLA",
      "date": "2026-02",
      "result": "Zero-shot transfer of a combat model to Elden Ring fights.",
+     "result_zh": "把战斗模型零样本迁移到《艾尔登法环》的战斗中。",
      "why_not": "Scores how often attacks land, not bosses beaten.",
+     "why_not_zh": "只统计攻击命中率，没有统计击败了哪些 Boss。",
      "url": "https://arxiv.org/abs/2602.02212"
     }
    ],
@@ -213,8 +221,11 @@
     {
      "name": "CyberpunkAgent",
      "team": "Hobby project",
+     "team_zh": "业余项目",
      "result": "An LLM agent that plays through a mod exposing the game state.",
+     "result_zh": "一个通过模组读取游戏状态来玩游戏的 LLM 智能体。",
      "why_not": "No missions reported.",
+     "why_not_zh": "没有报告完成任何任务。",
      "url": "https://github.com/Oli97430/CyberpunkAgent"
     },
     {
@@ -222,7 +233,9 @@
      "team": "NVIDIA",
      "date": "2026-01",
      "result": "A generalist model that outputs gamepad actions, trained across many games. Press coverage says it was shown playing Cyberpunk 2077.",
+     "result_zh": "一个在大量游戏上训练、直接输出手柄操作的通用模型。媒体报道说演示中玩了《赛博朋克 2077》。",
      "why_not": "The paper doesn't name Cyberpunk 2077 or report any mission.",
+     "why_not_zh": "论文没有提到《赛博朋克 2077》，也没有报告完成任何任务。",
      "url": "https://arxiv.org/abs/2601.02427"
     }
    ],
@@ -329,17 +342,22 @@
      "name": "GTAGym / GTAVBench",
      "date": "2026-11",
      "result": "A benchmark of GTA V story sub-tasks.",
+     "result_zh": "一个由《GTA V》剧情子任务组成的基准。",
      "why_not": "Scores sub-tasks, not whole missions; no mission pass is reported.",
+     "why_not_zh": "只给子任务打分，不是完整任务；没有报告通过任何任务。",
      "url": "https://arxiv.org/abs/2611.13028"
     },
     {
      "name": "WANTED",
      "team": "Hobby project",
+     "team_zh": "业余项目",
      "models": [
       "Claude"
      ],
      "result": "A Claude agent that plays through a mod exposing the game state.",
+     "result_zh": "一个通过模组读取游戏状态来玩游戏的 Claude 智能体。",
      "why_not": "No story mission passed yet.",
+     "why_not_zh": "还没有通过任何剧情任务。",
      "url": "https://github.com/devzer0x/wanted"
     }
    ],
@@ -499,6 +517,7 @@
    "attempts": [
     {
      "name": "VARP (Vision Action Role-Playing agent)",
+     "name_zh": "VARP（视觉动作角色扮演智能体）",
      "team": "Peng Chen, Pi Bu, Jun Song, Yuan Gao, Bo Zheng",
      "date": "2024-09",
      "models": [
@@ -507,11 +526,14 @@
       "Gemini 1.5 Pro"
      ],
      "result": "Screenshots in, keyboard and mouse out, with the game paused in photo mode while the model thinks. On 12 short Chapter 1 tasks, mostly fights, it wins about 90% of easy and medium fights. Against Bullguard it wins 20% of tries, a little above novice human players (15.63%). Walking to Bullguard within five minutes fails without human-guided examples and succeeds 40% of the time with them.",
+     "result_zh": "输入截图，输出键盘鼠标操作；模型思考时用拍照模式暂停游戏。在第一章的 12 个短任务（大多是战斗）里，简单和中等难度的战斗胜率约 90%。对牯护院（Bullguard）的胜率是 20%，略高于新手玩家的 15.63%。五分钟内走到牯护院的任务，没有人类示范时失败，有示范时成功率 40%。",
      "why_not": "Single fights and short tasks inside Chapter 1, five tries each. No chapter was finished, so no milestone is reached.",
+     "why_not_zh": "只测试第一章里的单场战斗和短任务，每项试 5 次。没有打完任何一章，所以没有达成里程碑。",
      "url": "https://arxiv.org/abs/2409.12889",
      "links": [
       {
        "label": "Project page",
+       "label_zh": "项目主页",
        "url": "https://varp-agent.github.io/"
       }
      ]
@@ -519,16 +541,20 @@
     {
      "name": "CombatVLA",
      "team": "Alibaba Group (ICCV 2025)",
+     "team_zh": "阿里巴巴集团（ICCV 2025）",
      "date": "2025-03",
      "models": [
       "CombatVLA-3B (Qwen2.5-VL-3B)"
      ],
      "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested on 10 Wukong fights, from wolf guards up to Bullguard, Wandering Wight and Guangzhi, plus 3 Sekiro fights. It takes 1.85 s per decision against 90 s for VARP, and the authors report higher success than human players on their tasks.",
+     "result_zh": "一个专为战斗训练的小型视觉-语言-动作模型：输入游戏画面，输出键盘鼠标操作，思考时暂停游戏。测试了 10 场悟空战斗（从狼族小妖到牯护院、幽魂和广智），外加 3 场只狼战斗。每次决策用 1.85 秒，VARP 要 90 秒；作者称它在这些任务上的成功率高于人类玩家。",
      "why_not": "Isolated fights only. No chapter was finished.",
+     "why_not_zh": "只打单场战斗，没有打完任何一章。",
      "url": "https://arxiv.org/abs/2503.09527",
      "links": [
       {
        "label": "Project page",
+       "label_zh": "项目主页",
        "url": "https://combatvla.github.io/"
       }
      ]
@@ -612,16 +638,20 @@
     {
      "name": "CombatVLA",
      "team": "Alibaba Group (ICCV 2025)",
+     "team_zh": "阿里巴巴集团（ICCV 2025）",
      "date": "2025-03",
      "models": [
       "CombatVLA-3B (Qwen2.5-VL-3B)"
      ],
      "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested zero-shot on three Sekiro fights, the hardest being the mini-boss Shigenori Yamauchi, alongside 10 Black Myth: Wukong fights.",
+     "result_zh": "一个专为战斗训练的小型视觉-语言-动作模型：输入游戏画面，输出键盘鼠标操作，思考时暂停游戏。零样本测试了三场只狼战斗，最难的是精英敌人山内典膳（Shigenori Yamauchi），另有 10 场《黑神话：悟空》战斗。",
      "why_not": "Isolated fights. Shigenori Yamauchi is a mini-boss, not one of this board's bosses, and no story progress is reported.",
+     "why_not_zh": "只打单场战斗。山内典膳是精英敌人，不在本榜的 Boss 列表里，也没有报告剧情进度。",
      "url": "https://arxiv.org/abs/2503.09527",
      "links": [
       {
        "label": "Project page",
+       "label_zh": "项目主页",
        "url": "https://combatvla.github.io/"
       }
      ]
@@ -762,7 +792,7 @@
     "card": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Global-Header_Image-Tile_MC-Java-Bedrock_570x321.jpg",
     "banner": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Hero-Image_Vanilla_Standard_1200x675.jpg"
    },
-   "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
+   "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen. The only clear so far, by four Gemini agents, never looked at the screen: they read the game state and acted through the Mineflayer bot API. The furthest any screen-watching agent has got is GPT-6 Astra, which reached the blaze rods.",
    "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
    "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
    "milestones": [
@@ -841,22 +871,60 @@
      "source": "https://www.speedrun.com/mc/runs/y44238ky"
     }
    ],
+   "attempts": [
+    {
+     "name": "Voyager",
+     "team": "NVIDIA, Caltech, UT Austin, Stanford and UW–Madison",
+     "team_zh": "英伟达、加州理工学院、得克萨斯大学奥斯汀分校、斯坦福大学、威斯康星大学麦迪逊分校",
+     "date": "2023-05",
+     "models": [
+      "GPT-4",
+      "GPT-3.5"
+     ],
+     "result": "A GPT-4 agent that reads the world as text and writes JavaScript skills for the Mineflayer bot API, building up a skill library. Within 160 prompting rounds it reached iron tools in all 3 trials and a diamond tool in 1 of 3. In a fresh world, reusing its skills, it made a diamond pickaxe in about 19 rounds.",
+     "result_zh": "一个 GPT-4 智能体：以文本形式读取世界，为 Mineflayer 机器人 API 编写 JavaScript 技能，逐步积累技能库。在 160 轮提示之内，3 次试验全部做出铁制工具，其中 1 次做出钻石工具。在新世界里复用已学技能，约 19 轮就做出了钻石镐。",
+     "why_not": "The setup uses cheat commands: it is handed a crafting table, a furnace and a replacement iron pickaxe with /give, keeps its inventory on death and plays on Peaceful. Mineflayer itself would be fine in the Harness track.",
+     "why_not_zh": "运行设置用了作弊指令：用 /give 直接给它工作台、熔炉和替换的铁镐，死亡不掉落物品，并且在和平难度下进行。单用 Mineflayer 本身是可以进工具辅助赛道的。",
+     "url": "https://arxiv.org/abs/2305.16291",
+     "links": [
+      {
+       "label": "Project page",
+       "label_zh": "项目主页",
+       "url": "https://voyager.minedojo.org/"
+      },
+      {
+       "label": "Code",
+       "label_zh": "代码",
+       "url": "https://github.com/MineDojo/Voyager"
+      }
+     ]
+    },
+    {
+     "name": "DreamerV3",
+     "team": "Google DeepMind and University of Toronto (Nature 2025)",
+     "team_zh": "Google DeepMind 与多伦多大学（Nature 2025）",
+     "date": "2023-01",
+     "models": [
+      "DreamerV3 (world-model RL, no human data)"
+     ],
+     "result": "A reinforcement-learning agent with a learned world model, trained from scratch without human data. It sees a 64×64 image plus its inventory and chooses among 25 actions. It was the first agent to collect diamonds this way: across 40 training runs, 50 of its 30-minute episodes ended with diamonds.",
+     "result_zh": "一个带有学习型世界模型的强化学习智能体，从零开始训练，不用任何人类数据。它看到 64×64 的画面和物品栏，从 25 个动作中选择。它是第一个以这种方式采到钻石的智能体：40 次训练中，共有 50 个 30 分钟的回合采到了钻石。",
+     "why_not": "Blocks break 100 times faster than normal, crafting and smelting are single actions instead of the crafting menu, and it runs Minecraft 1.11.2, which predates most of the advancements used as milestones here.",
+     "why_not_zh": "方块的破坏速度是正常的 100 倍，合成和熔炼是一步完成的动作而不是通过合成界面，而且用的是 Minecraft 1.11.2，比本榜用作里程碑的大部分进度都早。",
+     "url": "https://arxiv.org/abs/2301.04104",
+     "links": [
+      {
+       "label": "Project page with uncut videos",
+       "label_zh": "项目主页（含未剪辑视频）",
+       "url": "https://danijar.com/project/dreamerv3/"
+      }
+     ]
+    }
+   ],
    "links": [
     {
      "label": "Minecraft Wiki: Advancements",
      "url": "https://minecraft.wiki/w/Advancement"
-    },
-    {
-     "label": "VPT (OpenAI, 2022)",
-     "url": "https://openai.com/index/vpt"
-    },
-    {
-     "label": "Voyager (2023)",
-     "url": "https://arxiv.org/abs/2305.16291"
-    },
-    {
-     "label": "DreamerV3 (diamonds from scratch)",
-     "url": "https://danijar.com/project/dreamerv3/"
     }
    ]
   },
@@ -1039,11 +1107,14 @@
      "name": "CivBench (Civ VI)",
      "date": "2026-09",
      "result": "LLM agents playing through an MCP server won 3 science victories in 23 games on Prince and King difficulty, at Quick speed.",
+     "result_zh": "通过 MCP 服务器玩游戏的 LLM 智能体，在王子和国王难度、快速模式下，23 局里赢了 3 次科技胜利。",
      "why_not": "This board requires Deity difficulty at Standard speed.",
+     "why_not_zh": "本榜要求神级难度、标准速度。",
      "url": "https://arxiv.org/abs/2609.02459",
      "links": [
       {
        "label": "civ6-mcp (the MCP server)",
+       "label_zh": "civ6-mcp（所用的 MCP 服务器）",
        "url": "https://github.com/lmwilki/civ6-mcp"
       }
      ]
@@ -1155,32 +1226,50 @@
       "GPT-5.6 Sol"
      ],
      "result": "Launched a rocket after about 13.5 hours of game time, driving the game through a harness. Self-reported, with a timelapse video.",
+     "result_zh": "通过工具框架操作游戏，约 13.5 小时游戏时间后发射了火箭。作者自述，附延时录像。",
      "why_not": "Played in peaceful mode with enemies switched off. This board requires the Default map preset with enemies on.",
+     "why_not_zh": "在和平模式下进行，敌人被关闭。本榜要求默认地图预设并开启敌人。",
      "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
      "links": [
       {
        "label": "Timelapse",
+       "label_zh": "延时录像",
        "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs"
       },
       {
        "label": "Hacker News discussion",
+       "label_zh": "Hacker News 讨论",
        "url": "https://news.ycombinator.com/item?id=50318871"
       }
      ]
     },
     {
      "name": "Factorio Learning Environment",
+     "name_zh": "Factorio Learning Environment（异星工厂学习环境）",
      "date": "2025-03",
      "result": "A benchmark that drives Factorio through a code API. LLM agents stall before complex automation.",
+     "result_zh": "一个通过代码 API 操作《异星工厂》的基准。LLM 智能体在复杂自动化之前就卡住了。",
      "why_not": "Reports benchmark scores, not a run on this board's settings.",
+     "why_not_zh": "报告的是基准分数，不是按本榜设置进行的一次完整运行。",
      "url": "https://arxiv.org/abs/2503.09617"
+    },
+    {
+     "name": "Claude Code plays Factorio",
+     "name_zh": "Claude Code 玩《异星工厂》",
+     "team": "Ryan Madden and Sam Corzine",
+     "team_zh": "Ryan Madden 与 Sam Corzine",
+     "date": "2026-04",
+     "models": [
+      "Claude (Claude Code)"
+     ],
+     "result": "Claude Code played through a custom command-line tool that sends Lua over RCON, with no screenshots. Over two runs it powered labs with boilers and steam engines, made red and green science, and was about halfway through researching Automation 2 when the authors stopped the second run.",
+     "result_zh": "Claude Code 通过一个自制命令行工具玩游戏，工具经 RCON 发送 Lua 指令，不看截图。两轮运行中，它用锅炉和蒸汽机给研究中心供电，生产了红、绿两种科技包；作者停止第二轮时，「自动化 2」研究进行到一半左右。",
+     "why_not": "The tool let it reach anything without walking and mine with no delay, which the authors call cheating. Map settings, times and video are not given.",
+     "why_not_zh": "这个工具让它不用走路就能操作任何东西，采矿也没有延迟，作者自己也称之为作弊。没有给出地图设置、用时和录像。",
+     "url": "https://ryanmadden.net/claude-plays-factorio/"
     }
    ],
    "links": [
-    {
-     "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
-     "url": "https://ryanmadden.net/claude-plays-factorio/"
-    },
     {
      "label": "Factorio wiki: Technologies",
      "url": "https://wiki.factorio.com/Technologies"
@@ -1262,9 +1351,12 @@
    "attempts": [
     {
      "name": "LLMs as Autonomous Spacecraft Operators in KSP",
+     "name_zh": "LLM 担任坎巴拉太空计划中的自主航天器操作员",
      "date": "2025-05",
      "result": "LLM agents fly orbital pursuit tasks in KSP.",
+     "result_zh": "LLM 智能体在 KSP 里执行轨道追踪任务。",
      "why_not": "The tasks are orbital pursuits with no launch or landing, so no milestone is reached.",
+     "why_not_zh": "任务都是轨道追踪，不涉及发射或着陆，所以没有达成里程碑。",
      "url": "https://arxiv.org/abs/2505.19896"
     }
    ],
@@ -1360,11 +1452,46 @@
      "source": "https://www.speedrun.com/nethack/runs/z5r62kdy"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "BALROG leaderboard",
-     "url": "https://balrogai.com/"
+     "name": "BALROG",
+     "team": "UCL AI Centre and others (ICLR 2025)",
+     "team_zh": "伦敦大学学院 AI 中心等（ICLR 2025）",
+     "date": "2024-11",
+     "models": [
+      "GPT-6 Astra Max",
+      "Claude Opus 5 Max",
+      "Gemini 3 Pro"
+     ],
+     "result": "LLM agents play NetHack as text, zero-shot. Progress is scored as the chance that a human who reached the same dungeon or experience level went on to win. The leaderboard's best is GPT-6 Astra Max at 13.2% average progression; when the paper came out the best was o1-preview at about 1.5%.",
+     "result_zh": "LLM 智能体以文本形式零样本玩 NetHack。进度的算法是：到达同样地牢层数或经验等级的人类玩家最终获胜的概率。排行榜上最好的是 GPT-6 Astra Max，平均进度 13.2%；论文发表时最好的是 o1-preview，约 1.5%。",
+     "why_not": "An average over runs on a probability scale, not the milestones of a single run.",
+     "why_not_zh": "这是多局在一个概率刻度上的平均值，不是单局达成的里程碑。",
+     "url": "https://arxiv.org/abs/2411.13543",
+     "links": [
+      {
+       "label": "Leaderboard",
+       "url": "https://balrogai.com/"
+      }
+     ]
     },
+    {
+     "name": "NetHack Challenge (NeurIPS 2021)",
+     "name_zh": "NetHack 挑战赛（NeurIPS 2021）",
+     "team": "Competition on the NetHack Learning Environment",
+     "team_zh": "基于 NetHack 学习环境的比赛",
+     "date": "2022-03",
+     "models": [
+      "AutoAscend (rule-based)"
+     ],
+     "result": "The winner, the rule-based bot AutoAscend, had a median score of about 5,300, and the best rule-based entries scored nearly three times the best neural ones. In over half a million evaluation games, no agent ascended.",
+     "result_zh": "冠军是基于规则的机器人 AutoAscend，得分中位数约 5,300；最好的规则型参赛作品得分接近最好的神经网络作品的三倍。在超过 50 万局评测中，没有任何智能体飞升。",
+     "why_not": "Scores are summarized over many games; no individual game has been submitted with its recording.",
+     "why_not_zh": "成绩是对大量对局的汇总，没有提交任何一局的录像。",
+     "url": "https://arxiv.org/abs/2203.11889"
+    }
+   ],
+   "links": [
     {
      "label": "NetHackWiki: Ascension",
      "url": "https://nethackwiki.com/wiki/Ascension"
@@ -1417,14 +1544,47 @@
      "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "Epoch AI: SpireClimb results",
-     "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
+     "name": "SpireBench",
+     "team": "Scott C. Lowe (Vector Institute) and Sander W. Keemink (Radboud University)",
+     "team_zh": "Scott C. Lowe（Vector 研究所）与 Sander W. Keemink（拉德堡德大学）",
+     "date": "2026-10",
+     "models": [
+      "Claude Fable 5.1",
+      "GPT-6 Astra",
+      "Claude Opus 5",
+      "GPT-5.6 Sol"
+     ],
+     "result": "Twenty LLMs play the Ironclad at Ascension 20 through a mod that sends the game state as text, 10 runs each on held-out seeds. 4 of the 200 runs beat the Act 3 boss: Claude Fable 5.1 twice, GPT-6 Astra and GPT-5.6 Sol once each, and the Sol run went on to kill the Heart. For comparison, human players average 0.73 acts cleared and the expert Baalorlord 2.98.",
+     "result_zh": "20 个 LLM 通过一个把游戏状态转成文本的模组，用铁甲战士在进阶 20 下游玩，每个模型在预留种子上跑 10 局。200 局中有 4 局击败了第三幕 Boss：Claude Fable 5.1 两次，GPT-6 Astra 和 GPT-5.6 Sol 各一次，其中 Sol 那局还击杀了腐化之心。作为对比，人类玩家平均通过 0.73 幕，高手 Baalorlord 平均 2.98 幕。",
+     "why_not": "Those four winning runs would rank here, but none is public: the runs were logged to Weights & Biases with no public link.",
+     "why_not_zh": "这 4 局胜利本可以上榜，但都没有公开：运行记录存在 Weights & Biases 上，没有公开链接。",
+     "url": "https://arxiv.org/abs/2610.12596"
     },
     {
-     "label": "SpireBench",
-     "url": "https://papers.cool/arxiv/2610.12596"
+     "name": "SpireClimb",
+     "team": "Epoch AI (Benjamin Ou, Simon Chen)",
+     "team_zh": "Epoch AI（Benjamin Ou、Simon Chen）",
+     "date": "2026-10",
+     "models": [
+      "GPT-6 Astra",
+      "GPT-6.1 Sol",
+      "Claude Opus 5.5",
+      "Claude Sonnet 5.5"
+     ],
+     "result": "Models play the normal game from screenshots, 15 single attempts per model, character and game. At Ascension 0, GPT-6 Astra wins 98% of runs, GPT-6.1 Sol 97% and Claude Opus 5.5 93%. At Ascension 20 with the Heart required, the best is GPT-6.1 Sol at 20%. Slay the Spire 2 is tested too.",
+     "result_zh": "模型看截图玩原版游戏，每个模型、每个角色、每款游戏各尝试 15 次。进阶 0 下，GPT-6 Astra 胜率 98%，GPT-6.1 Sol 97%，Claude Opus 5.5 93%。进阶 20 且要求击杀腐化之心时，最好的是 GPT-6.1 Sol，20%。同时也测试了《杀戮尖塔 2》。",
+     "why_not": "Reports win rates over many runs; no single run is published with a log or video to check.",
+     "why_not_zh": "只报告多局的胜率，没有公开任何一局可供核对的日志或录像。",
+     "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel",
+     "links": [
+      {
+       "label": "Benchmark page",
+       "label_zh": "基准主页",
+       "url": "https://epoch.ai/benchmarks/spireclimb"
+      }
+     ]
     }
    ]
   },
@@ -1801,11 +1961,14 @@
      "name": "VideoGameBench",
      "date": "2025-05",
      "result": "Vision-language models played Link's Awakening DX in one fixed harness and scored 0%.",
+     "result_zh": "视觉-语言模型在同一个固定框架下玩《塞尔达传说：织梦岛 DX》，得分 0%。",
      "why_not": "No dungeon cleared.",
+     "why_not_zh": "没有通关任何一个迷宫。",
      "url": "https://www.vgbench.com/",
      "links": [
       {
        "label": "Paper",
+       "label_zh": "论文",
        "url": "https://arxiv.org/abs/2505.18134"
       }
      ]
@@ -1826,7 +1989,7 @@
     "#5a1d1d"
    ],
    "skin": "platformer",
-   "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
+   "description": "Short, real-time and deterministic. LLM benchmarks score how far Mario travels, not levels cleared; a full 8-4 clear by a general agent has not been reported.",
    "clear_condition": "Defeat Bowser in World 8-4.",
    "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",
    "milestones": [
@@ -1878,9 +2041,20 @@
      "source": "https://www.speedrun.com/smb1/runs/ylw8epxz"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "lmgame-bench",
+     "name": "lmgame-Bench",
+     "team": "UC San Diego, MBZUAI and UC Berkeley",
+     "team_zh": "加州大学圣地亚哥分校、MBZUAI、加州大学伯克利分校",
+     "date": "2025-05",
+     "models": [
+      "o3",
+      "GPT-4.1"
+     ],
+     "result": "Scores how far Mario travels in total across levels before losing three lives. The best was o3 with a perception harness that turns the screen into text, at 3,445 units in a single run; without the harness GPT-4.1 averaged 1,991, against 987 for random play.",
+     "result_zh": "以马里奥在丢掉三条命之前累计前进的水平距离计分。最好的是 o3，配合一个把画面转成文字的感知框架，单局 3,445 单位；不用框架时 GPT-4.1 平均 1,991，随机操作是 987。",
+     "why_not": "The paper reports distance only, not which levels or worlds were cleared.",
+     "why_not_zh": "论文只报告距离，没有说通过了哪些关卡或世界。",
      "url": "https://arxiv.org/abs/2505.15146"
     }
    ]
@@ -1941,6 +2115,8 @@
    ],
    "method": {
     "summary": "Claude Opus 5.5 driving the game through a Lua mod and an MCP server whose policy is to expose only what a player could see. Beat the Netherbrain on its 12th attempt and played the ending.",
+    "interface": "Game state from a Lua mod, limited to what a player could see → MCP tool calls",
+    "interface_zh": "通过 Lua 模组读取游戏状态（仅限玩家可见的信息）→ MCP 工具调用",
     "models": [
      "Claude Opus 5.5"
     ],
@@ -1994,6 +2170,8 @@
    ],
    "method": {
     "summary": "Vals AI Time Horizon Index: a 30-rung KSP mission ladder with a 120-hour budget, run in the OpenCode harness and scored from telemetry. Rung 2 is a Mun landing and safe return of the same Kerbal. Vals reports Claude Opus 5.5 verified all 27 missions through the Eve landing (91.33%).",
+    "interface": "Coding-agent harness (OpenCode); how it sees and controls the game isn't stated",
+    "interface_zh": "编程智能体框架（OpenCode）；如何观察和操控游戏未说明",
     "models": [
      "Claude Opus 5.5"
     ],
@@ -2001,6 +2179,67 @@
    },
    "hardware": {},
    "notes": "Game version and mode are not stated, and no per-rung timing is published, so this run is not plotted. The Mun landing and return is claimed because Vals reports every mission up to rung 27 verified."
+  },
+  {
+   "id": "2022-06-openai-vpt-minecraft",
+   "game": "minecraft",
+   "agent": "VPT (Video PreTraining) + RL fine-tuning",
+   "team": "OpenAI",
+   "track": "pixels",
+   "status": "curated",
+   "submitted_at": "2022-06-23",
+   "game_version": "Not stated in the paper; the released code uses MineRL 1.0 (Minecraft 1.16.5)",
+   "source": "https://arxiv.org/abs/2206.11795",
+   "source_type": "author",
+   "extra_sources": [
+    {
+     "label": "OpenAI blog post",
+     "url": "https://openai.com/index/vpt"
+    }
+   ],
+   "videos": [],
+   "milestones": [
+    {
+     "id": "crafting-table"
+    },
+    {
+     "id": "stone-age"
+    },
+    {
+     "id": "getting-an-upgrade"
+    },
+    {
+     "id": "acquire-hardware"
+    },
+    {
+     "id": "isnt-it-iron-pick"
+    },
+    {
+     "id": "diamonds",
+     "elapsed": "0:10:00",
+     "approx": true
+    }
+   ],
+   "vendor": "openai",
+   "method": {
+    "summary": "A model pretrained on 70,000 hours of unlabeled Minecraft video (actions inferred by an inverse dynamics model), then fine-tuned with reinforcement learning toward a diamond pickaxe. With RL it makes an iron pickaxe in over 80% of 10-minute episodes, collects diamonds in almost 20% and crafts a diamond pickaxe in 2.5%.",
+    "interface": "Screen pixels → keyboard and mouse at 20 Hz",
+    "interface_zh": "屏幕像素 → 键盘鼠标（20 Hz）",
+    "models": [
+     "VPT foundation model (~0.5B parameters) with RL fine-tuning"
+    ],
+    "observation": "Raw pixels with the HUD, 128x128 (rendered at 640x360)",
+    "action": "Full keyboard and mouse at 20 Hz, crafting through the normal crafting GUI",
+    "human_intervention": "none reported",
+    "game_speed": "real-time (20 Hz)",
+    "restarts": "Fresh survival world each episode; on death the agent drops its items and respawns, and the episode continues",
+    "paper": "https://arxiv.org/abs/2206.11795",
+    "code": "https://github.com/openai/Video-Pre-Training"
+   },
+   "hardware": {
+    "inference": "OpenAI internal"
+   },
+   "notes": "The paper reports rates over many 10-minute episodes; the milestones are those of its best episodes, where diamonds were collected (iron pickaxe, smelted iron and stone tools are required to mine diamonds). Each episode lasts 10 minutes, so 0:10:00 is an upper bound. Difficulty and seed are not stated. No full-episode video has been checked."
   },
   {
    "id": "2026-09-vals-gpt-6-astra-minecraft",
@@ -2027,6 +2266,18 @@
    ],
    "milestones": [
     {
+     "id": "crafting-table"
+    },
+    {
+     "id": "stone-age"
+    },
+    {
+     "id": "getting-an-upgrade"
+    },
+    {
+     "id": "acquire-hardware"
+    },
+    {
      "id": "we-need-to-go-deeper"
     },
     {
@@ -2040,6 +2291,8 @@
    ],
    "method": {
     "summary": "General computer-use agent (screen in, mouse and keyboard out). Collected 6 blaze rods and 3 ender pearls; stopped after 141 hours without reaching the dragon.",
+    "interface": "Screenshots → keyboard and mouse (computer use)",
+    "interface_zh": "截图 → 键盘鼠标（计算机操作）",
     "models": [
      "GPT-6 Astra"
     ],
@@ -2048,7 +2301,7 @@
     "human_intervention": "unknown"
    },
    "hardware": {},
-   "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
+   "notes": "Milestones up to smelting iron are claimed because Vals AI’s 3-hour upload shows the agent building a Nether portal, and in practice its obsidian takes iron: a bucket to cast it from lava, or a diamond pickaxe, which needs an iron pickaxe first. The iron pickaxe and diamonds are not claimed, since a bucket is enough. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
   },
   {
    "id": "2026-10-deepmind-gemini-minecraft",
@@ -2131,6 +2384,8 @@
    ],
    "method": {
     "summary": "Four Gemini agents controlling bots through Mineflayer (JavaScript API), Easy difficulty, Minecraft 1.20.4. Killed the Ender Dragon in a single run after 27h14m and 605 deaths.",
+    "interface": "Game state as data from the Mineflayer bot API → bot commands; never sees the screen",
+    "interface_zh": "通过 Mineflayer 机器人 API 读取结构化游戏状态 → 机器人指令；完全不看画面",
     "models": [
      "Gemini 4 Argon"
     ],
@@ -2220,6 +2475,8 @@
    ],
    "method": {
     "summary": "GPT-6 Astra driven through Codex with a self-built harness and open access to the NetHack wiki and spoilers. Ascended a Dwarf Valkyrie in 37,140 turns on the third attempt; a Hardfought dumplog is published.",
+    "interface": "Text terminal through a self-built Codex harness, with the wiki and spoilers open",
+    "interface_zh": "通过自建的 Codex 框架操作文字终端，可查阅 wiki 和攻略",
     "models": [
      "GPT-6 Astra"
     ],
@@ -2336,6 +2593,8 @@
    ],
    "method": {
     "summary": "GPT-5 in the GPT Plays Pokémon harness; beat Red in 9,517 steps (o3: 27,040).",
+    "interface": "Screenshots plus harness tools (GPT Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（GPT Plays Pokémon）→ 按键",
     "models": [
      "GPT-5"
     ],
@@ -2459,6 +2718,8 @@
    ],
    "method": {
     "summary": "Gemini 3 Pro in the Gemini Plays Pokémon harness: 16 badges, Elite Four, Lance and Red in about 17 days. Gemini 2.5 Pro in the same harness stalled at 4 badges.",
+    "interface": "Screenshots plus harness tools (Gemini Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Gemini Plays Pokémon）→ 按键",
     "models": [
      "Gemini 3 Pro"
     ],
@@ -2486,6 +2747,8 @@
    ],
    "method": {
     "summary": "NeurIPS 2025 PokeAgent speedrun-track winner: LLM-written scripted policies distilled into a neural network, then RL fine-tuning. Reached the first gym badge in 40:13.",
+    "interface": "Scripted policies written by LLMs, distilled into a neural network → button presses",
+    "interface_zh": "由 LLM 编写的脚本策略蒸馏成神经网络 → 按键",
     "models": [
      "LLM-generated policies + distilled neural policy"
     ],
@@ -2545,6 +2808,8 @@
    ],
    "method": {
     "summary": "Claude 3.7 Sonnet with a tool harness, streamed on Twitch. Reached 3 badges.",
+    "interface": "Screenshots plus harness tools (Claude Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Claude Plays Pokémon）→ 按键",
     "models": [
      "Claude 3.7 Sonnet"
     ],
@@ -2645,6 +2910,8 @@
    ],
    "method": {
     "summary": "Gemini 2.5 Pro playing Pokémon Blue through a custom harness (including a minimap and pathfinding help). First completion May 2, 2025 after about 813 hours; a second run on June 9, 2025 finished in about 406 hours.",
+    "interface": "Screenshots plus a minimap and pathfinding help → button presses",
+    "interface_zh": "截图加小地图和寻路辅助 → 按键",
     "models": [
      "Gemini 2.5 Pro"
     ],
@@ -2742,6 +3009,8 @@
    ],
    "method": {
     "summary": "GPT-5 in the GPT Plays Pokémon harness; finished Pokémon Red in 6,470 steps (the same harness with o3 took 18,184 steps).",
+    "interface": "Screenshots plus harness tools (GPT Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（GPT Plays Pokémon）→ 按键",
     "models": [
      "GPT-5"
     ],
@@ -2825,6 +3094,8 @@
    ],
    "method": {
     "summary": "Claude Opus 4.5 in the Claude Plays Pokémon harness. Collected all 8 badges, then stalled on the Victory Road boulder puzzles (~230k steps).",
+    "interface": "Screenshots plus harness tools (Claude Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Claude Plays Pokémon）→ 按键",
     "models": [
      "Claude Opus 4.5"
     ],
@@ -2926,6 +3197,8 @@
    ],
    "method": {
     "summary": "Claude Opus 4.7 with a deliberately minimal harness plus zoom and screenshot-memory tools; beat Pokémon Red.",
+    "interface": "Screenshots in a deliberately minimal harness, with zoom and screenshot-memory tools → button presses",
+    "interface_zh": "截图，配一个刻意精简的框架（只有放大和截图记忆工具）→ 按键",
     "models": [
      "Claude Opus 4.7"
     ],
@@ -2978,6 +3251,8 @@
    ],
    "method": {
     "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Played through the Chapter 1 story missions, ending with Eastward Bound.",
+    "interface": "Screenshots → keyboard and mouse",
+    "interface_zh": "截图 → 键盘鼠标",
     "models": [
      "GPT-4V",
      "GPT-4o"

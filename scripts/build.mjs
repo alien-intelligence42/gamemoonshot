@@ -114,6 +114,13 @@ function validateGame(file, g) {
       requireFields(file, l, ["label"], `${at}.links[${j}].`);
       checkUrlField(file, l, "url", `${at}.links[${j}].url`, true);
     }
+    // Chinese text is optional, but the page falls back to English per field, so flag the gaps.
+    for (const k of ["result", "why_not"]) {
+      if (isStr(a[k]) && !isStr(a[`${k}_zh`])) warn(file, `${at} has "${k}" but no "${k}_zh" (Chinese text)`);
+    }
+    for (const k of Object.keys(a)) {
+      if (k.endsWith("_zh") && !isStr(a[k.slice(0, -3)])) err(file, `${at}.${k} has no English "${k.slice(0, -3)}" to translate`);
+    }
   }
   if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
@@ -176,6 +183,9 @@ function validateSubmission(file, s, gamesById) {
     err(file, `method.human_intervention is required (use "none" if there was none, "unknown" for curated)`);
   }
   for (const k of ["paper", "code", "project"]) checkUrlField(file, m, k, `method.${k}`);
+  // method.interface is the one-line "sees → acts" shown on the leaderboard row.
+  if (!isStr(m.interface) && !(isStr(m.observation) && isStr(m.action))) warn(file, `method.interface is missing (one line: what the agent sees → how it acts)`);
+  if (isStr(m.interface) && !isStr(m.interface_zh)) warn(file, `method.interface has no Chinese "interface_zh"`);
 
   const hw = s.hardware ?? {};
   if (!curated) {

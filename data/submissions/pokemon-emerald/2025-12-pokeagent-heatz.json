@@ -17,6 +17,8 @@
   ],
   "method": {
     "summary": "NeurIPS 2025 PokeAgent speedrun-track winner: LLM-written scripted policies distilled into a neural network, then RL fine-tuning. Reached the first gym badge in 40:13.",
+    "interface": "Scripted policies written by LLMs, distilled into a neural network → button presses",
+    "interface_zh": "由 LLM 编写的脚本策略蒸馏成神经网络 → 按键",
     "models": [
       "LLM-generated policies + distilled neural policy"
     ],

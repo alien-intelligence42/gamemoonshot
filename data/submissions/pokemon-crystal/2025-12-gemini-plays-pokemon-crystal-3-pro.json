@@ -113,6 +113,8 @@
   ],
   "method": {
     "summary": "Gemini 3 Pro in the Gemini Plays Pokémon harness: 16 badges, Elite Four, Lance and Red in about 17 days. Gemini 2.5 Pro in the same harness stalled at 4 badges.",
+    "interface": "Screenshots plus harness tools (Gemini Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Gemini Plays Pokémon）→ 按键",
     "models": [
       "Gemini 3 Pro"
     ],

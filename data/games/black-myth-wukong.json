@@ -61,6 +61,7 @@
   "attempts": [
     {
       "name": "VARP (Vision Action Role-Playing agent)",
+      "name_zh": "VARP（视觉动作角色扮演智能体）",
       "team": "Peng Chen, Pi Bu, Jun Song, Yuan Gao, Bo Zheng",
       "date": "2024-09",
       "models": [
@@ -69,11 +70,14 @@
         "Gemini 1.5 Pro"
       ],
       "result": "Screenshots in, keyboard and mouse out, with the game paused in photo mode while the model thinks. On 12 short Chapter 1 tasks, mostly fights, it wins about 90% of easy and medium fights. Against Bullguard it wins 20% of tries, a little above novice human players (15.63%). Walking to Bullguard within five minutes fails without human-guided examples and succeeds 40% of the time with them.",
+      "result_zh": "输入截图，输出键盘鼠标操作；模型思考时用拍照模式暂停游戏。在第一章的 12 个短任务（大多是战斗）里，简单和中等难度的战斗胜率约 90%。对牯护院（Bullguard）的胜率是 20%，略高于新手玩家的 15.63%。五分钟内走到牯护院的任务，没有人类示范时失败，有示范时成功率 40%。",
       "why_not": "Single fights and short tasks inside Chapter 1, five tries each. No chapter was finished, so no milestone is reached.",
+      "why_not_zh": "只测试第一章里的单场战斗和短任务，每项试 5 次。没有打完任何一章，所以没有达成里程碑。",
       "url": "https://arxiv.org/abs/2409.12889",
       "links": [
         {
           "label": "Project page",
+          "label_zh": "项目主页",
           "url": "https://varp-agent.github.io/"
         }
       ]
@@ -81,16 +85,20 @@
     {
       "name": "CombatVLA",
       "team": "Alibaba Group (ICCV 2025)",
+      "team_zh": "阿里巴巴集团（ICCV 2025）",
       "date": "2025-03",
       "models": [
         "CombatVLA-3B (Qwen2.5-VL-3B)"
       ],
       "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested on 10 Wukong fights, from wolf guards up to Bullguard, Wandering Wight and Guangzhi, plus 3 Sekiro fights. It takes 1.85 s per decision against 90 s for VARP, and the authors report higher success than human players on their tasks.",
+      "result_zh": "一个专为战斗训练的小型视觉-语言-动作模型：输入游戏画面，输出键盘鼠标操作，思考时暂停游戏。测试了 10 场悟空战斗（从狼族小妖到牯护院、幽魂和广智），外加 3 场只狼战斗。每次决策用 1.85 秒，VARP 要 90 秒；作者称它在这些任务上的成功率高于人类玩家。",
       "why_not": "Isolated fights only. No chapter was finished.",
+      "why_not_zh": "只打单场战斗，没有打完任何一章。",
       "url": "https://arxiv.org/abs/2503.09527",
       "links": [
         {
           "label": "Project page",
+          "label_zh": "项目主页",
           "url": "https://combatvla.github.io/"
         }
       ]

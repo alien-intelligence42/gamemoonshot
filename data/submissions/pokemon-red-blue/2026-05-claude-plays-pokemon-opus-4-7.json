@@ -91,6 +91,8 @@
   ],
   "method": {
     "summary": "Claude Opus 4.7 with a deliberately minimal harness plus zoom and screenshot-memory tools; beat Pokémon Red.",
+    "interface": "Screenshots in a deliberately minimal harness, with zoom and screenshot-memory tools → button presses",
+    "interface_zh": "截图，配一个刻意精简的框架（只有放大和截图记忆工具）→ 按键",
     "models": [
       "Claude Opus 4.7"
     ],

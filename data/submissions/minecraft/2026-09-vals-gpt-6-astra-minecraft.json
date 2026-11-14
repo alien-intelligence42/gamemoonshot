@@ -23,6 +23,18 @@
   ],
   "milestones": [
     {
+      "id": "crafting-table"
+    },
+    {
+      "id": "stone-age"
+    },
+    {
+      "id": "getting-an-upgrade"
+    },
+    {
+      "id": "acquire-hardware"
+    },
+    {
       "id": "we-need-to-go-deeper"
     },
     {
@@ -36,6 +48,8 @@
   ],
   "method": {
     "summary": "General computer-use agent (screen in, mouse and keyboard out). Collected 6 blaze rods and 3 ender pearls; stopped after 141 hours without reaching the dragon.",
+    "interface": "Screenshots → keyboard and mouse (computer use)",
+    "interface_zh": "截图 → 键盘鼠标（计算机操作）",
     "models": [
       "GPT-6 Astra"
     ],
@@ -44,5 +58,5 @@
     "human_intervention": "unknown"
   },
   "hardware": {},
-  "notes": "Only milestones the blaze rods logically require are claimed. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
+  "notes": "Milestones up to smelting iron are claimed because Vals AI’s 3-hour upload shows the agent building a Nether portal, and in practice its obsidian takes iron: a bucket to cast it from lava, or a diamond pickaxe, which needs an iron pickaxe first. The iron pickaxe and diamonds are not claimed, since a bucket is enough. Reported via press, not verified. The 141h time is when the run was stopped, so it is an upper bound for reaching the blaze rods."
 }

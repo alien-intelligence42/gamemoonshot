@@ -12,7 +12,7 @@
     "#5a1d1d"
   ],
   "skin": "platformer",
-  "description": "Short, real-time and deterministic. LLM benchmarks score progress within single levels; a full 8-4 clear by a general agent has not been reported.",
+  "description": "Short, real-time and deterministic. LLM benchmarks score how far Mario travels, not levels cleared; a full 8-4 clear by a general agent has not been reported.",
   "clear_condition": "Defeat Bowser in World 8-4.",
   "rules": "Unmodified ROM. Warp zones allowed (say so). Save states may not be used by the agent during the run.",
   "milestones": [
@@ -64,9 +64,20 @@
       "source": "https://www.speedrun.com/smb1/runs/ylw8epxz"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "lmgame-bench",
+      "name": "lmgame-Bench",
+      "team": "UC San Diego, MBZUAI and UC Berkeley",
+      "team_zh": "加州大学圣地亚哥分校、MBZUAI、加州大学伯克利分校",
+      "date": "2025-05",
+      "models": [
+        "o3",
+        "GPT-4.1"
+      ],
+      "result": "Scores how far Mario travels in total across levels before losing three lives. The best was o3 with a perception harness that turns the screen into text, at 3,445 units in a single run; without the harness GPT-4.1 averaged 1,991, against 987 for random play.",
+      "result_zh": "以马里奥在丢掉三条命之前累计前进的水平距离计分。最好的是 o3，配合一个把画面转成文字的感知框架，单局 3,445 单位；不用框架时 GPT-4.1 平均 1,991，随机操作是 987。",
+      "why_not": "The paper reports distance only, not which levels or worlds were cleared.",
+      "why_not_zh": "论文只报告距离，没有说通过了哪些关卡或世界。",
       "url": "https://arxiv.org/abs/2505.15146"
     }
   ]

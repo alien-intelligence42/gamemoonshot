@@ -89,32 +89,50 @@
         "GPT-5.6 Sol"
       ],
       "result": "Launched a rocket after about 13.5 hours of game time, driving the game through a harness. Self-reported, with a timelapse video.",
+      "result_zh": "通过工具框架操作游戏，约 13.5 小时游戏时间后发射了火箭。作者自述，附延时录像。",
       "why_not": "Played in peaceful mode with enemies switched off. This board requires the Default map preset with enemies on.",
+      "why_not_zh": "在和平模式下进行，敌人被关闭。本榜要求默认地图预设并开启敌人。",
       "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
       "links": [
         {
           "label": "Timelapse",
+          "label_zh": "延时录像",
           "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs"
         },
         {
           "label": "Hacker News discussion",
+          "label_zh": "Hacker News 讨论",
           "url": "https://news.ycombinator.com/item?id=50318871"
         }
       ]
     },
     {
       "name": "Factorio Learning Environment",
+      "name_zh": "Factorio Learning Environment（异星工厂学习环境）",
       "date": "2025-03",
       "result": "A benchmark that drives Factorio through a code API. LLM agents stall before complex automation.",
+      "result_zh": "一个通过代码 API 操作《异星工厂》的基准。LLM 智能体在复杂自动化之前就卡住了。",
       "why_not": "Reports benchmark scores, not a run on this board's settings.",
+      "why_not_zh": "报告的是基准分数，不是按本榜设置进行的一次完整运行。",
       "url": "https://arxiv.org/abs/2503.09617"
+    },
+    {
+      "name": "Claude Code plays Factorio",
+      "name_zh": "Claude Code 玩《异星工厂》",
+      "team": "Ryan Madden and Sam Corzine",
+      "team_zh": "Ryan Madden 与 Sam Corzine",
+      "date": "2026-04",
+      "models": [
+        "Claude (Claude Code)"
+      ],
+      "result": "Claude Code played through a custom command-line tool that sends Lua over RCON, with no screenshots. Over two runs it powered labs with boilers and steam engines, made red and green science, and was about halfway through researching Automation 2 when the authors stopped the second run.",
+      "result_zh": "Claude Code 通过一个自制命令行工具玩游戏，工具经 RCON 发送 Lua 指令，不看截图。两轮运行中，它用锅炉和蒸汽机给研究中心供电，生产了红、绿两种科技包；作者停止第二轮时，「自动化 2」研究进行到一半左右。",
+      "why_not": "The tool let it reach anything without walking and mine with no delay, which the authors call cheating. Map settings, times and video are not given.",
+      "why_not_zh": "这个工具让它不用走路就能操作任何东西，采矿也没有延迟，作者自己也称之为作弊。没有给出地图设置、用时和录像。",
+      "url": "https://ryanmadden.net/claude-plays-factorio/"
     }
   ],
   "links": [
-    {
-      "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
-      "url": "https://ryanmadden.net/claude-plays-factorio/"
-    },
     {
       "label": "Factorio wiki: Technologies",
       "url": "https://wiki.factorio.com/Technologies"

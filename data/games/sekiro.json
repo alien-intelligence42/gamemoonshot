@@ -75,16 +75,20 @@
     {
       "name": "CombatVLA",
       "team": "Alibaba Group (ICCV 2025)",
+      "team_zh": "阿里巴巴集团（ICCV 2025）",
       "date": "2025-03",
       "models": [
         "CombatVLA-3B (Qwen2.5-VL-3B)"
       ],
       "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested zero-shot on three Sekiro fights, the hardest being the mini-boss Shigenori Yamauchi, alongside 10 Black Myth: Wukong fights.",
+      "result_zh": "一个专为战斗训练的小型视觉-语言-动作模型：输入游戏画面，输出键盘鼠标操作，思考时暂停游戏。零样本测试了三场只狼战斗，最难的是精英敌人山内典膳（Shigenori Yamauchi），另有 10 场《黑神话：悟空》战斗。",
       "why_not": "Isolated fights. Shigenori Yamauchi is a mini-boss, not one of this board's bosses, and no story progress is reported.",
+      "why_not_zh": "只打单场战斗。山内典膳是精英敌人，不在本榜的 Boss 列表里，也没有报告剧情进度。",
       "url": "https://arxiv.org/abs/2503.09527",
       "links": [
         {
           "label": "Project page",
+          "label_zh": "项目主页",
           "url": "https://combatvla.github.io/"
         }
       ]

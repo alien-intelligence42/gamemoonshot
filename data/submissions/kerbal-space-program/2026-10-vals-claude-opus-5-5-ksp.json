@@ -37,6 +37,8 @@
   ],
   "method": {
     "summary": "Vals AI Time Horizon Index: a 30-rung KSP mission ladder with a 120-hour budget, run in the OpenCode harness and scored from telemetry. Rung 2 is a Mun landing and safe return of the same Kerbal. Vals reports Claude Opus 5.5 verified all 27 missions through the Eve landing (91.33%).",
+    "interface": "Coding-agent harness (OpenCode); how it sees and controls the game isn't stated",
+    "interface_zh": "编程智能体框架（OpenCode）；如何观察和操控游戏未说明",
     "models": [
       "Claude Opus 5.5"
     ],

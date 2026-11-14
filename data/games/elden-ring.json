@@ -88,22 +88,30 @@
     {
       "name": "G.A.L.E.",
       "team": "Hobby project",
+      "team_zh": "业余项目",
       "result": "A PPO reinforcement-learning agent training against Margit, the Fell Omen.",
+      "result_zh": "用 PPO 强化学习训练智能体对战恶兆妖鬼玛尔基特。",
       "why_not": "No win against Margit reported yet.",
+      "why_not_zh": "还没有报告战胜玛尔基特。",
       "url": "https://github.com/mr-raichman/eldenring-ai"
     },
     {
       "name": "EldenRL",
       "team": "Hobby project",
+      "team_zh": "业余项目",
       "result": "A reinforcement-learning setup that trains agents against bosses in a fixed arena.",
+      "result_zh": "一套在固定竞技场里训练智能体打 Boss 的强化学习环境。",
       "why_not": "No boss defeated.",
+      "why_not_zh": "没有击败任何 Boss。",
       "url": "https://github.com/ocram444/EldenRL"
     },
     {
       "name": "3A-VLA",
       "date": "2026-02",
       "result": "Zero-shot transfer of a combat model to Elden Ring fights.",
+      "result_zh": "把战斗模型零样本迁移到《艾尔登法环》的战斗中。",
       "why_not": "Scores how often attacks land, not bosses beaten.",
+      "why_not_zh": "只统计攻击命中率，没有统计击败了哪些 Boss。",
       "url": "https://arxiv.org/abs/2602.02212"
     }
   ],

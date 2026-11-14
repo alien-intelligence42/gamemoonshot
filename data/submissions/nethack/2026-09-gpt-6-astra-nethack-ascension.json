@@ -77,6 +77,8 @@
   ],
   "method": {
     "summary": "GPT-6 Astra driven through Codex with a self-built harness and open access to the NetHack wiki and spoilers. Ascended a Dwarf Valkyrie in 37,140 turns on the third attempt; a Hardfought dumplog is published.",
+    "interface": "Text terminal through a self-built Codex harness, with the wiki and spoilers open",
+    "interface_zh": "通过自建的 Codex 框架操作文字终端，可查阅 wiki 和攻略",
     "models": [
       "GPT-6 Astra"
     ],

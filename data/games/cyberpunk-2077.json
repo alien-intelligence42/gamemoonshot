@@ -94,8 +94,11 @@
     {
       "name": "CyberpunkAgent",
       "team": "Hobby project",
+      "team_zh": "业余项目",
       "result": "An LLM agent that plays through a mod exposing the game state.",
+      "result_zh": "一个通过模组读取游戏状态来玩游戏的 LLM 智能体。",
       "why_not": "No missions reported.",
+      "why_not_zh": "没有报告完成任何任务。",
       "url": "https://github.com/Oli97430/CyberpunkAgent"
     },
     {
@@ -103,7 +106,9 @@
       "team": "NVIDIA",
       "date": "2026-01",
       "result": "A generalist model that outputs gamepad actions, trained across many games. Press coverage says it was shown playing Cyberpunk 2077.",
+      "result_zh": "一个在大量游戏上训练、直接输出手柄操作的通用模型。媒体报道说演示中玩了《赛博朋克 2077》。",
       "why_not": "The paper doesn't name Cyberpunk 2077 or report any mission.",
+      "why_not_zh": "论文没有提到《赛博朋克 2077》，也没有报告完成任何任务。",
       "url": "https://arxiv.org/abs/2601.02427"
     }
   ],

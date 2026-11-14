@@ -9,7 +9,7 @@ const player = document.getElementById("player");
 // ---------- language ----------
 // English or Chinese, from the saved choice, else the browser language. L(en, zh) picks the string for the
 // current language; vocab below uses getters so it follows a switch without a reload. Game data
-// (titles, descriptions, milestones) stays in English.
+// (titles, descriptions, milestones) stays in English, except the Chinese "_zh" fields of attempts.
 const LANG_KEY = "moonshot-lang";
 let LANG = (() => {
   let l = null;
@@ -644,16 +644,25 @@ function runDetail(game, sc) {
 
 // Agent work on a game that isn't ranked: it reached no milestone, or ran outside the board's rules
 // (other settings, isolated fights, a different game mode). Shown under the leaderboard so the work is on
-// record without competing with ranked runs. Text comes from the game's "attempts" (English, like the rest
-// of the game data).
+// record without competing with ranked runs. Text comes from the game's "attempts"; unlike the rest of the
+// game data, each text field may carry a Chinese version in "<field>_zh", used when the page is in Chinese.
+const zh = (o, k) => (LANG === "zh" && o[`${k}_zh`]) || o[k];
+// One line on how a run plays: what the agent sees → how it acts. Runs on the same board can differ a
+// lot here (a bot API that reads game state vs. screenshots and a mouse), so the leaderboard shows it on
+// every row. Falls back to "observation → action" for runs without method.interface.
+function howOf(r) {
+  const m = r.method ?? {};
+  return zh(m, "interface") || (m.observation && m.action ? `${m.observation} → ${m.action}` : "");
+}
+
 function attemptCard(a) {
-  const who = [a.team, a.date].filter(Boolean).map(esc).join(" · ");
-  const extra = (a.links ?? []).map((l) => link(l.url, `${l.label} ↗`)).join("");
+  const who = [zh(a, "team"), a.date].filter(Boolean).map(esc).join(" · ");
+  const extra = (a.links ?? []).map((l) => link(l.url, `${zh(l, "label")} ↗`)).join("");
   return `
     <article class="attempt">
-      <header><h3>${esc(a.name)}</h3>${who ? `<span class="who">${who}</span>` : ""}</header>
-      <p>${esc(a.result)}</p>
-      ${a.why_not ? `<p class="why"><b>${L("Why it isn't ranked", "为何未排名")}</b>${esc(a.why_not)}</p>` : ""}
+      <header><h3>${esc(zh(a, "name"))}</h3>${who ? `<span class="who">${who}</span>` : ""}</header>
+      <p>${esc(zh(a, "result"))}</p>
+      ${a.why_not ? `<p class="why"><b>${L("Why it isn't ranked", "为何未排名")}</b>${esc(zh(a, "why_not"))}</p>` : ""}
       ${(a.models ?? []).length ? `<div class="tags">${a.models.map((m) => `<span class="tag">${esc(m)}</span>`).join("")}</div>` : ""}
       <div class="links">${link(a.url, L("Source ↗", "来源 ↗"))}${extra}</div>
     </article>`;
@@ -679,7 +688,7 @@ function viewGame(id) {
       return `
       <div class="row" role="listitem" data-run="${esc(r.id)}" tabindex="0" aria-expanded="${open}" aria-controls="detail-${esc(r.id)}">
         <div class="c-rank"><span class="medal ${i < 3 ? `r${i + 1}` : ""}">${i + 1}</span></div>
-        <div class="c-who who"><b>${vendorIcon(r)}${esc(r.agent)}</b><span>${esc(r.team)}</span></div>
+        <div class="c-who who"><b>${vendorIcon(r)}${esc(r.agent)}</b><span>${esc(r.team)}</span>${howOf(r) ? `<span class="how" title="${L("What the agent sees → how it acts", "智能体看到什么 → 怎么操作")}">${esc(howOf(r))}</span>` : ""}</div>
         <div class="c-chev">${UI.chevron.replace("<svg", '<svg class="chev"')}</div>
         <div class="c-prog prog">
           ${bar(sc.n, sc.total, { cleared: sc.cleared })}

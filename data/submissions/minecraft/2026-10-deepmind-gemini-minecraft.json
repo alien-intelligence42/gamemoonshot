@@ -79,6 +79,8 @@
   ],
   "method": {
     "summary": "Four Gemini agents controlling bots through Mineflayer (JavaScript API), Easy difficulty, Minecraft 1.20.4. Killed the Ender Dragon in a single run after 27h14m and 605 deaths.",
+    "interface": "Game state as data from the Mineflayer bot API → bot commands; never sees the screen",
+    "interface_zh": "通过 Mineflayer 机器人 API 读取结构化游戏状态 → 机器人指令；完全不看画面",
     "models": [
       "Gemini 4 Argon"
     ],

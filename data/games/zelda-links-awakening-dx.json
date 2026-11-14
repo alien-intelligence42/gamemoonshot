@@ -67,11 +67,14 @@
       "name": "VideoGameBench",
       "date": "2025-05",
       "result": "Vision-language models played Link's Awakening DX in one fixed harness and scored 0%.",
+      "result_zh": "视觉-语言模型在同一个固定框架下玩《塞尔达传说：织梦岛 DX》，得分 0%。",
       "why_not": "No dungeon cleared.",
+      "why_not_zh": "没有通关任何一个迷宫。",
       "url": "https://www.vgbench.com/",
       "links": [
         {
           "label": "Paper",
+          "label_zh": "论文",
           "url": "https://arxiv.org/abs/2505.18134"
         }
       ]

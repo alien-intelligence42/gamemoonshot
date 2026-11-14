@@ -73,6 +73,8 @@
   ],
   "method": {
     "summary": "Claude Opus 4.5 in the Claude Plays Pokémon harness. Collected all 8 badges, then stalled on the Victory Road boulder puzzles (~230k steps).",
+    "interface": "Screenshots plus harness tools (Claude Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Claude Plays Pokémon）→ 按键",
     "models": [
       "Claude Opus 4.5"
     ],

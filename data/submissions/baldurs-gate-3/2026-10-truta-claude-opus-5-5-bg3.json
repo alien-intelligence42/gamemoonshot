@@ -52,6 +52,8 @@
   ],
   "method": {
     "summary": "Claude Opus 5.5 driving the game through a Lua mod and an MCP server whose policy is to expose only what a player could see. Beat the Netherbrain on its 12th attempt and played the ending.",
+    "interface": "Game state from a Lua mod, limited to what a player could see → MCP tool calls",
+    "interface_zh": "通过 Lua 模组读取游戏状态（仅限玩家可见的信息）→ MCP 工具调用",
     "models": [
       "Claude Opus 5.5"
     ],

@@ -87,6 +87,8 @@
   ],
   "method": {
     "summary": "GPT-5 in the GPT Plays Pokémon harness; finished Pokémon Red in 6,470 steps (the same harness with o3 took 18,184 steps).",
+    "interface": "Screenshots plus harness tools (GPT Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（GPT Plays Pokémon）→ 按键",
     "models": [
       "GPT-5"
     ],

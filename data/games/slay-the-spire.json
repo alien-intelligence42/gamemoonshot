@@ -44,14 +44,47 @@
       "source": "https://www.speedrun.com/slay_the_spire/runs/z52on9ez"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "Epoch AI: SpireClimb results",
-      "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"
+      "name": "SpireBench",
+      "team": "Scott C. Lowe (Vector Institute) and Sander W. Keemink (Radboud University)",
+      "team_zh": "Scott C. Lowe（Vector 研究所）与 Sander W. Keemink（拉德堡德大学）",
+      "date": "2026-10",
+      "models": [
+        "Claude Fable 5.1",
+        "GPT-6 Astra",
+        "Claude Opus 5",
+        "GPT-5.6 Sol"
+      ],
+      "result": "Twenty LLMs play the Ironclad at Ascension 20 through a mod that sends the game state as text, 10 runs each on held-out seeds. 4 of the 200 runs beat the Act 3 boss: Claude Fable 5.1 twice, GPT-6 Astra and GPT-5.6 Sol once each, and the Sol run went on to kill the Heart. For comparison, human players average 0.73 acts cleared and the expert Baalorlord 2.98.",
+      "result_zh": "20 个 LLM 通过一个把游戏状态转成文本的模组，用铁甲战士在进阶 20 下游玩，每个模型在预留种子上跑 10 局。200 局中有 4 局击败了第三幕 Boss：Claude Fable 5.1 两次，GPT-6 Astra 和 GPT-5.6 Sol 各一次，其中 Sol 那局还击杀了腐化之心。作为对比，人类玩家平均通过 0.73 幕，高手 Baalorlord 平均 2.98 幕。",
+      "why_not": "Those four winning runs would rank here, but none is public: the runs were logged to Weights & Biases with no public link.",
+      "why_not_zh": "这 4 局胜利本可以上榜，但都没有公开：运行记录存在 Weights & Biases 上，没有公开链接。",
+      "url": "https://arxiv.org/abs/2610.12596"
     },
     {
-      "label": "SpireBench",
-      "url": "https://papers.cool/arxiv/2610.12596"
+      "name": "SpireClimb",
+      "team": "Epoch AI (Benjamin Ou, Simon Chen)",
+      "team_zh": "Epoch AI（Benjamin Ou、Simon Chen）",
+      "date": "2026-10",
+      "models": [
+        "GPT-6 Astra",
+        "GPT-6.1 Sol",
+        "Claude Opus 5.5",
+        "Claude Sonnet 5.5"
+      ],
+      "result": "Models play the normal game from screenshots, 15 single attempts per model, character and game. At Ascension 0, GPT-6 Astra wins 98% of runs, GPT-6.1 Sol 97% and Claude Opus 5.5 93%. At Ascension 20 with the Heart required, the best is GPT-6.1 Sol at 20%. Slay the Spire 2 is tested too.",
+      "result_zh": "模型看截图玩原版游戏，每个模型、每个角色、每款游戏各尝试 15 次。进阶 0 下，GPT-6 Astra 胜率 98%，GPT-6.1 Sol 97%，Claude Opus 5.5 93%。进阶 20 且要求击杀腐化之心时，最好的是 GPT-6.1 Sol，20%。同时也测试了《杀戮尖塔 2》。",
+      "why_not": "Reports win rates over many runs; no single run is published with a log or video to check.",
+      "why_not_zh": "只报告多局的胜率，没有公开任何一局可供核对的日志或录像。",
+      "url": "https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel",
+      "links": [
+        {
+          "label": "Benchmark page",
+          "label_zh": "基准主页",
+          "url": "https://epoch.ai/benchmarks/spireclimb"
+        }
+      ]
     }
   ]
 }

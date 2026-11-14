@@ -94,17 +94,22 @@
       "name": "GTAGym / GTAVBench",
       "date": "2026-11",
       "result": "A benchmark of GTA V story sub-tasks.",
+      "result_zh": "一个由《GTA V》剧情子任务组成的基准。",
       "why_not": "Scores sub-tasks, not whole missions; no mission pass is reported.",
+      "why_not_zh": "只给子任务打分，不是完整任务；没有报告通过任何任务。",
       "url": "https://arxiv.org/abs/2611.13028"
     },
     {
       "name": "WANTED",
       "team": "Hobby project",
+      "team_zh": "业余项目",
       "models": [
         "Claude"
       ],
       "result": "A Claude agent that plays through a mod exposing the game state.",
+      "result_zh": "一个通过模组读取游戏状态来玩游戏的 Claude 智能体。",
       "why_not": "No story mission passed yet.",
+      "why_not_zh": "还没有通过任何剧情任务。",
       "url": "https://github.com/devzer0x/wanted"
     }
   ],

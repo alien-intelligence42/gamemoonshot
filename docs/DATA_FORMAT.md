@@ -45,9 +45,11 @@ Agent work on this game that doesn't make the leaderboard: it reached no milesto
   "result": "What it actually did, with numbers.",     // required
   "why_not": "Why it isn't ranked here.",
   "url": "https://arxiv.org/abs/2409.12889",          // required: paper, write-up or repo
-  "links": [ { "label": "Project page", "url": "https://..." } ]
+  "links": [ { "label": "Project page", "label_zh": "项目主页", "url": "https://..." } ]
 }
 ```
+
+Unlike the rest of the game data, attempts can carry Chinese text: add `name_zh`, `team_zh`, `result_zh`, `why_not_zh` or a link's `label_zh` and the page uses it when it is shown in Chinese (each field falls back to English on its own). `npm run build` warns when `result` or `why_not` has no `_zh` version.
 
 ## Submission — `data/submissions/<game>/<id>.json`
 
@@ -83,6 +85,10 @@ Agent work on this game that doesn't make the leaderboard: it reached no milesto
 
   "method": {
     "summary": "How the agent works.",
+    // one line shown under the team on the leaderboard: what the agent sees → how it acts.
+    // Say plainly when it never sees the screen (bot APIs, game-state mods).
+    "interface": "Screenshots → keyboard and mouse",
+    "interface_zh": "截图 → 键盘鼠标",          // optional Chinese version
     "models": ["GPT-4o"],
     "observation": "1080p screenshots every 1s",
     "action": "keyboard + mouse",

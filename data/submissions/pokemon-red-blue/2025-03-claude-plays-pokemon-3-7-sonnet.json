@@ -49,6 +49,8 @@
   ],
   "method": {
     "summary": "Claude 3.7 Sonnet with a tool harness, streamed on Twitch. Reached 3 badges.",
+    "interface": "Screenshots plus harness tools (Claude Plays Pokémon) → button presses",
+    "interface_zh": "截图加框架工具（Claude Plays Pokémon）→ 按键",
     "models": [
       "Claude 3.7 Sonnet"
     ],

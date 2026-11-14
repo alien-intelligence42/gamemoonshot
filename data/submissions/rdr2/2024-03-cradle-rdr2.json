@@ -42,6 +42,8 @@
   ],
   "method": {
     "summary": "General Computer Control agent: GPT-4V (later GPT-4o) with information gathering, self-reflection, task inference, skill curation, action planning and memory modules. Plays from screenshots through keyboard and mouse. Played through the Chapter 1 story missions, ending with Eastward Bound.",
+    "interface": "Screenshots → keyboard and mouse",
+    "interface_zh": "截图 → 键盘鼠标",
     "models": [
       "GPT-4V",
       "GPT-4o"

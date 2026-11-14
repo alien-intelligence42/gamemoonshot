@@ -16,7 +16,7 @@
     "card": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Global-Header_Image-Tile_MC-Java-Bedrock_570x321.jpg",
     "banner": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Hero-Image_Vanilla_Standard_1200x675.jpg"
   },
-  "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen.",
+  "description": "The classic long-horizon tech tree: wood to diamonds to the Nether to the End. Milestones follow official advancements, so a reviewer can check them from the toast on screen. The only clear so far, by four Gemini agents, never looked at the screen: they read the game state and acted through the Mineflayer bot API. The furthest any screen-watching agent has got is GPT-6 Astra, which reached the blaze rods.",
   "clear_condition": "Kill the Ender Dragon (advancement “Free the End”) in a new Survival world.",
   "rules": "Survival mode, random seed, no cheats or mods that change gameplay. State version and difficulty. Bot APIs such as Mineflayer go in the Harness track; screen + keyboard/mouse is Pixels-only. Milestones need not be reached in order.",
   "milestones": [
@@ -95,22 +95,60 @@
       "source": "https://www.speedrun.com/mc/runs/y44238ky"
     }
   ],
+  "attempts": [
+    {
+      "name": "Voyager",
+      "team": "NVIDIA, Caltech, UT Austin, Stanford and UW–Madison",
+      "team_zh": "英伟达、加州理工学院、得克萨斯大学奥斯汀分校、斯坦福大学、威斯康星大学麦迪逊分校",
+      "date": "2023-05",
+      "models": [
+        "GPT-4",
+        "GPT-3.5"
+      ],
+      "result": "A GPT-4 agent that reads the world as text and writes JavaScript skills for the Mineflayer bot API, building up a skill library. Within 160 prompting rounds it reached iron tools in all 3 trials and a diamond tool in 1 of 3. In a fresh world, reusing its skills, it made a diamond pickaxe in about 19 rounds.",
+      "result_zh": "一个 GPT-4 智能体：以文本形式读取世界，为 Mineflayer 机器人 API 编写 JavaScript 技能，逐步积累技能库。在 160 轮提示之内，3 次试验全部做出铁制工具，其中 1 次做出钻石工具。在新世界里复用已学技能，约 19 轮就做出了钻石镐。",
+      "why_not": "The setup uses cheat commands: it is handed a crafting table, a furnace and a replacement iron pickaxe with /give, keeps its inventory on death and plays on Peaceful. Mineflayer itself would be fine in the Harness track.",
+      "why_not_zh": "运行设置用了作弊指令：用 /give 直接给它工作台、熔炉和替换的铁镐，死亡不掉落物品，并且在和平难度下进行。单用 Mineflayer 本身是可以进工具辅助赛道的。",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "links": [
+        {
+          "label": "Project page",
+          "label_zh": "项目主页",
+          "url": "https://voyager.minedojo.org/"
+        },
+        {
+          "label": "Code",
+          "label_zh": "代码",
+          "url": "https://github.com/MineDojo/Voyager"
+        }
+      ]
+    },
+    {
+      "name": "DreamerV3",
+      "team": "Google DeepMind and University of Toronto (Nature 2025)",
+      "team_zh": "Google DeepMind 与多伦多大学（Nature 2025）",
+      "date": "2023-01",
+      "models": [
+        "DreamerV3 (world-model RL, no human data)"
+      ],
+      "result": "A reinforcement-learning agent with a learned world model, trained from scratch without human data. It sees a 64×64 image plus its inventory and chooses among 25 actions. It was the first agent to collect diamonds this way: across 40 training runs, 50 of its 30-minute episodes ended with diamonds.",
+      "result_zh": "一个带有学习型世界模型的强化学习智能体，从零开始训练，不用任何人类数据。它看到 64×64 的画面和物品栏，从 25 个动作中选择。它是第一个以这种方式采到钻石的智能体：40 次训练中，共有 50 个 30 分钟的回合采到了钻石。",
+      "why_not": "Blocks break 100 times faster than normal, crafting and smelting are single actions instead of the crafting menu, and it runs Minecraft 1.11.2, which predates most of the advancements used as milestones here.",
+      "why_not_zh": "方块的破坏速度是正常的 100 倍，合成和熔炼是一步完成的动作而不是通过合成界面，而且用的是 Minecraft 1.11.2，比本榜用作里程碑的大部分进度都早。",
+      "url": "https://arxiv.org/abs/2301.04104",
+      "links": [
+        {
+          "label": "Project page with uncut videos",
+          "label_zh": "项目主页（含未剪辑视频）",
+          "url": "https://danijar.com/project/dreamerv3/"
+        }
+      ]
+    }
+  ],
   "links": [
     {
       "label": "Minecraft Wiki: Advancements",
       "url": "https://minecraft.wiki/w/Advancement"
-    },
-    {
-      "label": "VPT (OpenAI, 2022)",
-      "url": "https://openai.com/index/vpt"
-    },
-    {
-      "label": "Voyager (2023)",
-      "url": "https://arxiv.org/abs/2305.16291"
-    },
-    {
-      "label": "DreamerV3 (diamonds from scratch)",
-      "url": "https://danijar.com/project/dreamerv3/"
     }
   ]
 }
