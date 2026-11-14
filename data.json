@@ -87,19 +87,30 @@
      "source": "https://www.speedrun.com/eldenring/runs/m349rkgz"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "G.A.L.E. — hobby PPO agent vs. Margit (no win yet)",
+     "name": "G.A.L.E.",
+     "team": "Hobby project",
+     "result": "A PPO reinforcement-learning agent training against Margit, the Fell Omen.",
+     "why_not": "No win against Margit reported yet.",
      "url": "https://github.com/mr-raichman/eldenring-ai"
     },
     {
-     "label": "EldenRL — hobby RL boss arena (no boss defeated)",
+     "name": "EldenRL",
+     "team": "Hobby project",
+     "result": "A reinforcement-learning setup that trains agents against bosses in a fixed arena.",
+     "why_not": "No boss defeated.",
      "url": "https://github.com/ocram444/EldenRL"
     },
     {
-     "label": "3A-VLA — zero-shot combat transfer, 'hit' rate only",
+     "name": "3A-VLA",
+     "date": "2026-02",
+     "result": "Zero-shot transfer of a combat model to Elden Ring fights.",
+     "why_not": "Scores how often attacks land, not bosses beaten.",
      "url": "https://arxiv.org/abs/2602.02212"
-    },
+    }
+   ],
+   "links": [
     {
      "label": "Elden Ring wiki: bosses and which are mandatory",
      "url": "https://eldenring.wiki.gg/wiki/Bosses"
@@ -198,15 +209,24 @@
      "source": "https://www.speedrun.com/cyberpunk_2077/runs/mkv5knxy"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "CyberpunkAgent — hobby LLM agent via a game-state mod (no missions reported)",
+     "name": "CyberpunkAgent",
+     "team": "Hobby project",
+     "result": "An LLM agent that plays through a mod exposing the game state.",
+     "why_not": "No missions reported.",
      "url": "https://github.com/Oli97430/CyberpunkAgent"
     },
     {
-     "label": "NitroGen — NVIDIA's generalist gamepad model (press says it was shown on Cyberpunk; the paper doesn't name it)",
+     "name": "NitroGen",
+     "team": "NVIDIA",
+     "date": "2026-01",
+     "result": "A generalist model that outputs gamepad actions, trained across many games. Press coverage says it was shown playing Cyberpunk 2077.",
+     "why_not": "The paper doesn't name Cyberpunk 2077 or report any mission.",
      "url": "https://arxiv.org/abs/2601.02427"
-    },
+    }
+   ],
+   "links": [
     {
      "label": "Main missions list (gamepressure)",
      "url": "https://www.gamepressure.com/cyberpunk-2077/main-missions/zcc7aa"
@@ -304,15 +324,26 @@
      "source": "https://www.speedrun.com/gtav/runs/y2nvj2wy"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "GTAGym / GTAVBench — benchmark of story sub-tasks (arXiv 2611.13028)",
+     "name": "GTAGym / GTAVBench",
+     "date": "2026-11",
+     "result": "A benchmark of GTA V story sub-tasks.",
+     "why_not": "Scores sub-tasks, not whole missions; no mission pass is reported.",
      "url": "https://arxiv.org/abs/2611.13028"
     },
     {
-     "label": "WANTED — hobby Claude agent via a game-state mod (no mission passed yet)",
+     "name": "WANTED",
+     "team": "Hobby project",
+     "models": [
+      "Claude"
+     ],
+     "result": "A Claude agent that plays through a mod exposing the game state.",
+     "why_not": "No story mission passed yet.",
      "url": "https://github.com/devzer0x/wanted"
-    },
+    }
+   ],
+   "links": [
     {
      "label": "HowLongToBeat: Grand Theft Auto V",
      "url": "https://howlongtobeat.com/game/4064"
@@ -465,14 +496,42 @@
      "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "VARP agent (arXiv 2409.12889)",
-     "url": "https://arxiv.org/abs/2409.12889"
+     "name": "VARP (Vision Action Role-Playing agent)",
+     "team": "Peng Chen, Pi Bu, Jun Song, Yuan Gao, Bo Zheng",
+     "date": "2024-09",
+     "models": [
+      "GPT-4o",
+      "Claude 3.5 Sonnet",
+      "Gemini 1.5 Pro"
+     ],
+     "result": "Screenshots in, keyboard and mouse out, with the game paused in photo mode while the model thinks. On 12 short Chapter 1 tasks, mostly fights, it wins about 90% of easy and medium fights. Against Bullguard it wins 20% of tries, a little above novice human players (15.63%). Walking to Bullguard within five minutes fails without human-guided examples and succeeds 40% of the time with them.",
+     "why_not": "Single fights and short tasks inside Chapter 1, five tries each. No chapter was finished, so no milestone is reached.",
+     "url": "https://arxiv.org/abs/2409.12889",
+     "links": [
+      {
+       "label": "Project page",
+       "url": "https://varp-agent.github.io/"
+      }
+     ]
     },
     {
-     "label": "CombatVLA",
-     "url": "https://arxiv.org/html/2503.09527v2"
+     "name": "CombatVLA",
+     "team": "Alibaba Group (ICCV 2025)",
+     "date": "2025-03",
+     "models": [
+      "CombatVLA-3B (Qwen2.5-VL-3B)"
+     ],
+     "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested on 10 Wukong fights, from wolf guards up to Bullguard, Wandering Wight and Guangzhi, plus 3 Sekiro fights. It takes 1.85 s per decision against 90 s for VARP, and the authors report higher success than human players on their tasks.",
+     "why_not": "Isolated fights only. No chapter was finished.",
+     "url": "https://arxiv.org/abs/2503.09527",
+     "links": [
+      {
+       "label": "Project page",
+       "url": "https://combatvla.github.io/"
+      }
+     ]
     }
    ]
   },
@@ -549,11 +608,26 @@
      "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "CombatVLA (isolated Sekiro / Wukong fights)",
-     "url": "https://arxiv.org/html/2503.09527v2"
-    },
+     "name": "CombatVLA",
+     "team": "Alibaba Group (ICCV 2025)",
+     "date": "2025-03",
+     "models": [
+      "CombatVLA-3B (Qwen2.5-VL-3B)"
+     ],
+     "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested zero-shot on three Sekiro fights, the hardest being the mini-boss Shigenori Yamauchi, alongside 10 Black Myth: Wukong fights.",
+     "why_not": "Isolated fights. Shigenori Yamauchi is a mini-boss, not one of this board's bosses, and no story progress is reported.",
+     "url": "https://arxiv.org/abs/2503.09527",
+     "links": [
+      {
+       "label": "Project page",
+       "url": "https://combatvla.github.io/"
+      }
+     ]
+    }
+   ],
+   "links": [
     {
      "label": "Fextralife: Bosses",
      "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"
@@ -960,15 +1034,22 @@
      "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
     }
    ],
+   "attempts": [
+    {
+     "name": "CivBench (Civ VI)",
+     "date": "2026-09",
+     "result": "LLM agents playing through an MCP server won 3 science victories in 23 games on Prince and King difficulty, at Quick speed.",
+     "why_not": "This board requires Deity difficulty at Standard speed.",
+     "url": "https://arxiv.org/abs/2609.02459",
+     "links": [
+      {
+       "label": "civ6-mcp (the MCP server)",
+       "url": "https://github.com/lmwilki/civ6-mcp"
+      }
+     ]
+    }
+   ],
    "links": [
-    {
-     "label": "CivBench (Civ VI) — 3 science wins in 23 games on Prince/King, Quick speed, via MCP",
-     "url": "https://arxiv.org/abs/2609.02459"
-    },
-    {
-     "label": "civ6-mcp — the MCP server behind it",
-     "url": "https://github.com/lmwilki/civ6-mcp"
-    },
     {
      "label": "CivRealm (Freeciv, ICLR 2024) — agents struggle in the full game",
      "url": "https://arxiv.org/abs/2401.10568"
@@ -998,7 +1079,7 @@
    ],
    "skin": "factory",
    "steam_appid": 427520,
-   "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see links), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
+   "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see the attempts below), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
    "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
    "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
    "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
@@ -1065,15 +1146,37 @@
      "source": "https://www.speedrun.com/factorio/runs/y8ovjjwm"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported (not counted: no enemies)",
-     "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
+     "name": "GPT-5.6 Sol (Codex)",
+     "team": "Ryan Madden",
+     "date": "2026-10",
+     "models": [
+      "GPT-5.6 Sol"
+     ],
+     "result": "Launched a rocket after about 13.5 hours of game time, driving the game through a harness. Self-reported, with a timelapse video.",
+     "why_not": "Played in peaceful mode with enemies switched off. This board requires the Default map preset with enemies on.",
+     "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
+     "links": [
+      {
+       "label": "Timelapse",
+       "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs"
+      },
+      {
+       "label": "Hacker News discussion",
+       "url": "https://news.ycombinator.com/item?id=50318871"
+      }
+     ]
     },
     {
-     "label": "Factorio Learning Environment (2025) — LLMs stall before complex automation",
+     "name": "Factorio Learning Environment",
+     "date": "2025-03",
+     "result": "A benchmark that drives Factorio through a code API. LLM agents stall before complex automation.",
+     "why_not": "Reports benchmark scores, not a run on this board's settings.",
      "url": "https://arxiv.org/abs/2503.09617"
-    },
+    }
+   ],
+   "links": [
     {
      "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
      "url": "https://ryanmadden.net/claude-plays-factorio/"
@@ -1156,14 +1259,19 @@
      "source": "https://www.speedrun.com/ksp/runs/m3wg8p6y"
     }
    ],
+   "attempts": [
+    {
+     "name": "LLMs as Autonomous Spacecraft Operators in KSP",
+     "date": "2025-05",
+     "result": "LLM agents fly orbital pursuit tasks in KSP.",
+     "why_not": "The tasks are orbital pursuits with no launch or landing, so no milestone is reached.",
+     "url": "https://arxiv.org/abs/2505.19896"
+    }
+   ],
    "links": [
     {
      "label": "Vals AI Time Horizon Index — KSP mission ladder; rung 2 is Mun landing and return",
      "url": "https://www.vals.ai/benchmarks/time_horizon_index"
-    },
-    {
-     "label": "LLMs as Autonomous Spacecraft Operators in KSP (2025) — orbital pursuit tasks, no landing",
-     "url": "https://arxiv.org/abs/2505.19896"
     },
     {
      "label": "KSPDG / SpaceGym — orbital differential games",
@@ -1688,10 +1796,19 @@
      "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
     }
    ],
-   "links": [
+   "attempts": [
     {
-     "label": "VideoGameBench",
-     "url": "https://www.vgbench.com/"
+     "name": "VideoGameBench",
+     "date": "2025-05",
+     "result": "Vision-language models played Link's Awakening DX in one fixed harness and scored 0%.",
+     "why_not": "No dungeon cleared.",
+     "url": "https://www.vgbench.com/",
+     "links": [
+      {
+       "label": "Paper",
+       "url": "https://arxiv.org/abs/2505.18134"
+      }
+     ]
     }
    ]
   },

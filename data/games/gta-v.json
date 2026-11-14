@@ -89,15 +89,26 @@
       "source": "https://www.speedrun.com/gtav/runs/y2nvj2wy"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "GTAGym / GTAVBench — benchmark of story sub-tasks (arXiv 2611.13028)",
+      "name": "GTAGym / GTAVBench",
+      "date": "2026-11",
+      "result": "A benchmark of GTA V story sub-tasks.",
+      "why_not": "Scores sub-tasks, not whole missions; no mission pass is reported.",
       "url": "https://arxiv.org/abs/2611.13028"
     },
     {
-      "label": "WANTED — hobby Claude agent via a game-state mod (no mission passed yet)",
+      "name": "WANTED",
+      "team": "Hobby project",
+      "models": [
+        "Claude"
+      ],
+      "result": "A Claude agent that plays through a mod exposing the game state.",
+      "why_not": "No story mission passed yet.",
       "url": "https://github.com/devzer0x/wanted"
-    },
+    }
+  ],
+  "links": [
     {
       "label": "HowLongToBeat: Grand Theft Auto V",
       "url": "https://howlongtobeat.com/game/4064"

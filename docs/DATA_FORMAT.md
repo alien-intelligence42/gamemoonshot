@@ -27,9 +27,27 @@ data/
 | `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |
 | `milestones[]` | yes | ordered; each `{ id, name, description?, final? }`. Exactly one has `"final": true` — reaching it means the game is cleared |
 | `human_baselines[]` | no | `{ label, time: "H:MM:SS", note?, source: url }` |
-| `links[]` | no | `{ label, url }` — references, prior work |
+| `attempts[]` | no | agent work on this game that isn't ranked — see below |
+| `links[]` | no | `{ label, url }` — references, related research on other games, wikis |
 
 Milestones should be things a reviewer can confirm on video in a few seconds: a badge screen, a boss "Immortality Severed" banner, a chapter title card, an advancement toast.
+
+### Attempts not on the board — `attempts[]`
+
+Agent work on this game that doesn't make the leaderboard: it reached no milestone (a paper that only tests single fights, a hobby bot that hasn't won yet), or it ran outside the board's rules (enemies off, a lower difficulty, a sub-task benchmark). The game page lists these as cards under the leaderboard, unranked. Once a run reaches a milestone within the rules, it becomes a submission instead.
+
+```jsonc
+{
+  "name": "VARP (Vision Action Role-Playing agent)",   // required
+  "team": "Peng Chen, Pi Bu, Jun Song, Yuan Gao, Bo Zheng",
+  "date": "2024-09",                                  // YYYY-MM or YYYY-MM-DD
+  "models": ["GPT-4o", "Claude 3.5 Sonnet"],
+  "result": "What it actually did, with numbers.",     // required
+  "why_not": "Why it isn't ranked here.",
+  "url": "https://arxiv.org/abs/2409.12889",          // required: paper, write-up or repo
+  "links": [ { "label": "Project page", "url": "https://..." } ]
+}
+```
 
 ## Submission — `data/submissions/<game>/<id>.json`
 

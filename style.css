@@ -482,6 +482,16 @@ input:focus, select:focus, textarea:focus { outline: 2px solid color-mix(in srgb
 }
 
 /* ---------- videos ---------- */
+.attempts { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 14px; }
+.attempt { display: grid; align-content: start; gap: 10px; background: var(--surface); border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 16px 18px; }
+.attempt header { display: grid; gap: 2px; }
+.attempt h3 { margin: 0; font-size: 16px; font-weight: 650; color: var(--ink); }
+.attempt .who { color: var(--muted); font-size: 13px; }
+.attempt p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.6; text-wrap: pretty; }
+.attempt .why { font-size: 13.5px; color: var(--muted); }
+.attempt .why b { display: block; font-family: var(--display); font-size: 11.5px; font-weight: 400; color: var(--gold); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2px; }
+.attempt .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.attempt .links { font-size: 13.5px; }
 .videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 18px; }
 .vcard { display: grid; gap: 10px; text-align: left; background: none; border: 0; padding: 0; cursor: pointer; color: var(--ink); font: inherit; }
 .thumb {

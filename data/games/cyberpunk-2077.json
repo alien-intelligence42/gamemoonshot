@@ -90,15 +90,24 @@
       "source": "https://www.speedrun.com/cyberpunk_2077/runs/mkv5knxy"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "CyberpunkAgent — hobby LLM agent via a game-state mod (no missions reported)",
+      "name": "CyberpunkAgent",
+      "team": "Hobby project",
+      "result": "An LLM agent that plays through a mod exposing the game state.",
+      "why_not": "No missions reported.",
       "url": "https://github.com/Oli97430/CyberpunkAgent"
     },
     {
-      "label": "NitroGen — NVIDIA's generalist gamepad model (press says it was shown on Cyberpunk; the paper doesn't name it)",
+      "name": "NitroGen",
+      "team": "NVIDIA",
+      "date": "2026-01",
+      "result": "A generalist model that outputs gamepad actions, trained across many games. Press coverage says it was shown playing Cyberpunk 2077.",
+      "why_not": "The paper doesn't name Cyberpunk 2077 or report any mission.",
       "url": "https://arxiv.org/abs/2601.02427"
-    },
+    }
+  ],
+  "links": [
     {
       "label": "Main missions list (gamepressure)",
       "url": "https://www.gamepressure.com/cyberpunk-2077/main-missions/zcc7aa"

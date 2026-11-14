@@ -103,6 +103,18 @@ function validateGame(file, g) {
     checkUrlField(file, b, "source", `human_baselines[${i}].source`, true);
   }
   for (const [i, l] of (g.links ?? []).entries()) checkUrlField(file, l, "url", `links[${i}].url`, true);
+  // Agent work on this game that isn't ranked (no milestone reached, or outside the board's rules).
+  for (const [i, a] of (g.attempts ?? []).entries()) {
+    const at = `attempts[${i}]`;
+    requireFields(file, a, ["name", "result"], `${at}.`);
+    checkUrlField(file, a, "url", `${at}.url`, true);
+    if (a.date != null && !/^\d{4}-\d{2}(-\d{2})?$/.test(a.date)) err(file, `${at}.date must be YYYY-MM or YYYY-MM-DD`);
+    if (a.models != null && !(Array.isArray(a.models) && a.models.every(isStr))) err(file, `${at}.models must be an array of names`);
+    for (const [j, l] of (a.links ?? []).entries()) {
+      requireFields(file, l, ["label"], `${at}.links[${j}].`);
+      checkUrlField(file, l, "url", `${at}.links[${j}].url`, true);
+    }
+  }
   if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
   if (g.icon != null && !ICONS.includes(g.icon)) err(file, `icon must be one of ${ICONS.join(", ")}`);

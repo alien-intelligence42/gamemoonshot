@@ -71,15 +71,22 @@
       "source": "https://forums.civfanatics.com/threads/cfc-fastest-deity-science-victory.649389"
     }
   ],
+  "attempts": [
+    {
+      "name": "CivBench (Civ VI)",
+      "date": "2026-09",
+      "result": "LLM agents playing through an MCP server won 3 science victories in 23 games on Prince and King difficulty, at Quick speed.",
+      "why_not": "This board requires Deity difficulty at Standard speed.",
+      "url": "https://arxiv.org/abs/2609.02459",
+      "links": [
+        {
+          "label": "civ6-mcp (the MCP server)",
+          "url": "https://github.com/lmwilki/civ6-mcp"
+        }
+      ]
+    }
+  ],
   "links": [
-    {
-      "label": "CivBench (Civ VI) — 3 science wins in 23 games on Prince/King, Quick speed, via MCP",
-      "url": "https://arxiv.org/abs/2609.02459"
-    },
-    {
-      "label": "civ6-mcp — the MCP server behind it",
-      "url": "https://github.com/lmwilki/civ6-mcp"
-    },
     {
       "label": "CivRealm (Freeciv, ICLR 2024) — agents struggle in the full game",
       "url": "https://arxiv.org/abs/2401.10568"

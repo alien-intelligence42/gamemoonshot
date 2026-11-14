@@ -62,10 +62,19 @@
       "source": "https://www.speedrun.com/ladx/runs/z02ejx9m"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "VideoGameBench",
-      "url": "https://www.vgbench.com/"
+      "name": "VideoGameBench",
+      "date": "2025-05",
+      "result": "Vision-language models played Link's Awakening DX in one fixed harness and scored 0%.",
+      "why_not": "No dungeon cleared.",
+      "url": "https://www.vgbench.com/",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2505.18134"
+        }
+      ]
     }
   ]
 }

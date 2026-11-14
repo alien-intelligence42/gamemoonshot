@@ -70,14 +70,19 @@
       "source": "https://www.speedrun.com/ksp/runs/m3wg8p6y"
     }
   ],
+  "attempts": [
+    {
+      "name": "LLMs as Autonomous Spacecraft Operators in KSP",
+      "date": "2025-05",
+      "result": "LLM agents fly orbital pursuit tasks in KSP.",
+      "why_not": "The tasks are orbital pursuits with no launch or landing, so no milestone is reached.",
+      "url": "https://arxiv.org/abs/2505.19896"
+    }
+  ],
   "links": [
     {
       "label": "Vals AI Time Horizon Index — KSP mission ladder; rung 2 is Mun landing and return",
       "url": "https://www.vals.ai/benchmarks/time_horizon_index"
-    },
-    {
-      "label": "LLMs as Autonomous Spacecraft Operators in KSP (2025) — orbital pursuit tasks, no landing",
-      "url": "https://arxiv.org/abs/2505.19896"
     },
     {
       "label": "KSPDG / SpaceGym — orbital differential games",

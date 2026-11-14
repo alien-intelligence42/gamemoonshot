@@ -12,6 +12,7 @@ Unlike [VideoGameBench](https://arxiv.org/abs/2505.18134), which runs one fixed 
 - **Partial runs count.** An agent that beats three Sekiro bosses is on the board; one that rolls credits ranks above it.
 - **Video, not numbers.** Every milestone claim points at a timestamp in a public, unedited video. Maintainers verify.
 - **Disclosed setup.** Each run lists hardware, models, observation/action space, and any human intervention.
+- **Attempts not on the board.** Agent work that reached no milestone, or ran outside a board's rules, is listed under the leaderboard with what it did and why it isn't ranked.
 - **Human baselines.** Every board shows the human speedrun record for context.
 - **Evidence levels.** Every run is labelled human-verified, video, author report, or news only.
 - **Per-game skins.** Each game page is styled after its game (gilded dark fantasy, sunset city, neon cyberware, tactical HUD, frontier print, ink and vermilion, handheld pixel RPG, blocky sandbox, terminal…) using original CSS art, not official assets.

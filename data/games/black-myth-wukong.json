@@ -58,14 +58,42 @@
       "source": "https://www.speedrun.com/BMW/runs/y6eqlv0z"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "VARP agent (arXiv 2409.12889)",
-      "url": "https://arxiv.org/abs/2409.12889"
+      "name": "VARP (Vision Action Role-Playing agent)",
+      "team": "Peng Chen, Pi Bu, Jun Song, Yuan Gao, Bo Zheng",
+      "date": "2024-09",
+      "models": [
+        "GPT-4o",
+        "Claude 3.5 Sonnet",
+        "Gemini 1.5 Pro"
+      ],
+      "result": "Screenshots in, keyboard and mouse out, with the game paused in photo mode while the model thinks. On 12 short Chapter 1 tasks, mostly fights, it wins about 90% of easy and medium fights. Against Bullguard it wins 20% of tries, a little above novice human players (15.63%). Walking to Bullguard within five minutes fails without human-guided examples and succeeds 40% of the time with them.",
+      "why_not": "Single fights and short tasks inside Chapter 1, five tries each. No chapter was finished, so no milestone is reached.",
+      "url": "https://arxiv.org/abs/2409.12889",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "https://varp-agent.github.io/"
+        }
+      ]
     },
     {
-      "label": "CombatVLA",
-      "url": "https://arxiv.org/html/2503.09527v2"
+      "name": "CombatVLA",
+      "team": "Alibaba Group (ICCV 2025)",
+      "date": "2025-03",
+      "models": [
+        "CombatVLA-3B (Qwen2.5-VL-3B)"
+      ],
+      "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested on 10 Wukong fights, from wolf guards up to Bullguard, Wandering Wight and Guangzhi, plus 3 Sekiro fights. It takes 1.85 s per decision against 90 s for VARP, and the authors report higher success than human players on their tasks.",
+      "why_not": "Isolated fights only. No chapter was finished.",
+      "url": "https://arxiv.org/abs/2503.09527",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "https://combatvla.github.io/"
+        }
+      ]
     }
   ]
 }

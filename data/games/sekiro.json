@@ -71,11 +71,26 @@
       "source": "https://www.speedrun.com/sekiro/runs/yo58gwdz"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "CombatVLA (isolated Sekiro / Wukong fights)",
-      "url": "https://arxiv.org/html/2503.09527v2"
-    },
+      "name": "CombatVLA",
+      "team": "Alibaba Group (ICCV 2025)",
+      "date": "2025-03",
+      "models": [
+        "CombatVLA-3B (Qwen2.5-VL-3B)"
+      ],
+      "result": "A small vision-language-action model trained for combat: game frames in, keyboard and mouse out, with the game paused while it thinks. Tested zero-shot on three Sekiro fights, the hardest being the mini-boss Shigenori Yamauchi, alongside 10 Black Myth: Wukong fights.",
+      "why_not": "Isolated fights. Shigenori Yamauchi is a mini-boss, not one of this board's bosses, and no story progress is reported.",
+      "url": "https://arxiv.org/abs/2503.09527",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "https://combatvla.github.io/"
+        }
+      ]
+    }
+  ],
+  "links": [
     {
       "label": "Fextralife: Bosses",
       "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Bosses"

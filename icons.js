@@ -116,6 +116,7 @@ export const UI = {
   close: U(`<path d="M6 6l12 12M18 6L6 18"/>`),
   external: U(`<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>`),
   trophy: U(`<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8M10 17h4"/>`),
+  footprints: U(`<path d="M8 16c-1.7 0-3-1.6-3-4.2C5 9 6.3 7 8 7s2.6 1.6 2.6 3.8C10.6 13.6 9.6 16 8 16zM6 18.5h4M16 13c-1.6 0-2.6-2.4-2.6-5.2C13.4 5.6 14.4 4 16 4s3 2 3 4.8c0 2.6-1.3 4.2-3 4.2zM14 15.5h4"/>`),
   sword: U(`<path d="M19 3l-9 9M14 3h5v5M7 13l4 4M5 15l4 4M3 21l3-3"/>`),
   scroll: U(`<path d="M7 4h11a2 2 0 0 1 0 4H9M7 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M9 12h6M9 16h4"/>`),
   film: U(`<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/>`),

@@ -13,7 +13,7 @@
   ],
   "skin": "factory",
   "steam_appid": 427520,
-  "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see links), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
+  "description": "From hand-mined ore to a rocket: hundreds of interlocking machines, belts, trains and oil chemistry, built while defending against biters. The longest planning horizon on the board. GPT-5.6 Sol has launched a rocket with enemies switched off (see the attempts below), which doesn't meet this board's clear condition, so it isn't counted; no agent has reported a launch on default settings.",
   "clear_condition": "Launch a rocket (the victory screen), base game without Space Age, Default map preset.",
   "timing": "Run time from the first frame of the map to the first frame of the victory screen, as on speedrun.com.",
   "rules": "Version 2.x base game without Space Age (state the exact version). Default map preset with a random seed, enemies on. Single player, no imported blueprints, no gameplay mods. Lua/RCON APIs (e.g. Factorio Learning Environment) go in the Harness track; they disable achievements, so the research-complete notices and the victory screen are the evidence.",
@@ -80,15 +80,37 @@
       "source": "https://www.speedrun.com/factorio/runs/y8ovjjwm"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "GPT-5.6 Sol launches a rocket — peaceful mode, 13.5 h game time, self-reported (not counted: no enemies)",
-      "url": "https://ryanmadden.net/gpt-56-beats-factorio/"
+      "name": "GPT-5.6 Sol (Codex)",
+      "team": "Ryan Madden",
+      "date": "2026-10",
+      "models": [
+        "GPT-5.6 Sol"
+      ],
+      "result": "Launched a rocket after about 13.5 hours of game time, driving the game through a harness. Self-reported, with a timelapse video.",
+      "why_not": "Played in peaceful mode with enemies switched off. This board requires the Default map preset with enemies on.",
+      "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
+      "links": [
+        {
+          "label": "Timelapse",
+          "url": "https://www.youtube.com/watch?v=kLuSDUzKYZs"
+        },
+        {
+          "label": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=50318871"
+        }
+      ]
     },
     {
-      "label": "Factorio Learning Environment (2025) — LLMs stall before complex automation",
+      "name": "Factorio Learning Environment",
+      "date": "2025-03",
+      "result": "A benchmark that drives Factorio through a code API. LLM agents stall before complex automation.",
+      "why_not": "Reports benchmark scores, not a run on this board's settings.",
       "url": "https://arxiv.org/abs/2503.09617"
-    },
+    }
+  ],
+  "links": [
     {
       "label": "Claude plays Factorio (Apr 2026) — about halfway through Automation 2",
       "url": "https://ryanmadden.net/claude-plays-factorio/"

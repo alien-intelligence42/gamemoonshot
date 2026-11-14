@@ -642,6 +642,23 @@ function runDetail(game, sc) {
     </div>`;
 }
 
+// Agent work on a game that isn't ranked: it reached no milestone, or ran outside the board's rules
+// (other settings, isolated fights, a different game mode). Shown under the leaderboard so the work is on
+// record without competing with ranked runs. Text comes from the game's "attempts" (English, like the rest
+// of the game data).
+function attemptCard(a) {
+  const who = [a.team, a.date].filter(Boolean).map(esc).join(" · ");
+  const extra = (a.links ?? []).map((l) => link(l.url, `${l.label} ↗`)).join("");
+  return `
+    <article class="attempt">
+      <header><h3>${esc(a.name)}</h3>${who ? `<span class="who">${who}</span>` : ""}</header>
+      <p>${esc(a.result)}</p>
+      ${a.why_not ? `<p class="why"><b>${L("Why it isn't ranked", "为何未排名")}</b>${esc(a.why_not)}</p>` : ""}
+      ${(a.models ?? []).length ? `<div class="tags">${a.models.map((m) => `<span class="tag">${esc(m)}</span>`).join("")}</div>` : ""}
+      <div class="links">${link(a.url, L("Source ↗", "来源 ↗"))}${extra}</div>
+    </article>`;
+}
+
 function viewGame(id) {
   const game = DATA.games.find((g) => g.id === id);
   if (!game) return `<div class="wrap"><div class="empty" style="margin-top:48px">${L(`Unknown game “${esc(id)}”.`, `未知游戏“${esc(id)}”。`)} <a href="./">${L("Back to all games", "返回全部游戏")}</a></div></div>`;
@@ -767,6 +784,17 @@ function viewGame(id) {
           ${rows || `<div class="empty">${L("No AI runs in this view yet.", "当前筛选下还没有 AI 运行。")} <a href="submit/?game=${esc(game.id)}">${L("Submit the first one.", "提交第一个。")}</a></div>`}
         </div>
       </section>
+
+      ${
+        (game.attempts ?? []).length
+          ? `<section class="section" id="attempts"><div class="section-head"><div><h2><span class="ico">${UI.footprints}</span>${L("Attempts not on the board", "未上榜的尝试")}</h2>
+             <div class="sub">${L(
+               "Agent work on this game that hasn't reached a milestone yet, or ran outside this board's rules (isolated fights, other settings). Listed for the record, not ranked.",
+               "针对这款游戏的智能体工作：还没达成任何里程碑，或不在本榜规则内（例如只打单场战斗、用了别的设置）。列在这里留作记录，不参与排名。"
+             )}</div></div></div>
+             <div class="attempts">${game.attempts.map(attemptCard).join("")}</div></section>`
+          : ""
+      }
 
       ${
         gameVideos

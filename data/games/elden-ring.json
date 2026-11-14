@@ -84,19 +84,30 @@
       "source": "https://www.speedrun.com/eldenring/runs/m349rkgz"
     }
   ],
-  "links": [
+  "attempts": [
     {
-      "label": "G.A.L.E. — hobby PPO agent vs. Margit (no win yet)",
+      "name": "G.A.L.E.",
+      "team": "Hobby project",
+      "result": "A PPO reinforcement-learning agent training against Margit, the Fell Omen.",
+      "why_not": "No win against Margit reported yet.",
       "url": "https://github.com/mr-raichman/eldenring-ai"
     },
     {
-      "label": "EldenRL — hobby RL boss arena (no boss defeated)",
+      "name": "EldenRL",
+      "team": "Hobby project",
+      "result": "A reinforcement-learning setup that trains agents against bosses in a fixed arena.",
+      "why_not": "No boss defeated.",
       "url": "https://github.com/ocram444/EldenRL"
     },
     {
-      "label": "3A-VLA — zero-shot combat transfer, 'hit' rate only",
+      "name": "3A-VLA",
+      "date": "2026-02",
+      "result": "Zero-shot transfer of a combat model to Elden Ring fights.",
+      "why_not": "Scores how often attacks land, not bosses beaten.",
       "url": "https://arxiv.org/abs/2602.02212"
-    },
+    }
+  ],
+  "links": [
     {
       "label": "Elden Ring wiki: bosses and which are mandatory",
       "url": "https://eldenring.wiki.gg/wiki/Bosses"
