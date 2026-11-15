@@ -99,6 +99,18 @@ Object.assign(EMBLEMS, {
   ),
 });
 
+// Coastal open-world board: a flamingo on one leg at the waterline, a low sun behind.
+Object.assign(EMBLEMS, {
+  flamingo: S(
+    `<g class="sun" opacity=".5"><circle cx="49" cy="13" r="8" stroke-width="2"/><path d="M41 18h16M42.5 21h13" stroke-width="1.6"/></g>
+     <path d="M27 30C19 28 15 23 18.5 18.5C22 14 26.5 12.5 24 8"/><circle cx="21.5" cy="7" r="3" stroke-width="2.6"/>
+     <path d="M18.6 6.4c-3 .4-5.2 2.6-5.2 5.6 0 1.2 1 1.6 1.8.8" stroke-width="2.4"/>
+     <path d="M25 31C28 24.5 40 22.5 48 27L57 31.5C51 35.5 42 39 34 38C29.5 37.4 26 35 25 31z"/><path d="M33 30.5c5-2.4 11-2.2 16 .8" stroke-width="2"/>
+     <path d="M37 38v19"/><path d="M41 38.5l5 8-8 3" stroke-width="2.6"/>
+     <path d="M27 57.5h22" stroke-width="2.5"/><path d="M14 61h10M44 61h8" stroke-width="1.8" opacity=".6"/>`
+  ),
+});
+
 // Horseshoe nail holes, placed along the arc.
 EMBLEMS.horseshoe = S(
   `<path d="M18 54l-4-22a18 18 0 0 1 36 0l-4 22" stroke-width="8"/>

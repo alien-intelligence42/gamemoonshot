@@ -126,6 +126,53 @@
    ]
   },
   {
+   "id": "gta-vi",
+   "order": 1,
+   "tier": "new",
+   "title": "Grand Theft Auto VI",
+   "platform": "PS5 / Xbox Series X|S",
+   "release_year": 2026,
+   "release_date": "2026-11-19",
+   "genre": "Open-world action",
+   "icon": "flamingo",
+   "theme": [
+    "#d9407f",
+    "#1b1238"
+   ],
+   "skin": "vice",
+   "art": {
+    "card": "https://www.rockstargames.com/VI/_next/static/media/meta.0t8ty~nlmxq2s.jpg",
+    "banner": "https://www.rockstargames.com/VI/_next/static/media/39ak81277255o9.0lmk9f~r~10.x.jpg"
+   },
+   "description": "Console only at launch; no PC version has been announced. Two leads, Lucia and Jason, in the state of Leonida around Vice City. Any model trained before launch has never seen a walkthrough, mission list or map of it, so early runs show how an agent copes with a game it was never trained on. The milestones between the first mission and the ending will be named once the mission list is known.",
+   "clear_condition": "Finish the story: pass the final story mission and reach the credits (any ending).",
+   "timing": "Run time from starting a new game to the end of the final story mission.",
+   "rules": "Story mode on a retail PS5 or Xbox Series X|S (or a PC release, if one comes), unmodified game, any patch (state it). The agent may play through a capture card or the console's official remote play, with a hardware or virtual controller. No cheat codes, modded consoles or save files from elsewhere; if the game offers to skip a mission after repeated failures, do not take it. Disclose each model's training cutoff and whether the agent could search the web or read guides, wikis or videos during the run, and when.",
+   "milestones": [
+    {
+     "id": "first-mission",
+     "name": "First mission passed",
+     "description": "The first story mission's pass screen after the opening"
+    },
+    {
+     "id": "ending",
+     "name": "Final mission and credits",
+     "description": "Provisional: real mission names go in between once they are known",
+     "final": true
+    }
+   ],
+   "links": [
+    {
+     "label": "Rockstar Games: Grand Theft Auto VI",
+     "url": "https://www.rockstargames.com/VI"
+    },
+    {
+     "label": "Rockstar Newswire: Grand Theft Auto VI is now set to launch November 19, 2026",
+     "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026"
+    }
+   ]
+  },
+  {
    "id": "cyberpunk-2077",
    "order": 2,
    "tier": "modern",

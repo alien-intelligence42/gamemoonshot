@@ -21,8 +21,8 @@ export const STATUSES = ["verified", "pending", "curated", "rejected"];
 const SOURCE_TYPES = ["author", "news"];
 // Emblem names defined in icons.js.
 // Skin names defined in skins.css / app.js SKINS.
-const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire", "erdtree", "sunset", "neon", "tactical", "factory", "orbital", "atlas", "tome"];
-const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield", "tree", "palm", "chip", "dogtag", "gear", "rocket", "laurel", "d20"];
+const SKINS = ["gb-dmg", "gb-crystal", "gba-emerald", "gb-adventure", "blocky", "western", "shinobi", "wukong", "platformer", "terminal", "spire", "erdtree", "sunset", "neon", "tactical", "factory", "orbital", "atlas", "tome", "vice"];
+const ICONS = ["badge", "crystal", "emerald", "pickaxe", "horseshoe", "katana", "staff", "flag", "at", "spire", "shield", "tree", "palm", "chip", "dogtag", "gear", "rocket", "laurel", "d20", "flamingo"];
 const ID_RE = /^[a-z0-9][a-z0-9-]*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_RE = /^(\d+):([0-5]\d):([0-5]\d)$/; // H:MM:SS, hours unbounded
@@ -122,7 +122,13 @@ function validateGame(file, g) {
       if (k.endsWith("_zh") && !isStr(a[k.slice(0, -3)])) err(file, `${at}.${k} has no English "${k.slice(0, -3)}" to translate`);
     }
   }
-  if (!["modern", "classic"].includes(g.tier)) err(file, `tier must be "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
+  if (!["new", "modern", "classic"].includes(g.tier)) {
+    err(file, `tier must be "new" (just released, few guides yet), "modern" (current, long-form) or "classic" (retro / 2D / turn-based)`);
+  }
+  if (g.release_date != null && !(DATE_RE.test(g.release_date) && !Number.isNaN(Date.parse(g.release_date)))) {
+    err(file, `release_date must be YYYY-MM-DD`);
+  }
+  if (g.tier === "new" && !isStr(g.release_date)) err(file, `a "new" game needs release_date (YYYY-MM-DD)`);
   if (g.skin != null && !SKINS.includes(g.skin)) err(file, `skin must be one of ${SKINS.join(", ")}`);
   if (g.icon != null && !ICONS.includes(g.icon)) err(file, `icon must be one of ${ICONS.join(", ")}`);
   if (g.steam_appid != null && !(Number.isInteger(g.steam_appid) && g.steam_appid > 0)) {

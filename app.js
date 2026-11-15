@@ -56,7 +56,7 @@ const SKINS = {
   blocky: { family: "blocky" }, western: { family: "western" }, shinobi: { family: "shinobi" }, wukong: { family: "wukong" },
   platformer: { family: "platformer" }, terminal: { family: "terminal" }, spire: { family: "spire" },
   erdtree: { family: "erdtree" }, sunset: { family: "sunset" }, neon: { family: "neon" }, tactical: { family: "tactical" },
-  factory: { family: "factory" }, orbital: { family: "orbital" }, atlas: { family: "atlas" }, tome: { family: "tome" },
+  factory: { family: "factory" }, orbital: { family: "orbital" }, atlas: { family: "atlas" }, tome: { family: "tome" }, vice: { family: "vice" },
 };
 const THEME_KEY = "moonshot-theme";
 let THEME = document.body.dataset.tone === "light" ? "light" : "dark";
@@ -361,13 +361,26 @@ function artFor(g) {
   const banner = g.art?.banner ?? (steam && `${steam}/library_hero.jpg`);
   return card || banner ? { card, banner } : null;
 }
+// For a just-released game ("new" tier): how long until launch, or how many days it has been out.
+// Day 1 is launch day. Counted in the viewer's calendar, so it changes at their midnight.
+function releaseNote(g) {
+  if (!g.release_date) return "";
+  const [y, m, d] = g.release_date.split("-").map(Number);
+  const out = Date.UTC(y, m - 1, d);
+  const now = new Date();
+  const days = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - out) / 864e5);
+  const date = new Date(out).toLocaleDateString(LANG === "zh" ? "zh-CN" : "en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  if (days < 0) return L(`Out ${date} — in ${-days} day${days === -1 ? "" : "s"}`, `${date}发售——还有 ${-days} 天`);
+  return L(`Out ${date} — day ${days + 1}`, `${date}发售——第 ${days + 1} 天`);
+}
 function viewHome() {
   const all = DATA.submissions.filter((s) => s.status !== "rejected");
   const clearedGames = DATA.games.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
   const videoCount = all.reduce((n, s) => n + (s.videos?.length ?? 0), 0);
   const verified = all.filter((s) => s.status === "verified").length;
 
-  const card = (g) => {
+  // feature: the wide card for a new release, with its description and the days since launch.
+  const card = (g, feature = false) => {
       const ranked = rankRuns(g, runsFor(g.id));
       const best = ranked[0];
       const vids = ranked.reduce((n, sc) => n + (sc.run.videos?.length ?? 0), 0);
@@ -390,6 +403,7 @@ function viewHome() {
             <h3>${esc(g.title)}</h3>
             <div class="meta">${esc([g.platform, g.genre].filter(Boolean).join(" · "))}</div>
           </div>
+          ${feature ? `<div class="fresh">${UI.footprints}<span>${esc(releaseNote(g))}</span></div>${g.description ? `<p class="desc">${esc(g.description)}</p>` : ""}` : ""}
           <div class="best">
             ${bar(best ? best.n : 0, g.milestones.length, { cleared: best?.cleared })}
             <div>${
@@ -406,8 +420,9 @@ function viewHome() {
         </div>
       </a>`;
   };
-  const modern = DATA.games.filter((g) => g.tier === "modern").map(card).join("");
-  const classic = DATA.games.filter((g) => g.tier !== "modern").map(card).join("");
+  const fresh = DATA.games.filter((g) => g.tier === "new").map((g) => card(g, true)).join("");
+  const modern = DATA.games.filter((g) => g.tier === "modern").map((g) => card(g)).join("");
+  const classic = DATA.games.filter((g) => g.tier === "classic").map((g) => card(g)).join("");
 
   VIDEO_REG = [];
   const footage = DATA.games
@@ -430,12 +445,12 @@ function viewHome() {
         <p class="lede">${L(
           `Finishing a modern game end to end — seeing, planning and acting in real time across a story that takes a person
           30 to 100 hours — is this era's moonshot for AI. GameMoonshot tracks how close agents get on Elden Ring, Cyberpunk 2077, GTA V,
-          Red Dead Redemption 2, Black Myth: Wukong and more. Each game is split into milestones (bosses, missions, chapters);
+          Red Dead Redemption 2, Black Myth: Wukong and more, and on GTA VI from launch day, before any guide exists. Each game is split into milestones (bosses, missions, chapters);
           every claim shows how well it is evidenced, and every board shows where human players stand.`,
-          `端到端通关一款现代游戏——在一个需要人类玩上 30 到 100 小时的故事里，实时地观察、规划和行动——是这个时代 AI 的登月计划。GameMoonshot 追踪智能体在《艾尔登法环》《赛博朋克 2077》《GTA V》《荒野大镖客：救赎 2》《黑神话：悟空》等游戏中能走多远。每款游戏都拆分成一串里程碑（Boss、任务、章节）；每项成绩都标明证据强度，每个榜单都列出人类玩家的水平。`
+          `端到端通关一款现代游戏——在一个需要人类玩上 30 到 100 小时的故事里，实时地观察、规划和行动——是这个时代 AI 的登月计划。GameMoonshot 追踪智能体在《艾尔登法环》《赛博朋克 2077》《GTA V》《荒野大镖客：救赎 2》《黑神话：悟空》等游戏中能走多远，也从首发当天起追踪还没有任何攻略的《GTA VI》。每款游戏都拆分成一串里程碑（Boss、任务、章节）；每项成绩都标明证据强度，每个榜单都列出人类玩家的水平。`
         )}</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#games">${UI.sword} ${L("Choose a game", "选择游戏")}</a>
+          <a class="btn primary" href="#${fresh ? "new" : "games"}">${UI.sword} ${L("Choose a game", "选择游戏")}</a>
           <a class="btn" href="submit/">${UI.scroll} ${L("Submit a run", "提交成绩")}</a>
         </div>
       </div>
@@ -450,6 +465,20 @@ function viewHome() {
     </div></div>
 
     <div class="wrap">
+      ${
+        fresh
+          ? `<section class="section" id="new">
+        <div class="section-head">
+          <div><h2><span class="ico">${UI.footprints}</span>${L("Uncharted: new releases", "未知之地：新发售游戏")}</h2>
+          <div class="sub">${L(
+            "Games out so recently that there are few walkthroughs, wikis or videos yet, and no model was trained on them. An agent has to explore, work out what the game wants and remember what it learned, much like a player on launch day. Runs here must say whether the agent could look things up, and when. A game moves to the moonshots once guides for it are widely available.",
+            "刚发售不久的游戏：攻略、wiki 和视频都还很少，也没有哪个模型在训练时见过它们。智能体得像首发当天的玩家一样自己探索，弄清游戏要它做什么，并记住学到的东西。这里的每次运行都要说明智能体能不能查资料、从什么时候开始能查。等攻略普遍出现后，这款游戏会移到“登月目标”里。"
+          )}</div></div>
+        </div>
+        <div class="grid feature">${fresh}</div>
+      </section>`
+          : ""
+      }
       <section class="section" id="games">
         <div class="section-head">
           <div><h2><span class="ico">${UI.sword}</span>${L("The moonshots", "登月目标")}</h2>
@@ -742,7 +771,9 @@ function viewGame(id) {
       ${MOUNTAINS}
       <div class="crumbs"><a href="./">${L("Games", "游戏")}</a> / ${esc(game.title)}</div>
       <h1>${esc(game.title)}</h1>
-      <div class="tags">${[game.platform, game.release_year, game.genre].filter(Boolean).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+      <div class="tags">${[game.platform, game.release_year, game.genre].filter(Boolean).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}${
+        game.tier === "new" ? `<span class="tag fresh">${esc(releaseNote(game))}</span>` : ""
+      }</div>
       ${game.description ? `<p class="desc">${esc(game.description)}</p>` : ""}
       <div class="frontier">
         <div class="label"><span>${L("AI frontier", "AI 前沿")}</span><span>${
@@ -1054,19 +1085,19 @@ const BOSSES = [
 
 function viewWhy() {
   const T = (pair) => L(...pair);
-  const modern = DATA.games.filter((g) => g.tier === "modern");
+  const modern = DATA.games.filter((g) => g.tier !== "classic");
   const cleared = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.cleared).length;
   const started = modern.filter((g) => rankRuns(g, runsFor(g.id))[0]?.n > 0).length;
 
-  // A tidy block of game emblems plus a "propose a game" tile. Columns: whichever of 5, 4, 6 leaves the
-  // fewest empty slots in the last row (5 wins ties), so the block stays a clean rectangle as games are added.
+  // A tidy block of game emblems plus a "propose a game" tile. Columns: whichever of 5, 4, 6, 7 leaves the
+  // fewest empty slots in the last row (earlier wins ties), so the block stays a clean rectangle as games are added.
   const shelf =
     DATA.games
       .map((g) => `<a class="cart" href="game/${esc(g.id)}/" style="${themeStyle(g)}" title="${esc(g.title)}" aria-label="${esc(g.title)}">${emblem(g)}</a>`)
       .join("") +
     `<a class="cart add" href="${esc(repoUrl("/issues/new?template=new-game.yml"))}" target="_blank" rel="noopener" title="${L("Propose a game", "推荐游戏")}" aria-label="${L("Propose a game", "推荐游戏")}">+</a>`;
   const tiles = DATA.games.length + 1;
-  const shelfCols = [5, 4, 6].reduce((best, c) => ((-tiles % c + c) % c < (-tiles % best + best) % best ? c : best));
+  const shelfCols = [5, 4, 6, 7].reduce((best, c) => ((-tiles % c + c) % c < (-tiles % best + best) % best ? c : best));
 
   const stages = [
     { n: 1, icon: UI.gamepad, state: "now", status: L("In progress", "进行中"), title: L("Clear the game", "打通游戏"),

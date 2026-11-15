@@ -1051,6 +1051,50 @@ body[data-skin="tome"] .banner .mountains .m2 { fill: #18131d; }
 body[data-skin="tome"] .banner h1 { font-weight: 400; letter-spacing: .02em; color: #f4ecdf; font-size: clamp(36px, 5.6vw, 66px); }
 
 /* ======================================================================
+   VICE — coastal city after dark: rounded retro type, neon horizon, striped sea
+   ====================================================================== */
+body[data-skin="vice"] {
+  --display: "Righteous", "Arial Rounded MT Bold", sans-serif;
+  --bg: #100c1c; --bg-2: #150f24; --surface: #19132b; --surface-2: #211a36; --surface-3: #2b2343;
+  --ink: #f2ecf6; --ink-2: #cdc4da; --muted: #998fab;
+  --gold: #f06aa6; --gold-hi: #f7a2c9; --gold-lo: #b84a7c; --ember: #4fd1c5; --on-gold: #1c0a14; --aqua: #4fd1c5;
+  --line: rgb(242 236 246 / 11%); --line-strong: rgb(240 106 166 / 38%); --human: #8fb4e8; --track: #0c0916;
+  --emblem: #f7a2c9; --emblem-glow: rgb(240 106 166 / 40%); --m2: #161025; --tip-bg: #19132bf5; --cash: #7fd6a0;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(240 106 166 / 9%), transparent 60%), #100c1c;
+}
+body[data-skin="vice"] :is(.card, .row, .fact, .panel, .step, fieldset, .detail) { border-radius: 10px; }
+body[data-skin="vice"] .section-head h2 { font-weight: 400; letter-spacing: .02em; font-size: clamp(26px, 3vw, 34px); }
+body[data-skin="vice"] .section-head h2 .ico { color: var(--aqua); }
+body[data-skin="vice"] .fact dt, body[data-skin="vice"] .board-head, body[data-skin="vice"] .detail h4, body[data-skin="vice"] .frontier .label { font-weight: 400; letter-spacing: .05em; font-size: 14px; }
+body[data-skin="vice"] .fact dt, body[data-skin="vice"] .detail h4 { color: var(--gold); }
+body[data-skin="vice"] .btn.primary { background: linear-gradient(90deg, var(--gold), #f39a6b); color: var(--on-gold); box-shadow: none; }
+body[data-skin="vice"] .badge.cleared { background: var(--cash); color: #0b1a10; }
+body[data-skin="vice"] .bossbar { height: 10px; border-radius: 99px; background: var(--track); border: 1px solid rgb(240 106 166 / 35%); box-shadow: none; }
+body[data-skin="vice"] .bossbar::before,
+body[data-skin="vice"] .bossbar::after { display: none; }
+body[data-skin="vice"] .bossbar > i { inset: 1px auto 1px 1px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), var(--aqua)); box-shadow: 0 0 10px rgb(240 106 166 / 35%); }
+body[data-skin="vice"] .bossbar.cleared > i { background: var(--cash); box-shadow: none; }
+body[data-skin="vice"] .bossbar.human > i { background: var(--human); box-shadow: none; }
+body[data-skin="vice"] .path li.hit .node { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px rgb(240 106 166 / 40%); }
+body[data-skin="vice"] .path li.hit .node span { color: var(--on-gold); }
+body[data-skin="vice"] .path li.final .name { font-family: var(--display); font-weight: 400; font-size: 18px; color: var(--aqua); }
+body[data-skin="vice"] .banner { background: radial-gradient(60% 70% at 85% 100%, rgb(217 64 127 / 34%), transparent 70%), linear-gradient(180deg, #150d2c 0%, #24124a 55%, #3a1650 100%); }
+/* the sea: thin aqua swell lines under a neon horizon */
+body[data-skin="vice"] .banner::before {
+  content: ""; position: absolute; z-index: -2; left: 0; right: 0; bottom: 0; height: 84px;
+  background: repeating-linear-gradient(180deg, rgb(79 209 197 / 20%) 0 2px, transparent 2px 10px);
+  -webkit-mask-image: linear-gradient(transparent, #000); mask-image: linear-gradient(transparent, #000);
+}
+body[data-skin="vice"] .banner::after {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 84px; height: 2px;
+  background: linear-gradient(90deg, transparent, #f06aa6 25%, #4fd1c5 75%, transparent); box-shadow: 0 0 14px rgb(240 106 166 / 55%);
+}
+body[data-skin="vice"] .banner .mountains { display: none; }
+body[data-skin="vice"] .banner .emblem { top: auto; bottom: 92px; opacity: 1; }
+body[data-skin="vice"] .banner h1 { font-weight: 400; letter-spacing: .01em; color: #fff; text-shadow: 0 0 18px rgb(240 106 166 / 50%), 2px 2px 0 #3a1650; font-size: clamp(36px, 5.6vw, 66px); }
+body[data-skin="vice"] .banner .tag { background: rgb(16 12 28 / 55%); }
+
+/* ======================================================================
    Home-page cards: a hint of each game's skin (title type + key-art texture)
    ====================================================================== */
 .card[data-skin="gb-dmg"] h3,
@@ -1137,6 +1181,13 @@ body[data-skin="tome"] .banner h1 { font-weight: 400; letter-spacing: .02em; col
 }
 .card[data-skin="tome"] .keyart .emblem { color: #ead29a; }
 .card[data-skin="tome"] .keyart .mountains .m1 { fill: #2a2034; }
+.card[data-skin="vice"] h3 { font-family: "Righteous", sans-serif; font-weight: 400; font-size: 22px; letter-spacing: .01em; }
+.card[data-skin="vice"] .keyart {
+  background: linear-gradient(transparent 70%, #f06aa6 70% calc(70% + 2px), rgb(79 209 197 / 14%) calc(70% + 2px)),
+    radial-gradient(50% 80% at 78% 70%, rgb(240 106 166 / 34%), transparent 70%), linear-gradient(180deg, #150d2c, #2c1450);
+}
+.card[data-skin="vice"] .keyart .emblem { color: #f7a2c9; }
+.card[data-skin="vice"] .keyart .mountains { display: none; }
 
 /* banner progress count sits on the banner art, not a panel */
 body[data-family="pixel"] .banner .num { color: var(--banner-ink); }
@@ -1439,6 +1490,23 @@ body[data-skin="tome"][data-tone="light"] .banner h1 { color: #221a28; text-shad
 body[data-skin="tome"][data-tone="light"] .bossbar > i { box-shadow: none; }
 body[data-skin="tome"][data-tone="light"] .path li.hit .node { box-shadow: none; }
 body[data-skin="tome"][data-tone="light"] .path li.hit .node span { color: #fcfaf6; }
+
+/* -- vice, light: beach morning, pastel sky over a striped sea -- */
+body[data-skin="vice"][data-tone="light"] {
+  --bg: #f8f2ef; --bg-2: #f3ebe7; --surface: #fffcfb; --surface-2: #f9f1ee; --surface-3: #efe3df;
+  --ink: #23182a; --ink-2: #47394f; --muted: #725f76;
+  --gold: #b8306c; --gold-hi: #92214f; --gold-lo: #d9709c; --ember: #0f7f86; --on-gold: #fffcfb; --aqua: #0f7f86; --cash: #2f8a4c;
+  --line: rgb(35 24 42 / 12%); --line-strong: rgb(184 48 108 / 34%); --human: #2f6aa8; --track: #efe3df; --tip-bg: #fffcfbf8;
+  --emblem: #b8306c; --emblem-glow: transparent; --m2: #efe3df;
+  --page-bg: radial-gradient(900px 500px at 80% -10%, rgb(240 106 166 / 8%), transparent 60%), #f8f2ef;
+}
+body[data-skin="vice"][data-tone="light"] .banner { background: radial-gradient(60% 70% at 85% 100%, rgb(240 106 166 / 22%), transparent 70%), linear-gradient(180deg, #fbe3ec 0%, #fdeee6 60%, #f8f2ef 100%); }
+body[data-skin="vice"][data-tone="light"] .banner::before { background: repeating-linear-gradient(180deg, rgb(15 127 134 / 22%) 0 2px, transparent 2px 10px); }
+body[data-skin="vice"][data-tone="light"] .banner::after { box-shadow: none; }
+body[data-skin="vice"][data-tone="light"] .banner h1 { color: #23182a; text-shadow: none; }
+body[data-skin="vice"][data-tone="light"] .banner .tag { background: rgb(255 252 251 / 70%); }
+body[data-skin="vice"][data-tone="light"] .bossbar > i { box-shadow: none; }
+body[data-skin="vice"][data-tone="light"] .path li.hit .node { box-shadow: none; }
 
 /* ======================================================================
    COMFORT — every skin keeps its look, but at lower saturation and

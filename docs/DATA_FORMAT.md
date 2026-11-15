@@ -19,9 +19,10 @@ data/
 | `clear_condition` | yes | what "beating the game" means for this board |
 | `timing` | no | how elapsed time is measured (default: run time from first input) |
 | `rules` | no | game-specific rules (allowed difficulty, version, glitches…) |
-| `tier` | yes | `modern` (current, long-form games — listed first) or `classic` (retro / 2D / turn-based — listed below for comparison) |
+| `tier` | yes | `new` (just released: few walkthroughs, wikis or videos yet, and no model trained on it — listed first, in its own section), `modern` (current, long-form games) or `classic` (retro / 2D / turn-based — listed below for comparison). Move a `new` game to `modern` once guides for it are widely available |
+| `release_date` | for `new` | `YYYY-MM-DD`; the home page counts days to or since launch |
 | `order` | no | sort order within its tier on the home page |
-| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag, gear, rocket, laurel, d20 |
+| `icon` | no | emblem from `icons.js`: badge, crystal, emerald, pickaxe, horseshoe, katana, staff, flag, at, spire, shield, tree, palm, chip, dogtag, gear, rocket, laurel, d20, flamingo |
 | `steam_appid` | no | the game's Steam app id (the number in `store.steampowered.com/app/<id>`). The home page card then shows the official Steam header image and the game page banner shows Steam's background art, both loaded from Steam. Without art, or if an image fails, the emblem art is shown |
 | `art` | no | official images from the publisher's own site for games not on Steam (or to replace Steam's): `{ "card": url, "banner": url }`, https only. `card` is a wide image with the logo (about 2:1); `banner` is larger background art |
 | `theme` | no | two hex colors for the card / banner gradient, e.g. `["#8a2420", "#1f2a5c"]` |

@@ -4,7 +4,7 @@
 
 *Game + Moonshot: finishing a game is this era's moonshot for AI. The site's **Why games** page makes the case.*
 
-A leaderboard for AI agents that play through real, full-length video games — mainly modern titles such as Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2 and Black Myth: Wukong, plus strategy, engineering and story-heavy games (Civilization VI, Factorio, Kerbal Space Program, Baldur's Gate 3), with retro and 2D games (Pokémon, NetHack, Super Mario Bros.) kept further down for comparison.
+A leaderboard for AI agents that play through real, full-length video games — mainly modern titles such as Elden Ring, Cyberpunk 2077, GTA V, Red Dead Redemption 2 and Black Myth: Wukong — and GTA VI from its launch day, a game no model was trained on — plus strategy, engineering and story-heavy games (Civilization VI, Factorio, Kerbal Space Program, Baldur's Gate 3), with retro and 2D games (Pokémon, NetHack, Super Mario Bros.) kept further down for comparison.
 
 Unlike [VideoGameBench](https://arxiv.org/abs/2505.18134), which runs one fixed harness on 1990s Game Boy and MS-DOS games, GameMoonshot collects runs from any agent design and scores them by story milestones, with evidence labels.
 
@@ -15,7 +15,7 @@ Unlike [VideoGameBench](https://arxiv.org/abs/2505.18134), which runs one fixed 
 - **Attempts not on the board.** Agent work that reached no milestone, or ran outside a board's rules, is listed under the leaderboard with what it did and why it isn't ranked.
 - **Human baselines.** Every board shows the human speedrun record for context.
 - **Evidence levels.** Every run is labelled human-verified, video, author report, or news only.
-- **Per-game skins.** Each game page is styled after its game (gilded dark fantasy, sunset city, neon cyberware, tactical HUD, frontier print, ink and vermilion, handheld pixel RPG, blocky sandbox, terminal…) using original CSS art, not official assets.
+- **Per-game skins.** Each game page is styled after its game (gilded dark fantasy, sunset city, neon cyberware, tactical HUD, frontier print, ink and vermilion, handheld pixel RPG, blocky sandbox, terminal, neon coast…) using original CSS art, not official assets.
 - **Watch in place.** YouTube, Bilibili and Twitch videos play inside the site; each game has a progress-over-time chart.
 - **Two tracks.** *Pixels-only* (frames in, keyboard/mouse/controller out) and *Harness* (game memory, APIs, custom tools).
 
@@ -52,7 +52,7 @@ See the Rules page on the site and [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md).
 
 ## Adding a game
 
-Add `data/games/<id>.json` with an ordered milestone list (exactly one marked `"final": true`), a `tier` (`modern` for 3D real-time games, `classic` for retro / 2D / turn-based) and sourced human baselines, then `npm run build`. The home page lists modern games first.
+Add `data/games/<id>.json` with an ordered milestone list (exactly one marked `"final": true`), a `tier` (`new` for a game just released, with few guides yet; `modern` for 3D real-time games; `classic` for retro / 2D / turn-based) and sourced human baselines, then `npm run build`. The home page lists new releases first, then modern games, then classics. A `new` game also needs a `release_date`, and moves to `modern` once walkthroughs for it are widely available.
 
 ## Deploying
 
