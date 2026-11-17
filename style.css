@@ -581,7 +581,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid color-mix(in srgb
 .page-head { padding: 48px 0 8px; }
 .page-head h1 { font-family: var(--display); font-weight: 900; font-size: clamp(30px, 4.6vw, 50px); letter-spacing: .04em; color: var(--gold-hi); }
 .page-head p { color: var(--ink-2); max-width: 72ch; margin: 12px 0 0; font-size: 16px; }
-.prose { max-width: 820px; }
+/* Rules: intro and body both span the content column, so their right edge lines up with the top bar. */
+.page-head:has(+ .prose) p { max-width: none; }
+.prose { font-size: 16px; }
 .prose h2 { font-family: var(--display); letter-spacing: .06em; font-size: 22px; margin: 40px 0 12px; color: var(--gold-hi); }
 .prose p, .prose li { color: var(--ink-2); line-height: 1.7; }
 .prose li { margin: 8px 0; }
